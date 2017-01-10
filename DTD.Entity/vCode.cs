@@ -11,6 +11,5 @@ namespace DTD.Entity
     public class vCode
     {
         public Enums.vType vType { get; set; }
-        
     }
 }
