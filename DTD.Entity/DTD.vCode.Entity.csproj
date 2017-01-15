@@ -46,7 +46,7 @@
     <Compile Include="vCodes\Function.cs" />
     <Compile Include="vCodes\If.cs" />
     <Compile Include="vCodes\Variable.cs" />
-    <Compile Include="vCode.cs" />
+    <Compile Include="VCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="vCodes\While.cs" />
   </ItemGroup>

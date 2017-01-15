@@ -8,6 +8,6 @@ namespace DTD.Entity.Helpers
 {
     public class Scope
     {
-        public Queue<vCode> Items { get; set; }
+        public Queue<VCode> Items { get; set; }
     }
 }

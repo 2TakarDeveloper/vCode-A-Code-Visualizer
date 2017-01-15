@@ -12,8 +12,8 @@ namespace DTD.Entity.vCodes
     {
 
         public string Name { get; set; }
-        public bool isArray { get; set; }
-        public bool isStatic { get; set; }
+        public bool IsArray { get; set; }
+        public bool IsStatic { get; set; }
 
         public Enums.Type Type { get; set; }
         

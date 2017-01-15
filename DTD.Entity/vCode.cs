@@ -8,9 +8,9 @@ using DTD.Entity.Enum;
 namespace DTD.Entity
 {
     
-    public class vCode
+    public class VCode
     {
-        public Enums.vType vType { get; set; }
+        public Enums.VType VType { get; set; }
         
     }
 }

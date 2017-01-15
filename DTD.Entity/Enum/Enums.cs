@@ -12,7 +12,7 @@
             Public,Private,Protected
         }
 
-        public enum vType
+        public enum VType
         {
             Variable,Function,If,While
         }

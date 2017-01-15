@@ -2,12 +2,12 @@
 
 namespace DTD.Entity.vCodes
 {
-    public class Variable<T>:vCode
+    public class Variable<T>:VCode
     {
         public string Name { get; set; }
         public T[,] Value { get; set; }
-        public bool isArray { get; set; }
-        public bool isStatic { get; set; }
+        public bool IsArray { get; set; }
+        public bool IsStatic { get; set; }
 
 
         //to initialize data in array #ignore if ur nub

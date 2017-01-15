@@ -7,7 +7,7 @@ using DTD.Entity.Helpers;
 
 namespace DTD.Entity.vCodes
 {
-    public class While : vCode
+    public class While : VCode
     {
         public Condition Condition { get; set; }
         public Scope Scope { get; set; }
