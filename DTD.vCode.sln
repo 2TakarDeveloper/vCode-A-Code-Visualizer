@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "DTD.Entity\Entity.csproj", "{B5F4796D-2DEF-4331-BE87-9E9941CC0EE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeVisualizer", "CodeVisualizer\CodeVisualizer.csproj", "{AEAAC82C-CBA7-49D3-986D-45A8003D4C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeVisualizer.Controls", "CodeVisualizer.Controls\CodeVisualizer.Controls.csproj", "{E174F5F6-348F-490C-B901-361482CC2280}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5F4796D-2DEF-4331-BE87-9E9941CC0EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F4796D-2DEF-4331-BE87-9E9941CC0EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5F4796D-2DEF-4331-BE87-9E9941CC0EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5F4796D-2DEF-4331-BE87-9E9941CC0EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEAAC82C-CBA7-49D3-986D-45A8003D4C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEAAC82C-CBA7-49D3-986D-45A8003D4C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEAAC82C-CBA7-49D3-986D-45A8003D4C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEAAC82C-CBA7-49D3-986D-45A8003D4C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E174F5F6-348F-490C-B901-361482CC2280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E174F5F6-348F-490C-B901-361482CC2280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E174F5F6-348F-490C-B901-361482CC2280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E174F5F6-348F-490C-B901-361482CC2280}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
