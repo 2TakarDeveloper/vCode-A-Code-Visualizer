@@ -42,12 +42,12 @@
             this.header = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.CodeEditor = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.midPanel.SuspendLayout();
@@ -120,8 +120,8 @@
             // 
             // TextPanel1.Panel1
             // 
-            this.TextPanel1.Panel1.AccessibleName = "TextPanel";
-            this.TextPanel1.Panel1.Controls.Add(this.richTextBox1);
+            this.TextPanel1.Panel1.AccessibleName = "codeEditor";
+            this.TextPanel1.Panel1.Controls.Add(this.CodeEditor);
             this.TextPanel1.Panel1.Controls.Add(this.panel1);
             // 
             // TextPanel1.Panel2
@@ -220,16 +220,6 @@
             this.panel2.Size = new System.Drawing.Size(115, 22);
             this.panel2.TabIndex = 2;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 22);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(231, 355);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.LemonChiffon;
@@ -283,6 +273,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Properties";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CodeEditor
+            // 
+            this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodeEditor.Location = new System.Drawing.Point(0, 22);
+            this.CodeEditor.Name = "CodeEditor";
+            this.CodeEditor.Size = new System.Drawing.Size(231, 355);
+            this.CodeEditor.TabIndex = 3;
+            this.CodeEditor.Text = "";
+            this.CodeEditor.TextChanged += new System.EventHandler(this.CodeEditor_TextChanged);
             // 
             // DashBoard
             // 
@@ -339,13 +339,13 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel header;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox CodeEditor;
     }
 }
 

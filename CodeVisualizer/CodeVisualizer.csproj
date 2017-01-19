@@ -92,6 +92,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeVisualizer.Controls\CodeVisualizer.Controls.csproj">
+      <Project>{e174f5f6-348f-490c-b901-361482cc2280}</Project>
+      <Name>CodeVisualizer.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

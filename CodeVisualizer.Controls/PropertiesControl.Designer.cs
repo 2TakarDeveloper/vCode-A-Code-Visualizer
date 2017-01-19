@@ -1,6 +1,6 @@
-﻿namespace CodeVisualizer.Controls.VBlocks
+﻿namespace CodeVisualizer.Controls
 {
-    partial class vVariable
+    partial class PropertiesControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // vVariable
+            // PropertiesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "vVariable";
-            this.Size = new System.Drawing.Size(697, 298);
+            this.Name = "PropertiesControl";
+            this.Size = new System.Drawing.Size(150, 446);
             this.ResumeLayout(false);
 
         }
