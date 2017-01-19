@@ -14,6 +14,8 @@ namespace CodeVisualizer
 {
     public partial class DashBoard : MetroForm
     {
+        private string Code { get; set; }
+
         public DashBoard()
         {
             InitializeComponent();
@@ -33,10 +35,27 @@ namespace CodeVisualizer
 
 
 
+
+
         ////Code Editor
+       
+        //RegexPatterns
+        private string[] _typepatterns =
+        {
+            "int", "float", "string", "bool", "void"
+        };
+
+
+        private string[] _codePatterns =
+        {
+            "if", "else", "while"
+        };
+
         private void CodeEditor_TextChanged(object sender, EventArgs e)
         {
+           Code = CodeEditor.Text;//get All text as string from CodeEditor
            
+
         }
 
     }

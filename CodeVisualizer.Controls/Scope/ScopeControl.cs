@@ -7,15 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTD.Entity.vCodes;
-using MetroFramework.Controls;
 
-namespace CodeVisualizer.Controls.VBlocks
+namespace CodeVisualizer.Controls.Scope
 {
-    public partial class Vvariable: VBlock
+    public partial class ScopeControl : UserControl
     {
-        
-        public Vvariable()
+        public DTD.Entity.Helpers.Scope Scope { get; set; }
+        public ScopeControl()
         {
             InitializeComponent();
         }

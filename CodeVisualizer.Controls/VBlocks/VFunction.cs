@@ -7,15 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTD.Entity.vCodes;
-using MetroFramework.Controls;
 
 namespace CodeVisualizer.Controls.VBlocks
 {
-    public partial class Vvariable: VBlock
+    public partial class VFunction : VBlock
     {
-        
-        public Vvariable()
+        public VFunction()
         {
             InitializeComponent();
         }

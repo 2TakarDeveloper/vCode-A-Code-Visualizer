@@ -7,26 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTD.Entity;
 using DTD.Entity.vCodes;
-using MetroFramework.Controls;
 
-namespace CodeVisualizer.Controls
+namespace CodeVisualizer.Controls.VBlocks
 {
-    public partial class PropertiesControl : MetroUserControl
+    public partial class Vif : VBlock
     {
-        public PropertiesControl()
+        public If If { get; set; }
+        public Vif()
         {
             InitializeComponent();
-        }
-
-
-        public void InitializevCode(VCode vCode)
-        {
             
         }
-       
-
-
     }
 }

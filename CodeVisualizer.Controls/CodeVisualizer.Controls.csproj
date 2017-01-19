@@ -60,18 +60,41 @@
     <Compile Include="PropertiesControl.Designer.cs">
       <DependentUpon>PropertiesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="VBlocks\vBlock.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scope\ScopeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VBlocks\vBlock.Designer.cs">
-      <DependentUpon>vBlock.cs</DependentUpon>
+    <Compile Include="Scope\ScopeControl.Designer.cs">
+      <DependentUpon>ScopeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VBlocks\VBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VBlocks\VBlock.Designer.cs">
+      <DependentUpon>VBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VBlocks\vVariable.cs">
+    <Compile Include="VBlocks\VFunction.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VBlocks\vVariable.Designer.cs">
-      <DependentUpon>vVariable.cs</DependentUpon>
+    <Compile Include="VBlocks\VFunction.Designer.cs">
+      <DependentUpon>VFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VBlocks\Vif.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VBlocks\Vif.Designer.cs">
+      <DependentUpon>Vif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VBlocks\Vvariable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VBlocks\Vvariable.Designer.cs">
+      <DependentUpon>Vvariable.cs</DependentUpon>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
@@ -79,11 +102,25 @@
     <EmbeddedResource Include="PropertiesControl.resx">
       <DependentUpon>PropertiesControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VBlocks\vBlock.resx">
-      <DependentUpon>vBlock.cs</DependentUpon>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="VBlocks\vVariable.resx">
-      <DependentUpon>vVariable.cs</DependentUpon>
+    <EmbeddedResource Include="Scope\ScopeControl.resx">
+      <DependentUpon>ScopeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBlocks\VBlock.resx">
+      <DependentUpon>VBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBlocks\VFunction.resx">
+      <DependentUpon>VFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBlocks\Vif.resx">
+      <DependentUpon>Vif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBlocks\Vvariable.resx">
+      <DependentUpon>Vvariable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +131,12 @@
       <Project>{b5f4796d-2def-4331-be87-9e9941cc0ee3}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1484856362_Close_Box_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1484856678_cog.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "VBlock";
-            this.Size = new System.Drawing.Size(460, 285);
+            this.Size = new System.Drawing.Size(312, 285);
             this.ResumeLayout(false);
 
         }
