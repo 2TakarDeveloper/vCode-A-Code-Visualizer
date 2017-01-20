@@ -1,6 +1,6 @@
 ﻿namespace CodeVisualizer.Controls.VBlocks
 {
-    partial class VFunction
+    partial class Vfunction
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,94 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.scope = new CodeVisualizer.Controls.Scope.ScopeControl();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.settingsButton = new MetroFramework.Controls.MetroLink();
-            this.DisposeButton = new MetroFramework.Controls.MetroLink();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel1.SuspendLayout();
+            this.scopeControl1 = new CodeVisualizer.Controls.Helpers.ScopeControl();
+            this.Header.SuspendLayout();
+            this.body.SuspendLayout();
             this.SuspendLayout();
             // 
-            // scope
+            // Header
             // 
-            this.scope.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scope.Location = new System.Drawing.Point(0, 24);
-            this.scope.Name = "scope";
-            this.scope.Scope = null;
-            this.scope.Size = new System.Drawing.Size(595, 261);
-            this.scope.TabIndex = 3;
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.BackColor = System.Drawing.Color.Snow;
-            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel1.Controls.Add(this.settingsButton);
-            this.metroPanel1.Controls.Add(this.DisposeButton);
-            this.metroPanel1.Controls.Add(this.metroLabel1);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(595, 24);
-            this.metroPanel1.TabIndex = 2;
-            this.metroPanel1.UseCustomBackColor = true;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.Header.Size = new System.Drawing.Size(400, 29);
             // 
             // settingsButton
             // 
-            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.settingsButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856678_cog;
-            this.settingsButton.Location = new System.Drawing.Point(531, 0);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(31, 22);
-            this.settingsButton.TabIndex = 6;
-            this.settingsButton.UseSelectable = true;
+            this.settingsButton.Location = new System.Drawing.Point(311, 0);
+            this.settingsButton.Size = new System.Drawing.Size(31, 23);
+            // 
+            // NameLable
+            // 
+            this.NameLable.Location = new System.Drawing.Point(25, 4);
+            this.NameLable.Size = new System.Drawing.Size(109, 19);
+            this.NameLable.Text = "Function Name";
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DisposeButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
-            this.DisposeButton.Location = new System.Drawing.Point(562, 0);
-            this.DisposeButton.Name = "DisposeButton";
-            this.DisposeButton.Size = new System.Drawing.Size(31, 22);
-            this.DisposeButton.TabIndex = 5;
-            this.DisposeButton.UseSelectable = true;
+            this.DisposeButton.Location = new System.Drawing.Point(348, 0);
+            this.DisposeButton.Size = new System.Drawing.Size(31, 23);
             // 
-            // metroLabel1
+            // body
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(0, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Function";
+            this.body.Controls.Add(this.scopeControl1);
+            this.body.Size = new System.Drawing.Size(400, 300);
+            this.body.Controls.SetChildIndex(this.Header, 0);
+            this.body.Controls.SetChildIndex(this.scopeControl1, 0);
             // 
-            // VFunction
+            // scopeControl1
+            // 
+            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scopeControl1.Location = new System.Drawing.Point(0, 29);
+            this.scopeControl1.Name = "scopeControl1";
+            this.scopeControl1.Scope = null;
+            this.scopeControl1.Size = new System.Drawing.Size(400, 271);
+            this.scopeControl1.TabIndex = 7;
+            // 
+            // Vfunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.scope);
-            this.Controls.Add(this.metroPanel1);
-            this.Name = "VFunction";
-            this.Size = new System.Drawing.Size(595, 285);
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.Name = "Vfunction";
+            this.Size = new System.Drawing.Size(400, 300);
+            this.Header.ResumeLayout(false);
+            this.Header.PerformLayout();
+            this.body.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Scope.ScopeControl scope;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLink settingsButton;
-        private MetroFramework.Controls.MetroLink DisposeButton;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private Helpers.ScopeControl scopeControl1;
     }
 }

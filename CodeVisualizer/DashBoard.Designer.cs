@@ -1,4 +1,6 @@
-﻿namespace CodeVisualizer
+﻿using CodeVisualizer.Controls.Helpers;
+
+namespace CodeVisualizer
 {
     partial class DashBoard
     {
@@ -47,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.scopeControl1 = new CodeVisualizer.Controls.Scope.ScopeControl();
+            this.scopeControl1 = new ScopeControl();
             this.tableLayoutPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -345,7 +347,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox CodeEditor;
-        private Controls.Scope.ScopeControl scopeControl1;
+        private ScopeControl scopeControl1;
     }
 }
 

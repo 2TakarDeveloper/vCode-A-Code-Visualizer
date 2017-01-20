@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTD.Entity;
 
 namespace CodeVisualizer.Controls.VBlocks
 {
-    public partial class VFunction : VBlock
+    public partial class Vfunction : VBlock
     {
-        public VFunction()
+        
+        public Vfunction()
         {
             InitializeComponent();
+           
         }
     }
 }

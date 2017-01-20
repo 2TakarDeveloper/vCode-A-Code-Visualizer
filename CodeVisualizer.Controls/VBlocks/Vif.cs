@@ -13,11 +13,13 @@ namespace CodeVisualizer.Controls.VBlocks
 {
     public partial class Vif : VBlock
     {
-        public If If { get; set; }
+    
         public Vif()
         {
             InitializeComponent();
             
         }
+
+      
     }
 }

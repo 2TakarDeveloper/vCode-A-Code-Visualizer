@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeVisualizer", "CodeVisua
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeVisualizer.Controls", "CodeVisualizer.Controls\CodeVisualizer.Controls.csproj", "{E174F5F6-348F-490C-B901-361482CC2280}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{F940BE78-7BB6-4D10-B405-3FF400A6F25A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E174F5F6-348F-490C-B901-361482CC2280}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E174F5F6-348F-490C-B901-361482CC2280}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E174F5F6-348F-490C-B901-361482CC2280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F940BE78-7BB6-4D10-B405-3FF400A6F25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F940BE78-7BB6-4D10-B405-3FF400A6F25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F940BE78-7BB6-4D10-B405-3FF400A6F25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F940BE78-7BB6-4D10-B405-3FF400A6F25A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
