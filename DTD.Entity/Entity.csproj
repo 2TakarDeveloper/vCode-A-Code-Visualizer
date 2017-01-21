@@ -44,6 +44,7 @@
     <Compile Include="Helpers\Condition.cs" />
     <Compile Include="Helpers\Scope.cs" />
     <Compile Include="vCodes\Function.cs" />
+    <Compile Include="vCodes\GlobalScope.cs" />
     <Compile Include="vCodes\If.cs" />
     <Compile Include="vCodes\Variable.cs" />
     <Compile Include="VCode.cs" />

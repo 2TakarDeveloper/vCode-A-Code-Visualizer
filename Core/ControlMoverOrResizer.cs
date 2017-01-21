@@ -10,26 +10,26 @@ using System.Windows.Forms;
 
 namespace Core
 {
-    public class ControlMoverOrResizer
+    public static class ControlMoverOrResizer
     {
         private static bool _moving;
         private static Point _cursorStartPoint;
         private static bool _moveIsInterNal;
         private static bool _resizing;
         private static Size _currentControlStartSize;
-        public static bool MouseIsInLeftEdge { get; set; }
-        public static bool MouseIsInRightEdge { get; set; }
-        public static bool MouseIsInTopEdge { get; set; }
-        public static bool MouseIsInBottomEdge { get; set; }
+        private static bool MouseIsInLeftEdge { get; set; }
+        private static bool MouseIsInRightEdge { get; set; }
+        private static bool MouseIsInTopEdge { get; set; }
+        private static bool MouseIsInBottomEdge { get; set; }
 
-        public enum MoveOrResize
+        private enum MoveOrResize
         {
             Move,
             Resize,
             MoveAndResize
         }
 
-        public static MoveOrResize WorkType { get; set; }
+        private static MoveOrResize WorkType { get; set; }
 
         public static void Init(Control control)
         {
@@ -198,12 +198,10 @@ namespace Core
             else if (_moving)
             {
                 _moveIsInterNal = !_moveIsInterNal;
-                if (!_moveIsInterNal)
-                {
-                    int x = (e.X - _cursorStartPoint.X) + control.Left;
-                    int y = (e.Y - _cursorStartPoint.Y) + control.Top;
-                    control.Location = new Point(x, y);
-                }
+                if (_moveIsInterNal) return;
+                var x = (e.X - _cursorStartPoint.X) + control.Left;
+                var y = (e.Y - _cursorStartPoint.Y) + control.Top;
+                control.Location = new Point(x, y);
             }
         }
 

@@ -42,6 +42,7 @@ namespace CodeVisualizer
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.scopeControl1 = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,7 +50,6 @@ namespace CodeVisualizer
             this.label3 = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.scopeControl1 = new ScopeControl();
             this.tableLayoutPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -207,6 +207,16 @@ namespace CodeVisualizer
             this.splitContainer.SplitterDistance = 350;
             this.splitContainer.TabIndex = 0;
             // 
+            // scopeControl1
+            // 
+            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scopeControl1.GlobalScope = null;
+            this.scopeControl1.Location = new System.Drawing.Point(0, 22);
+            this.scopeControl1.Name = "scopeControl1";
+            this.scopeControl1.Scope = null;
+            this.scopeControl1.Size = new System.Drawing.Size(350, 355);
+            this.scopeControl1.TabIndex = 2;
+            // 
             // header
             // 
             this.header.BackColor = System.Drawing.Color.Thistle;
@@ -276,15 +286,6 @@ namespace CodeVisualizer
             this.statusStrip.Size = new System.Drawing.Size(708, 22);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
-            // 
-            // scopeControl1
-            // 
-            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scopeControl1.Location = new System.Drawing.Point(0, 22);
-            this.scopeControl1.Name = "scopeControl1";
-            this.scopeControl1.Scope = null;
-            this.scopeControl1.Size = new System.Drawing.Size(350, 355);
-            this.scopeControl1.TabIndex = 2;
             // 
             // DashBoard
             // 

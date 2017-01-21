@@ -35,28 +35,34 @@
             // Header
             // 
             this.Header.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Header.Size = new System.Drawing.Size(222, 26);
+            this.Header.Size = new System.Drawing.Size(258, 29);
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(141, 0);
-            this.settingsButton.Size = new System.Drawing.Size(50, 26);
+            this.settingsButton.Location = new System.Drawing.Point(163, 0);
+            this.settingsButton.Size = new System.Drawing.Size(33, 26);
+            // 
+            // NameLable
+            // 
+            this.NameLable.Location = new System.Drawing.Point(15, 4);
+            this.NameLable.Size = new System.Drawing.Size(104, 19);
+            this.NameLable.Text = "VariableName";
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(191, 0);
+            this.DisposeButton.Location = new System.Drawing.Point(202, 0);
             this.DisposeButton.Size = new System.Drawing.Size(31, 26);
             // 
             // body
             // 
-            this.body.Size = new System.Drawing.Size(222, 26);
+            this.body.Size = new System.Drawing.Size(258, 29);
             // 
             // Vvariable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Vvariable";
-            this.Size = new System.Drawing.Size(222, 26);
+            this.Size = new System.Drawing.Size(258, 29);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);
