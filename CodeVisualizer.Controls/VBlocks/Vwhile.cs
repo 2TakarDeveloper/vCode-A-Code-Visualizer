@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTD.Entity;
+using DTD.Entity.vCodes;
 
 namespace CodeVisualizer.Controls.VBlocks
 {
     public partial class Vwhile : VBlock
     {
-        private VCode vCode { get; set; }
+       
         public Vwhile()
         {
             InitializeComponent();
+            VCode=new While();
         }
     }
 }

@@ -9,5 +9,10 @@ namespace DTD.Entity.Helpers
     public class Scope
     {
         public Queue<VCode> Items { get; set; }
+
+        public Scope()
+        {
+            Items=new Queue<VCode>();
+        }
     }
 }

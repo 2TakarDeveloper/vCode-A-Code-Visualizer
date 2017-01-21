@@ -14,7 +14,7 @@
 
         public enum VType
         {
-            Variable,Function,If,While
+            Variable,Function,If,While,GlobalScope
         }
 
         public enum BooleanOperator

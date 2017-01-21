@@ -7,7 +7,7 @@ namespace CodeVisualizer.Controls.VBlocks
 {
     public partial class VBlock: MetroUserControl
     {
-        protected VCode VCode { get; set; }
+        public VCode VCode { get; set; }
         protected VBlock()
         {
             InitializeComponent();

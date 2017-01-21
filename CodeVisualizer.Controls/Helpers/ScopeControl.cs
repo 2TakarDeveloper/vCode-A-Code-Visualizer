@@ -13,54 +13,37 @@ namespace CodeVisualizer.Controls.Helpers
     public partial class ScopeControl : UserControl
     {
         public Scope Scope { get; set; }
-        public GlobalScope GlobalScope { get; set; }
-        private bool IsGlobalScope { get; set; }
-        private Queue<VBlock> VBlocks { get; set; }
+        public GlobalScope GlobalScope { get; set; }//This is Required for The global scope//
+      
+      
         public ScopeControl()
         {
             InitializeComponent();
-            VBlocks=new Queue<VBlock>();
-           
+            Scope=new Scope();
+            //GlobalScope=new GlobalScope();
+            
         }
 
-       
-
-
-        //ClickEventsOnToolTip
-        private void iFToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddItemToScope(VBlock vBlock)
         {
-            var vif= new Vif();
-            VBlocks.Enqueue(vif);
-            ScopePanel.Controls.Add(vif);
-          
-
+            Scope.Items.Enqueue(vBlock.VCode);
+            //GlobalScope.Scope = Scope;
         }
 
-        private void functionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var vFunc = new Vfunction();
-            VBlocks.Enqueue(vFunc);
-            ScopePanel.Controls.Add(vFunc);
-        }
 
-        private void whileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var vWhile = new Vwhile();
-            VBlocks.Enqueue(vWhile);
-            ScopePanel.Controls.Add(vWhile);
-        }
+        #region AddControls
 
         private void intToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var vVariable = new Vvariable(new Variable<int>());
-            VBlocks.Enqueue(vVariable);
+            //VBlocks.Enqueue(vVariable);
             ScopePanel.Controls.Add(vVariable);
         }
 
         private void floatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var vVariable = new Vvariable(new Variable<float>());
-            VBlocks.Enqueue(vVariable);
+            //VBlocks.Enqueue(vVariable);
             ScopePanel.Controls.Add(vVariable);
     
         }
@@ -68,22 +51,45 @@ namespace CodeVisualizer.Controls.Helpers
         private void doubleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var vVariable = new Vvariable(new Variable<double>());
-            VBlocks.Enqueue(vVariable);
+            //VBlocks.Enqueue(vVariable);
             ScopePanel.Controls.Add(vVariable);
         }
 
         private void stringToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var vVariable = new Vvariable(new Variable<string>());
-            VBlocks.Enqueue(vVariable);
+            //VBlocks.Enqueue(vVariable);
             ScopePanel.Controls.Add(vVariable);
         }
 
         private void boolToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var vVariable = new Vvariable(new Variable<bool>());
-            VBlocks.Enqueue(vVariable);
+           // VBlocks.Enqueue(vVariable);
             ScopePanel.Controls.Add(vVariable);
         }
+
+        private void whileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var vWhile = new Vwhile();
+            AddItemToScope(vWhile);
+            ScopePanel.Controls.Add(vWhile);
+        }
+
+        private void ifToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var vif = new Vif();
+            AddItemToScope(vif);
+            ScopePanel.Controls.Add(vif);
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var vFunc = new Vfunction();
+            ScopePanel.Controls.Add(vFunc);
+            AddItemToScope(vFunc);
+        }
+
+        #endregion
     }
 }

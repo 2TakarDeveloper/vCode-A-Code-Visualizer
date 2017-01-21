@@ -50,6 +50,8 @@ namespace CodeVisualizer
             this.label3 = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.compileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualToCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -100,7 +102,8 @@ namespace CodeVisualizer
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.compileToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(708, 24);
@@ -287,6 +290,21 @@ namespace CodeVisualizer
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
+            // compileToolStripMenuItem
+            // 
+            this.compileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualToCodeToolStripMenuItem});
+            this.compileToolStripMenuItem.Name = "compileToolStripMenuItem";
+            this.compileToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.compileToolStripMenuItem.Text = "Compile";
+            // 
+            // visualToCodeToolStripMenuItem
+            // 
+            this.visualToCodeToolStripMenuItem.Name = "visualToCodeToolStripMenuItem";
+            this.visualToCodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.visualToCodeToolStripMenuItem.Text = "Visual To Code";
+            this.visualToCodeToolStripMenuItem.Click += new System.EventHandler(this.visualToCodeToolStripMenuItem_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +367,8 @@ namespace CodeVisualizer
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox CodeEditor;
         private ScopeControl scopeControl1;
+        private System.Windows.Forms.ToolStripMenuItem compileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualToCodeToolStripMenuItem;
     }
 }
 

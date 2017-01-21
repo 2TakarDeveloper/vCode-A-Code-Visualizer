@@ -12,5 +12,12 @@ namespace DTD.Entity.Helpers
         public string LeftParameter { get; set; }
         public string RightParameter { get; set; }
         public Enums.BooleanOperator BooleanOperator { get; set; }
+
+        public Condition()
+        {
+            LeftParameter = "x";
+            RightParameter = "5";
+            BooleanOperator=Enums.BooleanOperator.LessThanOrEqualTo;
+        }
     }
 }

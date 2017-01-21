@@ -10,39 +10,78 @@ using DTD.Entity.vCodes;
 
 namespace Core.Converter
 {
-    public static class VBlockToCode
+    public  class VBlockToCode
     {
-        public static void VCodeToCode(VCode vcode,out string code)
+        public string Code { get; set; }
+
+        public VBlockToCode(VCode vcode)
         {
-          
+            VCodeToCode(vcode);
+        }
+
+
+        private void VCodeToCode(VCode vcode)
+        {
+
+            if (vcode.VType == Enums.VType.GlobalScope)
+            {
+                var globalScope = (GlobalScope)vcode;
+                ScopeToCode(globalScope.Scope);
+
+            }
+
+            if (vcode.VType == Enums.VType.If)
+            {
+                var If = (If) vcode;
+                Code += "if";
+                ConditionToCode(If.Condition);
+                ScopeToCode(If.Scope);
+                
+            }
+
+            if (vcode.VType == Enums.VType.While)
+            {
+                var wWhile = (While) vcode;
+                Code += "while";
+                ConditionToCode(wWhile.Condition);
+                ScopeToCode(wWhile.Scope);
+
+            }
+
+
             if (vcode.VType == Enums.VType.Function)
             {
-                Function function=vcode;
-                code += function.AccessModifier;
-                code += function.Type;
-                code += function.Name;
-                code += "(";
-                code += ")";
-                ScopeToCode(function.Scope,out code);
+                var function=(Function)vcode;
+                Code += function.AccessModifier;
+                Code += function.Type;
+                Code += function.Name;
+                Code += "(";
+                //For each on parameters later
+                Code += ")";
+                ScopeToCode(function.Scope);
             }
 
-            code = "";
+            Code = "";
         }
 
-        public static void ScopeToCode(Scope scope,out string code)
+        private  void ScopeToCode(Scope scope)
         {
-            code += "{";
+            Code += "{\n\t";
             foreach (VCode item in scope.Items)
             {
-                VCodeToCode(item,out code);
+                VCodeToCode(item);
             }
-            code += "}";
+            Code += "}\n";
 
         }
 
-        public static void ConditionToCode()
+        private  void ConditionToCode(Condition condition)
         {
-            
+            Code += "(";
+            Code += condition.LeftParameter;
+            Code += condition.BooleanOperator;
+            Code += condition.RightParameter;
+            Code += ")";
         }
 
     }

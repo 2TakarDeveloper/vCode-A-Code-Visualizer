@@ -97,6 +97,10 @@
       <Project>{e174f5f6-348f-490c-b901-361482cc2280}</Project>
       <Name>CodeVisualizer.Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{f940be78-7bb6-4d10-b405-3ff400a6f25a}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTD.Entity\Entity.csproj">
       <Project>{b5f4796d-2def-4331-be87-9e9941cc0ee3}</Project>
       <Name>Entity</Name>

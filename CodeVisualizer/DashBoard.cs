@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Core.Converter;
 using MetroFramework.Forms;
 
 namespace CodeVisualizer
@@ -53,10 +54,15 @@ namespace CodeVisualizer
 
         private void CodeEditor_TextChanged(object sender, EventArgs e)
         {
-           Code = CodeEditor.Text;//get All text as string from CodeEditor
-           
+          
+           //Code
 
         }
 
+        private void visualToCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VBlockToCode vBlockToCode = new VBlockToCode(scopeControl1.GlobalScope);
+            CodeEditor.Text = vBlockToCode.Code;
+        }
     }
 }

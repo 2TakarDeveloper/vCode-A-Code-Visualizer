@@ -17,7 +17,7 @@ namespace CodeVisualizer.Controls.VBlocks
         public Vif()
         {
             InitializeComponent();
-            
+            VCode=new If();
         }
 
       
