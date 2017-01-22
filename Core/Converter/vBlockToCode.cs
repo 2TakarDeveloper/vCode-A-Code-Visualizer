@@ -73,6 +73,7 @@ namespace Core.Converter
             foreach (VCode item in scope.Items)
             {
                 VCodeToCode(item);
+               
             }
             Code += "}\n";
 

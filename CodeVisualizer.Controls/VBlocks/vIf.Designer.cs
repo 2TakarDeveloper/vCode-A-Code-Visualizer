@@ -30,55 +30,69 @@ namespace CodeVisualizer.Controls.VBlocks
         /// </summary>
         private void InitializeComponent()
         {
-            this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
+            DTD.Entity.Helpers.Condition condition1 = new DTD.Entity.Helpers.Condition();
+            this.scopeControl1 = new CodeVisualizer.Controls.Helpers.ScopeControl();
+            this.conditionControl1 = new CodeVisualizer.Controls.Helpers.ConditionControl();
             this.Header.SuspendLayout();
             this.body.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
             // 
-            this.Header.Size = new System.Drawing.Size(400, 33);
+            this.Header.Controls.Add(this.conditionControl1);
+            this.Header.Size = new System.Drawing.Size(358, 23);
+            this.Header.Controls.SetChildIndex(this.DisposeButton, 0);
+            this.Header.Controls.SetChildIndex(this.settingsButton, 0);
+            this.Header.Controls.SetChildIndex(this.NameLable, 0);
+            this.Header.Controls.SetChildIndex(this.conditionControl1, 0);
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(307, 0);
-            this.settingsButton.Size = new System.Drawing.Size(31, 28);
+            this.settingsButton.Location = new System.Drawing.Point(295, 1);
             // 
             // NameLable
             // 
-            this.NameLable.Location = new System.Drawing.Point(21, 7);
-            this.NameLable.Size = new System.Drawing.Size(20, 19);
-            this.NameLable.Text = "IF";
+            this.NameLable.Size = new System.Drawing.Size(18, 19);
+            this.NameLable.Text = "If";
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(344, 2);
-            this.DisposeButton.Size = new System.Drawing.Size(31, 28);
+            this.DisposeButton.Location = new System.Drawing.Point(326, 1);
             // 
             // body
             // 
-            this.body.Controls.Add(this.scopeControl);
-            this.body.Size = new System.Drawing.Size(400, 300);
+            this.body.Controls.Add(this.scopeControl1);
+            this.body.Size = new System.Drawing.Size(360, 240);
             this.body.Controls.SetChildIndex(this.Header, 0);
-            this.body.Controls.SetChildIndex(this.scopeControl, 0);
+            this.body.Controls.SetChildIndex(this.scopeControl1, 0);
             // 
-            // scopeControl
+            // scopeControl1
             // 
-            this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scopeControl.GlobalScope = null;
-            this.scopeControl.Location = new System.Drawing.Point(0, 33);
-            this.scopeControl.Name = "scopeControl";
-            this.scopeControl.Scope = null;
-            this.scopeControl.Size = new System.Drawing.Size(400, 267);
-            this.scopeControl.TabIndex = 7;
+            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scopeControl1.GlobalScope = null;
+            this.scopeControl1.Location = new System.Drawing.Point(0, 23);
+            this.scopeControl1.Name = "scopeControl1";
+            this.scopeControl1.Scope = null;
+            this.scopeControl1.Size = new System.Drawing.Size(358, 215);
+            this.scopeControl1.TabIndex = 7;
+            // 
+            // conditionControl1
+            // 
+            condition1.BooleanOperator = "<=";
+            condition1.LeftParameter = "x";
+            condition1.RightParameter = "5";
+            this.conditionControl1.Condition = condition1;
+            this.conditionControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.conditionControl1.Location = new System.Drawing.Point(19, 1);
+            this.conditionControl1.Name = "conditionControl1";
+            this.conditionControl1.Size = new System.Drawing.Size(202, 21);
+            this.conditionControl1.TabIndex = 3;
             // 
             // Vif
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.BackColor = System.Drawing.Color.Green;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Name = "Vif";
-            this.Size = new System.Drawing.Size(400, 300);
+            this.Size = new System.Drawing.Size(390, 270);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);
@@ -88,6 +102,7 @@ namespace CodeVisualizer.Controls.VBlocks
 
         #endregion
 
-        private ScopeControl scopeControl;
+        private ScopeControl scopeControl1;
+        private ConditionControl conditionControl1;
     }
 }

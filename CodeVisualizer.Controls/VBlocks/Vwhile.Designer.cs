@@ -28,53 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.scopeControl1 = new CodeVisualizer.Controls.Helpers.ScopeControl();
+            DTD.Entity.Helpers.Condition condition1 = new DTD.Entity.Helpers.Condition();
+            this.conditionControl1 = new CodeVisualizer.Controls.Helpers.ConditionControl();
+            this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.Header.SuspendLayout();
             this.body.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
             // 
-            this.Header.Size = new System.Drawing.Size(400, 37);
+            this.Header.Controls.Add(this.conditionControl1);
+            this.Header.Size = new System.Drawing.Size(407, 24);
+            this.Header.Controls.SetChildIndex(this.DisposeButton, 0);
+            this.Header.Controls.SetChildIndex(this.settingsButton, 0);
+            this.Header.Controls.SetChildIndex(this.NameLable, 0);
+            this.Header.Controls.SetChildIndex(this.conditionControl1, 0);
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(304, 5);
-            this.settingsButton.Size = new System.Drawing.Size(31, 23);
-            // 
-            // NameLable
-            // 
-            this.NameLable.Location = new System.Drawing.Point(27, 9);
-            this.NameLable.Size = new System.Drawing.Size(47, 19);
-            this.NameLable.Text = "While";
+            this.settingsButton.Location = new System.Drawing.Point(344, 1);
+            this.settingsButton.Size = new System.Drawing.Size(31, 22);
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(341, 5);
-            this.DisposeButton.Size = new System.Drawing.Size(31, 23);
+            this.DisposeButton.Location = new System.Drawing.Point(375, 1);
+            this.DisposeButton.Size = new System.Drawing.Size(31, 22);
             // 
             // body
             // 
-            this.body.Controls.Add(this.scopeControl1);
-            this.body.Size = new System.Drawing.Size(400, 300);
+            this.body.Controls.Add(this.scopeControl);
+            this.body.Size = new System.Drawing.Size(409, 259);
             this.body.Controls.SetChildIndex(this.Header, 0);
-            this.body.Controls.SetChildIndex(this.scopeControl1, 0);
+            this.body.Controls.SetChildIndex(this.scopeControl, 0);
             // 
-            // scopeControl1
+            // conditionControl1
             // 
-            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scopeControl1.Location = new System.Drawing.Point(0, 37);
-            this.scopeControl1.Name = "scopeControl1";
-            this.scopeControl1.Scope = null;
-            this.scopeControl1.Size = new System.Drawing.Size(400, 263);
-            this.scopeControl1.TabIndex = 7;
+            condition1.BooleanOperator = "<=";
+            condition1.LeftParameter = "x";
+            condition1.RightParameter = "5";
+            this.conditionControl1.Condition = condition1;
+            this.conditionControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.conditionControl1.Location = new System.Drawing.Point(76, 1);
+            this.conditionControl1.Name = "conditionControl1";
+            this.conditionControl1.Size = new System.Drawing.Size(201, 22);
+            this.conditionControl1.TabIndex = 3;
+            // 
+            // scopeControl
+            // 
+            this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scopeControl.GlobalScope = null;
+            this.scopeControl.Location = new System.Drawing.Point(0, 24);
+            this.scopeControl.Name = "scopeControl";
+            this.scopeControl.Scope = null;
+            this.scopeControl.Size = new System.Drawing.Size(407, 233);
+            this.scopeControl.TabIndex = 7;
             // 
             // Vwhile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Vwhile";
-            this.Size = new System.Drawing.Size(400, 300);
+            this.Size = new System.Drawing.Size(439, 289);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);
@@ -85,5 +98,7 @@
         #endregion
 
         private Helpers.ScopeControl scopeControl1;
+        private Helpers.ConditionControl conditionControl1;
+        private Helpers.ScopeControl scopeControl;
     }
 }

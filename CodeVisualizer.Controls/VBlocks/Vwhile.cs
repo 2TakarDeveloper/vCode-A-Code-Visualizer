@@ -19,8 +19,14 @@ namespace CodeVisualizer.Controls.VBlocks
         public Vwhile()
         {
             InitializeComponent();
-            scopeControl1.Scope=new Scope();
-            While wWhile = new While {Scope = scopeControl1.Scope};
+            scopeControl1 = scopeControl;//Some vs error just ignore it.
+            scopeControl.Scope=new Scope();
+            conditionControl1.Condition=new Condition();
+            While wWhile = new While
+            {
+                Scope = scopeControl.Scope,
+                Condition = conditionControl1.Condition
+            };
             VCode = (While) wWhile;
         }
     }

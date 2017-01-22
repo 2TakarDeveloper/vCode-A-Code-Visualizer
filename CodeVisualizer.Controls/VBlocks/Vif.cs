@@ -18,8 +18,14 @@ namespace CodeVisualizer.Controls.VBlocks
         public Vif()
         {
             InitializeComponent();
-            scopeControl.Scope=new Scope();
-            var iIf = new If {Scope = scopeControl.Scope};
+            NameLable.Text = @"If";
+            scopeControl1.Scope=new Scope();
+            conditionControl1.Condition = new Condition();
+            var iIf = new If
+            {
+                Scope = scopeControl1.Scope,
+                Condition = conditionControl1.Condition
+            };
             VCode = (If) iIf;
         }
 

@@ -85,7 +85,7 @@ namespace CodeVisualizer
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.531531F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.38739F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.306306F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(714, 444);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(723, 444);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // topPanel
@@ -94,7 +94,7 @@ namespace CodeVisualizer
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topPanel.Location = new System.Drawing.Point(3, 3);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(708, 22);
+            this.topPanel.Size = new System.Drawing.Size(717, 22);
             this.topPanel.TabIndex = 0;
             // 
             // menuStrip
@@ -106,7 +106,7 @@ namespace CodeVisualizer
             this.compileToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(708, 24);
+            this.menuStrip.Size = new System.Drawing.Size(717, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -150,7 +150,7 @@ namespace CodeVisualizer
             this.midPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.midPanel.Location = new System.Drawing.Point(3, 31);
             this.midPanel.Name = "midPanel";
-            this.midPanel.Size = new System.Drawing.Size(708, 381);
+            this.midPanel.Size = new System.Drawing.Size(717, 381);
             this.midPanel.TabIndex = 1;
             // 
             // TextPanel1
@@ -168,8 +168,8 @@ namespace CodeVisualizer
             // TextPanel1.Panel2
             // 
             this.TextPanel1.Panel2.Controls.Add(this.splitContainer);
-            this.TextPanel1.Size = new System.Drawing.Size(704, 377);
-            this.TextPanel1.SplitterDistance = 231;
+            this.TextPanel1.Size = new System.Drawing.Size(713, 377);
+            this.TextPanel1.SplitterDistance = 233;
             this.TextPanel1.TabIndex = 0;
             // 
             // CodeEditor
@@ -177,7 +177,7 @@ namespace CodeVisualizer
             this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CodeEditor.Location = new System.Drawing.Point(0, 22);
             this.CodeEditor.Name = "CodeEditor";
-            this.CodeEditor.Size = new System.Drawing.Size(231, 355);
+            this.CodeEditor.Size = new System.Drawing.Size(233, 355);
             this.CodeEditor.TabIndex = 3;
             this.CodeEditor.Text = "";
             this.CodeEditor.TextChanged += new System.EventHandler(this.CodeEditor_TextChanged);
@@ -189,7 +189,7 @@ namespace CodeVisualizer
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 22);
+            this.panel1.Size = new System.Drawing.Size(233, 22);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -221,8 +221,8 @@ namespace CodeVisualizer
             this.splitContainer.Panel2.AccessibleName = "PropertiesPanel";
             this.splitContainer.Panel2.Controls.Add(this.panel3);
             this.splitContainer.Panel2.Controls.Add(this.panel2);
-            this.splitContainer.Size = new System.Drawing.Size(469, 377);
-            this.splitContainer.SplitterDistance = 350;
+            this.splitContainer.Size = new System.Drawing.Size(476, 377);
+            this.splitContainer.SplitterDistance = 355;
             this.splitContainer.TabIndex = 0;
             // 
             // scopeControl1
@@ -232,7 +232,7 @@ namespace CodeVisualizer
             this.scopeControl1.Location = new System.Drawing.Point(0, 22);
             this.scopeControl1.Name = "scopeControl1";
             this.scopeControl1.Scope = null;
-            this.scopeControl1.Size = new System.Drawing.Size(350, 355);
+            this.scopeControl1.Size = new System.Drawing.Size(355, 355);
             this.scopeControl1.TabIndex = 2;
             // 
             // header
@@ -242,7 +242,7 @@ namespace CodeVisualizer
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(350, 22);
+            this.header.Size = new System.Drawing.Size(355, 22);
             this.header.TabIndex = 1;
             // 
             // label2
@@ -260,10 +260,11 @@ namespace CodeVisualizer
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 22);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(115, 355);
+            this.panel3.Size = new System.Drawing.Size(117, 355);
             this.panel3.TabIndex = 3;
             // 
             // panel2
@@ -273,7 +274,7 @@ namespace CodeVisualizer
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(115, 22);
+            this.panel2.Size = new System.Drawing.Size(117, 22);
             this.panel2.TabIndex = 2;
             // 
             // label3
@@ -294,14 +295,14 @@ namespace CodeVisualizer
             this.botPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.botPanel.Location = new System.Drawing.Point(3, 418);
             this.botPanel.Name = "botPanel";
-            this.botPanel.Size = new System.Drawing.Size(708, 23);
+            this.botPanel.Size = new System.Drawing.Size(717, 23);
             this.botPanel.TabIndex = 2;
             // 
             // statusStrip
             // 
             this.statusStrip.Location = new System.Drawing.Point(0, 1);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(708, 22);
+            this.statusStrip.Size = new System.Drawing.Size(717, 22);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -309,7 +310,7 @@ namespace CodeVisualizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 494);
+            this.ClientSize = new System.Drawing.Size(763, 494);
             this.Controls.Add(this.tableLayoutPanel);
             this.DisplayHeader = false;
             this.ForeColor = System.Drawing.Color.Teal;
@@ -318,7 +319,6 @@ namespace CodeVisualizer
             this.Name = "DashBoard";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Style = MetroFramework.MetroColorStyle.White;
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.tableLayoutPanel.ResumeLayout(false);
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();

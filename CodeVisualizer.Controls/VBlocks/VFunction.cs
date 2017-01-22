@@ -22,6 +22,7 @@ namespace CodeVisualizer.Controls.VBlocks
             
             
             Function f = new Function();
+            scopeControl1 = scopeControl;
             scopeControl1.Scope=new Scope();
             f.Scope = scopeControl1.Scope;
             

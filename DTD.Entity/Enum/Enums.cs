@@ -17,10 +17,6 @@
             Variable,Function,If,While,GlobalScope
         }
 
-        public enum BooleanOperator
-        {
-            LessThan,GreaterThan,EqualTo,NotEqualTo,GreaterThanOrEqualTo,LessThanOrEqualTo
-        }
 
     }
 }

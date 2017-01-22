@@ -12,13 +12,18 @@ namespace CodeVisualizer.Controls.VBlocks
         {
             InitializeComponent();
    
-            ControlMoverOrResizer.Init(Header, this);//This Allows the Controls to be movable and resizable
+            ControlMoverOrResizer.Init(this);//This Allows the Controls to be movable and resizable
   
         }
 
         private void DisposeButton_Click(object sender, System.EventArgs e)
         {
             Dispose();
+        }
+
+        private void Header_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -28,53 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.scopeControl1 = new CodeVisualizer.Controls.Helpers.ScopeControl();
+            this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.Header.SuspendLayout();
             this.body.SuspendLayout();
             this.SuspendLayout();
             // 
             // Header
             // 
-            this.Header.Size = new System.Drawing.Size(400, 29);
+            this.Header.Location = new System.Drawing.Point(10, 10);
+            this.Header.Size = new System.Drawing.Size(457, 23);
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(311, 0);
-            this.settingsButton.Size = new System.Drawing.Size(31, 23);
+            this.settingsButton.Location = new System.Drawing.Point(394, 1);
             // 
             // NameLable
             // 
-            this.NameLable.Location = new System.Drawing.Point(25, 4);
-            this.NameLable.Size = new System.Drawing.Size(109, 19);
-            this.NameLable.Text = "Function Name";
+            this.NameLable.Size = new System.Drawing.Size(65, 19);
+            this.NameLable.Text = "Function";
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(348, 0);
-            this.DisposeButton.Size = new System.Drawing.Size(31, 23);
+            this.DisposeButton.Location = new System.Drawing.Point(425, 1);
             // 
             // body
             // 
-            this.body.Controls.Add(this.scopeControl1);
-            this.body.Size = new System.Drawing.Size(400, 300);
+            this.body.Controls.Add(this.scopeControl);
+            this.body.Padding = new System.Windows.Forms.Padding(10);
+            this.body.Size = new System.Drawing.Size(479, 261);
+            this.body.Controls.SetChildIndex(this.scopeControl, 0);
             this.body.Controls.SetChildIndex(this.Header, 0);
-            this.body.Controls.SetChildIndex(this.scopeControl1, 0);
             // 
-            // scopeControl1
+            // scopeControl
             // 
-            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scopeControl1.Location = new System.Drawing.Point(0, 29);
-            this.scopeControl1.Name = "scopeControl1";
-            this.scopeControl1.Scope = null;
-            this.scopeControl1.Size = new System.Drawing.Size(400, 271);
-            this.scopeControl1.TabIndex = 7;
+            this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scopeControl.GlobalScope = null;
+            this.scopeControl.Location = new System.Drawing.Point(10, 10);
+            this.scopeControl.Name = "scopeControl";
+            this.scopeControl.Scope = null;
+            this.scopeControl.Size = new System.Drawing.Size(457, 239);
+            this.scopeControl.TabIndex = 7;
             // 
             // Vfunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Vfunction";
-            this.Size = new System.Drawing.Size(400, 300);
+            this.Size = new System.Drawing.Size(509, 291);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);
@@ -85,5 +84,6 @@
         #endregion
 
         private Helpers.ScopeControl scopeControl1;
+        private Helpers.ScopeControl scopeControl;
     }
 }
