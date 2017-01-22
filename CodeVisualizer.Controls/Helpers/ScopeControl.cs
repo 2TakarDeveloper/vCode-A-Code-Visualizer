@@ -19,15 +19,15 @@ namespace CodeVisualizer.Controls.Helpers
         public ScopeControl()
         {
             InitializeComponent();
-            Scope=new Scope();
-            //GlobalScope=new GlobalScope();
+            
+            
             
         }
 
         private void AddItemToScope(VBlock vBlock)
         {
             Scope.Items.Enqueue(vBlock.VCode);
-            //GlobalScope.Scope = Scope;
+            
         }
 
 
@@ -79,8 +79,9 @@ namespace CodeVisualizer.Controls.Helpers
         private void ifToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vif = new Vif();
-            AddItemToScope(vif);
+      
             ScopePanel.Controls.Add(vif);
+            AddItemToScope(vif);
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)

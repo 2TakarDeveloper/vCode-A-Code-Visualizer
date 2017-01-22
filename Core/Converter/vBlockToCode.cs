@@ -16,7 +16,9 @@ namespace Core.Converter
 
         public VBlockToCode(VCode vcode)
         {
+            Code = "";
             VCodeToCode(vcode);
+            
         }
 
 
@@ -26,7 +28,7 @@ namespace Core.Converter
             if (vcode.VType == Enums.VType.GlobalScope)
             {
                 var globalScope = (GlobalScope)vcode;
-                ScopeToCode(globalScope.Scope);
+                GlobalScopeToCode(globalScope.Scope);
 
             }
 
@@ -52,8 +54,8 @@ namespace Core.Converter
             if (vcode.VType == Enums.VType.Function)
             {
                 var function=(Function)vcode;
-                Code += function.AccessModifier;
-                Code += function.Type;
+                Code += function.AccessModifier.ToString().ToLower()+" ";
+                Code += function.Type.ToString().ToLower() + " ";
                 Code += function.Name;
                 Code += "(";
                 //For each on parameters later
@@ -61,11 +63,12 @@ namespace Core.Converter
                 ScopeToCode(function.Scope);
             }
 
-            Code = "";
+            
         }
 
         private  void ScopeToCode(Scope scope)
         {
+            
             Code += "{\n\t";
             foreach (VCode item in scope.Items)
             {
@@ -73,6 +76,16 @@ namespace Core.Converter
             }
             Code += "}\n";
 
+        }
+
+        private void GlobalScopeToCode(Scope scope)
+        {
+
+            foreach (VCode item in scope.Items)
+            {
+                VCodeToCode(item);
+            }
+          
         }
 
         private  void ConditionToCode(Condition condition)

@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Core.Converter;
+using DTD.Entity.Helpers;
+using DTD.Entity.vCodes;
 using MetroFramework.Forms;
 
 namespace CodeVisualizer
@@ -20,7 +22,8 @@ namespace CodeVisualizer
         public DashBoard()
         {
             InitializeComponent();
-            
+            scopeControl1.Scope=new Scope();
+            scopeControl1.GlobalScope = new GlobalScope {Scope = scopeControl1.Scope};
         }
 
 
@@ -63,6 +66,7 @@ namespace CodeVisualizer
         {
             VBlockToCode vBlockToCode = new VBlockToCode(scopeControl1.GlobalScope);
             CodeEditor.Text = vBlockToCode.Code;
+            
         }
     }
 }

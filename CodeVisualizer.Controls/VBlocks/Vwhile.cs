@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTD.Entity;
+using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
 
 namespace CodeVisualizer.Controls.VBlocks
@@ -18,7 +19,9 @@ namespace CodeVisualizer.Controls.VBlocks
         public Vwhile()
         {
             InitializeComponent();
-            VCode=new While();
+            scopeControl1.Scope=new Scope();
+            While wWhile = new While {Scope = scopeControl1.Scope};
+            VCode = (While) wWhile;
         }
     }
 }

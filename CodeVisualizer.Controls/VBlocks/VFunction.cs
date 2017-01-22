@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTD.Entity;
+using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
 
 namespace CodeVisualizer.Controls.VBlocks
@@ -18,8 +19,13 @@ namespace CodeVisualizer.Controls.VBlocks
         public Vfunction()
         {
             InitializeComponent();
-            VCode=new Function();
-            Function f = (Function)VCode;
+            
+            
+            Function f = new Function();
+            scopeControl1.Scope=new Scope();
+            f.Scope = scopeControl1.Scope;
+            
+            VCode = (Function) f;
             NameLable.Text = f.Name;
         }
     }

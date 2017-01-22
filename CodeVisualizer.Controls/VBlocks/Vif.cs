@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
 
 namespace CodeVisualizer.Controls.VBlocks
@@ -17,7 +18,9 @@ namespace CodeVisualizer.Controls.VBlocks
         public Vif()
         {
             InitializeComponent();
-            VCode=new If();
+            scopeControl.Scope=new Scope();
+            var iIf = new If {Scope = scopeControl.Scope};
+            VCode = (If) iIf;
         }
 
       
