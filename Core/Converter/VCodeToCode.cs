@@ -10,19 +10,27 @@ using DTD.Entity.vCodes;
 
 namespace Core.Converter
 {
-    public  class VBlockToCode
+    public  class VCodeToCode
     {
-        public string Code { get; set; }
+        public string Code { get; private set; }
 
-        public VBlockToCode(VCode vcode)
+        public VCodeToCode(VCode vcode)
         {
             Code = "";
-            VCodeToCode(vcode);
+            VCodeToString(vcode);
             
         }
 
+        private void VariableToCode<T>(VCode vCode)
+        {
+            var variable = (Variable<T>)vCode;
+            Code += variable.AccessModifier + " ";
+            Code += variable.Type + " ";
+            Code += variable.Name + "";
+            Code += ";\n";
+        }
 
-        private void VCodeToCode(VCode vcode)
+        private void VCodeToString(VCode vcode)
         {
 
             if (vcode.VType == Enums.VType.GlobalScope)
@@ -31,6 +39,31 @@ namespace Core.Converter
                 GlobalScopeToCode(globalScope.Scope);
 
             }
+
+
+            if (vcode.VType == Enums.VType.Variable)
+            {
+                switch (vcode.Type)
+                {
+                    case Enums.Type.Int:
+                        VariableToCode<int>(vcode);
+                        break;
+                    case Enums.Type.Float:
+                        VariableToCode<float>(vcode);
+                        break;
+                    case Enums.Type.Double:
+                        VariableToCode<double>(vcode);
+                        break;
+                    case Enums.Type.String:
+                        VariableToCode<string>(vcode);
+                        break;
+                    case Enums.Type.Bool:
+                        VariableToCode<bool>(vcode);
+                        break;
+                    
+                }
+            }
+
 
             if (vcode.VType == Enums.VType.If)
             {
@@ -72,7 +105,7 @@ namespace Core.Converter
             Code += "{\n\t";
             foreach (VCode item in scope.Items)
             {
-                VCodeToCode(item);
+                VCodeToString(item);
                
             }
             Code += "}\n";
@@ -84,7 +117,7 @@ namespace Core.Converter
 
             foreach (VCode item in scope.Items)
             {
-                VCodeToCode(item);
+                VCodeToString(item);
             }
           
         }

@@ -60,12 +60,6 @@
     <Compile Include="Helpers\ConditionControl.Designer.cs">
       <DependentUpon>ConditionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PropertiesControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PropertiesControl.Designer.cs">
-      <DependentUpon>PropertiesControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,9 +108,6 @@
     <EmbeddedResource Include="Helpers\ConditionControl.resx">
       <DependentUpon>ConditionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PropertiesControl.resx">
-      <DependentUpon>PropertiesControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,13 +136,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{f940be78-7bb6-4d10-b405-3ff400a6f25a}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTD.Entity\Entity.csproj">
       <Project>{b5f4796d-2def-4331-be87-9e9941cc0ee3}</Project>
       <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GlobalLibrary\GlobalLibrary.csproj">
+      <Project>{472f2b06-b4a9-4a47-a7d5-fa96440e898d}</Project>
+      <Name>GlobalLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

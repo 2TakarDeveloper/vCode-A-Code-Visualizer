@@ -8,7 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Core
+namespace GlobalLibrary
 {
     public static class ControlMoverOrResizer
     {
@@ -22,14 +22,14 @@ namespace Core
         private static bool MouseIsInTopEdge { get; set; }
         private static bool MouseIsInBottomEdge { get; set; }
 
-        private enum MoveOrResize
+        public enum MoveOrResize
         {
             Move,
             Resize,
             MoveAndResize
         }
 
-        private static MoveOrResize WorkType { get; set; }
+        public static MoveOrResize WorkType { get; set; }
 
         public static void Init(Control control)
         {

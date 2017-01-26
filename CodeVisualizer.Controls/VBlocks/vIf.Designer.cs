@@ -31,7 +31,7 @@ namespace CodeVisualizer.Controls.VBlocks
         private void InitializeComponent()
         {
             DTD.Entity.Helpers.Condition condition1 = new DTD.Entity.Helpers.Condition();
-            this.scopeControl1 = new CodeVisualizer.Controls.Helpers.ScopeControl();
+            this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.conditionControl1 = new CodeVisualizer.Controls.Helpers.ConditionControl();
             this.Header.SuspendLayout();
             this.body.SuspendLayout();
@@ -61,20 +61,20 @@ namespace CodeVisualizer.Controls.VBlocks
             // 
             // body
             // 
-            this.body.Controls.Add(this.scopeControl1);
+            this.body.Controls.Add(this.scopeControl);
             this.body.Size = new System.Drawing.Size(360, 240);
             this.body.Controls.SetChildIndex(this.Header, 0);
-            this.body.Controls.SetChildIndex(this.scopeControl1, 0);
+            this.body.Controls.SetChildIndex(this.scopeControl, 0);
             // 
-            // scopeControl1
+            // scopeControl
             // 
-            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scopeControl1.GlobalScope = null;
-            this.scopeControl1.Location = new System.Drawing.Point(0, 23);
-            this.scopeControl1.Name = "scopeControl1";
-            this.scopeControl1.Scope = null;
-            this.scopeControl1.Size = new System.Drawing.Size(358, 215);
-            this.scopeControl1.TabIndex = 7;
+            this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scopeControl.GlobalScope = null;
+            this.scopeControl.Location = new System.Drawing.Point(0, 23);
+            this.scopeControl.Name = "scopeControl";
+            this.scopeControl.Scope = null;
+            this.scopeControl.Size = new System.Drawing.Size(358, 215);
+            this.scopeControl.TabIndex = 7;
             // 
             // conditionControl1
             // 
@@ -102,7 +102,7 @@ namespace CodeVisualizer.Controls.VBlocks
 
         #endregion
 
-        private ScopeControl scopeControl1;
+        private ScopeControl scopeControl;
         private ConditionControl conditionControl1;
     }
 }

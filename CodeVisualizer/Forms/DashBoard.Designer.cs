@@ -1,6 +1,6 @@
 ﻿using CodeVisualizer.Controls.Helpers;
 
-namespace CodeVisualizer
+namespace CodeVisualizer.Forms
 {
     partial class DashBoard
     {
@@ -39,34 +39,25 @@ namespace CodeVisualizer
             this.compileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualToCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.midPanel = new System.Windows.Forms.Panel();
-            this.TextPanel1 = new System.Windows.Forms.SplitContainer();
+            this.SplitPanel = new System.Windows.Forms.SplitContainer();
             this.CodeEditor = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.scopeControl1 = new CodeVisualizer.Controls.Helpers.ScopeControl();
+            this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.tableLayoutPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.midPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextPanel1)).BeginInit();
-            this.TextPanel1.Panel1.SuspendLayout();
-            this.TextPanel1.Panel2.SuspendLayout();
-            this.TextPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SplitPanel)).BeginInit();
+            this.SplitPanel.Panel1.SuspendLayout();
+            this.SplitPanel.Panel2.SuspendLayout();
+            this.SplitPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
-            this.splitContainer.Panel1.SuspendLayout();
-            this.splitContainer.Panel2.SuspendLayout();
-            this.splitContainer.SuspendLayout();
             this.header.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.botPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,38 +137,40 @@ namespace CodeVisualizer
             // midPanel
             // 
             this.midPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.midPanel.Controls.Add(this.TextPanel1);
+            this.midPanel.Controls.Add(this.SplitPanel);
             this.midPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.midPanel.Location = new System.Drawing.Point(3, 31);
             this.midPanel.Name = "midPanel";
             this.midPanel.Size = new System.Drawing.Size(717, 381);
             this.midPanel.TabIndex = 1;
             // 
-            // TextPanel1
+            // SplitPanel
             // 
-            this.TextPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TextPanel1.Location = new System.Drawing.Point(0, 0);
-            this.TextPanel1.Name = "TextPanel1";
+            this.SplitPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SplitPanel.Location = new System.Drawing.Point(0, 0);
+            this.SplitPanel.Name = "SplitPanel";
             // 
-            // TextPanel1.Panel1
+            // SplitPanel.Panel1
             // 
-            this.TextPanel1.Panel1.AccessibleName = "codeEditor";
-            this.TextPanel1.Panel1.Controls.Add(this.CodeEditor);
-            this.TextPanel1.Panel1.Controls.Add(this.panel1);
+            this.SplitPanel.Panel1.AccessibleName = "codeEditor";
+            this.SplitPanel.Panel1.Controls.Add(this.CodeEditor);
+            this.SplitPanel.Panel1.Controls.Add(this.panel1);
             // 
-            // TextPanel1.Panel2
+            // SplitPanel.Panel2
             // 
-            this.TextPanel1.Panel2.Controls.Add(this.splitContainer);
-            this.TextPanel1.Size = new System.Drawing.Size(713, 377);
-            this.TextPanel1.SplitterDistance = 233;
-            this.TextPanel1.TabIndex = 0;
+            this.SplitPanel.Panel2.Controls.Add(this.scopeControl);
+            this.SplitPanel.Panel2.Controls.Add(this.header);
+            this.SplitPanel.Size = new System.Drawing.Size(713, 377);
+            this.SplitPanel.SplitterDistance = 294;
+            this.SplitPanel.TabIndex = 0;
             // 
             // CodeEditor
             // 
             this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CodeEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CodeEditor.Location = new System.Drawing.Point(0, 22);
             this.CodeEditor.Name = "CodeEditor";
-            this.CodeEditor.Size = new System.Drawing.Size(233, 355);
+            this.CodeEditor.Size = new System.Drawing.Size(294, 355);
             this.CodeEditor.TabIndex = 3;
             this.CodeEditor.Text = "";
             this.CodeEditor.TextChanged += new System.EventHandler(this.CodeEditor_TextChanged);
@@ -189,7 +182,7 @@ namespace CodeVisualizer
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 22);
+            this.panel1.Size = new System.Drawing.Size(294, 22);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -204,36 +197,15 @@ namespace CodeVisualizer
             this.label1.Text = "Code Editor";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // splitContainer
+            // scopeControl
             // 
-            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer.Name = "splitContainer";
-            // 
-            // splitContainer.Panel1
-            // 
-            this.splitContainer.Panel1.AccessibleName = "visualPanel";
-            this.splitContainer.Panel1.Controls.Add(this.scopeControl1);
-            this.splitContainer.Panel1.Controls.Add(this.header);
-            // 
-            // splitContainer.Panel2
-            // 
-            this.splitContainer.Panel2.AccessibleName = "PropertiesPanel";
-            this.splitContainer.Panel2.Controls.Add(this.panel3);
-            this.splitContainer.Panel2.Controls.Add(this.panel2);
-            this.splitContainer.Size = new System.Drawing.Size(476, 377);
-            this.splitContainer.SplitterDistance = 355;
-            this.splitContainer.TabIndex = 0;
-            // 
-            // scopeControl1
-            // 
-            this.scopeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scopeControl1.GlobalScope = null;
-            this.scopeControl1.Location = new System.Drawing.Point(0, 22);
-            this.scopeControl1.Name = "scopeControl1";
-            this.scopeControl1.Scope = null;
-            this.scopeControl1.Size = new System.Drawing.Size(355, 355);
-            this.scopeControl1.TabIndex = 2;
+            this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scopeControl.GlobalScope = null;
+            this.scopeControl.Location = new System.Drawing.Point(0, 22);
+            this.scopeControl.Name = "scopeControl";
+            this.scopeControl.Scope = null;
+            this.scopeControl.Size = new System.Drawing.Size(415, 355);
+            this.scopeControl.TabIndex = 4;
             // 
             // header
             // 
@@ -242,8 +214,8 @@ namespace CodeVisualizer
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(355, 22);
-            this.header.TabIndex = 1;
+            this.header.Size = new System.Drawing.Size(415, 22);
+            this.header.TabIndex = 3;
             // 
             // label2
             // 
@@ -256,38 +228,6 @@ namespace CodeVisualizer
             this.label2.TabIndex = 1;
             this.label2.Text = "Code Visualizer";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 22);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(117, 355);
-            this.panel3.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Thistle;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 22);
-            this.panel2.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Properties";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // botPanel
             // 
@@ -325,20 +265,14 @@ namespace CodeVisualizer
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.midPanel.ResumeLayout(false);
-            this.TextPanel1.Panel1.ResumeLayout(false);
-            this.TextPanel1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.TextPanel1)).EndInit();
-            this.TextPanel1.ResumeLayout(false);
+            this.SplitPanel.Panel1.ResumeLayout(false);
+            this.SplitPanel.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SplitPanel)).EndInit();
+            this.SplitPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.splitContainer.Panel1.ResumeLayout(false);
-            this.splitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
-            this.splitContainer.ResumeLayout(false);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.botPanel.ResumeLayout(false);
             this.botPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -351,24 +285,20 @@ namespace CodeVisualizer
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel midPanel;
         private System.Windows.Forms.Panel botPanel;
-        private System.Windows.Forms.SplitContainer TextPanel1;
-        private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.SplitContainer SplitPanel;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel header;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox CodeEditor;
-        private ScopeControl scopeControl1;
         private System.Windows.Forms.ToolStripMenuItem compileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualToCodeToolStripMenuItem;
+        private ScopeControl scopeControl;
+        private System.Windows.Forms.Panel header;
+        private System.Windows.Forms.Label label2;
     }
 }
 

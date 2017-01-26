@@ -16,7 +16,7 @@ namespace DTD.Entity.vCodes
         public bool IsArray { get; set; }
         public bool IsStatic { get; set; }
 
-        public Enums.Type Type { get; set; }
+        
         
         public Enums.AccessModifier AccessModifier { get; set; }
         public Scope Scope { get; set; }

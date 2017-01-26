@@ -15,42 +15,14 @@ namespace CodeVisualizer.Controls.VBlocks
 {
     public partial class Vvariable: VBlock
     {
-        private VCode _vCode;
-        public Vvariable(VCode variable)
+   
+        public Vvariable(VCode vCode)
         {
             InitializeComponent();
-            _vCode = variable;
+            VCode = vCode;
         }
 
-        //public Vvariable(Variable<int> variable)
-        //{
-        //    InitializeComponent();
-        //    _vCode = variable;
-        //}
-
-        //public Vvariable(Variable<float> variable)
-        //{
-        //    InitializeComponent();
-        //    _vCode = variable;
-        //}
-
-        //public Vvariable(Variable<double> variable)
-        //{
-        //    InitializeComponent();
-        //    _vCode = variable;
-        //}
-
-        //public Vvariable(Variable<string> variable)
-        //{
-        //    InitializeComponent();
-        //    _vCode = variable;
-        //}
-
-        //public Vvariable(Variable<bool> variable)
-        //{
-        //    InitializeComponent();
-        //    _vCode = variable;
-        //}
+       
 
         
     }

@@ -19,11 +19,12 @@ namespace CodeVisualizer.Controls.VBlocks
         {
             InitializeComponent();
             NameLable.Text = @"If";
-            scopeControl1.Scope=new Scope();
+            scopeControl.Scope=new Scope();
+            ScopeControl = scopeControl;
             conditionControl1.Condition = new Condition();
             var iIf = new If
             {
-                Scope = scopeControl1.Scope,
+                Scope = scopeControl.Scope,
                 Condition = conditionControl1.Condition
             };
             VCode = (If) iIf;

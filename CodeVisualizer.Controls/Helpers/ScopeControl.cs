@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using CodeVisualizer.Controls.VBlocks;
-using Core;
+using DTD.Entity.Enum;
 using DTD.Entity.vCodes;
 using DTD.Entity.Helpers;
 
@@ -20,60 +20,96 @@ namespace CodeVisualizer.Controls.Helpers
         {
             InitializeComponent();
             
-            
-            
         }
 
         private void AddItemToScope(VBlock vBlock)
         {
+            vBlock.ScopeControl?.UpdateScope();
             Scope.Items.Enqueue(vBlock.VCode);
             
         }
 
+        public void UpdateScope()
+        {
+            Scope.Items.Clear();
+            foreach (VBlock vBlock in ScopePanel.Controls)
+            {
+                AddItemToScope(vBlock);
+            }
+        }
 
-        #region AddControls
+
+        #region toolStripMenuItemClick
 
         private void intToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vVariable = new Vvariable(new Variable<int>());
-            //VBlocks.Enqueue(vVariable);
+            Variable<int> x = new Variable<int>
+            {
+                Type = Enums.Type.Int,
+                VType = Enums.VType.Variable
+            };
+            var vVariable = new Vvariable(x);
+            
             ScopePanel.Controls.Add(vVariable);
+          
         }
 
         private void floatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vVariable = new Vvariable(new Variable<float>());
-            //VBlocks.Enqueue(vVariable);
+            Variable<float> x = new Variable<float>
+            {
+                Type = Enums.Type.Float,
+                VType = Enums.VType.Variable
+            };
+            var vVariable = new Vvariable(x);
+            
             ScopePanel.Controls.Add(vVariable);
-    
+     
+
         }
 
         private void doubleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vVariable = new Vvariable(new Variable<double>());
-            //VBlocks.Enqueue(vVariable);
+            Variable<double> x = new Variable<double>
+            {
+                Type = Enums.Type.Double,
+                VType = Enums.VType.Variable
+            };
+            var vVariable = new Vvariable(x);
+
             ScopePanel.Controls.Add(vVariable);
+            
         }
 
         private void stringToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vVariable = new Vvariable(new Variable<string>());
-            //VBlocks.Enqueue(vVariable);
+            Variable<string> x = new Variable<string>
+            {
+                Type = Enums.Type.String,
+                VType = Enums.VType.Variable
+            };
+            var vVariable = new Vvariable(x);
             ScopePanel.Controls.Add(vVariable);
         }
 
         private void boolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vVariable = new Vvariable(new Variable<bool>());
-           // VBlocks.Enqueue(vVariable);
+            Variable<bool> x = new Variable<bool>
+            {
+                Type = Enums.Type.Bool,
+                VType = Enums.VType.Variable
+            };
+            var vVariable = new Vvariable(x);
             ScopePanel.Controls.Add(vVariable);
+           
         }
 
         private void whileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vWhile = new Vwhile();
-            AddItemToScope(vWhile);
+          
             ScopePanel.Controls.Add(vWhile);
+          
         }
 
         private void ifToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -81,16 +117,17 @@ namespace CodeVisualizer.Controls.Helpers
             var vif = new Vif();
       
             ScopePanel.Controls.Add(vif);
-            AddItemToScope(vif);
+            
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var vFunc = new Vfunction();
             ScopePanel.Controls.Add(vFunc);
-            AddItemToScope(vFunc);
+            
         }
 
         #endregion
+
     }
 }

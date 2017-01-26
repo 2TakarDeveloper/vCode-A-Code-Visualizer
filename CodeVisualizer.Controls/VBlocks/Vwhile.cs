@@ -21,6 +21,7 @@ namespace CodeVisualizer.Controls.VBlocks
             InitializeComponent();
             scopeControl1 = scopeControl;//Some vs error just ignore it.
             scopeControl.Scope=new Scope();
+            ScopeControl = scopeControl;
             conditionControl1.Condition=new Condition();
             While wWhile = new While
             {

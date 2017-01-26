@@ -22,9 +22,11 @@ namespace CodeVisualizer.Controls.VBlocks
             
             
             Function f = new Function();
-            scopeControl1 = scopeControl;
-            scopeControl1.Scope=new Scope();
-            f.Scope = scopeControl1.Scope;
+            
+            
+            scopeControl.Scope=new Scope();
+            f.Scope = scopeControl.Scope;
+            ScopeControl = scopeControl;
             
             VCode = (Function) f;
             NameLable.Text = f.Name;

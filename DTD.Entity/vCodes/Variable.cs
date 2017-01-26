@@ -15,9 +15,14 @@ namespace DTD.Entity.vCodes
         private int Column { get; set; }
 
 
-        public Enums.Type Type { get; set; }
+       
   
         public Enums.AccessModifier AccessModifier{get;set;}
 
+        public Variable()
+        {
+            Name = "NewVariable";
+            AccessModifier=Enums.AccessModifier.Public;
+        }
     }
 }

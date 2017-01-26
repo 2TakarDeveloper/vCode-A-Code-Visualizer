@@ -49,7 +49,6 @@
             this.Header.Padding = new System.Windows.Forms.Padding(1);
             this.Header.Size = new System.Drawing.Size(616, 23);
             this.Header.TabIndex = 6;
-            this.Header.Paint += new System.Windows.Forms.PaintEventHandler(this.Header_Paint);
             // 
             // settingsButton
             // 
