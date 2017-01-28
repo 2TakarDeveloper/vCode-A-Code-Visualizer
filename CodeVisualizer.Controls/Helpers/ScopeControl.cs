@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using CodeVisualizer.Controls.VBlocks;
+using DTD.Entity;
 using DTD.Entity.Enum;
 using DTD.Entity.vCodes;
 using DTD.Entity.Helpers;
@@ -22,6 +23,8 @@ namespace CodeVisualizer.Controls.Helpers
             
         }
 
+        #region UpdateScopeData
+
         private void AddItemToScope(VBlock vBlock)
         {
             vBlock.ScopeControl?.UpdateScope();
@@ -37,6 +40,8 @@ namespace CodeVisualizer.Controls.Helpers
                 AddItemToScope(vBlock);
             }
         }
+
+        #endregion
 
 
         #region toolStripMenuItemClick
@@ -128,6 +133,51 @@ namespace CodeVisualizer.Controls.Helpers
         }
 
         #endregion
+
+
+        #region vCodeConverter
+        //Pass the the items of a scope and it will generate necessary controls
+
+        public void VcodeToVblock(Queue<VCode>  items)
+        {
+            foreach (var item in items)
+            {
+                switch (item.VType)
+                {
+                    case Enums.VType.Variable:
+                            Vvariable vvariable= new Vvariable(item);
+                            ScopePanel.Controls.Add(vvariable);
+                        break;
+                    case Enums.VType.Function:
+                        Function function = (Function)item;
+                        Vfunction vfunction = new Vfunction {VCode = function};
+                        vfunction.ScopeControl.VcodeToVblock(function.Scope.Items);
+                        ScopePanel.Controls.Add(vfunction);
+                        break;
+                    case Enums.VType.If:
+                        If iif = (If)item;
+                        Vif vif = new Vif() { VCode = iif };
+                        vif.ScopeControl.VcodeToVblock(iif.Scope.Items);
+                        ScopePanel.Controls.Add(vif);
+                        break;
+                    case Enums.VType.While:
+                        While wWhile = (While) item;
+                        Vwhile vwhile=new Vwhile() {VCode=wWhile};
+                        vwhile.ScopeControl.VcodeToVblock(wWhile.Scope.Items);
+                        ScopePanel.Controls.Add(vwhile);
+                        break;
+                    
+                   
+                }
+            }
+            
+        }
+
+
+
+
+        #endregion
+
 
     }
 }
