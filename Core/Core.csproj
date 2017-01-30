@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\CodeToVCode.cs" />
     <Compile Include="Converter\VCodeToCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
