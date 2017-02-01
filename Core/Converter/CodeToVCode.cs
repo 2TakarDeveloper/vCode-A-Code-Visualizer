@@ -14,13 +14,12 @@ namespace Core.Converter
     public class CodeToVCode
     {
         public Scope Scope { get; set; }
-        private string _code;
+  
         public CodeToVCode(string code)
         {
-            _code = code;
+          
             //Call Function here.
-            Scope = new Scope();
-            Scope.Items = GetQueueOfFuncAndVars(code);
+            Scope = new Scope {Items = GetQueueOfFuncAndVars(code)};
 
         }
 
