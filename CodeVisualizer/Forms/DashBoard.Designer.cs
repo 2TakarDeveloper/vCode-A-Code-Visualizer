@@ -48,6 +48,7 @@ namespace CodeVisualizer.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.codeToVisualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -122,7 +123,8 @@ namespace CodeVisualizer.Forms
             // compileToolStripMenuItem
             // 
             this.compileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualToCodeToolStripMenuItem});
+            this.visualToCodeToolStripMenuItem,
+            this.codeToVisualToolStripMenuItem});
             this.compileToolStripMenuItem.Name = "compileToolStripMenuItem";
             this.compileToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.compileToolStripMenuItem.Text = "Compile";
@@ -246,6 +248,13 @@ namespace CodeVisualizer.Forms
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
+            // codeToVisualToolStripMenuItem
+            // 
+            this.codeToVisualToolStripMenuItem.Name = "codeToVisualToolStripMenuItem";
+            this.codeToVisualToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.codeToVisualToolStripMenuItem.Text = "Code To Visual";
+            this.codeToVisualToolStripMenuItem.Click += new System.EventHandler(this.codeToVisualToolStripMenuItem_Click);
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +308,7 @@ namespace CodeVisualizer.Forms
         private ScopeControl scopeControl;
         private System.Windows.Forms.Panel header;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem codeToVisualToolStripMenuItem;
     }
 }
 

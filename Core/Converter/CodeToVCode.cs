@@ -19,6 +19,9 @@ namespace Core.Converter
         {
             _code = code;
             //Call Function here.
+            Scope = new Scope();
+            Scope.Items = GetQueueOfFuncAndVars(code);
+
         }
 
         #region RegexPatterns
@@ -61,7 +64,7 @@ namespace Core.Converter
 
 
 
-       private  bool IsMatchPattern(string selectedText)
+        private bool IsMatchPattern(string selectedText)
         {
             if (IfRegex.IsMatch(selectedText) ||
                 WhileRegex.IsMatch(selectedText) ||

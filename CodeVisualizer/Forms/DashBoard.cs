@@ -52,5 +52,10 @@ namespace CodeVisualizer.Forms
             CodeEditor.Text = vBlockToCode.Code;
             
         }
+
+        private void codeToVisualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CodeToVCode converter = new CodeToVCode(CodeEditor.Text);
+        }
     }
 }
