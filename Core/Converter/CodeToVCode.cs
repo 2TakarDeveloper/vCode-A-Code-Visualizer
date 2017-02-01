@@ -52,7 +52,7 @@ namespace Core.Converter
                       variable + "[\\s]*[(](" + dataType + "[\\s]+" + variable + "[\\s]*([,][\\s]*" + dataType +
                       "[\\s]+" + variable + "[\\s]*)*)?[)][\\s]*");
 
-        private static Regex scope =
+        private static readonly Regex ScopeRegex =
             new Regex("^[{][\\s]*([\\s]*((" + VarDeclaration + ")|(" + FunctionCall + ")|(" + IfRegex + ")|(" + WhileRegex + ")))*[\\s]*[}]$");
 
         #endregion
@@ -74,7 +74,7 @@ namespace Core.Converter
         private Condition GetConditionObject(string selectedText)
         {
             Condition condition = new Condition();
-            Match m = Regex.Match(selectedText, condition.ToString());
+            Match m = Regex.Match(selectedText, Condition.ToString());
             string conditionText = m.Groups[1].Value;
             m = Regex.Match(conditionText, variable.ToString());
 

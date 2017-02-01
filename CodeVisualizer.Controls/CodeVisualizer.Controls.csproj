@@ -60,6 +60,12 @@
     <Compile Include="Helpers\ConditionControl.Designer.cs">
       <DependentUpon>ConditionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="PropertiesForm\VariableProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertiesForm\VariableProperties.Designer.cs">
+      <DependentUpon>VariableProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,6 +114,9 @@
     <EmbeddedResource Include="Helpers\ConditionControl.resx">
       <DependentUpon>ConditionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesForm\VariableProperties.resx">
+      <DependentUpon>VariableProperties.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -151,6 +160,7 @@
   <ItemGroup>
     <None Include="Resources\1484856678_cog.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

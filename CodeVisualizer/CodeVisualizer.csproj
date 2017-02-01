@@ -64,19 +64,10 @@
     <Compile Include="Forms\DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PropertiesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PropertiesForm.Designer.cs">
-      <DependentUpon>PropertiesForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PropertiesForm.resx">
-      <DependentUpon>PropertiesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -114,6 +106,9 @@
       <Project>{b5f4796d-2def-4331-be87-9e9941cc0ee3}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1484856362_Close_Box_Red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

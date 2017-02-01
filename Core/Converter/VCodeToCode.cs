@@ -24,8 +24,8 @@ namespace Core.Converter
         private void VariableToCode<T>(VCode vCode)
         {
             var variable = (Variable<T>)vCode;
-            Code += variable.AccessModifier + " ";
-            Code += variable.Type + " ";
+            Code += variable.AccessModifier.ToString().ToLower() + " ";
+            Code += variable.Type.ToString().ToLower() + " ";
             Code += variable.Name + "";
             Code += ";\n";
         }

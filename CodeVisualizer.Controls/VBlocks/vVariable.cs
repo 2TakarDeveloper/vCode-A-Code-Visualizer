@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeVisualizer.Controls.PropertiesForm;
 using DTD.Entity;
 using DTD.Entity.vCodes;
 using MetroFramework.Controls;
@@ -22,8 +23,13 @@ namespace CodeVisualizer.Controls.VBlocks
             VCode = vCode;
         }
 
-       
-
-        
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            VariableProperties variableProperties= new VariableProperties(VCode);
+            if (variableProperties.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
+        }
     }
 }

@@ -40,6 +40,7 @@
             // 
             this.settingsButton.Location = new System.Drawing.Point(148, 1);
             this.settingsButton.Size = new System.Drawing.Size(33, 21);
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // NameLable
             // 
