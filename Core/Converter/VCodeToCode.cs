@@ -24,10 +24,10 @@ namespace Core.Converter
         private void VariableToCode<T>(VCode vCode)
         {
             var variable = (Variable<T>)vCode;
-            Code += variable.AccessModifier.ToString().ToLower() + " ";
-            Code += variable.Type.ToString().ToLower() + " ";
-            Code += variable.Name + "";
-            Code += ";\n";
+            Code += variable.AccessModifier.ToString().ToLower();
+            Code += variable.Type.ToString().ToLower();
+            Code += variable.Name;
+            Code += ";";
         }
 
         private void VCodeToString(VCode vcode)
@@ -87,8 +87,8 @@ namespace Core.Converter
             if (vcode.VType == Enums.VType.Function)
             {
                 var function=(Function)vcode;
-                Code += function.AccessModifier.ToString().ToLower()+" ";
-                Code += function.Type.ToString().ToLower() + " ";
+                Code += function.AccessModifier.ToString().ToLower();
+                Code += function.Type.ToString().ToLower();
                 Code += function.Name;
                 Code += "(";
                 //For each on parameters later
@@ -102,13 +102,13 @@ namespace Core.Converter
         private  void ScopeToCode(Scope scope)
         {
             
-            Code += "{\n\t";
+            Code += "{";
             foreach (VCode item in scope.Items)
             {
                 VCodeToString(item);
                
             }
-            Code += "}\n";
+            Code += "}";
 
         }
 

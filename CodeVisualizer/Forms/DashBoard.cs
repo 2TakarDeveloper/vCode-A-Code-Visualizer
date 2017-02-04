@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Beautifier;
 using Core.Converter;
 using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
@@ -49,7 +50,8 @@ namespace CodeVisualizer.Forms
 
             scopeControl.UpdateScope();
             VCodeToCode vBlockToCode = new VCodeToCode(scopeControl.GlobalScope);
-            CodeEditor.Text = vBlockToCode.Code;
+            Beautify beautifier= new Beautify(vBlockToCode.Code);
+            CodeEditor.Text = beautifier.CodeOutput;
             
         }
 

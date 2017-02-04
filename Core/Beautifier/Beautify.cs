@@ -13,7 +13,7 @@ namespace Core.Beautifier
     public class Beautify
     {
         public string CodeOutput { get; private set; }
-        public int braces = 0;
+        private int _braces = 0;
 
         public Beautify(string code)
         {
@@ -23,45 +23,44 @@ namespace Core.Beautifier
         }
         private void CodeBeautifier(string codeInput)
         {
-            for (int i = 0; i < codeInput.Length; i++)
+            foreach (char t in codeInput)
             {
-
-                if (codeInput[i] == ')' || codeInput[i] == ';' || codeInput[i] == '{')
+                if (t == ')' || t == ';' || t == '{')
                 {
-                    CodeOutput += codeInput[i];
+                    CodeOutput += t;
                     CodeOutput += "\n";
 
-                    if (codeInput[i] == '{')
+                    if (t == '{')
                     {
-                        braces++;
+                        _braces++;
                     }
 
-                    for (int j = 1; j <= braces; j++)
+                    for (int j = 1; j <= _braces; j++)
                     {
                         CodeOutput += "\t";
                     }
 
 
                 }
-                else if (codeInput[i] == '}')
+                else if (t == '}')
                 {
-                    braces--;
+                    _braces--;
                     CodeOutput += "\n";
 
-                    for (int j = 1; j <= braces; j++)
+                    for (int j = 1; j <= _braces; j++)
                     {
                         CodeOutput += "\t";
                     }
-                    CodeOutput += codeInput[i];
+                    CodeOutput += t;
                     CodeOutput += "\n";
-                    for (int j = 1; j <= braces; j++)
+                    for (int j = 1; j <= _braces; j++)
                     {
                         CodeOutput += "\t";
                     }
                 }
                 else
                 {
-                    CodeOutput += codeInput[i];
+                    CodeOutput += t;
                 }
             }
         }
