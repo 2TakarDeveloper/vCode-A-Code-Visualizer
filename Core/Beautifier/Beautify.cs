@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTD.Entity;
-using DTD.Entity.Enum;
-using DTD.Entity.Helpers;
-using DTD.Entity.vCodes;
-
+﻿
 namespace Core.Beautifier
 {
     public class Beautify
     {
         public string CodeOutput { get; private set; }
-        private int _braces = 0;
+        public int braces = 0;
 
         public Beautify(string code)
         {
@@ -23,44 +14,57 @@ namespace Core.Beautifier
         }
         private void CodeBeautifier(string codeInput)
         {
-            foreach (char t in codeInput)
+            for (int i = 0; i < codeInput.Length; i++)
             {
-                if (t == ')' || t == ';' || t == '{')
+                if (codeInput[i] == '(')
                 {
-                    CodeOutput += t;
+                    while (true)
+                    {
+                        if (codeInput[i] == ')')
+                            break;
+
+                        CodeOutput += codeInput[i];
+                        i++;
+
+                    }
+                }
+
+                if (codeInput[i] == ')' || codeInput[i] == ';' || codeInput[i] == '{')
+                {
+                    CodeOutput += codeInput[i];
                     CodeOutput += "\n";
 
-                    if (t == '{')
+                    if (codeInput[i] == '{')
                     {
-                        _braces++;
+                        braces++;
                     }
 
-                    for (int j = 1; j <= _braces; j++)
+                    for (int j = 1; j <= braces; j++)
                     {
                         CodeOutput += "\t";
                     }
 
 
                 }
-                else if (t == '}')
+                else if (codeInput[i] == '}')
                 {
-                    _braces--;
+                    braces--;
                     CodeOutput += "\n";
 
-                    for (int j = 1; j <= _braces; j++)
+                    for (int j = 1; j <= braces; j++)
                     {
                         CodeOutput += "\t";
                     }
-                    CodeOutput += t;
+                    CodeOutput += codeInput[i];
                     CodeOutput += "\n";
-                    for (int j = 1; j <= _braces; j++)
+                    for (int j = 1; j <= braces; j++)
                     {
                         CodeOutput += "\t";
                     }
                 }
                 else
                 {
-                    CodeOutput += t;
+                    CodeOutput += codeInput[i];
                 }
             }
         }
@@ -68,6 +72,5 @@ namespace Core.Beautifier
 
     }
 }
-
 
 

@@ -16,6 +16,15 @@ namespace CodeVisualizer.Controls.PropertiesForm
     public partial class VariableProperties : Form
     {
         private VCode Vcode { get; set; }
+       
+
+        public VariableProperties()
+        {
+            
+            InitializeComponent();
+            
+        }
+
         public VariableProperties(VCode vCode)
         {
             Vcode = vCode;
@@ -90,6 +99,22 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 columnlable.Visible = true;
                 numericUpDownColumn.Visible = true;
             }
+        }
+
+        
+
+        private void CancleButton_Click(object sender, EventArgs e)
+        {
+            DialogResult=DialogResult.Cancel;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            
+
+
+
+            DialogResult = DialogResult.OK;
         }
     }
 }

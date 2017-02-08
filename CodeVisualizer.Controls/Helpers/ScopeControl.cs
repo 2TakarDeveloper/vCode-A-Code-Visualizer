@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using CodeVisualizer.Controls.PropertiesForm;
 using CodeVisualizer.Controls.VBlocks;
 using DTD.Entity;
 using DTD.Entity.Enum;
@@ -46,68 +47,7 @@ namespace CodeVisualizer.Controls.Helpers
 
         #region toolStripMenuItemClick
 
-        private void intToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Variable<int> x = new Variable<int>
-            {
-                Type = Enums.Type.Int,
-                VType = Enums.VType.Variable
-            };
-            var vVariable = new Vvariable(x);
-            
-            ScopePanel.Controls.Add(vVariable);
-          
-        }
-
-        private void floatToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Variable<float> x = new Variable<float>
-            {
-                Type = Enums.Type.Float,
-                VType = Enums.VType.Variable
-            };
-            var vVariable = new Vvariable(x);
-            
-            ScopePanel.Controls.Add(vVariable);
-     
-
-        }
-
-        private void doubleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Variable<double> x = new Variable<double>
-            {
-                Type = Enums.Type.Double,
-                VType = Enums.VType.Variable
-            };
-            var vVariable = new Vvariable(x);
-
-            ScopePanel.Controls.Add(vVariable);
-            
-        }
-
-        private void stringToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Variable<string> x = new Variable<string>
-            {
-                Type = Enums.Type.String,
-                VType = Enums.VType.Variable
-            };
-            var vVariable = new Vvariable(x);
-            ScopePanel.Controls.Add(vVariable);
-        }
-
-        private void boolToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Variable<bool> x = new Variable<bool>
-            {
-                Type = Enums.Type.Bool,
-                VType = Enums.VType.Variable
-            };
-            var vVariable = new Vvariable(x);
-            ScopePanel.Controls.Add(vVariable);
-           
-        }
+    
 
         private void whileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -130,6 +70,15 @@ namespace CodeVisualizer.Controls.Helpers
             var vFunc = new Vfunction();
             ScopePanel.Controls.Add(vFunc);
             
+        }
+
+        private void newToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VariableProperties variableProperties= new VariableProperties();
+            if (variableProperties.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
         }
 
         #endregion
@@ -176,8 +125,9 @@ namespace CodeVisualizer.Controls.Helpers
 
 
 
+
         #endregion
 
-
+      
     }
 }

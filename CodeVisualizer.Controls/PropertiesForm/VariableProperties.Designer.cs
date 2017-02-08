@@ -50,8 +50,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.CancleButton = new MetroFramework.Controls.MetroButton();
+            this.SaveButton = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -346,8 +346,8 @@
             // metroPanel1
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.metroPanel1, 2);
-            this.metroPanel1.Controls.Add(this.metroButton2);
-            this.metroPanel1.Controls.Add(this.metroButton1);
+            this.metroPanel1.Controls.Add(this.CancleButton);
+            this.metroPanel1.Controls.Add(this.SaveButton);
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -360,23 +360,25 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroButton1
+            // CancleButton
             // 
-            this.metroButton1.Location = new System.Drawing.Point(174, 11);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(160, 23);
-            this.metroButton1.TabIndex = 2;
-            this.metroButton1.Text = "Save";
-            this.metroButton1.UseSelectable = true;
+            this.CancleButton.Location = new System.Drawing.Point(340, 11);
+            this.CancleButton.Name = "CancleButton";
+            this.CancleButton.Size = new System.Drawing.Size(160, 23);
+            this.CancleButton.TabIndex = 3;
+            this.CancleButton.Text = "Cancle";
+            this.CancleButton.UseSelectable = true;
+            this.CancleButton.Click += new System.EventHandler(this.CancleButton_Click);
             // 
-            // metroButton2
+            // SaveButton
             // 
-            this.metroButton2.Location = new System.Drawing.Point(340, 11);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(160, 23);
-            this.metroButton2.TabIndex = 3;
-            this.metroButton2.Text = "Cancle";
-            this.metroButton2.UseSelectable = true;
+            this.SaveButton.Location = new System.Drawing.Point(174, 11);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(160, 23);
+            this.SaveButton.TabIndex = 2;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseSelectable = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // VariableProperties
             // 
@@ -417,7 +419,7 @@
         private MetroFramework.Controls.MetroComboBox variableType;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton CancleButton;
+        private MetroFramework.Controls.MetroButton SaveButton;
     }
 }

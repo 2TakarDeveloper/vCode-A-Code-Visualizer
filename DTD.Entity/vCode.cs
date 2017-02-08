@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTD.Entity.Enum;
+using DTD.Entity.vCodes;
 
 namespace DTD.Entity
 {
@@ -14,5 +15,7 @@ namespace DTD.Entity
 
         //For variables
         public Enums.Type Type { get; set; }
+
+       
     }
 }
