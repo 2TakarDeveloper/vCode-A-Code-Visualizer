@@ -9,16 +9,8 @@ using DTD.Entity.Helpers;
 
 namespace DTD.Entity.vCodes
 {
-    public class Function:VCode
+    public class Function:FuncAndVar
     {
-
-        public string Name { get; set; }
-        public bool IsArray { get; set; }
-        public bool IsStatic { get; set; }
-
-        
-        
-        public Enums.AccessModifier AccessModifier { get; set; }
         public Scope Scope { get; set; }
 
         public Function()

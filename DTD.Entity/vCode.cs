@@ -13,9 +13,8 @@ namespace DTD.Entity
     {
         public Enums.VType VType { get; set; }
 
-        //For variables
-        public Enums.Type Type { get; set; }
+        
 
-       
+
     }
 }

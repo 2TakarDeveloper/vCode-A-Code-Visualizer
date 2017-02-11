@@ -77,7 +77,8 @@ namespace CodeVisualizer.Controls.Helpers
             VariableProperties variableProperties= new VariableProperties();
             if (variableProperties.ShowDialog() == DialogResult.OK)
             {
-                
+                Vvariable vvariable = new Vvariable(variableProperties.Variable);
+                ScopePanel.Controls.Add(vvariable);
             }
         }
 

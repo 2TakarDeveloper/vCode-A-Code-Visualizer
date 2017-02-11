@@ -4,7 +4,7 @@ namespace Core.Beautifier
     public class Beautify
     {
         public string CodeOutput { get; private set; }
-        public int braces = 0;
+        public int braces = 0; //curly brace count
 
         public Beautify(string code)
         {
@@ -25,41 +25,42 @@ namespace Core.Beautifier
 
                         CodeOutput += codeInput[i];
                         i++;
-
                     }
                 }
 
                 if (codeInput[i] == ')' || codeInput[i] == ';' || codeInput[i] == '{')
                 {
                     CodeOutput += codeInput[i];
-                    CodeOutput += "\n";
+                    CodeOutput += "\n"; //add newline
 
                     if (codeInput[i] == '{')
                     {
-                        braces++;
+                        braces++; //increase brace count
                     }
 
                     for (int j = 1; j <= braces; j++)
                     {
-                        CodeOutput += "\t";
+                        CodeOutput += "\t"; //add tab space
                     }
 
 
                 }
                 else if (codeInput[i] == '}')
                 {
-                    braces--;
-                    CodeOutput += "\n";
+                    braces--; //decrease brace count
+                    CodeOutput += "\n"; //add newline
 
                     for (int j = 1; j <= braces; j++)
                     {
-                        CodeOutput += "\t";
+                        CodeOutput += "\t"; //add tab space
                     }
+
                     CodeOutput += codeInput[i];
-                    CodeOutput += "\n";
+                    CodeOutput += "\n"; //add newline
+
                     for (int j = 1; j <= braces; j++)
                     {
-                        CodeOutput += "\t";
+                        CodeOutput += "\t"; //add tab space
                     }
                 }
                 else
@@ -68,8 +69,6 @@ namespace Core.Beautifier
                 }
             }
         }
-
-
     }
 }
 

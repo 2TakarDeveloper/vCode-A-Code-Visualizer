@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using DTD.Entity;
 using DTD.Entity.Enum;
 using DTD.Entity.Helpers;
@@ -21,9 +17,9 @@ namespace Core.Converter
             
         }
 
-        private void VariableToCode<T>(VCode vCode)
+        private void VariableToCode(Variable variable)
         {
-            var variable = (Variable<T>)vCode;
+         
             Code += variable.AccessModifier.ToString().ToLower()+" ";
             Code += variable.Type.ToString().ToLower()+" ";
             Code += variable.Name+" ";
@@ -43,25 +39,8 @@ namespace Core.Converter
 
             if (vcode.VType == Enums.VType.Variable)
             {
-                switch (vcode.Type)
-                {
-                    case Enums.Type.Int:
-                        VariableToCode<int>(vcode);
-                        break;
-                    case Enums.Type.Float:
-                        VariableToCode<float>(vcode);
-                        break;
-                    case Enums.Type.Double:
-                        VariableToCode<double>(vcode);
-                        break;
-                    case Enums.Type.String:
-                        VariableToCode<string>(vcode);
-                        break;
-                    case Enums.Type.Bool:
-                        VariableToCode<bool>(vcode);
-                        break;
-                    
-                }
+                Variable variable = (Variable) vcode;
+                VariableToCode(variable);
             }
 
 
@@ -87,8 +66,8 @@ namespace Core.Converter
             if (vcode.VType == Enums.VType.Function)
             {
                 var function=(Function)vcode;
-                Code += function.AccessModifier.ToString().ToLower();
-                Code += function.Type.ToString().ToLower();
+                Code += function.AccessModifier.ToString().ToLower()+" ";
+                Code += function.Type.ToString().ToLower()+" ";
                 Code += function.Name;
                 Code += "(";
                 //For each on parameters later

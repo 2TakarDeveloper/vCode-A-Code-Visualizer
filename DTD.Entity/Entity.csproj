@@ -43,6 +43,7 @@
     <Compile Include="Enum\Enums.cs" />
     <Compile Include="Helpers\Condition.cs" />
     <Compile Include="Helpers\Scope.cs" />
+    <Compile Include="FuncAndVar.cs" />
     <Compile Include="vCodes\Function.cs" />
     <Compile Include="vCodes\GlobalScope.cs" />
     <Compile Include="vCodes\If.cs" />

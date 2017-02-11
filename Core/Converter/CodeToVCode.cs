@@ -17,76 +17,66 @@ namespace Core.Converter
   
         public CodeToVCode(string code)
         {
-            initRegex();
-            //Call Function here.
+            InitRegex();
+            
             Scope = new Scope();
             code = Regex.Replace(code, @"\t|\n", "");
-            createScopeObject(Scope,'{'+code.Trim()+'}');
+            CreateScopeObject(Scope,'{'+code.Trim()+'}');
         }
 
         #region RegexPatterns
 
-        private Regex AccessModifier, IsStatic, dataType;
-        private Regex NumberRegex, StringRegex, boolValue;
-        private Regex variable, VarDeclaration, FunctionRegex, FunctionCall;
-        private Regex IfRegex, WhileRegex, Condition, booleanOperator;
+        private Regex _accessModifierRegex, _isStatic, _dataType;
+        private Regex _numberRegex, _stringRegex, _boolValue;
+        private Regex _variableRegex, _varDeclaration, _functionRegex, _functionCall;
+        private Regex _ifRegex, _whileRegex, _condition, _booleanOperator;
 
-        private void initRegex()
+        private void InitRegex()
         {
-            AccessModifier = new Regex("([p][u][b][l][i][c])|([p][r][i][v][a][t][e])|[p][r][o][t][e][c][t][e][d]");
-            IsStatic = new Regex("[s][t][a][t][i][c]");
-            NumberRegex = new Regex("([+]|[-])?[0-9]+([.][0-9]+)?");
-            StringRegex = new Regex("([\\w]*[\\W]*)*");
-            boolValue = new Regex("([t][r][u][e])|[f][a][l][s][e]");
+            _accessModifierRegex = new Regex("([p][u][b][l][i][c])|([p][r][i][v][a][t][e])|[p][r][o][t][e][c][t][e][d]");
+            _isStatic = new Regex("[s][t][a][t][i][c]");
+            _numberRegex = new Regex("([+]|[-])?[0-9]+([.][0-9]+)?");
+            _stringRegex = new Regex("([\\w]*[\\W]*)*");
+            _boolValue = new Regex("([t][r][u][e])|[f][a][l][s][e]");
 
-            dataType = new Regex("([i][n][t])|([f][l][o][a][t])|([d][o][u][b][l][e])|([s][t][r][i][n][g])|([b][o][o][l])");
+            _dataType = new Regex("([i][n][t])|([f][l][o][a][t])|([d][o][u][b][l][e])|([s][t][r][i][n][g])|([b][o][o][l])");
 
-            variable = new Regex("[a-z|A-Z|_][a-z|A-Z|0-9]*");
+            _variableRegex = new Regex("[a-z|A-Z|_][a-z|A-Z|0-9]*");
 
-            VarDeclaration = new Regex("^(" + AccessModifier + ")?[\\s]+" + "(" + IsStatic + ")?[\\s]+" + dataType + "[\\s]+" + variable +
-                          "[\\s]*([=][\\s]*((" + NumberRegex + ")|([\"]" + StringRegex + "[\"])))?[\\s]*[;]$");
+            _varDeclaration = new Regex("^(" + _accessModifierRegex + ")?[\\s]+" + "(" + _isStatic + ")?[\\s]+" + _dataType + "[\\s]+" + _variableRegex +
+                          "[\\s]*([=][\\s]*((" + _numberRegex + ")|([\"]" + _stringRegex + "[\"])))?[\\s]*[;]$");
 
-            booleanOperator = new Regex("([<]|[>]|[<][=]|[>][=]|[=][=])");
-            Condition = new Regex("[(]" + variable + "[\\s]*"+ booleanOperator + "[\\s]*" + variable + "[)]");
+            _booleanOperator = new Regex("([<]|[>]|[<][=]|[>][=]|[=][=])");
+            _condition = new Regex("[(]" + _variableRegex + "[\\s]*"+ _booleanOperator + "[\\s]*" + _variableRegex + "[)]");
 
 
-            FunctionCall = new Regex("^[(][\\s]*(" + variable + "([,]" + variable + ")*)?" + "[\\s]*[)][;]$");
+            _functionCall = new Regex("^[(][\\s]*(" + _variableRegex + "([,]" + _variableRegex + ")*)?" + "[\\s]*[)][;]$");
 
-            IfRegex = new Regex("^[i][f][\\s]*" + Condition + "[\\s]*$");
-            WhileRegex = new Regex("^[w][h][i][l][e][\\s]*" + Condition + "[\\s]*$");
+            _ifRegex = new Regex("^[i][f][\\s]*" + _condition + "[\\s]*$");
+            _whileRegex = new Regex("^[w][h][i][l][e][\\s]*" + _condition + "[\\s]*$");
 
-            FunctionRegex = new Regex("((" + AccessModifier + ")?[\\s]+)?" + "((" + IsStatic + ")?[\\s]+" + dataType + "[\\s]+)?" +
-                          variable + "[\\s]*[(](" + dataType + "[\\s]+" + variable + "[\\s]*([,][\\s]*" + dataType +
-                          "[\\s]+" + variable + "[\\s]*)*)?[)][\\s]*");
+            _functionRegex = new Regex("((" + _accessModifierRegex + ")?[\\s]+)?" + "((" + _isStatic + ")?[\\s]+" + _dataType + "[\\s]+)?" +
+                          _variableRegex + "[\\s]*[(](" + _dataType + "[\\s]+" + _variableRegex + "[\\s]*([,][\\s]*" + _dataType +
+                          "[\\s]+" + _variableRegex + "[\\s]*)*)?[)][\\s]*");
 
         }
 
         #endregion
 
         #region LexicalAnalyzer
+        
 
-        private bool isVCode(string selectedText)
+        private void CreateConditionObject(Condition condition,string text)
         {
-            if (IfRegex.IsMatch(selectedText) ||
-                WhileRegex.IsMatch(selectedText) ||
-                FunctionCall.IsMatch(selectedText) ||
-                VarDeclaration.IsMatch(selectedText)||
-                FunctionRegex.IsMatch(selectedText))
-            { return true; }
-            return false;
-        }
-
-        private void createConditionObject(Condition condition,string text)
-        {
-            Match op = booleanOperator.Match(text);
+            Match op = _booleanOperator.Match(text);
             condition.BooleanOperator = op.Groups[0].ToString();
 
-            Match param = variable.Match(text);
+            Match param = _variableRegex.Match(text);
             condition.LeftParameter = op.Groups[0].ToString();
             condition.RightParameter = op.Groups[1].ToString();
         }
 
-        private int cropScope(Scope scope, int start, string text)
+        private int CropScope(Scope scope, int start, string text)
         {
             Stack<char> stack = new Stack<char>();
             int end = start;
@@ -99,79 +89,82 @@ namespace Core.Converter
             while (stack.Count != 0)
             {
                 end++;
-                if (text[end] == '{')
+                switch (text[end])
                 {
-                    stack.Push('{');
-                }
-                else if (text[end] == '}')
-                {
-                    stack.Pop();
+                    case '{':
+                        stack.Push('{');
+                        break;
+                    case '}':
+                        stack.Pop();
+                        break;
                 }
             }
-            createScopeObject(scope,text.Substring(start, end - start +1));
+            CreateScopeObject(scope,text.Substring(start, end - start +1));
             return ++end;
         }
 
-        private void createScopeObject(Scope scope, string currentScope)
+        private void CreateScopeObject(Scope scope, string currentScope)
         {
             int start = 1, end = 1;
             while (end < currentScope.Length - 1)
             {
                 string selectedText = currentScope.Substring(start, end - start + 1);
-                if (isVCode(selectedText))
+
+                #region Parse Code
+
+                if (_functionRegex.IsMatch(selectedText))
                 {
-                    if(FunctionRegex.IsMatch(selectedText))
-                    {
-                        Function funcObject = new Function();
-                        scope.Items.Enqueue(funcObject);
-                        createFunctionObject(funcObject, selectedText);
-                        start = ++end;
-                        start = end = cropScope(funcObject.Scope, start, currentScope);
-                    }
-                    else if (VarDeclaration.IsMatch(selectedText))
-                    {
-                        createVariableObject(scope, selectedText);
-                        start = ++end;
-                    }
-                    else if (IfRegex.IsMatch(selectedText))
-                    {
-                        If ifObject = new If();
-                        scope.Items.Enqueue(ifObject);
-                        createConditionObject(ifObject.Condition, selectedText);
-                        start = ++end;
-                        start = end = cropScope(ifObject.Scope, start, currentScope);
-                    }
-                    else if (WhileRegex.IsMatch(selectedText))
-                    {
-                        While whileObject = new While();
-                        scope.Items.Enqueue(whileObject);
-                        createConditionObject(whileObject.Condition, selectedText);
-                        start = ++end;
-                        start = end = cropScope(whileObject.Scope, start, currentScope);
-                    }
-                    else if(currentScope[start] == ' ')
-                    {
-                        start = ++end;
-                    }
-                    else if (selectedText == "\n")
-                    {
-                        start = ++end;
-                    }
+                    var funcObject = new Function();
+                    scope.Items.Enqueue(funcObject);
+                    CreateFunctionObject(funcObject, selectedText);
+                    start = ++end;
+                    start = end = CropScope(funcObject.Scope, start, currentScope);
+                }
+                else if (_varDeclaration.IsMatch(selectedText))
+                {
+                    CreateVariableObject(scope, selectedText);
+                    start = ++end;
+                }
+                else if (_ifRegex.IsMatch(selectedText))
+                {
+                    var ifObject = new If();
+                    scope.Items.Enqueue(ifObject);
+                    CreateConditionObject(ifObject.Condition, selectedText);
+                    start = ++end;
+                    start = end = CropScope(ifObject.Scope, start, currentScope);
+                }
+                else if (_whileRegex.IsMatch(selectedText))
+                {
+                    var whileObject = new While();
+                    scope.Items.Enqueue(whileObject);
+                    CreateConditionObject(whileObject.Condition, selectedText);
+                    start = ++end;
+                    start = end = CropScope(whileObject.Scope, start, currentScope);
+                }
+                else if (currentScope[start] == ' ')        //Ensures that start variable is not pointing at space
+                {
+                    start = ++end;
                 }
                 else
                 {
                     end++;
                 }
+
+
+                #endregion
+
+
+
             }
         }
         
         //will return function object globaly declared
-        private void createFunctionObject(Function funcObject,string text)
+        private void CreateFunctionObject(Function funcObject,string text)
         {
-            #region Variable DataType
-            if (dataType.IsMatch(text))
+            #region Function ReturnType
+            if (_dataType.IsMatch(text))
             {
-                Match m = dataType.Match(text);
+                Match m = _dataType.Match(text);
                 switch (m.Groups[0].ToString())
                 {
                     case "bool":
@@ -194,14 +187,14 @@ namespace Core.Converter
                         funcObject.Type = Enums.Type.String;
                         break;
                 }
-                dataType.Replace(text, "");
+                _dataType.Replace(text, "");
             }
             #endregion
 
-            #region Variable AccessModifier
-            if (AccessModifier.IsMatch(text))
+            #region Function AccessModifierRegex
+            if (_accessModifierRegex.IsMatch(text))
             {
-                Match m = AccessModifier.Match(text);
+                Match m = _accessModifierRegex.Match(text);
 
                 switch (m.Groups[0].ToString())
                 {
@@ -215,113 +208,98 @@ namespace Core.Converter
                         funcObject.AccessModifier = Enums.AccessModifier.Protected;
                         break;
                 }
-                AccessModifier.Replace(text, "");
+                _accessModifierRegex.Replace(text, "");
             }
             #endregion
 
-            if (IsStatic.IsMatch(text))
+            if (_isStatic.IsMatch(text))
             {
                 funcObject.IsStatic = true;
-                IsStatic.Replace(text, "");
+                _isStatic.Replace(text, "");
             }
 
-            if (variable.IsMatch(text))
+            if (_variableRegex.IsMatch(text))
             {
-                if (variable.IsMatch(text))
+                if (_variableRegex.IsMatch(text))
                 {
-                    Match m = variable.Match(text);
+                    Match m = _variableRegex.Match(text);
                     funcObject.Name = m.Groups[0].ToString();
                 }
             }
         }
 
-        private void createVariableObject(Scope scope, string text)
+        private void CreateVariableObject(Scope scope, string text)
         {
-            dynamic varObject = new Variable<int>();
+            Variable variable = new Variable();
 
             #region Variable DataType
-            if (dataType.IsMatch(text))
+            if (_dataType.IsMatch(text))
             {
-                Match m = dataType.Match(text), mv;
-                switch(m.Groups[0].ToString())
+                Match m = _dataType.Match(text);
+
+                switch (m.Groups[0].ToString())
                 {
                     case "bool":
-                        varObject = new Variable<bool>();
-
-                        mv = boolValue.Match(text);
-                        varObject.Value = Convert.ToBoolean(m.Groups[0].ToString());
-
+                        variable.Type = Enums.Type.Bool;
                         break;
 
                     case "int":
-                        varObject = new Variable<int>();
-
-                        mv = NumberRegex.Match(text);
-                        varObject.Value = Convert.ToInt32(m.Groups[0].ToString());
-
+                        variable.Type = Enums.Type.Int;
                         break;
 
                     case "float":
-                        varObject = new Variable<float>();
-
-                        mv = NumberRegex.Match(text);
-                        varObject.Value = Convert.ToSingle(m.Groups[0].ToString());
-
+                        variable.Type = Enums.Type.Float;
                         break;
 
                     case "double":
-                        varObject = new Variable<double>();
-
-                        mv = NumberRegex.Match(text);
-                        varObject.Value = Convert.ToDouble(m.Groups[0].ToString());
-
+                        variable.Type = Enums.Type.Double;
                         break;
 
                     case "string":
-                        varObject = new Variable<string>();
+                        variable.Type = Enums.Type.String;
                         break;
                 }
-                dataType.Replace(text,"");
+                _dataType.Replace(text,"");
             }
             #endregion
 
-            #region Variable AccessModifier
-            if (AccessModifier.IsMatch(text))
+            #region Variable AccessModifierRegex
+            if (_accessModifierRegex.IsMatch(text))
             {
-                Match m = AccessModifier.Match(text);
+                Match m = _accessModifierRegex.Match(text);
 
                 switch(m.Groups[0].ToString())
                 {
                     case "public":
-                        varObject.AccessModifier = Enums.AccessModifier.Public;
+                        variable.AccessModifier = Enums.AccessModifier.Public;
                         break;
                     case "private":
-                        varObject.AccessModifier = Enums.AccessModifier.Private;
+                        variable.AccessModifier = Enums.AccessModifier.Private;
                         break;
                     case "protected":
-                        varObject.AccessModifier = Enums.AccessModifier.Protected;
+                        variable.AccessModifier = Enums.AccessModifier.Protected;
                         break;
                 }
-                AccessModifier.Replace(text, "");
+                _accessModifierRegex.Replace(text, "");
             }
             #endregion
 
-            if (IsStatic.IsMatch(text))
+            if (_isStatic.IsMatch(text))
             {
-                varObject.IsStatic = true;
-                IsStatic.Replace(text, "");
+                variable.IsStatic = true;
+                _isStatic.Replace(text, "");
             }
 
-            if(variable.IsMatch(text))
+            if(_variableRegex.IsMatch(text))
             {
-                if(variable.IsMatch(text))
+                if(_variableRegex.IsMatch(text))
                 {
-                    Match m = variable.Match(text);
-                    varObject.Name = m.Groups[0].ToString();
+                    Match m = _variableRegex.Match(text);
+                    variable.Name = m.Groups[0].ToString();
                 }
             }
 
-            scope.Items.Enqueue(varObject);
+            scope.Items.Enqueue(variable);
         }
                 
         #endregion
