@@ -69,7 +69,6 @@ namespace CodeVisualizer.Controls.VBlocks
             // scopeControl
             // 
             this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
-           
             this.scopeControl.Location = new System.Drawing.Point(0, 23);
             this.scopeControl.Name = "scopeControl";
             this.scopeControl.Scope = null;

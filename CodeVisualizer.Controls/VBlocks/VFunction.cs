@@ -15,21 +15,21 @@ namespace CodeVisualizer.Controls.VBlocks
 {
     public partial class Vfunction : VBlock
     {
-        
+        public Function Function { get; set; }
         public Vfunction()
         {
             InitializeComponent();
-            
-            
-            Function f = new Function();
-            
+
+
+            Function = new Function();
+            VCode = Function;
             
             scopeControl.Scope=new Scope();
-            f.Scope = scopeControl.Scope;
+            Function.Scope = scopeControl.Scope;
             ScopeControl = scopeControl;
             
-            VCode = (Function) f;
-            NameLable.Text = f.Name;
+          
+            NameLable.Text = Function.Name;
         }
     }
 }

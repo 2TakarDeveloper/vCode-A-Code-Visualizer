@@ -14,10 +14,12 @@ namespace CodeVisualizer.Controls.VBlocks
 {
     public partial class Vif : VBlock
     {
-    
+       
+        //TODO add function list later
         public Vif()
         {
             InitializeComponent();
+           
             NameLable.Text = @"If";
             scopeControl.Scope=new Scope();
             ScopeControl = scopeControl;
@@ -27,7 +29,16 @@ namespace CodeVisualizer.Controls.VBlocks
                 Scope = scopeControl.Scope,
                 Condition = conditionControl1.Condition
             };
-            VCode = (If) iIf;
+            VCode = iIf;
+        }
+
+        public void PopulateScopeVariables(List<string> varList )
+        {
+             List<string> leftParameters= new List<string>(varList);
+            List<string> rightParameters = new List<string>(varList);
+            conditionControl1.LeftBox.DataSource = leftParameters;
+            conditionControl1.RightBox.DataSource = rightParameters;
+            //Reason for 2 list is that both combobox switch when another is changed.
         }
 
       

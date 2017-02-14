@@ -64,7 +64,6 @@
             // scopeControl
             // 
             this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            
             this.scopeControl.Location = new System.Drawing.Point(10, 34);
             this.scopeControl.Name = "scopeControl";
             this.scopeControl.Scope = null;

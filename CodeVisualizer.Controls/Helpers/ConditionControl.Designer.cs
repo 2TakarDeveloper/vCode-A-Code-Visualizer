@@ -35,7 +35,7 @@
             // 
             // LeftBox
             // 
-            this.LeftBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.LeftBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.LeftBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.LeftBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftBox.FormattingEnabled = true;
@@ -64,7 +64,7 @@
             // 
             // RightBox
             // 
-            this.RightBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.RightBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.RightBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.RightBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.RightBox.FormattingEnabled = true;
@@ -88,9 +88,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox LeftBox;
-        private System.Windows.Forms.ComboBox OperatorBox;
-        private System.Windows.Forms.ComboBox RightBox;
+        public System.Windows.Forms.ComboBox LeftBox;
+        public System.Windows.Forms.ComboBox RightBox;
+        protected System.Windows.Forms.ComboBox OperatorBox;
     }
 }

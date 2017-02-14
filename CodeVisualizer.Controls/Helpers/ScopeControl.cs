@@ -36,10 +36,15 @@ namespace CodeVisualizer.Controls.Helpers
         public void UpdateScope()
         {
             Scope.Items.Clear();
+            
+
             foreach (VBlock vBlock in ScopePanel.Controls)
             {
                 AddItemToScope(vBlock);
             }
+
+            Scope.UpdateAccessibleVariableNames();
+            
         }
 
         #endregion
@@ -60,7 +65,7 @@ namespace CodeVisualizer.Controls.Helpers
         private void ifToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vif = new Vif();
-      
+            vif.PopulateScopeVariables(Scope.LocalVariables);
             ScopePanel.Controls.Add(vif);
             
         }
@@ -74,6 +79,7 @@ namespace CodeVisualizer.Controls.Helpers
             {
                 Vvariable vvariable = new Vvariable(variableProperties.Variable);
                 ScopePanel.Controls.Add(vvariable);
+                UpdateScope();
             }
         }
 

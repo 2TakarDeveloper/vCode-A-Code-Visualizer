@@ -38,10 +38,17 @@ namespace CodeVisualizer.Controls.Helpers
         public void UpdateScope()
         {
             GlobalScope.Scope.Items.Clear();
+           
+            
             foreach (VBlock vBlock in GlobalScopePanel.Controls)
             {
                 AddItemToScope(vBlock);
             }
+
+            GlobalScope.UpdateFunctionNames();
+            GlobalScope.Scope.UpdateAccessibleVariableNames();
+          
+
         }
 
         #endregion
@@ -89,13 +96,16 @@ namespace CodeVisualizer.Controls.Helpers
             if (variableProperties.ShowDialog() != DialogResult.OK) return;
             Vvariable vvariable = new Vvariable(variableProperties.Variable);
             GlobalScopePanel.Controls.Add(vvariable);
+            UpdateScope();
         }
 
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vFunc = new Vfunction();
+            vFunc.Function.Scope.ScopeVariables = GlobalScope.Scope.LocalVariables;
             GlobalScopePanel.Controls.Add(vFunc);
 
+            UpdateScope();
         }
     }
 }
