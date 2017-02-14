@@ -14,8 +14,8 @@ namespace CodeVisualizer.Forms
         public DashBoard()
         {
             InitializeComponent();
-            scopeControl.Scope=new Scope();
-            scopeControl.GlobalScope = new GlobalScope {Scope = scopeControl.Scope};
+            globalScopeControl.GlobalScope=new GlobalScope();
+           
         }
 
 
@@ -46,20 +46,20 @@ namespace CodeVisualizer.Forms
 
         private void visualToCodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
 
-            scopeControl.UpdateScope();
-            VCodeToCode vBlockToCode = new VCodeToCode(scopeControl.GlobalScope);
-            Beautify beautifier= new Beautify(vBlockToCode.Code);
+
+            globalScopeControl.UpdateScope();
+            VCodeToCode vBlockToCode = new VCodeToCode(globalScopeControl.GlobalScope);
+            Beautify beautifier = new Beautify(vBlockToCode.Code);
             CodeEditor.Text = beautifier.CodeOutput;
-            
+
         }
 
         private void codeToVisualToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             CodeToVCode codeToVCode = new CodeToVCode(CodeEditor.Text);
-            scopeControl.VcodeToVblock(codeToVCode.Scope.Items);
+            globalScopeControl.VcodeToVblock(codeToVCode.Scope);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace DTD.Entity.vCodes
         //to initialize data in array #ignore if ur nub
         public int Row { get; set; }
         public int Column { get; set; }
-
+        public string ArrayType { get; set; }
 
        
   

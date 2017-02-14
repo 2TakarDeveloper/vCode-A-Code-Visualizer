@@ -31,17 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.ContextMenuStrip = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.variableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.iFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ifToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.switchCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ScopePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +63,13 @@
             this.variableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.variableToolStripMenuItem.Text = "Variable";
             // 
+            // newToolStripMenuItem1
+            // 
+            this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem1.Text = "New";
+            this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
+            // 
             // iFToolStripMenuItem
             // 
             this.iFToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -77,7 +82,7 @@
             // ifToolStripMenuItem1
             // 
             this.ifToolStripMenuItem1.Name = "ifToolStripMenuItem1";
-            this.ifToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.ifToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.ifToolStripMenuItem1.Text = "If";
             this.ifToolStripMenuItem1.Click += new System.EventHandler(this.ifToolStripMenuItem1_Click);
             // 
@@ -85,31 +90,14 @@
             // 
             this.switchCaseToolStripMenuItem.Enabled = false;
             this.switchCaseToolStripMenuItem.Name = "switchCaseToolStripMenuItem";
-            this.switchCaseToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.switchCaseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.switchCaseToolStripMenuItem.Text = "Switch Case";
             // 
             // functionToolStripMenuItem
             // 
-            this.functionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainToolStripMenuItem,
-            this.newToolStripMenuItem});
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
             this.functionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.functionToolStripMenuItem.Text = "Function";
-            // 
-            // mainToolStripMenuItem
-            // 
-            this.mainToolStripMenuItem.Enabled = false;
-            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
-            this.mainToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
-            this.mainToolStripMenuItem.Text = "Main";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
-            this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // whileToolStripMenuItem
             // 
@@ -124,13 +112,13 @@
             // 
             this.forToolStripMenuItem.Enabled = false;
             this.forToolStripMenuItem.Name = "forToolStripMenuItem";
-            this.forToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.forToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.forToolStripMenuItem.Text = "For";
             // 
             // whileToolStripMenuItem1
             // 
             this.whileToolStripMenuItem1.Name = "whileToolStripMenuItem1";
-            this.whileToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
+            this.whileToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.whileToolStripMenuItem1.Text = "While";
             this.whileToolStripMenuItem1.Click += new System.EventHandler(this.whileToolStripMenuItem1_Click);
             // 
@@ -145,13 +133,6 @@
             this.ScopePanel.Name = "ScopePanel";
             this.ScopePanel.Size = new System.Drawing.Size(475, 376);
             this.ScopePanel.TabIndex = 1;
-            // 
-            // newToolStripMenuItem1
-            // 
-            this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.newToolStripMenuItem1.Text = "New";
-            this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
             // 
             // ScopeControl
             // 
@@ -173,8 +154,6 @@
         private System.Windows.Forms.ToolStripMenuItem whileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ifToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem switchCaseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mainToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem whileToolStripMenuItem1;
         public System.Windows.Forms.FlowLayoutPanel ScopePanel;

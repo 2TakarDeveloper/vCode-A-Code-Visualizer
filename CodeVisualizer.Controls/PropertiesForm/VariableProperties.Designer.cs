@@ -32,7 +32,6 @@
             this.columnlable = new MetroFramework.Controls.MetroLabel();
             this.staticCheck = new MetroFramework.Controls.MetroCheckBox();
             this.variableType = new MetroFramework.Controls.MetroComboBox();
-            this.variableName = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -49,6 +48,7 @@
             this.CancleButton = new MetroFramework.Controls.MetroButton();
             this.SaveButton = new MetroFramework.Controls.MetroButton();
             this.ValueBox = new System.Windows.Forms.TextBox();
+            this.variableNameTextBox = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -58,9 +58,9 @@
             // numericUpDownRow
             // 
             this.numericUpDownRow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownRow.Location = new System.Drawing.Point(168, 236);
+            this.numericUpDownRow.Location = new System.Drawing.Point(155, 199);
             this.numericUpDownRow.Name = "numericUpDownRow";
-            this.numericUpDownRow.Size = new System.Drawing.Size(344, 20);
+            this.numericUpDownRow.Size = new System.Drawing.Size(317, 20);
             this.numericUpDownRow.TabIndex = 16;
             this.numericUpDownRow.Value = new decimal(new int[] {
             1,
@@ -72,7 +72,7 @@
             // columnlable
             // 
             this.columnlable.AutoSize = true;
-            this.columnlable.Location = new System.Drawing.Point(3, 257);
+            this.columnlable.Location = new System.Drawing.Point(3, 220);
             this.columnlable.Name = "columnlable";
             this.columnlable.Size = new System.Drawing.Size(60, 19);
             this.columnlable.TabIndex = 15;
@@ -84,9 +84,9 @@
             this.staticCheck.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.staticCheck, 2);
             this.staticCheck.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.staticCheck.Location = new System.Drawing.Point(3, 132);
+            this.staticCheck.Location = new System.Drawing.Point(3, 113);
             this.staticCheck.Name = "staticCheck";
-            this.staticCheck.Size = new System.Drawing.Size(509, 28);
+            this.staticCheck.Size = new System.Drawing.Size(469, 19);
             this.staticCheck.TabIndex = 10;
             this.staticCheck.Text = "isStatic";
             this.staticCheck.UseSelectable = true;
@@ -102,65 +102,34 @@
             "double",
             "string",
             "bool"});
-            this.variableType.Location = new System.Drawing.Point(168, 53);
+            this.variableType.Location = new System.Drawing.Point(155, 49);
             this.variableType.Name = "variableType";
-            this.variableType.Size = new System.Drawing.Size(344, 29);
+            this.variableType.Size = new System.Drawing.Size(317, 29);
             this.variableType.TabIndex = 5;
             this.variableType.UseSelectable = true;
-            // 
-            // variableName
-            // 
-            // 
-            // 
-            // 
-            this.variableName.CustomButton.Image = null;
-            this.variableName.CustomButton.Location = new System.Drawing.Point(324, 2);
-            this.variableName.CustomButton.Name = "";
-            this.variableName.CustomButton.Size = new System.Drawing.Size(17, 17);
-            this.variableName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.variableName.CustomButton.TabIndex = 1;
-            this.variableName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.variableName.CustomButton.UseSelectable = true;
-            this.variableName.CustomButton.Visible = false;
-            this.variableName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.variableName.Lines = new string[0];
-            this.variableName.Location = new System.Drawing.Point(168, 25);
-            this.variableName.MaxLength = 32767;
-            this.variableName.Name = "variableName";
-            this.variableName.PasswordChar = '\0';
-            this.variableName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.variableName.SelectedText = "";
-            this.variableName.SelectionLength = 0;
-            this.variableName.SelectionStart = 0;
-            this.variableName.ShortcutsEnabled = true;
-            this.variableName.Size = new System.Drawing.Size(344, 22);
-            this.variableName.TabIndex = 3;
-            this.variableName.UseSelectable = true;
-            this.variableName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.variableName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(3, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(44, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(44, 18);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "VType";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(168, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(155, 0);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(55, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(55, 18);
             this.metroLabel2.TabIndex = 1;
             this.metroLabel2.Text = "Variable";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(3, 22);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 18);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(45, 19);
             this.metroLabel3.TabIndex = 2;
@@ -169,7 +138,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(3, 50);
+            this.metroLabel4.Location = new System.Drawing.Point(3, 46);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(36, 19);
             this.metroLabel4.TabIndex = 4;
@@ -178,7 +147,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(3, 89);
+            this.metroLabel5.Location = new System.Drawing.Point(3, 77);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(101, 19);
             this.metroLabel5.TabIndex = 6;
@@ -193,9 +162,9 @@
             "public",
             "private",
             "protected"});
-            this.variableAccessModifier.Location = new System.Drawing.Point(168, 92);
+            this.variableAccessModifier.Location = new System.Drawing.Point(155, 80);
             this.variableAccessModifier.Name = "variableAccessModifier";
-            this.variableAccessModifier.Size = new System.Drawing.Size(344, 29);
+            this.variableAccessModifier.Size = new System.Drawing.Size(317, 29);
             this.variableAccessModifier.TabIndex = 7;
             this.variableAccessModifier.UseSelectable = true;
             // 
@@ -204,9 +173,9 @@
             this.isArrayCheck.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.isArrayCheck, 2);
             this.isArrayCheck.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.isArrayCheck.Location = new System.Drawing.Point(3, 166);
+            this.isArrayCheck.Location = new System.Drawing.Point(3, 138);
             this.isArrayCheck.Name = "isArrayCheck";
-            this.isArrayCheck.Size = new System.Drawing.Size(509, 28);
+            this.isArrayCheck.Size = new System.Drawing.Size(469, 20);
             this.isArrayCheck.TabIndex = 11;
             this.isArrayCheck.Text = "isArray";
             this.isArrayCheck.UseSelectable = true;
@@ -215,7 +184,7 @@
             // arrytypelable
             // 
             this.arrytypelable.AutoSize = true;
-            this.arrytypelable.Location = new System.Drawing.Point(3, 197);
+            this.arrytypelable.Location = new System.Drawing.Point(3, 161);
             this.arrytypelable.Name = "arrytypelable";
             this.arrytypelable.Size = new System.Drawing.Size(68, 19);
             this.arrytypelable.TabIndex = 12;
@@ -230,9 +199,9 @@
             this.ArrayType.Items.AddRange(new object[] {
             "1D",
             "2D"});
-            this.ArrayType.Location = new System.Drawing.Point(168, 200);
+            this.ArrayType.Location = new System.Drawing.Point(155, 164);
             this.ArrayType.Name = "ArrayType";
-            this.ArrayType.Size = new System.Drawing.Size(344, 29);
+            this.ArrayType.Size = new System.Drawing.Size(317, 29);
             this.ArrayType.TabIndex = 13;
             this.ArrayType.UseSelectable = true;
             this.ArrayType.Visible = false;
@@ -241,7 +210,7 @@
             // rowsLable
             // 
             this.rowsLable.AutoSize = true;
-            this.rowsLable.Location = new System.Drawing.Point(3, 233);
+            this.rowsLable.Location = new System.Drawing.Point(3, 196);
             this.rowsLable.Name = "rowsLable";
             this.rowsLable.Size = new System.Drawing.Size(39, 19);
             this.rowsLable.TabIndex = 14;
@@ -251,9 +220,9 @@
             // numericUpDownColumn
             // 
             this.numericUpDownColumn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownColumn.Location = new System.Drawing.Point(168, 260);
+            this.numericUpDownColumn.Location = new System.Drawing.Point(155, 223);
             this.numericUpDownColumn.Name = "numericUpDownColumn";
-            this.numericUpDownColumn.Size = new System.Drawing.Size(344, 20);
+            this.numericUpDownColumn.Size = new System.Drawing.Size(317, 20);
             this.numericUpDownColumn.TabIndex = 17;
             this.numericUpDownColumn.Value = new decimal(new int[] {
             1,
@@ -278,30 +247,30 @@
             this.tableLayoutPanel1.Controls.Add(this.metroLabel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.variableName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.variableType, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.staticCheck, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.columnlable, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDownRow, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.metroPanel1, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.ValueBox, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.variableNameTextBox, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 60);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.899285F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.132775F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.532557F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.7992F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.471257F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.471257F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.910743F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.273829F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.372543F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.13655F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.407407F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.201058F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.730159F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.613757F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.878307F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.259259F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.349206F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.613757F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.18518F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(515, 506);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(475, 426);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // metroPanel1
@@ -313,9 +282,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(3, 460);
+            this.metroPanel1.Location = new System.Drawing.Point(3, 381);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(509, 43);
+            this.metroPanel1.Size = new System.Drawing.Size(469, 42);
             this.metroPanel1.TabIndex = 19;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -323,7 +292,7 @@
             // 
             // CancleButton
             // 
-            this.CancleButton.Location = new System.Drawing.Point(340, 11);
+            this.CancleButton.Location = new System.Drawing.Point(297, 11);
             this.CancleButton.Name = "CancleButton";
             this.CancleButton.Size = new System.Drawing.Size(160, 23);
             this.CancleButton.TabIndex = 3;
@@ -333,7 +302,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(174, 11);
+            this.SaveButton.Location = new System.Drawing.Point(131, 11);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(160, 23);
             this.SaveButton.TabIndex = 2;
@@ -345,11 +314,42 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.ValueBox, 2);
             this.ValueBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ValueBox.Location = new System.Drawing.Point(3, 289);
+            this.ValueBox.Location = new System.Drawing.Point(3, 248);
             this.ValueBox.Multiline = true;
             this.ValueBox.Name = "ValueBox";
-            this.ValueBox.Size = new System.Drawing.Size(509, 165);
+            this.ValueBox.Size = new System.Drawing.Size(469, 127);
             this.ValueBox.TabIndex = 20;
+            // 
+            // variableNameTextBox
+            // 
+            // 
+            // 
+            // 
+            this.variableNameTextBox.CustomButton.Image = null;
+            this.variableNameTextBox.CustomButton.Location = new System.Drawing.Point(297, 2);
+            this.variableNameTextBox.CustomButton.Name = "";
+            this.variableNameTextBox.CustomButton.Size = new System.Drawing.Size(17, 17);
+            this.variableNameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.variableNameTextBox.CustomButton.TabIndex = 1;
+            this.variableNameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.variableNameTextBox.CustomButton.UseSelectable = true;
+            this.variableNameTextBox.CustomButton.Visible = false;
+            this.variableNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.variableNameTextBox.Lines = new string[0];
+            this.variableNameTextBox.Location = new System.Drawing.Point(155, 21);
+            this.variableNameTextBox.MaxLength = 32767;
+            this.variableNameTextBox.Name = "variableNameTextBox";
+            this.variableNameTextBox.PasswordChar = '\0';
+            this.variableNameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.variableNameTextBox.SelectedText = "";
+            this.variableNameTextBox.SelectionLength = 0;
+            this.variableNameTextBox.SelectionStart = 0;
+            this.variableNameTextBox.ShortcutsEnabled = true;
+            this.variableNameTextBox.Size = new System.Drawing.Size(317, 22);
+            this.variableNameTextBox.TabIndex = 21;
+            this.variableNameTextBox.UseSelectable = true;
+            this.variableNameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.variableNameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // VariableProperties
             // 
@@ -358,7 +358,7 @@
             this.ClientSize = new System.Drawing.Size(515, 506);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "VariableProperties";
-            this.Text = "VariableProperties";
+            this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumn)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -385,11 +385,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox variableName;
         private MetroFramework.Controls.MetroComboBox variableType;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton CancleButton;
         private MetroFramework.Controls.MetroButton SaveButton;
         private System.Windows.Forms.TextBox ValueBox;
+        private MetroFramework.Controls.MetroTextBox variableNameTextBox;
     }
 }

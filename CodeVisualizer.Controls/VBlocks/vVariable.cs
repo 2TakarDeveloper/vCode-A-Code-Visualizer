@@ -16,11 +16,13 @@ namespace CodeVisualizer.Controls.VBlocks
 {
     public partial class Vvariable: VBlock
     {
-   
-        public Vvariable(VCode vCode)
+        private Variable Variable { get; set; }
+        public Vvariable(VCode variable)
         {
             InitializeComponent();
-            VCode = vCode;
+            VCode = variable;        
+            Variable = (Variable)variable;
+            PopulateProperties();
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -28,8 +30,18 @@ namespace CodeVisualizer.Controls.VBlocks
             VariableProperties variableProperties= new VariableProperties(VCode);
             if (variableProperties.ShowDialog() == DialogResult.OK)
             {
-                
+                Variable = variableProperties.Variable;
+                VCode = Variable;
+                PopulateProperties();
+
             }
         }
+
+
+        private void PopulateProperties()
+        {
+            NameLable.Text = Variable.Name;
+        }
+
     }
 }

@@ -7,10 +7,10 @@ using MetroFramework;
 
 namespace CodeVisualizer.Controls.PropertiesForm
 {
-    public partial class VariableProperties : Form
+    public partial class VariableProperties : MetroFramework.Forms.MetroForm
     {
         public Variable Variable { get; set; }
-        public VCode VCode { get; set; }
+     
 
     public VariableProperties()
         {
@@ -28,7 +28,16 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private void PopulateProperties(Variable variable)
         {
-            
+            Variable = variable;
+            variableNameTextBox.Text = Variable.Name;
+            variableType.Text = Variable.Type.ToString().ToLower();
+            variableAccessModifier.Text = Variable.AccessModifier.ToString().ToLower();
+            staticCheck.CheckState = Variable.IsStatic ? CheckState.Checked : CheckState.Unchecked;
+            isArrayCheck.CheckState = Variable.IsArray ? CheckState.Checked : CheckState.Unchecked;
+            numericUpDownRow.Value = Variable.Row;
+            numericUpDownColumn.Value = Variable.Column;
+            ArrayType.Text = Variable.ArrayType;
+            ValueBox.Text = Variable.Value[0,0].ToString();
         }
 
 
@@ -75,8 +84,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 switch (variableType.Text)
                 {
                     case "int":
@@ -98,8 +106,8 @@ namespace CodeVisualizer.Controls.PropertiesForm
                         MetroMessageBox.Show(this,"Type Can't be Empty");
                         break;
                 }
-                Variable.Name = variableName.Text;
-
+                Variable.Name = variableNameTextBox.Text;
+                    
                 switch (variableAccessModifier.Text)
                 {
                     case "public":
@@ -124,10 +132,12 @@ namespace CodeVisualizer.Controls.PropertiesForm
                     {
                         case "1D":
                             Variable.Row = numericUpDownRow.DecimalPlaces;
+                            Variable.ArrayType = "1D";
                             break;
                         case "2D":
                             Variable.Row = numericUpDownRow.DecimalPlaces;
                             Variable.Column = numericUpDownColumn.DecimalPlaces;
+                            Variable.ArrayType = "2D";
                             break;
                         default:
                             MetroMessageBox.Show(this, "Array Type Can't be Empty");
@@ -140,38 +150,37 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 switch (Variable.Type)
                 {
                     case Enums.Type.Int:
-                        Variable.Value = new int[Variable.Row,Variable.Column];
-                        Variable.Value[0][0] = Convert.ToInt32(ValueBox.Text);
+                        Variable.Value = new int[Variable.Row+1,Variable.Column+1];
+                        Variable.Value[0,0] = Convert.ToInt32(ValueBox.Text);
                         break;
                     case Enums.Type.Float:
-                        Variable.Value = new float[Variable.Row, Variable.Column];
+                        Variable.Value = new float[Variable.Row + 1, Variable.Column + 1];
+                        Variable.Value[0, 0] = Convert.ToDouble(ValueBox.Text);
                         break;
                     case Enums.Type.Double:
-                        Variable.Value = new double[Variable.Row, Variable.Column];
+                        Variable.Value = new double[Variable.Row + 1, Variable.Column + 1];
+                        Variable.Value[0, 0] = Convert.ToDouble(ValueBox.Text);
                         break;
                     case Enums.Type.String:
-                        Variable.Value = new string[Variable.Row, Variable.Column];
+                        Variable.Value = new string[Variable.Row + 1, Variable.Column + 1];
+                        Variable.Value[0, 0] = ValueBox.Text;
                         break;
                     case Enums.Type.Bool:
-                        Variable.Value = new bool[Variable.Row, Variable.Column];
+                        Variable.Value = new bool[Variable.Row + 1, Variable.Column + 1];
+                      
                         break;
                       
                 }
                 
 
                 DialogResult = DialogResult.OK;
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-                
-            }
+            
+           
 
             
         }
-        
+
 
         #endregion
-
     }
 }

@@ -15,9 +15,9 @@ namespace CodeVisualizer.Controls.Helpers
     public partial class ScopeControl : UserControl
     {
         public Scope Scope { get; set; }
-        public GlobalScope GlobalScope { get; set; }//This is Required for The global scope//
-      
-      
+       
+
+
         public ScopeControl()
         {
             InitializeComponent();
@@ -65,12 +65,7 @@ namespace CodeVisualizer.Controls.Helpers
             
         }
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var vFunc = new Vfunction();
-            ScopePanel.Controls.Add(vFunc);
-            
-        }
+
 
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -88,9 +83,9 @@ namespace CodeVisualizer.Controls.Helpers
         #region vCodeConverter
         //Pass the the items of a scope and it will generate necessary controls
 
-        public void VcodeToVblock(Queue<VCode>  items)
+        public void VcodeToVblock(Scope scope)
         {
-            foreach (var item in items)
+            foreach (VCode item in scope.Items)
             {
                 switch (item.VType)
                 {
@@ -101,19 +96,19 @@ namespace CodeVisualizer.Controls.Helpers
                     case Enums.VType.Function:
                         Function function = (Function)item;
                         Vfunction vfunction = new Vfunction {VCode = function};
-                        vfunction.ScopeControl.VcodeToVblock(function.Scope.Items);
+                        vfunction.ScopeControl.VcodeToVblock(function.Scope);
                         ScopePanel.Controls.Add(vfunction);
                         break;
                     case Enums.VType.If:
                         If iif = (If)item;
                         Vif vif = new Vif() { VCode = iif };
-                        vif.ScopeControl.VcodeToVblock(iif.Scope.Items);
+                        vif.ScopeControl.VcodeToVblock(iif.Scope);
                         ScopePanel.Controls.Add(vif);
                         break;
                     case Enums.VType.While:
                         While wWhile = (While) item;
                         Vwhile vwhile=new Vwhile() {VCode=wWhile};
-                        vwhile.ScopeControl.VcodeToVblock(wWhile.Scope.Items);
+                        vwhile.ScopeControl.VcodeToVblock(wWhile.Scope);
                         ScopePanel.Controls.Add(vwhile);
                         break;
                     

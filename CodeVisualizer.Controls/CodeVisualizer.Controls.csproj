@@ -60,6 +60,12 @@
     <Compile Include="Helpers\ConditionControl.Designer.cs">
       <DependentUpon>ConditionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GlobalScopeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Helpers\GlobalScopeControl.Designer.cs">
+      <DependentUpon>GlobalScopeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PropertiesForm\VariableProperties.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Helpers\ConditionControl.resx">
       <DependentUpon>ConditionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\GlobalScopeControl.resx">
+      <DependentUpon>GlobalScopeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PropertiesForm\VariableProperties.resx">
       <DependentUpon>VariableProperties.cs</DependentUpon>
