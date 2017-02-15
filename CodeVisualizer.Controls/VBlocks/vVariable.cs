@@ -28,13 +28,10 @@ namespace CodeVisualizer.Controls.VBlocks
         private void settingsButton_Click(object sender, EventArgs e)
         {
             VariableProperties variableProperties= new VariableProperties(VCode);
-            if (variableProperties.ShowDialog() == DialogResult.OK)
-            {
-                Variable = variableProperties.Variable;
-                VCode = Variable;
-                PopulateProperties();
-
-            }
+            if (variableProperties.ShowDialog() != DialogResult.OK) return;
+            Variable = variableProperties.Variable;
+            VCode = Variable;
+            PopulateProperties();
         }
 
 

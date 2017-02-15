@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.variableAccessModifier = new MetroFramework.Controls.MetroComboBox();
+            this.FunctionAccessModifier = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.variableType = new MetroFramework.Controls.MetroComboBox();
+            this.ReturnType = new MetroFramework.Controls.MetroComboBox();
             this.staticCheck = new MetroFramework.Controls.MetroCheckBox();
-            this.variableNameTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.FunctionNameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.HasParameter = new MetroFramework.Controls.MetroCheckBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.ParameterFlow = new System.Windows.Forms.FlowLayoutPanel();
             this.AddNewParameter = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.CancleButton = new MetroFramework.Controls.MetroButton();
@@ -53,17 +53,17 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.variableAccessModifier, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.FunctionAccessModifier, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel5, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.variableType, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ReturnType, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.staticCheck, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.variableNameTextBox, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.FunctionNameTextBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.HasParameter, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.ParameterFlow, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.AddNewParameter, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.metroPanel1, 1, 9);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -82,22 +82,21 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(476, 351);
             this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // variableAccessModifier
+            // FunctionAccessModifier
             // 
-            this.variableAccessModifier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.variableAccessModifier.FormattingEnabled = true;
-            this.variableAccessModifier.ItemHeight = 23;
-            this.variableAccessModifier.Items.AddRange(new object[] {
+            this.FunctionAccessModifier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FunctionAccessModifier.FormattingEnabled = true;
+            this.FunctionAccessModifier.ItemHeight = 23;
+            this.FunctionAccessModifier.Items.AddRange(new object[] {
             "public",
             "private",
             "protected"});
-            this.variableAccessModifier.Location = new System.Drawing.Point(161, 89);
-            this.variableAccessModifier.Name = "variableAccessModifier";
-            this.variableAccessModifier.Size = new System.Drawing.Size(312, 29);
-            this.variableAccessModifier.TabIndex = 7;
-            this.variableAccessModifier.UseSelectable = true;
+            this.FunctionAccessModifier.Location = new System.Drawing.Point(161, 89);
+            this.FunctionAccessModifier.Name = "FunctionAccessModifier";
+            this.FunctionAccessModifier.Size = new System.Drawing.Size(312, 29);
+            this.FunctionAccessModifier.TabIndex = 7;
+            this.FunctionAccessModifier.UseSelectable = true;
             // 
             // metroLabel5
             // 
@@ -144,22 +143,22 @@
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "VType";
             // 
-            // variableType
+            // ReturnType
             // 
-            this.variableType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.variableType.FormattingEnabled = true;
-            this.variableType.ItemHeight = 23;
-            this.variableType.Items.AddRange(new object[] {
+            this.ReturnType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReturnType.FormattingEnabled = true;
+            this.ReturnType.ItemHeight = 23;
+            this.ReturnType.Items.AddRange(new object[] {
             "int",
             "float",
             "double",
             "string",
             "bool"});
-            this.variableType.Location = new System.Drawing.Point(161, 54);
-            this.variableType.Name = "variableType";
-            this.variableType.Size = new System.Drawing.Size(312, 29);
-            this.variableType.TabIndex = 5;
-            this.variableType.UseSelectable = true;
+            this.ReturnType.Location = new System.Drawing.Point(161, 54);
+            this.ReturnType.Name = "ReturnType";
+            this.ReturnType.Size = new System.Drawing.Size(312, 29);
+            this.ReturnType.TabIndex = 5;
+            this.ReturnType.UseSelectable = true;
             // 
             // staticCheck
             // 
@@ -173,36 +172,36 @@
             this.staticCheck.Text = "isStatic";
             this.staticCheck.UseSelectable = true;
             // 
-            // variableNameTextBox
+            // FunctionNameTextBox
             // 
             // 
             // 
             // 
-            this.variableNameTextBox.CustomButton.Image = null;
-            this.variableNameTextBox.CustomButton.Location = new System.Drawing.Point(288, 2);
-            this.variableNameTextBox.CustomButton.Name = "";
-            this.variableNameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.variableNameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.variableNameTextBox.CustomButton.TabIndex = 1;
-            this.variableNameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.variableNameTextBox.CustomButton.UseSelectable = true;
-            this.variableNameTextBox.CustomButton.Visible = false;
-            this.variableNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.variableNameTextBox.Lines = new string[0];
-            this.variableNameTextBox.Location = new System.Drawing.Point(161, 22);
-            this.variableNameTextBox.MaxLength = 32767;
-            this.variableNameTextBox.Name = "variableNameTextBox";
-            this.variableNameTextBox.PasswordChar = '\0';
-            this.variableNameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.variableNameTextBox.SelectedText = "";
-            this.variableNameTextBox.SelectionLength = 0;
-            this.variableNameTextBox.SelectionStart = 0;
-            this.variableNameTextBox.ShortcutsEnabled = true;
-            this.variableNameTextBox.Size = new System.Drawing.Size(312, 26);
-            this.variableNameTextBox.TabIndex = 21;
-            this.variableNameTextBox.UseSelectable = true;
-            this.variableNameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.variableNameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.FunctionNameTextBox.CustomButton.Image = null;
+            this.FunctionNameTextBox.CustomButton.Location = new System.Drawing.Point(288, 2);
+            this.FunctionNameTextBox.CustomButton.Name = "";
+            this.FunctionNameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.FunctionNameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.FunctionNameTextBox.CustomButton.TabIndex = 1;
+            this.FunctionNameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.FunctionNameTextBox.CustomButton.UseSelectable = true;
+            this.FunctionNameTextBox.CustomButton.Visible = false;
+            this.FunctionNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FunctionNameTextBox.Lines = new string[0];
+            this.FunctionNameTextBox.Location = new System.Drawing.Point(161, 22);
+            this.FunctionNameTextBox.MaxLength = 32767;
+            this.FunctionNameTextBox.Name = "FunctionNameTextBox";
+            this.FunctionNameTextBox.PasswordChar = '\0';
+            this.FunctionNameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.FunctionNameTextBox.SelectedText = "";
+            this.FunctionNameTextBox.SelectionLength = 0;
+            this.FunctionNameTextBox.SelectionStart = 0;
+            this.FunctionNameTextBox.ShortcutsEnabled = true;
+            this.FunctionNameTextBox.Size = new System.Drawing.Size(312, 26);
+            this.FunctionNameTextBox.TabIndex = 21;
+            this.FunctionNameTextBox.UseSelectable = true;
+            this.FunctionNameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.FunctionNameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // HasParameter
             // 
@@ -214,27 +213,27 @@
             this.HasParameter.TabIndex = 22;
             this.HasParameter.Text = "HasParameter";
             this.HasParameter.UseSelectable = true;
+            this.HasParameter.CheckedChanged += new System.EventHandler(this.HasParameter_CheckedChanged);
             // 
-            // flowLayoutPanel1
+            // ParameterFlow
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Enabled = false;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(161, 166);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(312, 125);
-            this.flowLayoutPanel1.TabIndex = 24;
+            this.ParameterFlow.AutoScroll = true;
+            this.ParameterFlow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ParameterFlow.Location = new System.Drawing.Point(161, 166);
+            this.ParameterFlow.Name = "ParameterFlow";
+            this.ParameterFlow.Size = new System.Drawing.Size(312, 125);
+            this.ParameterFlow.TabIndex = 24;
             // 
             // AddNewParameter
             // 
-            this.AddNewParameter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddNewParameter.Enabled = false;
             this.AddNewParameter.Location = new System.Drawing.Point(3, 166);
             this.AddNewParameter.Name = "AddNewParameter";
-            this.AddNewParameter.Size = new System.Drawing.Size(152, 125);
+            this.AddNewParameter.Size = new System.Drawing.Size(152, 30);
             this.AddNewParameter.TabIndex = 25;
             this.AddNewParameter.Text = "AddNewParameter";
             this.AddNewParameter.UseSelectable = true;
+            this.AddNewParameter.Visible = false;
+            this.AddNewParameter.Click += new System.EventHandler(this.AddNewParameter_Click);
             // 
             // metroPanel1
             // 
@@ -254,12 +253,13 @@
             // 
             // CancleButton
             // 
-            this.CancleButton.Location = new System.Drawing.Point(184, 3);
+            this.CancleButton.Location = new System.Drawing.Point(184, 5);
             this.CancleButton.Name = "CancleButton";
             this.CancleButton.Size = new System.Drawing.Size(125, 43);
             this.CancleButton.TabIndex = 3;
             this.CancleButton.Text = "Cancle";
             this.CancleButton.UseSelectable = true;
+            this.CancleButton.Click += new System.EventHandler(this.CancleButton_Click);
             // 
             // SubmitButton
             // 
@@ -288,17 +288,17 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private MetroFramework.Controls.MetroComboBox variableAccessModifier;
+        private MetroFramework.Controls.MetroComboBox FunctionAccessModifier;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroComboBox variableType;
+        private MetroFramework.Controls.MetroComboBox ReturnType;
         private MetroFramework.Controls.MetroCheckBox staticCheck;
-        private MetroFramework.Controls.MetroTextBox variableNameTextBox;
+        private MetroFramework.Controls.MetroTextBox FunctionNameTextBox;
         private MetroFramework.Controls.MetroCheckBox HasParameter;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel ParameterFlow;
         private MetroFramework.Controls.MetroButton AddNewParameter;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton CancleButton;

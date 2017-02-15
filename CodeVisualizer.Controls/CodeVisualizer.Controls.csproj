@@ -66,6 +66,12 @@
     <Compile Include="Helpers\GlobalScopeControl.Designer.cs">
       <DependentUpon>GlobalScopeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="PropertiesForm\FormControls\ParameterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertiesForm\FormControls\ParameterControl.Designer.cs">
+      <DependentUpon>ParameterControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="PropertiesForm\FunctionProperties.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Helpers\GlobalScopeControl.resx">
       <DependentUpon>GlobalScopeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesForm\FormControls\ParameterControl.resx">
+      <DependentUpon>ParameterControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PropertiesForm\FunctionProperties.resx">
       <DependentUpon>FunctionProperties.cs</DependentUpon>

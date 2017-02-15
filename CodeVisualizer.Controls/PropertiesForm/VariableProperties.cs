@@ -84,7 +84,9 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            
+
+            try
+            {
                 switch (variableType.Text)
                 {
                     case "int":
@@ -103,8 +105,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                         Variable.Type = Enums.Type.Bool;
                         break;
                     default:
-                        MetroMessageBox.Show(this,"Type Can't be Empty");
-                        break;
+                        throw new Exception("Type  can't be empty");
                 }
                 Variable.Name = variableNameTextBox.Text;
                     
@@ -121,8 +122,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                         break;
                   
                     default:
-                        MetroMessageBox.Show(this, "Access Modifier Can't be Empty");
-                        break;
+                        throw new Exception("AccessModifier  can't be empty");
                 }
                 Variable.IsStatic = staticCheck.Checked;
                 Variable.IsArray = isArrayCheck.Checked;
@@ -174,6 +174,11 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 
 
                 DialogResult = DialogResult.OK;
+            }
+            catch (Exception exception)
+            {
+                MetroMessageBox.Show(this, exception.Message);
+            }
             
            
 

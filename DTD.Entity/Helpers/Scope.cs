@@ -11,15 +11,15 @@ namespace DTD.Entity.Helpers
     public class Scope
     {
         public Queue<VCode> Items { get; set; }
-        public List<string> LocalVariables { get; set; }
-        public List<string> ScopeVariables { get; set; }
+        public List<Variable> LocalVariables { get; set; }
+        public List<Variable> ScopeVariables { get; set; }
 
 
         public Scope()
         {
             Items=new Queue<VCode>();
-            LocalVariables=new List<string>();
-            ScopeVariables=new List<string>();
+            LocalVariables=new List<Variable>();
+            ScopeVariables=new List<Variable>();
        
         }
 
@@ -32,7 +32,7 @@ namespace DTD.Entity.Helpers
                 if (item.VType == Enums.VType.Variable)
                 {
                     Variable v = (Variable) item;
-                    LocalVariables.Add(v.Name);
+                    LocalVariables.Add(v);
                 }
                
             }

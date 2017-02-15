@@ -32,10 +32,16 @@ namespace CodeVisualizer.Controls.VBlocks
             VCode = iIf;
         }
 
-        public void PopulateScopeVariables(List<string> varList )
+        public void PopulateScopeVariables(List<Variable> varList )
         {
-             List<string> leftParameters= new List<string>(varList);
-            List<string> rightParameters = new List<string>(varList);
+            List<string> leftParameters=new List<string>();
+            
+            foreach (var variable in varList)
+            {
+                leftParameters.Add(variable.Name);
+            }
+            List<string> rightParameters=new List<string>(leftParameters);
+
             conditionControl1.LeftBox.DataSource = leftParameters;
             conditionControl1.RightBox.DataSource = rightParameters;
             //Reason for 2 list is that both combobox switch when another is changed.

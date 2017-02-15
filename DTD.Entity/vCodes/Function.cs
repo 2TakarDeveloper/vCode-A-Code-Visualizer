@@ -12,13 +12,14 @@ namespace DTD.Entity.vCodes
     public class Function:FuncAndVar
     {
         public Scope Scope { get; set; }
-
+        public List<Parameter> Parameters { get; set; }
         public Function()
         {
             Name = "NewFunction";
             Type=Enums.Type.Int;
             AccessModifier=Enums.AccessModifier.Public;
             Scope=new Scope();
+            Parameters= new List<Parameter>();
             VType=Enums.VType.Function;
         }
         

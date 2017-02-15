@@ -101,7 +101,7 @@ namespace CodeVisualizer.Controls.Helpers
                         break;
                     case Enums.VType.Function:
                         Function function = (Function)item;
-                        Vfunction vfunction = new Vfunction {VCode = function};
+                        Vfunction vfunction = new Vfunction(function);
                         vfunction.ScopeControl.VcodeToVblock(function.Scope);
                         ScopePanel.Controls.Add(vfunction);
                         break;

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalLibrary", "GlobalLibrary\GlobalLibrary.csproj", "{472F2B06-B4A9-4A47-A7D5-FA96440E898D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{D8F84411-FC24-4890-879F-DA1AFEB8F945}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEAAC82C-CBA7-49D3-986D-45A8003D4C11} = {D8F84411-FC24-4890-879F-DA1AFEB8F945}
+		{E174F5F6-348F-490C-B901-361482CC2280} = {D8F84411-FC24-4890-879F-DA1AFEB8F945}
 	EndGlobalSection
 EndGlobal
