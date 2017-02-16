@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using CodeVisualizer.Controls.VBlocks;
+using CodeVisualizer.Controls.VBlocks.Function;
+using CodeVisualizer.Controls.VBlocks.Variable;
 using DTD.Entity;
 using DTD.Entity.Enum;
 using DTD.Entity.Helpers;

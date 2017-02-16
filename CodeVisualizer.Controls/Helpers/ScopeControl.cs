@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using CodeVisualizer.Controls.VBlocks;
+using CodeVisualizer.Controls.VBlocks.Conditionals;
+using CodeVisualizer.Controls.VBlocks.Function;
+using CodeVisualizer.Controls.VBlocks.Variable;
 using DTD.Entity;
 using DTD.Entity.Enum;
 using DTD.Entity.vCodes;
@@ -128,8 +131,18 @@ namespace CodeVisualizer.Controls.Helpers
 
 
 
+
         #endregion
 
       
+
+        private void printToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Function PrintFunction = new Function();
+            PrintFunction.Name = "printf";
+            PrintFunction.Parameters.Add(new Parameter() { Name = "", Type = "string" });
+            FunctionCall functionCall = new FunctionCall(PrintFunction, Scope.ScopeVariables);
+            ScopePanel.Controls.Add(functionCall);
+        }
     }
 }

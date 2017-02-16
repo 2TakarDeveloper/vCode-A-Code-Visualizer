@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.VBlockMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.variableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.GlobalScopePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.VBlockMenu.SuspendLayout();
@@ -54,6 +54,13 @@
             this.variableToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.variableToolStripMenuItem.Text = "Variable";
             // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
             // functionToolStripMenuItem
             // 
             this.functionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -62,22 +69,16 @@
             this.functionToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.functionToolStripMenuItem.Text = "Function";
             // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newToolStripMenuItem.Text = "New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-            // 
             // newToolStripMenuItem1
             // 
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
             this.newToolStripMenuItem1.Text = "New";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
             // 
             // GlobalScopePanel
             // 
+            this.GlobalScopePanel.AutoScroll = true;
             this.GlobalScopePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.GlobalScopePanel.ContextMenuStrip = this.VBlockMenu;
             this.GlobalScopePanel.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -11,7 +11,7 @@ namespace DTD.Entity.vCodes
     public class GlobalScope:VCode
     {
         public Scope Scope { get; set; }
-        public List<Function> FunctionList { get; set; }
+        public static List<Function> FunctionList { get; set; }
 
 
         public GlobalScope()

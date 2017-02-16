@@ -1,27 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using DTD.Entity;
-using DTD.Entity.vCodes;
-using MetroFramework.Controls;
 
-namespace CodeVisualizer.Controls.VBlocks
+namespace CodeVisualizer.Controls.VBlocks.Variable
 {
     public partial class Vvariable: VBlock
     {
-        private Variable Variable { get; set; }
+        private DTD.Entity.vCodes.Variable Variable { get; set; }
         public Vvariable(VCode variable)
         {
             InitializeComponent();
             VCode = variable;        
-            Variable = (Variable)variable;
+            Variable = (DTD.Entity.vCodes.Variable)variable;
             PopulateProperties();
         }
 

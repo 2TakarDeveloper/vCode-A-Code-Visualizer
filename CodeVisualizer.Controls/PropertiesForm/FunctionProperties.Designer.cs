@@ -153,7 +153,8 @@
             "float",
             "double",
             "string",
-            "bool"});
+            "bool",
+            "void"});
             this.ReturnType.Location = new System.Drawing.Point(161, 54);
             this.ReturnType.Name = "ReturnType";
             this.ReturnType.Size = new System.Drawing.Size(312, 29);

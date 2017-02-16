@@ -1,4 +1,4 @@
-﻿namespace CodeVisualizer.Controls.PropertiesForm.FormControls
+﻿namespace CodeVisualizer.Controls.Helpers
 {
     partial class ParameterControl
     {
@@ -35,6 +35,7 @@
             // 
             // TypePicker
             // 
+            this.TypePicker.Dock = System.Windows.Forms.DockStyle.Left;
             this.TypePicker.FormattingEnabled = true;
             this.TypePicker.Items.AddRange(new object[] {
             "int",
@@ -42,7 +43,7 @@
             "double",
             "string",
             "bool"});
-            this.TypePicker.Location = new System.Drawing.Point(3, 3);
+            this.TypePicker.Location = new System.Drawing.Point(0, 0);
             this.TypePicker.Name = "TypePicker";
             this.TypePicker.Size = new System.Drawing.Size(121, 21);
             this.TypePicker.TabIndex = 0;
@@ -62,8 +63,9 @@
             this.NameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.NameTextBox.CustomButton.UseSelectable = true;
             this.NameTextBox.CustomButton.Visible = false;
+            this.NameTextBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.NameTextBox.Lines = new string[0];
-            this.NameTextBox.Location = new System.Drawing.Point(140, 3);
+            this.NameTextBox.Location = new System.Drawing.Point(121, 0);
             this.NameTextBox.MaxLength = 32767;
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.PasswordChar = '\0';
@@ -72,7 +74,7 @@
             this.NameTextBox.SelectionLength = 0;
             this.NameTextBox.SelectionStart = 0;
             this.NameTextBox.ShortcutsEnabled = true;
-            this.NameTextBox.Size = new System.Drawing.Size(115, 23);
+            this.NameTextBox.Size = new System.Drawing.Size(115, 22);
             this.NameTextBox.TabIndex = 1;
             this.NameTextBox.UseSelectable = true;
             this.NameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -82,7 +84,7 @@
             // CloseButton
             // 
             this.CloseButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
-            this.CloseButton.Location = new System.Drawing.Point(261, 3);
+            this.CloseButton.Location = new System.Drawing.Point(260, -1);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(23, 23);
             this.CloseButton.TabIndex = 2;
@@ -97,7 +99,7 @@
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.TypePicker);
             this.Name = "ParameterControl";
-            this.Size = new System.Drawing.Size(286, 27);
+            this.Size = new System.Drawing.Size(286, 22);
             this.ResumeLayout(false);
 
         }
@@ -106,6 +108,6 @@
 
         private System.Windows.Forms.ComboBox TypePicker;
         private MetroFramework.Controls.MetroTextBox NameTextBox;
-        private MetroFramework.Controls.MetroLink CloseButton;
+        public MetroFramework.Controls.MetroLink CloseButton;
     }
 }

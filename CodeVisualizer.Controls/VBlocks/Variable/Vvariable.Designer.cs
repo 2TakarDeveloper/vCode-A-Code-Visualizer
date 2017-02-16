@@ -1,4 +1,4 @@
-﻿namespace CodeVisualizer.Controls.VBlocks
+﻿namespace CodeVisualizer.Controls.VBlocks.Variable
 {
     partial class Vvariable
     {

@@ -66,10 +66,10 @@
     <Compile Include="Helpers\GlobalScopeControl.Designer.cs">
       <DependentUpon>GlobalScopeControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="PropertiesForm\FormControls\ParameterControl.cs">
+    <Compile Include="Helpers\ParameterControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PropertiesForm\FormControls\ParameterControl.Designer.cs">
+    <Compile Include="Helpers\ParameterControl.Designer.cs">
       <DependentUpon>ParameterControl.cs</DependentUpon>
     </Compile>
     <Compile Include="PropertiesForm\FunctionProperties.cs">
@@ -95,6 +95,12 @@
     <Compile Include="Helpers\ScopeControl.Designer.cs">
       <DependentUpon>ScopeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="VBlocks\Function\FunctionCall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VBlocks\Function\FunctionCall.Designer.cs">
+      <DependentUpon>FunctionCall.cs</DependentUpon>
+    </Compile>
     <Compile Include="VBlocks\VBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,28 +108,28 @@
       <DependentUpon>VBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VBlocks\Vfunction.cs">
+    <Compile Include="VBlocks\Function\Vfunction.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VBlocks\Vfunction.Designer.cs">
+    <Compile Include="VBlocks\Function\Vfunction.Designer.cs">
       <DependentUpon>Vfunction.cs</DependentUpon>
     </Compile>
-    <Compile Include="VBlocks\Vif.cs">
+    <Compile Include="VBlocks\Conditionals\Vif.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VBlocks\Vif.Designer.cs">
+    <Compile Include="VBlocks\Conditionals\Vif.Designer.cs">
       <DependentUpon>Vif.cs</DependentUpon>
     </Compile>
-    <Compile Include="VBlocks\Vvariable.cs">
+    <Compile Include="VBlocks\Variable\Vvariable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VBlocks\Vvariable.Designer.cs">
+    <Compile Include="VBlocks\Variable\Vvariable.Designer.cs">
       <DependentUpon>Vvariable.cs</DependentUpon>
     </Compile>
-    <Compile Include="VBlocks\Vwhile.cs">
+    <Compile Include="VBlocks\Loop\Vwhile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VBlocks\Vwhile.Designer.cs">
+    <Compile Include="VBlocks\Loop\Vwhile.Designer.cs">
       <DependentUpon>Vwhile.cs</DependentUpon>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
@@ -135,7 +141,7 @@
     <EmbeddedResource Include="Helpers\GlobalScopeControl.resx">
       <DependentUpon>GlobalScopeControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PropertiesForm\FormControls\ParameterControl.resx">
+    <EmbeddedResource Include="Helpers\ParameterControl.resx">
       <DependentUpon>ParameterControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PropertiesForm\FunctionProperties.resx">
@@ -152,19 +158,22 @@
     <EmbeddedResource Include="Helpers\ScopeControl.resx">
       <DependentUpon>ScopeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VBlocks\Function\FunctionCall.resx">
+      <DependentUpon>FunctionCall.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VBlocks\VBlock.resx">
       <DependentUpon>VBlock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VBlocks\Vfunction.resx">
+    <EmbeddedResource Include="VBlocks\Function\Vfunction.resx">
       <DependentUpon>Vfunction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VBlocks\Vif.resx">
+    <EmbeddedResource Include="VBlocks\Conditionals\Vif.resx">
       <DependentUpon>Vif.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VBlocks\Vvariable.resx">
+    <EmbeddedResource Include="VBlocks\Variable\Vvariable.resx">
       <DependentUpon>Vvariable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VBlocks\Vwhile.resx">
+    <EmbeddedResource Include="VBlocks\Loop\Vwhile.resx">
       <DependentUpon>Vwhile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

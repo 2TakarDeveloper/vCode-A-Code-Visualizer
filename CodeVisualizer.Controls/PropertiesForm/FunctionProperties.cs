@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CodeVisualizer.Controls.PropertiesForm.FormControls;
+using CodeVisualizer.Controls.Helpers;
 using DTD.Entity.Enum;
 using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
@@ -62,6 +62,9 @@ namespace CodeVisualizer.Controls.PropertiesForm
                         break;
                     case "bool":
                         Function.Type = Enums.Type.Bool;
+                        break;
+                    case "void":
+                        Function.Type = Enums.Type.Void;
                         break;
                     default:
                         throw new Exception("Return type can't be empty");

@@ -4,7 +4,7 @@
     {
         public enum Type
         {
-            Int,Float,Double,String,Bool
+            Int,Float,Double,String,Bool,Void
         }
 
         public enum AccessModifier
