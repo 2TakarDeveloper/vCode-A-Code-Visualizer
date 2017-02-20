@@ -65,15 +65,36 @@ namespace Core.Converter
 
             if (vcode.VType == Enums.VType.Function)
             {
-                var function=(Function)vcode;
-                Code += function.AccessModifier.ToString().ToLower()+" ";
-                Code += function.Type.ToString().ToLower()+" ";
+                var function = (Function) vcode;
+                Code += function.AccessModifier.ToString().ToLower() + " ";
+                Code += function.Type.ToString().ToLower() + " ";
                 Code += function.Name;
                 Code += "(";
-                //For each on parameters later
+                string parameter = "";
+
+                if (function.Parameters != null)
+                {
+                    foreach (Parameter p in function.Parameters)
+                    {
+                        parameter += p.Type + " " + p.Name + ",";
+                    }
+                    parameter =parameter.Remove(parameter.Length-1);
+                }
+
+
+                Code += parameter;
                 Code += ")";
-                ScopeToCode(function.Scope);
-            }
+
+
+                if (function.IsBody)
+                {
+                    ScopeToCode(function.Scope);
+                }
+                else
+                {
+                    Code +=";";
+                }
+        }
 
             
         }

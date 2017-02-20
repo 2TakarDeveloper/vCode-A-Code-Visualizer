@@ -24,6 +24,20 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             VCode = iIf;
         }
 
+
+        public Vif(If iif)
+        {
+            InitializeComponent();
+
+            NameLable.Text = @"If";
+            scopeControl.Scope = iif.Scope;
+            ScopeControl = scopeControl;
+            conditionControl1.Condition = iif.Condition;
+            VCode = iif;
+        }
+
+
+
         public void PopulateScopeVariables(List<DTD.Entity.vCodes.Variable> varList )
         {
            

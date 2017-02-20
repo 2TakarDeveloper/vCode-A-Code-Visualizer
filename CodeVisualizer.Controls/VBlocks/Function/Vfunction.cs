@@ -16,6 +16,7 @@ namespace CodeVisualizer.Controls.VBlocks.Function
 
 
             Function = (DTD.Entity.vCodes.Function)vCode;
+            Function.IsBody = true;
             VCode = Function;
             
             scopeControl.Scope=new Scope();

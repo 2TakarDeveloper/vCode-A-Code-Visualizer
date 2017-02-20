@@ -28,13 +28,10 @@ namespace DTD.Entity.Helpers
             LocalVariables.Clear();
             foreach (var item in Items)
             {
-
-                if (item.VType == Enums.VType.Variable)
-                {
-                    Variable v = (Variable) item;
-                    LocalVariables.Add(v);
-                }
-               
+                
+                if (item.VType != Enums.VType.Variable) continue;
+                Variable v = (Variable) item;
+                LocalVariables.Add(v);
             }
 
             foreach (var variable in ScopeVariables)

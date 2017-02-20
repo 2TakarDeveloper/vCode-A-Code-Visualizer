@@ -1,21 +1,28 @@
 ﻿
 using System.Collections.Generic;
+using DTD.Entity.Enum;
 using DTD.Entity.Helpers;
 using MetroFramework.Controls;
-using MetroFramework.Drawing;
 
 namespace CodeVisualizer.Controls.VBlocks.Function
 {
-    public partial class FunctionCall : MetroFramework.Controls.MetroUserControl
+    public partial class FunctionCall : VBlock
     {
         public  DTD.Entity.vCodes.Function Function { get; set; }
         private List<DTD.Entity.vCodes.Variable> ScopeVariables { get; set; }
         public FunctionCall(DTD.Entity.vCodes.Function function,List<DTD.Entity.vCodes.Variable> scopeVariables)
         {
+            
             InitializeComponent();
             Function = function;
+            Function.IsBody = false;
+            ScopeControl = null;
+            Function.VType=Enums.VType.Function;
+            
             ScopeVariables = scopeVariables;
+           
             PopulateProperties();
+            VCode = Function;
         }
 
         private void PopulateProperties()

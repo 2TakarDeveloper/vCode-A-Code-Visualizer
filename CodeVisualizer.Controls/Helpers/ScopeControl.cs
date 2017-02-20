@@ -43,6 +43,7 @@ namespace CodeVisualizer.Controls.Helpers
 
             foreach (VBlock vBlock in ScopePanel.Controls)
             {
+               
                 AddItemToScope(vBlock);
             }
 
@@ -104,13 +105,23 @@ namespace CodeVisualizer.Controls.Helpers
                         break;
                     case Enums.VType.Function:
                         Function function = (Function)item;
-                        Vfunction vfunction = new Vfunction(function);
-                        vfunction.ScopeControl.VcodeToVblock(function.Scope);
-                        ScopePanel.Controls.Add(vfunction);
+
+                        if (function.IsBody)
+                        {
+                            Vfunction vfunction = new Vfunction(function);
+                            vfunction.ScopeControl.VcodeToVblock(function.Scope);
+                            ScopePanel.Controls.Add(vfunction);
+                        }
+                        else
+                        {
+                            FunctionCall vFunctionCall=new FunctionCall(function,scope.ScopeVariables);
+                            ScopePanel.Controls.Add(vFunctionCall);
+                        }
+                        
                         break;
                     case Enums.VType.If:
                         If iif = (If)item;
-                        Vif vif = new Vif() { VCode = iif };
+                        Vif vif = new Vif(iif);
                         vif.ScopeControl.VcodeToVblock(iif.Scope);
                         ScopePanel.Controls.Add(vif);
                         break;
@@ -140,8 +151,12 @@ namespace CodeVisualizer.Controls.Helpers
         {
             Function PrintFunction = new Function();
             PrintFunction.Name = "printf";
+            PrintFunction.IsBody = false;
+            PrintFunction.VType=Enums.VType.Function;
+      
             PrintFunction.Parameters.Add(new Parameter() { Name = "", Type = "string" });
             FunctionCall functionCall = new FunctionCall(PrintFunction, Scope.ScopeVariables);
+            functionCall.ScopeControl = null;
             ScopePanel.Controls.Add(functionCall);
         }
     }
