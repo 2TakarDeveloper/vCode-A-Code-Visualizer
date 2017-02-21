@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using DTD.Entity;
+using DTD.Entity.Enum;
 
 namespace CodeVisualizer.Controls.VBlocks.Variable
 {
@@ -14,6 +15,7 @@ namespace CodeVisualizer.Controls.VBlocks.Variable
             VCode = variable;        
             Variable = (DTD.Entity.vCodes.Variable)variable;
             PopulateProperties();
+            
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -23,13 +25,72 @@ namespace CodeVisualizer.Controls.VBlocks.Variable
             Variable = variableProperties.Variable;
             VCode = Variable;
             PopulateProperties();
+            
         }
 
 
         private void PopulateProperties()
         {
             NameLable.Text = Variable.Name;
+
+            if (Variable.IsArray)
+            {
+             
+                if (Variable.ArrayType == "1D")
+                {
+                    numericUpDownRow.Visible = true;
+                    numericUpDownRow.Maximum = Variable.Row - 1;
+
+                }
+                if (Variable.ArrayType == "2D")
+                {
+                    numericUpDownRow.Visible = true;
+                    numericUpColumn.Visible = true;
+                    numericUpDownRow.Maximum = Variable.Row - 1;
+                    numericUpColumn.Maximum = Variable.Column - 1;
+                }
+            }
+            else
+            {
+                numericUpDownRow.Visible = false;
+                numericUpColumn.Visible = false;
+            }
         }
 
+    
+
+        private void ValueBox_TextChanged(object sender, EventArgs e)
+        {
+            dynamic value = "0";
+
+            switch (Variable.Type)
+            {
+                case Enums.Type.Int:
+                    value = Int32.Parse(ValueBox.Text);
+                    break;
+                case Enums.Type.Float:
+                    value = double.Parse(ValueBox.Text);
+                    break;
+                case Enums.Type.Double:
+                    value = double.Parse(ValueBox.Text);
+                    break;
+                case Enums.Type.String:
+                    value = ValueBox.Text;
+                    break;
+
+            }
+
+            Variable.Value[(int)numericUpDownRow.Value, (int)numericUpColumn.Value] = value;
+        }
+
+        private void numericUpDownRow_ValueChanged(object sender, EventArgs e)
+        {
+            ValueBox.Text = Variable.Value[(int)numericUpDownRow.Value, (int)numericUpColumn.Value].ToString();
+        }
+
+        private void numericUpColumn_ValueChanged(object sender, EventArgs e)
+        {
+            ValueBox.Text = Variable.Value[(int)numericUpDownRow.Value, (int)numericUpColumn.Value].ToString();
+        }
     }
 }

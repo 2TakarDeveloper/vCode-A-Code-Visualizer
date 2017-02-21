@@ -23,6 +23,47 @@ namespace Core.Converter
             Code += variable.AccessModifier.ToString().ToLower()+" ";
             Code += variable.Type.ToString().ToLower()+" ";
             Code += variable.Name+" ";
+            Code += "="+" ";
+            if (variable.IsArray)
+            {
+                Code += "{";
+
+                switch (variable.ArrayType)
+                {
+                    case "1D":
+                        for (int i = 0; i < variable.Row; i++)
+                        {
+                            Code += variable.Value[i, 0].ToString()+",";
+                        }
+                        Code = Code.Remove(Code.Length - 1);
+                        break;
+                    case "2D":
+                        for (int i = 0; i < variable.Row; i++)
+                        {
+                            Code += "{";
+                            for (int j = 0; j < variable.Column; j++)
+                            {
+                                Code += variable.Value[i, j].ToString()+",";
+                            }
+                            Code = Code.Remove(Code.Length - 1);
+                            Code += "},";
+                        }
+
+                        Code = Code.Remove(Code.Length - 1);
+                        break;
+                }
+
+                Code += "}";
+
+            }
+            else
+            {
+                Code += variable.Value[0, 0].ToString();
+            }
+
+
+
+
             Code += ";";
         }
 

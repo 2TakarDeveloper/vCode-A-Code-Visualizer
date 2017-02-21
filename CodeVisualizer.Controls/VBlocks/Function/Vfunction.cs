@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using DTD.Entity;
 using DTD.Entity.Helpers;
+using GlobalLibrary;
 
 namespace CodeVisualizer.Controls.VBlocks.Function
 {
@@ -24,7 +25,7 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             ScopeControl = scopeControl;
             
             PopulateProperties();
-           
+          
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

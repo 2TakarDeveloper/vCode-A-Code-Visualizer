@@ -40,6 +40,7 @@
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.White;
+            this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Header.Controls.Add(this.settingsButton);
             this.Header.Controls.Add(this.NameLable);
             this.Header.Controls.Add(this.DisposeButton);
@@ -55,9 +56,9 @@
             this.settingsButton.BackColor = System.Drawing.Color.Gray;
             this.settingsButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.settingsButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856678_cog;
-            this.settingsButton.Location = new System.Drawing.Point(553, 1);
+            this.settingsButton.Location = new System.Drawing.Point(551, 1);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(31, 21);
+            this.settingsButton.Size = new System.Drawing.Size(31, 19);
             this.settingsButton.TabIndex = 4;
             this.settingsButton.UseSelectable = true;
             // 
@@ -77,9 +78,9 @@
             this.DisposeButton.BackColor = System.Drawing.Color.Gray;
             this.DisposeButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.DisposeButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
-            this.DisposeButton.Location = new System.Drawing.Point(584, 1);
+            this.DisposeButton.Location = new System.Drawing.Point(582, 1);
             this.DisposeButton.Name = "DisposeButton";
-            this.DisposeButton.Size = new System.Drawing.Size(31, 21);
+            this.DisposeButton.Size = new System.Drawing.Size(31, 19);
             this.DisposeButton.TabIndex = 3;
             this.DisposeButton.UseSelectable = true;
             this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);

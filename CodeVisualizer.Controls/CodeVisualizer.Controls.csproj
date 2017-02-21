@@ -101,6 +101,12 @@
     <Compile Include="VBlocks\Function\FunctionCall.Designer.cs">
       <DependentUpon>FunctionCall.cs</DependentUpon>
     </Compile>
+    <Compile Include="VBlocks\Variable\VariableDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VBlocks\Variable\VariableDataControl.Designer.cs">
+      <DependentUpon>VariableDataControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="VBlocks\VBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VBlocks\Function\FunctionCall.resx">
       <DependentUpon>FunctionCall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBlocks\Variable\VariableDataControl.resx">
+      <DependentUpon>VariableDataControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VBlocks\VBlock.resx">
       <DependentUpon>VBlock.cs</DependentUpon>
