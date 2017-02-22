@@ -17,8 +17,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
             
             InitializeComponent();
             Variable =  new Variable();
-            RowIndex.Maximum = numericUpDownRow.Value - 1;
-            ColumnIndex.Maximum = numericUpDownColumn.Value - 1;
+          
        
         }
 
@@ -27,8 +26,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
             Variable = (Variable)vcode;
             InitializeComponent();
             PopulateProperties(Variable);
-            RowIndex.Maximum = numericUpDownRow.Value - 1;
-            ColumnIndex.Maximum = numericUpDownColumn.Value - 1;
+           
         }
 
         private void PopulateProperties(Variable variable)
@@ -42,7 +40,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
             numericUpDownRow.Value = Variable.Row;
             numericUpDownColumn.Value = Variable.Column;
             ArrayType.Text = Variable.ArrayType;
-            ValueBox.Text = Variable.Value[0,0].ToString();
+    
         }
 
 
@@ -63,7 +61,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 numericUpDownRow.Visible = false;
                 rowsLable.Visible = false;
                 columnlable.Visible = false;
-
+                Variable.IsArray = false;
             }
         }
 
@@ -75,8 +73,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 numericUpDownRow.Visible = true;
                 columnlable.Visible = false;
                 numericUpDownColumn.Visible = false;
-                RowIndex.Visible = true;
-                RowIndexLable.Visible = true;
+          
                 Variable.ArrayType = "1D";
 
             }
@@ -86,10 +83,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 numericUpDownRow.Visible = true;
                 columnlable.Visible = true;
                 numericUpDownColumn.Visible = true;
-                RowIndex.Visible = true;
-                RowIndexLable.Visible = true;
-                ColumnIndex.Visible = true;
-                ColumnIndexLable.Visible = true;
+              
                 Variable.ArrayType = "2D";
             }
         }
@@ -113,42 +107,21 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private void numericUpDownRow_ValueChanged(object sender, EventArgs e)
         {
-            RowIndex.Maximum = numericUpDownRow.Value-1;
+           
             Variable.Row = (int)numericUpDownRow.Value;
             UpdateVariableValue();
         }
 
         private void numericUpDownColumn_ValueChanged(object sender, EventArgs e)
         {
-            ColumnIndex.Maximum = numericUpDownColumn.Value-1;
+           
             Variable.Column = (int)numericUpDownColumn.Value;
             UpdateVariableValue();
         }
 
-        private void RowIndex_ValueChanged(object sender, EventArgs e)
-        {
+    
 
-            try
-            {
-                ValueBox.Text = Variable.Value[(int)RowIndex.Value, (int)ColumnIndex.Value].ToString();
-            }
-            catch (Exception )
-            {
-                //ignored
-            }
-        }
-
-        private void ColumnIndex_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ValueBox.Text = Variable.Value[(int)RowIndex.Value, (int)ColumnIndex.Value].ToString();
-            }
-            catch (Exception)
-            {
-                //ignored
-            }
-        }
+       
 
         private void variableType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -179,6 +152,10 @@ namespace CodeVisualizer.Controls.PropertiesForm
                     Variable.Type = Enums.Type.Bool;
                     Variable.Value = new bool[Variable.Row + 1, Variable.Column + 1];
                     break;
+                default:
+                    Variable.Type = Enums.Type.String;
+                    Variable.Value = new string[Variable.Row + 1, Variable.Column + 1];
+                    break;
 
             }
         }
@@ -199,7 +176,8 @@ namespace CodeVisualizer.Controls.PropertiesForm
                     break;
 
                 default:
-                    throw new Exception("AccessModifier  can't be empty");
+                    Variable.AccessModifier = Enums.AccessModifier.Public;
+                    break;
             }
 
         }
@@ -214,28 +192,6 @@ namespace CodeVisualizer.Controls.PropertiesForm
             Variable.IsStatic = staticCheck.Checked;
         }
 
-        private void ValueBox_TextChanged(object sender, EventArgs e)
-        {
-            dynamic value="0";
-            
-            switch (Variable.Type)
-            {
-                case Enums.Type.Int:
-                    value = Int32.Parse(ValueBox.Text);
-                    break;
-                case Enums.Type.Float:
-                    value = double.Parse(ValueBox.Text);
-                    break;
-                case Enums.Type.Double:
-                    value = double.Parse(ValueBox.Text);
-                    break;
-                case Enums.Type.String:
-                    value = ValueBox.Text;
-                    break;
-               
-            }
-
-            Variable.Value[(int)RowIndex.Value, (int)ColumnIndex.Value] = value;
-        }
+       
     }
 }

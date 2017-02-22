@@ -49,21 +49,11 @@
             this.SaveButton = new MetroFramework.Controls.MetroButton();
             this.variableNameTextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.ValueBox = new System.Windows.Forms.TextBox();
-            this.ColumnIndex = new System.Windows.Forms.NumericUpDown();
-            this.RowIndex = new System.Windows.Forms.NumericUpDown();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.ColumnIndexLable = new MetroFramework.Controls.MetroLabel();
-            this.RowIndexLable = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColumnIndex)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RowIndex)).BeginInit();
-            this.metroPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // numericUpDownRow
@@ -361,9 +351,6 @@
             // 
             // metroPanel2
             // 
-            this.metroPanel2.Controls.Add(this.ValueBox);
-            this.metroPanel2.Controls.Add(this.ColumnIndex);
-            this.metroPanel2.Controls.Add(this.RowIndex);
             this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
@@ -376,42 +363,8 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // ValueBox
-            // 
-            this.ValueBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ValueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValueBox.Location = new System.Drawing.Point(0, 40);
-            this.ValueBox.Name = "ValueBox";
-            this.ValueBox.Size = new System.Drawing.Size(317, 53);
-            this.ValueBox.TabIndex = 19;
-            this.ValueBox.TextChanged += new System.EventHandler(this.ValueBox_TextChanged);
-            // 
-            // ColumnIndex
-            // 
-            this.ColumnIndex.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ColumnIndex.Location = new System.Drawing.Point(0, 20);
-            this.ColumnIndex.Name = "ColumnIndex";
-            this.ColumnIndex.Size = new System.Drawing.Size(317, 20);
-            this.ColumnIndex.TabIndex = 18;
-            this.ColumnIndex.Visible = false;
-            this.ColumnIndex.ValueChanged += new System.EventHandler(this.ColumnIndex_ValueChanged);
-            // 
-            // RowIndex
-            // 
-            this.RowIndex.BackColor = System.Drawing.SystemColors.Window;
-            this.RowIndex.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RowIndex.Location = new System.Drawing.Point(0, 0);
-            this.RowIndex.Name = "RowIndex";
-            this.RowIndex.Size = new System.Drawing.Size(317, 20);
-            this.RowIndex.TabIndex = 17;
-            this.RowIndex.Visible = false;
-            this.RowIndex.ValueChanged += new System.EventHandler(this.RowIndex_ValueChanged);
-            // 
             // metroPanel3
             // 
-            this.metroPanel3.Controls.Add(this.metroLabel8);
-            this.metroPanel3.Controls.Add(this.ColumnIndexLable);
-            this.metroPanel3.Controls.Add(this.RowIndexLable);
             this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
@@ -423,38 +376,6 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroLabel8.Location = new System.Drawing.Point(0, 38);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(39, 19);
-            this.metroLabel8.TabIndex = 18;
-            this.metroLabel8.Text = "Value";
-            // 
-            // ColumnIndexLable
-            // 
-            this.ColumnIndexLable.AutoSize = true;
-            this.ColumnIndexLable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ColumnIndexLable.Location = new System.Drawing.Point(0, 19);
-            this.ColumnIndexLable.Name = "ColumnIndexLable";
-            this.ColumnIndexLable.Size = new System.Drawing.Size(90, 19);
-            this.ColumnIndexLable.TabIndex = 17;
-            this.ColumnIndexLable.Text = "Column Index";
-            this.ColumnIndexLable.Visible = false;
-            // 
-            // RowIndexLable
-            // 
-            this.RowIndexLable.AutoSize = true;
-            this.RowIndexLable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RowIndexLable.Location = new System.Drawing.Point(0, 0);
-            this.RowIndexLable.Name = "RowIndexLable";
-            this.RowIndexLable.Size = new System.Drawing.Size(69, 19);
-            this.RowIndexLable.TabIndex = 16;
-            this.RowIndexLable.Text = "Row Index";
-            this.RowIndexLable.Visible = false;
             // 
             // VariableProperties
             // 
@@ -469,12 +390,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
-            this.metroPanel2.ResumeLayout(false);
-            this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ColumnIndex)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RowIndex)).EndInit();
-            this.metroPanel3.ResumeLayout(false);
-            this.metroPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -502,12 +417,6 @@
         private MetroFramework.Controls.MetroButton SaveButton;
         private MetroFramework.Controls.MetroTextBox variableNameTextBox;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.TextBox ValueBox;
-        private System.Windows.Forms.NumericUpDown ColumnIndex;
-        private System.Windows.Forms.NumericUpDown RowIndex;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroLabel RowIndexLable;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroLabel ColumnIndexLable;
     }
 }

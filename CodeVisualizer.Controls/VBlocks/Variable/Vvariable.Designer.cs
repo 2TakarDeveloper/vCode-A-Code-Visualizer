@@ -101,6 +101,11 @@
             // 
             this.numericUpColumn.Dock = System.Windows.Forms.DockStyle.Top;
             this.numericUpColumn.Location = new System.Drawing.Point(0, 20);
+            this.numericUpColumn.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.numericUpColumn.Name = "numericUpColumn";
             this.numericUpColumn.Size = new System.Drawing.Size(221, 20);
             this.numericUpColumn.TabIndex = 5;
@@ -110,6 +115,11 @@
             // 
             this.numericUpDownRow.Dock = System.Windows.Forms.DockStyle.Top;
             this.numericUpDownRow.Location = new System.Drawing.Point(0, 0);
+            this.numericUpDownRow.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.numericUpDownRow.Name = "numericUpDownRow";
             this.numericUpDownRow.Size = new System.Drawing.Size(221, 20);
             this.numericUpDownRow.TabIndex = 4;
