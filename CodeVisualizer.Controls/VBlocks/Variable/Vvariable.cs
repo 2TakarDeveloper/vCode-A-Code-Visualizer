@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using DTD.Entity;
 using DTD.Entity.Enum;
-using MetroFramework;
 
 namespace CodeVisualizer.Controls.VBlocks.Variable
 {
@@ -88,7 +87,7 @@ namespace CodeVisualizer.Controls.VBlocks.Variable
                 }
             }
         
-            catch (Exception exception)
+            catch (Exception)
             {
                
                 ValueBox.Clear();

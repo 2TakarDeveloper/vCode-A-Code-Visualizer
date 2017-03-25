@@ -45,11 +45,11 @@ namespace CodeVisualizer.Forms
             this.CodeEditor = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.globalScopeControl = new CodeVisualizer.Controls.Helpers.GlobalScopeControl();
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.globalScopeControl = new CodeVisualizer.Controls.Helpers.GlobalScopeControl();
             this.tableLayoutPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -216,6 +216,17 @@ namespace CodeVisualizer.Forms
             this.label1.Text = "Code Editor";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // globalScopeControl
+            // 
+            this.globalScopeControl.BackColor = System.Drawing.Color.DarkCyan;
+            this.globalScopeControl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.globalScopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.globalScopeControl.GlobalScope = null;
+            this.globalScopeControl.Location = new System.Drawing.Point(0, 22);
+            this.globalScopeControl.Name = "globalScopeControl";
+            this.globalScopeControl.Size = new System.Drawing.Size(465, 371);
+            this.globalScopeControl.TabIndex = 6;
+            // 
             // header
             // 
             this.header.BackColor = System.Drawing.Color.Thistle;
@@ -260,17 +271,6 @@ namespace CodeVisualizer.Forms
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // globalScopeControl
-            // 
-            this.globalScopeControl.BackColor = System.Drawing.Color.DarkCyan;
-            this.globalScopeControl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.globalScopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.globalScopeControl.GlobalScope = null;
-            this.globalScopeControl.Location = new System.Drawing.Point(0, 22);
-            this.globalScopeControl.Name = "globalScopeControl";
-            this.globalScopeControl.Size = new System.Drawing.Size(465, 371);
-            this.globalScopeControl.TabIndex = 6;
             // 
             // DashBoard
             // 
