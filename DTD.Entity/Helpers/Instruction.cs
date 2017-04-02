@@ -8,5 +8,6 @@ namespace DTD.Entity.Helpers
 {
     public class Instruction
     {
+        public Enum.Enums.InstructionType InstructionType { set; get; }
     }
 }
