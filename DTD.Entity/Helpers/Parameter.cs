@@ -18,5 +18,15 @@ namespace DTD.Entity.Helpers
             Type = "int";
             Name = "New Parameter";
         }
+        public Parameter(string type, string name)
+        {
+            this.Type = type;
+            this.Name = name;
+        }
+        public Parameter(string name)
+        {
+            this.Type = null;
+            this.Name = name;
+        }
     }
 }

@@ -4,19 +4,22 @@
     {
         public enum Type
         {
-            Int,Float,Double,String,Bool,Void
+            Int, Float, Double, String, Bool, Void, Char
         }
 
         public enum AccessModifier
         {
-            Public,Private,Protected
+            Public, Private, Protected
         }
 
         public enum VType
         {
-            Variable,Function,If,While,GlobalScope
+            Variable, Function, If, While, GlobalScope, Constant
         }
 
-
+        public enum InstructionType
+        {
+            SingleAddress, ThreeAddress
+        }
     }
 }

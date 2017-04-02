@@ -56,6 +56,10 @@
       <Project>{b5f4796d-2def-4331-be87-9e9941cc0ee3}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GlobalLibrary\GlobalLibrary.csproj">
+      <Project>{472f2b06-b4a9-4a47-a7d5-fa96440e898d}</Project>
+      <Name>GlobalLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
