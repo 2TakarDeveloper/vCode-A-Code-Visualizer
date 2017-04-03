@@ -42,12 +42,12 @@
   <ItemGroup>
     <Compile Include="Enum\Enums.cs" />
     <Compile Include="Helpers\Condition.cs" />
-    <Compile Include="Helpers\Instruction.cs" />
+    <Compile Include="vCodes\Instruction.cs" />
     <Compile Include="Helpers\Parameter.cs" />
     <Compile Include="Helpers\Scope.cs" />
     <Compile Include="FuncAndVar.cs" />
-    <Compile Include="Helpers\SingleInstruction.cs" />
-    <Compile Include="Helpers\ThreeAddressInstruction.cs" />
+    <Compile Include="vCodes\SingleInstruction.cs" />
+    <Compile Include="vCodes\ThreeAddressInstruction.cs" />
     <Compile Include="vCodes\Assignment.cs" />
     <Compile Include="vCodes\Constant.cs" />
     <Compile Include="vCodes\Function.cs" />

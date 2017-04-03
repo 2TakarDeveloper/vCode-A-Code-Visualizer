@@ -358,8 +358,11 @@ namespace Core.Converter
 
             if (regex.ThreeAddressInstructionRegex.IsMatch(text))
             {
-                instruction.InstructionType = Enums.InstructionType.ThreeAddress;
-                ThreeAddressInstruction threeAddress = (ThreeAddressInstruction)instruction;
+
+                ThreeAddressInstruction threeAddress = new ThreeAddressInstruction
+                {
+                    InstructionType = Enums.InstructionType.ThreeAddress
+                };
                 m = m.NextMatch();
                 threeAddress.LeftInstruction = m.Groups[0].ToString();
                 m = m.NextMatch();
@@ -368,8 +371,8 @@ namespace Core.Converter
             }
             else
             {
-                instruction.InstructionType = Enums.InstructionType.SingleAddress;
-                SingleInstruction single = (SingleInstruction)instruction;
+
+                SingleInstruction single = new SingleInstruction {InstructionType = Enums.InstructionType.SingleAddress};
                 m = m.NextMatch();
                 single.Instruction = m.Groups[0].ToString();
             }
