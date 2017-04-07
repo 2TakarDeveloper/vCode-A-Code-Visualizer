@@ -22,6 +22,9 @@ namespace DTD.Entity.vCodes
             Parameters= new List<Parameter>();
             VType=Enums.VType.Function;
         }
-        
+        public Function(string name):this()
+        {
+            Name = name;
+        }
     }
 }

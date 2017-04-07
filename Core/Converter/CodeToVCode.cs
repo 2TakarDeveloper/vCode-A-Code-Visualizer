@@ -129,6 +129,7 @@ namespace Core.Converter
                 else if(regex.VarAssignmentRegex.IsMatch(selectedText))
                 {
                     CreateAssignmentObject(scope,selectedText);
+                    start = ++end;
                 }
                 else if (currentScope[start] == ' ')
                 {
@@ -348,9 +349,9 @@ namespace Core.Converter
         private void CreateAssignmentObject(Scope scope, string text)
         {
             Assignment assignment = new Assignment();
-            Instruction instruction = new Instruction();
+            scope.Items.Enqueue(assignment);
 
-            Match m = regex.SingleInstructionRegex.Match(text);
+            Match m = regex.InstructionRegex.Match(text);
             Match op = regex.OperatorRegex.Match(text);
 
             assignment.Variable = m.Groups[0].ToString();
@@ -358,25 +359,96 @@ namespace Core.Converter
 
             if (regex.ThreeAddressInstructionRegex.IsMatch(text))
             {
-
                 ThreeAddressInstruction threeAddress = new ThreeAddressInstruction
                 {
                     InstructionType = Enums.InstructionType.ThreeAddress
                 };
+                assignment.Instruction = threeAddress;
+
+
                 m = m.NextMatch();
-                threeAddress.LeftInstruction = m.Groups[0].ToString();
-                m = m.NextMatch();
-                threeAddress.RightInstruction = m.Groups[0].ToString();
+                byte count = 0;
+                while (m.Success)
+                {
+                    FuncAndVar ins = new FuncAndVar();
+                    if (regex.Variable.IsMatch(m.Groups[0].ToString()))
+                    {
+                        ins.Name = m.Groups[0].ToString();
+                    }
+                    else if (regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
+                    {
+                        ins.Name = m.Groups[0].ToString();
+                    }
+                    else if (regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
+                    {
+                        CreateInstructionObject(ins,m.Groups[0].ToString());
+                    }
+                    if (count == 0)
+                    {
+                        threeAddress.LeftInstruction = ins;
+                        count++;
+                        MessageBox.Show(threeAddress.LeftInstruction.ToString());
+                    }
+                    else
+                    {
+                        threeAddress.RightInstruction = ins;
+                    }
+                    m = m.NextMatch();
+                }
                 threeAddress.Operator = op.Groups[0].ToString();
             }
             else
             {
 
                 SingleInstruction single = new SingleInstruction {InstructionType = Enums.InstructionType.SingleAddress};
+                assignment.Instruction = single;
+
                 m = m.NextMatch();
-                single.Instruction = m.Groups[0].ToString();
+                FuncAndVar ins = new FuncAndVar();
+                if (regex.Variable.IsMatch(m.Groups[0].ToString()))
+                {
+                    ins.Name = m.Groups[0].ToString();
+                }
+                else if (regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
+                {
+                    ins.Name = m.Groups[0].ToString();
+                }
+                else if (regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
+                {
+                    CreateInstructionObject(ins, m.Groups[0].ToString());
+                }
+                single.Instruction = ins;
             }
         }
+
+        private void CreateInstructionObject(FuncAndVar ins,string text)
+        {
+            Constant cns = (Constant)ins;
+            cns.Value = text;
+            cns.VType = Enums.VType.Constant;
+
+            if (regex.StringRegex.IsMatch(text))
+            {
+                cns.Type = Enums.Type.String;
+            }
+            else if (regex.DoubleRgex.IsMatch(text))
+            {
+                cns.Type = Enums.Type.Double;
+            }
+            else if (regex.IntRegex.IsMatch(text))
+            {
+                cns.Type = Enums.Type.Int;
+            }
+            else if (regex.BoolValue.IsMatch(text))
+            {
+                cns.Type = Enums.Type.Bool;
+            }
+            else if (regex.CharRegex.IsMatch(text))
+            {
+                cns.Type = Enums.Type.Char;
+            }
+        }
+
         #endregion
 
     }

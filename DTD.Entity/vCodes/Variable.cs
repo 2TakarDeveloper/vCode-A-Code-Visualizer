@@ -24,5 +24,11 @@ namespace DTD.Entity.vCodes
             Name = "NewVariable";
             AccessModifier=Enums.AccessModifier.Public;
         }
+
+        public Variable(string name)
+        {
+            Name = name;
+            AccessModifier = Enums.AccessModifier.Public;
+        }
     }
 }
