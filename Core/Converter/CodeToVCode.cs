@@ -370,7 +370,7 @@ namespace Core.Converter
                 byte count = 0;
                 while (m.Success)
                 {
-                    FuncAndVar ins = new FuncAndVar();
+                    TypedvCodes ins = new TypedvCodes();
                     if (regex.Variable.IsMatch(m.Groups[0].ToString()))
                     {
                         ins.Name = m.Groups[0].ToString();
@@ -404,7 +404,7 @@ namespace Core.Converter
                 assignment.Instruction = single;
 
                 m = m.NextMatch();
-                FuncAndVar ins = new FuncAndVar();
+                TypedvCodes ins = new TypedvCodes();
                 if (regex.Variable.IsMatch(m.Groups[0].ToString()))
                 {
                     ins.Name = m.Groups[0].ToString();
@@ -421,7 +421,7 @@ namespace Core.Converter
             }
         }
 
-        private void CreateInstructionObject(FuncAndVar ins,string text)
+        private void CreateInstructionObject(TypedvCodes ins,string text)
         {
             Constant cns = (Constant)ins;
             cns.Value = text;

@@ -7,7 +7,7 @@ using DTD.Entity.Enum;
 
 namespace DTD.Entity.vCodes
 {
-    public class Constant:FuncAndVar
+    public class Constant:TypedvCodes
     {
         public string Value { set; get; }
 

@@ -33,7 +33,7 @@ namespace Core.Converter
                     case "1D":
                         for (int i = 0; i < variable.Row; i++)
                         {
-                            Code += variable.Value[i, 0].ToString()+",";
+                            //Code += variable.Value[i, 0].ToString()+",";
                         }
                         Code = Code.Remove(Code.Length - 1);
                         break;
@@ -43,7 +43,7 @@ namespace Core.Converter
                             Code += "{";
                             for (int j = 0; j < variable.Column; j++)
                             {
-                                Code += variable.Value[i, j].ToString()+",";
+                                //Code += variable.Value[i, j].ToString()+",";
                             }
                             Code = Code.Remove(Code.Length - 1);
                             Code += "},";
@@ -58,7 +58,7 @@ namespace Core.Converter
             }
             else
             {
-                Code += variable.Value[0, 0].ToString();
+                //Code += variable.Value[0, 0].ToString();
             }
 
 

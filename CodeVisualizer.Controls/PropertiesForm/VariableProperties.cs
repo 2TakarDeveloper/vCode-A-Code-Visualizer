@@ -134,27 +134,27 @@ namespace CodeVisualizer.Controls.PropertiesForm
             {
                 case "int":
                     Variable.Type = Enums.Type.Int;
-                    Variable.Value = new int[Variable.Row + 1, Variable.Column + 1];
+                   
                     break;
                 case "float":
                     Variable.Type = Enums.Type.Float;
-                    Variable.Value = new float[Variable.Row + 1, Variable.Column + 1];
+                 
                     break;
                 case "double":
                     Variable.Type = Enums.Type.Double;
-                    Variable.Value = new double[Variable.Row + 1, Variable.Column + 1];
+                 
                     break;
                 case "string":
                     Variable.Type = Enums.Type.String;
-                    Variable.Value = new string[Variable.Row + 1, Variable.Column + 1];
+                  
                     break;
                 case "bool":
                     Variable.Type = Enums.Type.Bool;
-                    Variable.Value = new bool[Variable.Row + 1, Variable.Column + 1];
+                  
                     break;
                 default:
                     Variable.Type = Enums.Type.String;
-                    Variable.Value = new string[Variable.Row + 1, Variable.Column + 1];
+                   
                     break;
 
             }

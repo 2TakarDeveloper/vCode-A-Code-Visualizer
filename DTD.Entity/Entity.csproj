@@ -45,7 +45,7 @@
     <Compile Include="vCodes\Instruction.cs" />
     <Compile Include="Helpers\Parameter.cs" />
     <Compile Include="Helpers\Scope.cs" />
-    <Compile Include="FuncAndVar.cs" />
+    <Compile Include="TypedvCodes.cs" />
     <Compile Include="vCodes\SingleInstruction.cs" />
     <Compile Include="vCodes\ThreeAddressInstruction.cs" />
     <Compile Include="vCodes\Assignment.cs" />

@@ -2,7 +2,7 @@
 
 namespace DTD.Entity
 {
-    public class FuncAndVar:VCode
+    public class TypedvCodes:VCode
     {
         
         public Enums.Type Type { get; set; }
