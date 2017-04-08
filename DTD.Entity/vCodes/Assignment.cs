@@ -12,6 +12,11 @@ namespace DTD.Entity.vCodes
     {
         //public Enums.InstructionType InstructionType { set; get; }
         public Instruction Instruction { set; get; }
-        public string Variable { set; get; } 
+        public string Variable { set; get; }
+
+        public Assignment()
+        {
+            VType = Enums.VType.Assignment;
+        }
     }
 }
