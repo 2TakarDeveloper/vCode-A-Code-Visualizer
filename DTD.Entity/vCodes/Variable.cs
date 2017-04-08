@@ -2,10 +2,10 @@
 
 namespace DTD.Entity.vCodes
 {
-    public class Variable:FuncAndVar
+    public class Variable:TypedvCodes
     {
       
-        public dynamic  Value { get; set; }
+        //public dynamic  Value { get; set; }
         public bool IsArray { get; set; }
      
 

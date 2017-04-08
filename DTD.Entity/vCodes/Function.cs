@@ -9,7 +9,7 @@ using DTD.Entity.Helpers;
 
 namespace DTD.Entity.vCodes
 {
-    public class Function:FuncAndVar
+    public class Function:TypedvCodes
     {
         public Scope Scope { get; set; }
         public List<Parameter> Parameters { get; set; }

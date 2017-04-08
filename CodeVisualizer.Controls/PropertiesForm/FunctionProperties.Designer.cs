@@ -97,6 +97,7 @@
             this.FunctionAccessModifier.Size = new System.Drawing.Size(312, 29);
             this.FunctionAccessModifier.TabIndex = 7;
             this.FunctionAccessModifier.UseSelectable = true;
+            this.FunctionAccessModifier.Visible = false;
             // 
             // metroLabel5
             // 
@@ -106,6 +107,7 @@
             this.metroLabel5.Size = new System.Drawing.Size(101, 19);
             this.metroLabel5.TabIndex = 6;
             this.metroLabel5.Text = "Access Modifier";
+            this.metroLabel5.Visible = false;
             // 
             // metroLabel4
             // 
@@ -172,6 +174,7 @@
             this.staticCheck.TabIndex = 10;
             this.staticCheck.Text = "isStatic";
             this.staticCheck.UseSelectable = true;
+            this.staticCheck.Visible = false;
             // 
             // FunctionNameTextBox
             // 

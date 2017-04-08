@@ -2,6 +2,6 @@
 {
     public class SingleInstruction:Instruction
     {
-        public FuncAndVar Instruction { get; set; }
+        public TypedvCodes Instruction { get; set; }
     }
 }

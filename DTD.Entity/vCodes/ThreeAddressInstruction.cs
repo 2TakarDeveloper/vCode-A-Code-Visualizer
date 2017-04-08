@@ -9,8 +9,8 @@ namespace DTD.Entity.Helpers
 {
     public class ThreeAddressInstruction:Instruction
     {
-        public FuncAndVar LeftInstruction { get; set; }
-        public FuncAndVar RightInstruction { get; set; }
+        public TypedvCodes LeftInstruction { get; set; }
+        public TypedvCodes RightInstruction { get; set; }
         public string Operator { get; set; }
     }
 }

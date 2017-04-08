@@ -92,6 +92,7 @@
             this.staticCheck.TabIndex = 10;
             this.staticCheck.Text = "isStatic";
             this.staticCheck.UseSelectable = true;
+            this.staticCheck.Visible = false;
             this.staticCheck.CheckedChanged += new System.EventHandler(this.staticCheck_CheckedChanged);
             // 
             // variableType
@@ -156,6 +157,7 @@
             this.metroLabel5.Size = new System.Drawing.Size(101, 19);
             this.metroLabel5.TabIndex = 6;
             this.metroLabel5.Text = "Access Modifier";
+            this.metroLabel5.Visible = false;
             // 
             // variableAccessModifier
             // 
@@ -171,6 +173,7 @@
             this.variableAccessModifier.Size = new System.Drawing.Size(317, 29);
             this.variableAccessModifier.TabIndex = 7;
             this.variableAccessModifier.UseSelectable = true;
+            this.variableAccessModifier.Visible = false;
             this.variableAccessModifier.SelectedIndexChanged += new System.EventHandler(this.variableAccessModifier_SelectedIndexChanged);
             // 
             // isArrayCheck
