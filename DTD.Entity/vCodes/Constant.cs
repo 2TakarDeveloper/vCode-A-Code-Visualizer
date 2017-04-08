@@ -13,6 +13,7 @@ namespace DTD.Entity.vCodes
 
         public Constant()
         {
+            Value = "";
             VType = Enums.VType.Constant;
         }
     }

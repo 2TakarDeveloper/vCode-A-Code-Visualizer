@@ -16,6 +16,8 @@ namespace DTD.Entity.vCodes
 
         public Assignment()
         {
+            Variable = "";
+            Instruction = new Instruction();
             VType = Enums.VType.Assignment;
         }
     }
