@@ -16,11 +16,11 @@ namespace Core.Converter
     public class CodeToVCode
     {
         public Scope Scope { get; set; }
-        private RegexPatterns regex;
+        private readonly RegexPatterns _regex;
 
         public CodeToVCode(string code)
         {
-            regex = new RegexPatterns();
+            _regex = new RegexPatterns();
 
             //Call Function here.
             Scope = new Scope();
@@ -32,10 +32,10 @@ namespace Core.Converter
 
         private void CreateConditionObject(Condition condition, string text)
         {
-            Match op = regex.BooleanOperator.Match(text);
+            Match op = _regex.BooleanOperator.Match(text);
             condition.BooleanOperator = op.Groups[0].ToString();
 
-            Match param = regex.SingleInstructionRegex.Match(text);
+            Match param = _regex.SingleInstructionRegex.Match(text);
 
             byte count = 0;
             while (param.Success)
@@ -85,7 +85,7 @@ namespace Core.Converter
             while (end < currentScope.Length - 1)
             {
                 string selectedText = currentScope.Substring(start, end - start + 1);
-                if (regex.FunctionRegex.IsMatch(selectedText))
+                if (_regex.FunctionRegex.IsMatch(selectedText))
                 {
                     Function funcObject = new Function();
                     scope.Items.Enqueue(funcObject);
@@ -93,24 +93,24 @@ namespace Core.Converter
                     start = ++end;
                     start = end = CropScope(funcObject.Scope, start, currentScope);
                 }
-                else if (regex.FunctionCall.IsMatch(selectedText))
+                else if (_regex.FunctionCall.IsMatch(selectedText))
                 {
                     Function funcObject = new Function();
                     scope.Items.Enqueue(funcObject);
                     CreateFunctionCallObject(funcObject, selectedText);
                     start = ++end;
                 }
-                else if (regex.VarDeclaration.IsMatch(selectedText))
+                else if (_regex.VarDeclaration.IsMatch(selectedText))
                 {
                     CreateVariableObject(scope, selectedText, false);
                     start = ++end;
                 }
-                else if (regex.ArrayRegex.IsMatch(selectedText))
+                else if (_regex.ArrayRegex.IsMatch(selectedText))
                 {
                     CreateVariableObject(scope, selectedText, true);
                     start = ++end;
                 }
-                else if (regex.IfRegex.IsMatch(selectedText))
+                else if (_regex.IfRegex.IsMatch(selectedText))
                 {
                     If ifObject = new If();
                     scope.Items.Enqueue(ifObject);
@@ -118,7 +118,7 @@ namespace Core.Converter
                     start = ++end;
                     start = end = CropScope(ifObject.Scope, start, currentScope);
                 }
-                else if (regex.WhileRegex.IsMatch(selectedText))
+                else if (_regex.WhileRegex.IsMatch(selectedText))
                 {
                     While whileObject = new While();
                     scope.Items.Enqueue(whileObject);
@@ -126,7 +126,7 @@ namespace Core.Converter
                     start = ++end;
                     start = end = CropScope(whileObject.Scope, start, currentScope);
                 }
-                else if(regex.VarAssignmentRegex.IsMatch(selectedText))
+                else if(_regex.VarAssignmentRegex.IsMatch(selectedText))
                 {
                     CreateAssignmentObject(scope,selectedText);
                     start = ++end;
@@ -148,21 +148,21 @@ namespace Core.Converter
 
         private void CreateFunctionCallObject(Function funcObject, string text)
         {
-            if (regex.ParameterValueRegex.IsMatch(text))
+            if (_regex.ParameterValueRegex.IsMatch(text))
             {
-                Match parameters = regex.ParameterValueRegex.Match(text);
-                Match m = regex.SingleInstructionRegex.Match(parameters.Groups[0].ToString());
+                Match parameters = _regex.ParameterValueRegex.Match(text);
+                Match m = _regex.SingleInstructionRegex.Match(parameters.Groups[0].ToString());
 
                 while (m.Success)
                 {
                     funcObject.Parameters.Add(new Parameter(m.Groups[0].ToString()));
                     m = m.NextMatch();
                 }
-                text = regex.ParameterRegex.Replace(text, "");
+                text = _regex.ParameterRegex.Replace(text, "");
             }
-            if (regex.Variable.IsMatch(text))
+            if (_regex.Variable.IsMatch(text))
             {
-                Match m = regex.Variable.Match(text);
+                Match m = _regex.Variable.Match(text);
                 funcObject.Name = m.Groups[0].ToString();
             }
         }
@@ -170,10 +170,10 @@ namespace Core.Converter
         //will return function object globaly declared
         private void CreateFunctionObject(Function funcObject, string text)
         {
-            if (regex.ParameterRegex.IsMatch(text))
+            if (_regex.ParameterRegex.IsMatch(text))
             {
-                Match parameters = regex.ParameterRegex.Match(text);
-                Regex param = new Regex("(" + regex.DataType + ")[\\s]+(" + regex.Variable + ")");
+                Match parameters = _regex.ParameterRegex.Match(text);
+                Regex param = new Regex("(" + _regex.DataType + ")[\\s]+(" + _regex.Variable + ")");
                 Match m = param.Match(parameters.Groups[0].ToString());
                 while (m.Success)
                 {
@@ -187,13 +187,13 @@ namespace Core.Converter
 
                     m = m.NextMatch();
                 }
-                text = regex.ParameterRegex.Replace(text, "");
+                text = _regex.ParameterRegex.Replace(text, "");
             }
 
             #region Variable DataType
-            if (regex.DataType.IsMatch(text))
+            if (_regex.DataType.IsMatch(text))
             {
-                Match m = regex.DataType.Match(text);
+                Match m = _regex.DataType.Match(text);
                 switch (m.Groups[0].ToString())
                 {
                     case "bool":
@@ -216,14 +216,14 @@ namespace Core.Converter
                         funcObject.Type = Enums.Type.String;
                         break;
                 }
-                text = regex.DataType.Replace(text, "");
+                text = _regex.DataType.Replace(text, "");
             }
             #endregion
 
             #region Variable AccessModifier
-            if (regex.AccessModifier.IsMatch(text))
+            if (_regex.AccessModifier.IsMatch(text))
             {
-                Match m = regex.AccessModifier.Match(text);
+                Match m = _regex.AccessModifier.Match(text);
 
                 switch (m.Groups[0].ToString())
                 {
@@ -237,19 +237,19 @@ namespace Core.Converter
                         funcObject.AccessModifier = Enums.AccessModifier.Protected;
                         break;
                 }
-                text = regex.AccessModifier.Replace(text, "");
+                text = _regex.AccessModifier.Replace(text, "");
             }
             #endregion
 
-            if (regex.IsStatic.IsMatch(text))
+            if (_regex.IsStatic.IsMatch(text))
             {
                 funcObject.IsStatic = true;
-                text = regex.IsStatic.Replace(text, "");
+                text = _regex.IsStatic.Replace(text, "");
             }
 
-            if (regex.Variable.IsMatch(text))
+            if (_regex.Variable.IsMatch(text))
             {
-                Match m = regex.Variable.Match(text);
+                Match m = _regex.Variable.Match(text);
                 funcObject.Name = m.Groups[0].ToString();
             }
         }
@@ -260,9 +260,9 @@ namespace Core.Converter
             varObject.IsArray = isArray;
 
             #region Variable DataType
-            if (regex.DataType.IsMatch(text))
+            if (_regex.DataType.IsMatch(text))
             {
-                Match m = regex.DataType.Match(text);
+                Match m = _regex.DataType.Match(text);
                 switch (m.Groups[0].ToString())
                 {
                     case "bool":
@@ -289,15 +289,15 @@ namespace Core.Converter
                         varObject.Type = Enums.Type.Char;
                         break;
                 }
-                text = regex.DataType.Replace(text, "");
+                text = _regex.DataType.Replace(text, "");
             }
 
             #endregion
 
             #region Variable AccessModifier
-            if (regex.AccessModifier.IsMatch(text))
+            if (_regex.AccessModifier.IsMatch(text))
             {
-                Match m = regex.AccessModifier.Match(text);
+                Match m = _regex.AccessModifier.Match(text);
 
                 switch (m.Groups[0].ToString())
                 {
@@ -311,27 +311,27 @@ namespace Core.Converter
                         varObject.AccessModifier = Enums.AccessModifier.Protected;
                         break;
                 }
-                text = regex.AccessModifier.Replace(text, "");
+                text = _regex.AccessModifier.Replace(text, "");
             }
             #endregion
 
-            if (regex.IsStatic.IsMatch(text))
+            if (_regex.IsStatic.IsMatch(text))
             {
                 varObject.IsStatic = true;
-                text = regex.IsStatic.Replace(text, "");
+                text = _regex.IsStatic.Replace(text, "");
             }
 
 
-            if (regex.Variable.IsMatch(text))
+            if (_regex.Variable.IsMatch(text))
             {
-                Match m = regex.Variable.Match(text);
+                Match m = _regex.Variable.Match(text);
                 varObject.Name = m.Groups[0].ToString();
-                text = regex.Variable.Replace(text, "");
+                text = _regex.Variable.Replace(text, "");
             }
 
             if (isArray)
             {
-                Match m = regex.NumberRegex.Match(text);
+                Match m = _regex.NumberRegex.Match(text);
                 byte count = 0;
                 while (m.Success)
                 {
@@ -351,13 +351,13 @@ namespace Core.Converter
             Assignment assignment = new Assignment();
             scope.Items.Enqueue(assignment);
 
-            Match m = regex.InstructionRegex.Match(text);
-            Match op = regex.OperatorRegex.Match(text);
+            Match m = _regex.InstructionRegex.Match(text);
+            Match op = _regex.OperatorRegex.Match(text);
 
             assignment.Variable = m.Groups[0].ToString();
 
 
-            if (regex.ThreeAddressInstructionRegex.IsMatch(text))
+            if (_regex.ThreeAddressInstructionRegex.IsMatch(text))
             {
                 ThreeAddressInstruction threeAddress = new ThreeAddressInstruction
                 {
@@ -371,15 +371,15 @@ namespace Core.Converter
                 while (m.Success)
                 {
                     TypedvCodes ins = new TypedvCodes();
-                    if (regex.Variable.IsMatch(m.Groups[0].ToString()))
+                    if (_regex.Variable.IsMatch(m.Groups[0].ToString()))
                     {
                         ins.Name = m.Groups[0].ToString();
                     }
-                    else if (regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
+                    else if (_regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
                     {
                         ins.Name = m.Groups[0].ToString();
                     }
-                    else if (regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
+                    else if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
                     {
                         CreateInstructionObject(ins,m.Groups[0].ToString());
                     }
@@ -387,7 +387,6 @@ namespace Core.Converter
                     {
                         threeAddress.LeftInstruction = ins;
                         count++;
-                        MessageBox.Show(threeAddress.LeftInstruction.ToString());
                     }
                     else
                     {
@@ -405,15 +404,15 @@ namespace Core.Converter
 
                 m = m.NextMatch();
                 TypedvCodes ins = new TypedvCodes();
-                if (regex.Variable.IsMatch(m.Groups[0].ToString()))
+                if (_regex.Variable.IsMatch(m.Groups[0].ToString()))
                 {
                     ins.Name = m.Groups[0].ToString();
                 }
-                else if (regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
+                else if (_regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
                 {
                     ins.Name = m.Groups[0].ToString();
                 }
-                else if (regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
+                else if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
                 {
                     CreateInstructionObject(ins, m.Groups[0].ToString());
                 }
@@ -427,23 +426,23 @@ namespace Core.Converter
             cns.Value = text;
             cns.VType = Enums.VType.Constant;
 
-            if (regex.StringRegex.IsMatch(text))
+            if (_regex.StringRegex.IsMatch(text))
             {
                 cns.Type = Enums.Type.String;
             }
-            else if (regex.DoubleRgex.IsMatch(text))
+            else if (_regex.DoubleRgex.IsMatch(text))
             {
                 cns.Type = Enums.Type.Double;
             }
-            else if (regex.IntRegex.IsMatch(text))
+            else if (_regex.IntRegex.IsMatch(text))
             {
                 cns.Type = Enums.Type.Int;
             }
-            else if (regex.BoolValue.IsMatch(text))
+            else if (_regex.BoolValue.IsMatch(text))
             {
                 cns.Type = Enums.Type.Bool;
             }
-            else if (regex.CharRegex.IsMatch(text))
+            else if (_regex.CharRegex.IsMatch(text))
             {
                 cns.Type = Enums.Type.Char;
             }
