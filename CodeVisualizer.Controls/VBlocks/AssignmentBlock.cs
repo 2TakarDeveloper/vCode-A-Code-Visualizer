@@ -26,42 +26,8 @@ namespace CodeVisualizer.Controls.VBlocks
             InitializeComponent();
             Assignment = assignment;
             assignment.VType=Enums.VType.Assignment;
-            AssignmentString = assignment.Variable;
             VCode = Assignment;
-
-
-
-
-            AssignmentString += "=";
-            if (assignment.Instruction.InstructionType == Enums.InstructionType.SingleAddress)
-            {
-                SingleInstruction instruction = (SingleInstruction) assignment.Instruction;
-                if(instruction==null)return;
-                ParseInstruction(instruction.Instruction);
-
-                
-
-            }
-
-            else if (Assignment.Instruction.InstructionType == Enums.InstructionType.ThreeAddress)
-            {
-                ThreeAddressInstruction instruction = (ThreeAddressInstruction)assignment.Instruction;
-                if (instruction == null) return;
-                ParseInstruction(instruction.LeftInstruction);
-
-                AssignmentString += instruction.Operator;
-
-                ParseInstruction(instruction.RightInstruction);
-
-
-
-
-            }
-
-            AssignmentString += ";";
-
-            AssignmentStringLable.Text = AssignmentString;
-            Assignment.AssignmentString = AssignmentString;
+            SetString(Assignment);
         }
 
 
@@ -107,8 +73,52 @@ namespace CodeVisualizer.Controls.VBlocks
             AssignmentForm assignmentForm = new AssignmentForm(Assignment);
             if (assignmentForm.ShowDialog() != DialogResult.OK) return;
             Assignment = assignmentForm.Assignment;
+            SetString(Assignment);
             
         }
+
+
+
+        private void SetString(Assignment assignment)
+        {
+            AssignmentString = assignment.Variable;
+
+
+
+
+
+            AssignmentString += "=";
+            if (assignment.Instruction.InstructionType == Enums.InstructionType.SingleAddress)
+            {
+                SingleInstruction instruction = (SingleInstruction)assignment.Instruction;
+                if (instruction == null) return;
+                ParseInstruction(instruction.Instruction);
+
+
+
+            }
+
+            else if (Assignment.Instruction.InstructionType == Enums.InstructionType.ThreeAddress)
+            {
+                ThreeAddressInstruction instruction = (ThreeAddressInstruction)assignment.Instruction;
+                if (instruction == null) return;
+                ParseInstruction(instruction.LeftInstruction);
+
+                AssignmentString += instruction.Operator;
+
+                ParseInstruction(instruction.RightInstruction);
+
+
+
+
+            }
+
+            AssignmentString += ";";
+
+            AssignmentStringLable.Text = AssignmentString;
+            Assignment.AssignmentString = AssignmentString;
+        }
+
     }
 
 

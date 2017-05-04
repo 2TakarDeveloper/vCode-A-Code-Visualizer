@@ -30,6 +30,7 @@ namespace CodeVisualizer.Controls.Instructions
             ThreeAddressInstruction.InstructionType=Enums.InstructionType.ThreeAddress;
             SelectetVariable = selectedVariable;
             LocalVariables = ScopeVariables;
+            ThreeAddressInstruction.Operator = "+";
         }
 
         #region Left
