@@ -44,15 +44,15 @@
             this.Header.Controls.SetChildIndex(this.NameLable, 0);
             this.Header.Controls.SetChildIndex(this.conditionControl1, 0);
             // 
-            // settingsButton
+            // NameLable
             // 
-            this.settingsButton.Location = new System.Drawing.Point(344, 1);
-            this.settingsButton.Size = new System.Drawing.Size(31, 22);
+            this.NameLable.Size = new System.Drawing.Size(47, 19);
+            this.NameLable.Text = "While";
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(375, 1);
-            this.DisposeButton.Size = new System.Drawing.Size(31, 22);
+            this.DisposeButton.Location = new System.Drawing.Point(373, 1);
+            this.DisposeButton.Size = new System.Drawing.Size(31, 20);
             // 
             // body
             // 
@@ -61,6 +61,11 @@
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.scopeControl, 0);
             // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(342, 1);
+            this.settingsButton.Size = new System.Drawing.Size(31, 20);
+            // 
             // conditionControl1
             // 
             condition1.BooleanOperator = "<=";
@@ -68,15 +73,14 @@
             condition1.RightParameter = "5";
             this.conditionControl1.Condition = condition1;
             this.conditionControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.conditionControl1.Location = new System.Drawing.Point(76, 1);
+            this.conditionControl1.Location = new System.Drawing.Point(48, 1);
             this.conditionControl1.Name = "conditionControl1";
-            this.conditionControl1.Size = new System.Drawing.Size(201, 22);
+            this.conditionControl1.Size = new System.Drawing.Size(201, 20);
             this.conditionControl1.TabIndex = 3;
             // 
             // scopeControl
             // 
             this.scopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
-           
             this.scopeControl.Location = new System.Drawing.Point(0, 24);
             this.scopeControl.Name = "scopeControl";
             this.scopeControl.Scope = null;

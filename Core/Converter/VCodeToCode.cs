@@ -20,40 +20,23 @@ namespace Core.Converter
         private void VariableToCode(Variable variable)
         {
          
-            Code += variable.AccessModifier.ToString().ToLower()+" ";
+            //Code += variable.AccessModifier.ToString().ToLower()+" ";
             Code += variable.Type.ToString().ToLower()+" ";
             Code += variable.Name+" ";
-            Code += "="+" ";
+           
             if (variable.IsArray)
             {
-                Code += "{";
 
+                Code += "[" + variable.Row + "]";
                 switch (variable.ArrayType)
                 {
-                    case "1D":
-                        for (int i = 0; i < variable.Row; i++)
-                        {
-                            //Code += variable.Value[i, 0].ToString()+",";
-                        }
-                        Code = Code.Remove(Code.Length - 1);
-                        break;
+                   
                     case "2D":
-                        for (int i = 0; i < variable.Row; i++)
-                        {
-                            Code += "{";
-                            for (int j = 0; j < variable.Column; j++)
-                            {
-                                //Code += variable.Value[i, j].ToString()+",";
-                            }
-                            Code = Code.Remove(Code.Length - 1);
-                            Code += "},";
-                        }
-
-                        Code = Code.Remove(Code.Length - 1);
+                        Code += "[" + variable.Column + "]";
                         break;
                 }
 
-                Code += "}";
+            
 
             }
             else
@@ -61,7 +44,7 @@ namespace Core.Converter
                 //Code += variable.Value[0, 0].ToString();
             }
 
-
+          
 
 
             Code += ";";
@@ -69,75 +52,67 @@ namespace Core.Converter
 
         private void VCodeToString(VCode vcode)
         {
-
-            if (vcode.VType == Enums.VType.GlobalScope)
+            switch (vcode.VType)
             {
-                var globalScope = (GlobalScope)vcode;
-                GlobalScopeToCode(globalScope.Scope);
+                case Enums.VType.GlobalScope:
+                    var globalScope = (GlobalScope)vcode;
+                    GlobalScopeToCode(globalScope.Scope);
+                    break;
+                case Enums.VType.Variable:
+                    Variable variable = (Variable) vcode;
+                    VariableToCode(variable);
+                    break;
+                case Enums.VType.If:
+                    var If = (If) vcode;
+                    Code += "if";
+                    ConditionToCode(If.Condition);
+                    ScopeToCode(If.Scope);
+                    break;
+                case Enums.VType.While:
+                    var wWhile = (While) vcode;
+                    Code += "while";
+                    ConditionToCode(wWhile.Condition);
+                    ScopeToCode(wWhile.Scope);
+                    break;
 
-            }
+                case Enums.VType.Assignment:
+                    var assignment = (Assignment) vcode;
+                    AssignmentToCode(assignment);
+                    break;
+                case Enums.VType.Function:
+                    var function = (Function) vcode;
+                    //Code += function.AccessModifier.ToString().ToLower() + " ";
+                    if(function.IsBody)
+                    Code += function.Type.ToString().ToLower() + " ";
 
+                    Code += function.Name;
+                    Code += "(";
+                    string parameter = "";
 
-            if (vcode.VType == Enums.VType.Variable)
-            {
-                Variable variable = (Variable) vcode;
-                VariableToCode(variable);
-            }
-
-
-            if (vcode.VType == Enums.VType.If)
-            {
-                var If = (If) vcode;
-                Code += "if";
-                ConditionToCode(If.Condition);
-                ScopeToCode(If.Scope);
-                
-            }
-
-            if (vcode.VType == Enums.VType.While)
-            {
-                var wWhile = (While) vcode;
-                Code += "while";
-                ConditionToCode(wWhile.Condition);
-                ScopeToCode(wWhile.Scope);
-
-            }
-
-
-            if (vcode.VType == Enums.VType.Function)
-            {
-                var function = (Function) vcode;
-                Code += function.AccessModifier.ToString().ToLower() + " ";
-                Code += function.Type.ToString().ToLower() + " ";
-                Code += function.Name;
-                Code += "(";
-                string parameter = "";
-
-                if (function.Parameters != null)
-                {
-                    foreach (Parameter p in function.Parameters)
+                    if (function.Parameters.Count > 0)
                     {
-                        parameter += p.Type + " " + p.Name + ",";
+                        foreach (Parameter p in function.Parameters)
+                        {
+                            parameter += p.Type + " " + p.Name + ",";
+                        }
+                        parameter =parameter.Remove(parameter.Length-1);
                     }
-                    parameter =parameter.Remove(parameter.Length-1);
-                }
 
 
-                Code += parameter;
-                Code += ")";
+                    Code += parameter;
+                    Code += ")";
 
 
-                if (function.IsBody)
-                {
-                    ScopeToCode(function.Scope);
-                }
-                else
-                {
-                    Code +=";";
-                }
-        }
-
-            
+                    if (function.IsBody)
+                    {
+                        ScopeToCode(function.Scope);
+                    }
+                    else
+                    {
+                        Code +=";";
+                    }
+                    break;
+            }
         }
 
         private  void ScopeToCode(Scope scope)
@@ -171,6 +146,13 @@ namespace Core.Converter
             Code += condition.RightParameter;
             Code += ")";
         }
+
+
+        private void AssignmentToCode(Assignment assignment)
+        {
+            Code += assignment.AssignmentString;
+        }
+
 
     }
 }

@@ -22,7 +22,8 @@ namespace CodeVisualizer.Controls.VBlocks.Variable
             VCode = variable;        
             Variable = (DTD.Entity.vCodes.Variable)variable;
             UpdateName();
-            
+            Variable.IsBody = true;
+
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

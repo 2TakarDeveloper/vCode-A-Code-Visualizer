@@ -47,7 +47,7 @@ namespace CodeVisualizer.Controls.Helpers
                 AddItemToScope(vBlock);
             }
 
-            Scope.UpdateAccessibleVariableNames();
+            Scope.UpdateLocalVariables();
             
         }
 
@@ -61,17 +61,20 @@ namespace CodeVisualizer.Controls.Helpers
         private void whileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vWhile = new Vwhile();
-          
+            vWhile.ScopeControl.Scope.ScopeAccessVariable = Scope.LocalVariables;
+            vWhile.PopulateScopeVariables(Scope.LocalVariables);
+
             ScopePanel.Controls.Add(vWhile);
-          
+            UpdateScope();
         }
 
         private void ifToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vif = new Vif();
+            vif.ScopeControl.Scope.ScopeAccessVariable = Scope.LocalVariables;
             vif.PopulateScopeVariables(Scope.LocalVariables);
             ScopePanel.Controls.Add(vif);
-            
+            UpdateScope();
         }
 
 
@@ -87,8 +90,43 @@ namespace CodeVisualizer.Controls.Helpers
             }
         }
 
-        #endregion
 
+        private void printToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Function PrintFunction = new Function();
+            PrintFunction.Name = "printf";
+            PrintFunction.IsBody = false;
+            PrintFunction.VType = Enums.VType.Function;
+
+            PrintFunction.Parameters.Add(new Parameter() { Name = "", Type = "string" });
+            FunctionCall functionCall = new FunctionCall(PrintFunction, Scope.LocalVariables);
+            functionCall.settingsButton.Visible = false;
+
+
+            functionCall.ScopeControl = null;
+            ScopePanel.Controls.Add(functionCall);
+        }
+
+        private void assignmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AssignmentForm assignmentForm = new AssignmentForm(Scope.LocalVariables);
+            if (assignmentForm.ShowDialog() == DialogResult.OK)
+            {
+                AssignmentBlock assignmentBlock = new AssignmentBlock(assignmentForm.Assignment);
+                ScopePanel.Controls.Add(assignmentBlock);
+                UpdateScope();
+            }
+
+
+
+            #endregion
+
+
+
+
+
+
+        }
 
         #region vCodeConverter
         //Pass the the items of a scope and it will generate necessary controls
@@ -100,8 +138,8 @@ namespace CodeVisualizer.Controls.Helpers
                 switch (item.VType)
                 {
                     case Enums.VType.Variable:
-                            Vvariable vvariable= new Vvariable(item);
-                            ScopePanel.Controls.Add(vvariable);
+                        Vvariable vvariable = new Vvariable(item);
+                        ScopePanel.Controls.Add(vvariable);
                         break;
                     case Enums.VType.Function:
                         Function function = (Function)item;
@@ -114,10 +152,10 @@ namespace CodeVisualizer.Controls.Helpers
                         }
                         else
                         {
-                            FunctionCall vFunctionCall=new FunctionCall(function,scope.ScopeVariables);
+                            FunctionCall vFunctionCall = new FunctionCall(function, scope.LocalVariables);
                             ScopePanel.Controls.Add(vFunctionCall);
                         }
-                        
+
                         break;
                     case Enums.VType.If:
                         If iif = (If)item;
@@ -126,16 +164,22 @@ namespace CodeVisualizer.Controls.Helpers
                         ScopePanel.Controls.Add(vif);
                         break;
                     case Enums.VType.While:
-                        While wWhile = (While) item;
-                        Vwhile vwhile=new Vwhile() {VCode=wWhile};
+                        While wWhile = (While)item;
+                        Vwhile vwhile = new Vwhile() { VCode = wWhile };
                         vwhile.ScopeControl.VcodeToVblock(wWhile.Scope);
                         ScopePanel.Controls.Add(vwhile);
                         break;
-                    
-                   
+
+                    case Enums.VType.Assignment:
+                        Assignment assignment = (Assignment)item;
+                        AssignmentBlock assignmentBlock = new AssignmentBlock(assignment);
+                        ScopePanel.Controls.Add(assignmentBlock);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
             }
-            
+
         }
 
 
@@ -144,20 +188,5 @@ namespace CodeVisualizer.Controls.Helpers
 
 
         #endregion
-
-      
-
-        private void printToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            Function PrintFunction = new Function();
-            PrintFunction.Name = "printf";
-            PrintFunction.IsBody = false;
-            PrintFunction.VType=Enums.VType.Function;
-      
-            PrintFunction.Parameters.Add(new Parameter() { Name = "", Type = "string" });
-            FunctionCall functionCall = new FunctionCall(PrintFunction, Scope.ScopeVariables);
-            functionCall.ScopeControl = null;
-            ScopePanel.Controls.Add(functionCall);
-        }
     }
 }

@@ -30,5 +30,10 @@ namespace DTD.Entity.vCodes
             Name = name;
             AccessModifier = Enums.AccessModifier.Public;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

@@ -36,15 +36,16 @@
             this.ifToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.switchCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.whileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.forToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.whileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ScopePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.systemDefinedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userDefinedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.whileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.whileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ScopePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.assignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +56,10 @@
             this.variableToolStripMenuItem,
             this.iFToolStripMenuItem,
             this.functionToolStripMenuItem,
-            this.whileToolStripMenuItem});
+            this.whileToolStripMenuItem,
+            this.assignmentToolStripMenuItem});
             this.ContextMenuStrip.Name = "ContextMenu";
-            this.ContextMenuStrip.Size = new System.Drawing.Size(153, 114);
+            this.ContextMenuStrip.Size = new System.Drawing.Size(153, 136);
             this.ContextMenuStrip.Text = "Component";
             // 
             // variableToolStripMenuItem
@@ -107,6 +109,41 @@
             this.functionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.functionToolStripMenuItem.Text = "Function";
             // 
+            // systemDefinedToolStripMenuItem
+            // 
+            this.systemDefinedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.printToolStripMenuItem,
+            this.scanToolStripMenuItem,
+            this.mainToolStripMenuItem});
+            this.systemDefinedToolStripMenuItem.Name = "systemDefinedToolStripMenuItem";
+            this.systemDefinedToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.systemDefinedToolStripMenuItem.Text = "System Defined";
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click_1);
+            // 
+            // scanToolStripMenuItem
+            // 
+            this.scanToolStripMenuItem.Name = "scanToolStripMenuItem";
+            this.scanToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.scanToolStripMenuItem.Text = "Scan";
+            // 
+            // mainToolStripMenuItem
+            // 
+            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
+            this.mainToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.mainToolStripMenuItem.Text = "Main";
+            // 
+            // userDefinedToolStripMenuItem
+            // 
+            this.userDefinedToolStripMenuItem.Name = "userDefinedToolStripMenuItem";
+            this.userDefinedToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.userDefinedToolStripMenuItem.Text = "User Defined";
+            // 
             // whileToolStripMenuItem
             // 
             this.whileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -120,13 +157,13 @@
             // 
             this.forToolStripMenuItem.Enabled = false;
             this.forToolStripMenuItem.Name = "forToolStripMenuItem";
-            this.forToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.forToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.forToolStripMenuItem.Text = "For";
             // 
             // whileToolStripMenuItem1
             // 
             this.whileToolStripMenuItem1.Name = "whileToolStripMenuItem1";
-            this.whileToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.whileToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
             this.whileToolStripMenuItem1.Text = "While";
             this.whileToolStripMenuItem1.Click += new System.EventHandler(this.whileToolStripMenuItem1_Click);
             // 
@@ -142,40 +179,12 @@
             this.ScopePanel.Size = new System.Drawing.Size(475, 376);
             this.ScopePanel.TabIndex = 1;
             // 
-            // systemDefinedToolStripMenuItem
+            // assignmentToolStripMenuItem
             // 
-            this.systemDefinedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printToolStripMenuItem,
-            this.scanToolStripMenuItem,
-            this.mainToolStripMenuItem});
-            this.systemDefinedToolStripMenuItem.Name = "systemDefinedToolStripMenuItem";
-            this.systemDefinedToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.systemDefinedToolStripMenuItem.Text = "System Defined";
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.printToolStripMenuItem.Text = "Print";
-            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click_1);
-            // 
-            // scanToolStripMenuItem
-            // 
-            this.scanToolStripMenuItem.Name = "scanToolStripMenuItem";
-            this.scanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.scanToolStripMenuItem.Text = "Scan";
-            // 
-            // mainToolStripMenuItem
-            // 
-            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
-            this.mainToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.mainToolStripMenuItem.Text = "Main";
-            // 
-            // userDefinedToolStripMenuItem
-            // 
-            this.userDefinedToolStripMenuItem.Name = "userDefinedToolStripMenuItem";
-            this.userDefinedToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.userDefinedToolStripMenuItem.Text = "User Defined";
+            this.assignmentToolStripMenuItem.Name = "assignmentToolStripMenuItem";
+            this.assignmentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.assignmentToolStripMenuItem.Text = "Assignment";
+            this.assignmentToolStripMenuItem.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
             // 
             // ScopeControl
             // 
@@ -206,5 +215,6 @@
         private System.Windows.Forms.ToolStripMenuItem scanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mainToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userDefinedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assignmentToolStripMenuItem;
     }
 }

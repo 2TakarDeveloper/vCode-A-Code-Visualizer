@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using CodeVisualizer.Controls.VBlocks;
@@ -25,6 +19,7 @@ namespace CodeVisualizer.Controls.Helpers
         public GlobalScopeControl()
         {
             InitializeComponent();
+            
         }
 
 
@@ -48,7 +43,7 @@ namespace CodeVisualizer.Controls.Helpers
             }
 
             GlobalScope.UpdateFunctionNames();
-            GlobalScope.Scope.UpdateAccessibleVariableNames();
+            GlobalScope.Scope.UpdateLocalVariables();
           
 
         }
@@ -61,6 +56,7 @@ namespace CodeVisualizer.Controls.Helpers
 
         public void VcodeToVblock(Scope scope)
         {
+            GlobalScopePanel.Controls.Clear();
             foreach (VCode item in scope.Items)
             {
                 switch (item.VType)
@@ -107,7 +103,26 @@ namespace CodeVisualizer.Controls.Helpers
             FunctionProperties functionProperties = new FunctionProperties();
             if (functionProperties.ShowDialog() != DialogResult.OK) return;
             Vfunction vFunc = new Vfunction(functionProperties.Function);
-            vFunc.Function.Scope.ScopeVariables = GlobalScope.Scope.LocalVariables;
+            vFunc.Function.Scope.ScopeAccessVariable = GlobalScope.Scope.LocalVariables;
+            GlobalScopePanel.Controls.Add(vFunc);
+            GlobalScope.FunctionList.Add(functionProperties.Function);
+            UpdateScope();
+        }
+
+        private void mainToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Function MainFunction = new Function();
+            MainFunction.Name = "Main";
+            MainFunction.IsBody = true;
+            MainFunction.VType = Enums.VType.Function;
+            MainFunction.Type=Enums.Type.Void;
+
+            Vfunction vFunc = new Vfunction(MainFunction);
+            vFunc.settingsButton.Visible = false;
+
+
+            vFunc.Function.Scope.ScopeAccessVariable = GlobalScope.Scope.LocalVariables;
+
             GlobalScopePanel.Controls.Add(vFunc);
 
             UpdateScope();

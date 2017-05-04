@@ -14,8 +14,8 @@ namespace CodeVisualizer.Controls.VBlocks.Function
         {
             
             InitializeComponent();
-            Function = function;
-            Function.IsBody = false;
+            Function = new DTD.Entity.vCodes.Function(function) {IsBody = false};
+
             ScopeControl = null;
             Function.VType=Enums.VType.Function;
             
@@ -30,7 +30,10 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             functionName.Text = Function.Name;
             foreach (Parameter parameter in Function.Parameters)
             {
+
                 var combo = new MetroComboBox();
+
+                if(ScopeVariables==null)return;
                 foreach (var variable in ScopeVariables)
                 {
                     if (variable.Type.ToString().ToLower() == parameter.Type)

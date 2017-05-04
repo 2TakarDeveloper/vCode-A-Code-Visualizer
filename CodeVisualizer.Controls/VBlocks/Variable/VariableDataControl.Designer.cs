@@ -29,97 +29,95 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.ValueTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.columnIndex = new MetroFramework.Controls.MetroComboBox();
+            this.rowIndex = new MetroFramework.Controls.MetroComboBox();
+            this.VariableName = new MetroFramework.Controls.MetroLabel();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
-            this.metroPanel1.Controls.Add(this.metroComboBox2);
-            this.metroPanel1.Controls.Add(this.metroComboBox1);
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel1.Controls.Add(this.columnIndex);
+            this.metroPanel1.Controls.Add(this.rowIndex);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel1.Location = new System.Drawing.Point(0, 28);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(251, 40);
+            this.metroPanel1.Size = new System.Drawing.Size(254, 38);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroComboBox1
+            // columnIndex
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(3, 3);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox1.TabIndex = 2;
-            this.metroComboBox1.UseSelectable = true;
+            this.columnIndex.FormattingEnabled = true;
+            this.columnIndex.ItemHeight = 23;
+            this.columnIndex.Location = new System.Drawing.Point(127, 3);
+            this.columnIndex.Name = "columnIndex";
+            this.columnIndex.Size = new System.Drawing.Size(121, 29);
+            this.columnIndex.TabIndex = 3;
+            this.columnIndex.UseSelectable = true;
+            this.columnIndex.Visible = false;
             // 
-            // metroComboBox2
+            // rowIndex
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(127, 3);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox2.TabIndex = 3;
-            this.metroComboBox2.UseSelectable = true;
+            this.rowIndex.FormattingEnabled = true;
+            this.rowIndex.ItemHeight = 23;
+            this.rowIndex.Location = new System.Drawing.Point(3, 3);
+            this.rowIndex.Name = "rowIndex";
+            this.rowIndex.Size = new System.Drawing.Size(121, 29);
+            this.rowIndex.TabIndex = 2;
+            this.rowIndex.UseSelectable = true;
+            this.rowIndex.Visible = false;
             // 
-            // ValueTextBox
+            // VariableName
             // 
+            this.VariableName.AutoSize = true;
+            this.VariableName.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.VariableName.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.VariableName.Location = new System.Drawing.Point(70, 0);
+            this.VariableName.Name = "VariableName";
+            this.VariableName.Size = new System.Drawing.Size(118, 25);
+            this.VariableName.TabIndex = 2;
+            this.VariableName.Text = "metroLabel1";
+            this.VariableName.WrapToLine = true;
             // 
+            // metroLink1
             // 
-            // 
-            this.ValueTextBox.CustomButton.Image = null;
-            this.ValueTextBox.CustomButton.Location = new System.Drawing.Point(197, 2);
-            this.ValueTextBox.CustomButton.Name = "";
-            this.ValueTextBox.CustomButton.Size = new System.Drawing.Size(51, 51);
-            this.ValueTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ValueTextBox.CustomButton.TabIndex = 1;
-            this.ValueTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.ValueTextBox.CustomButton.UseSelectable = true;
-            this.ValueTextBox.CustomButton.Visible = false;
-            this.ValueTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ValueTextBox.Lines = new string[0];
-            this.ValueTextBox.Location = new System.Drawing.Point(0, 40);
-            this.ValueTextBox.MaxLength = 32767;
-            this.ValueTextBox.Name = "ValueTextBox";
-            this.ValueTextBox.PasswordChar = '\0';
-            this.ValueTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.ValueTextBox.SelectedText = "";
-            this.ValueTextBox.SelectionLength = 0;
-            this.ValueTextBox.SelectionStart = 0;
-            this.ValueTextBox.ShortcutsEnabled = true;
-            this.ValueTextBox.Size = new System.Drawing.Size(251, 56);
-            this.ValueTextBox.TabIndex = 1;
-            this.ValueTextBox.UseSelectable = true;
-            this.ValueTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.ValueTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroLink1.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
+            this.metroLink1.Location = new System.Drawing.Point(228, -2);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(20, 23);
+            this.metroLink1.TabIndex = 3;
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // VariableDataControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ValueTextBox);
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.metroLink1);
+            this.Controls.Add(this.VariableName);
             this.Controls.Add(this.metroPanel1);
             this.Name = "VariableDataControl";
-            this.Size = new System.Drawing.Size(251, 96);
+            this.Size = new System.Drawing.Size(254, 66);
             this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         protected MetroFramework.Controls.MetroPanel metroPanel1;
-        protected MetroFramework.Controls.MetroComboBox metroComboBox2;
-        protected MetroFramework.Controls.MetroComboBox metroComboBox1;
-        protected MetroFramework.Controls.MetroTextBox ValueTextBox;
+        protected MetroFramework.Controls.MetroComboBox columnIndex;
+        protected MetroFramework.Controls.MetroComboBox rowIndex;
+        private MetroFramework.Controls.MetroLabel VariableName;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }

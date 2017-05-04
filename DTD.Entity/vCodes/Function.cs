@@ -26,5 +26,30 @@ namespace DTD.Entity.vCodes
         {
             Name = name;
         }
+
+        public Function(Function function)
+        {
+            Name = function.Name;
+            Type = function.Type;
+            AccessModifier = function.AccessModifier;
+            Scope = function.Scope;
+            Parameters = function.Parameters;
+            VType = function.VType;
+        }
+
+
+        public override string ToString()
+        {
+            string returnName;
+            returnName = Name+"(";
+            foreach (var var in Parameters)
+            {
+                returnName += var.Type + " " + var.Name+",";
+            }
+            if(Parameters.Count>0)
+                returnName = returnName.Remove(returnName.Length - 1);
+            returnName += ")";
+            return returnName;
+        }
     }
 }

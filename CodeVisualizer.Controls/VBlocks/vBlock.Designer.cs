@@ -116,9 +116,9 @@
 
         #endregion
         protected System.Windows.Forms.Panel Header;
-        protected MetroFramework.Controls.MetroLink settingsButton;
         protected MetroFramework.Controls.MetroLabel NameLable;
         protected MetroFramework.Controls.MetroLink DisposeButton;
         protected System.Windows.Forms.Panel body;
+        public MetroFramework.Controls.MetroLink settingsButton;
     }
 }

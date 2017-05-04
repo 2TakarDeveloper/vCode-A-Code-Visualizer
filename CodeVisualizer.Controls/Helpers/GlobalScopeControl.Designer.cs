@@ -35,6 +35,7 @@
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.GlobalScopePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VBlockMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,14 +45,14 @@
             this.variableToolStripMenuItem,
             this.functionToolStripMenuItem});
             this.VBlockMenu.Name = "VBlockMenu";
-            this.VBlockMenu.Size = new System.Drawing.Size(122, 48);
+            this.VBlockMenu.Size = new System.Drawing.Size(153, 70);
             // 
             // variableToolStripMenuItem
             // 
             this.variableToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem});
             this.variableToolStripMenuItem.Name = "variableToolStripMenuItem";
-            this.variableToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.variableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.variableToolStripMenuItem.Text = "Variable";
             // 
             // newToolStripMenuItem
@@ -64,15 +65,16 @@
             // functionToolStripMenuItem
             // 
             this.functionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem1});
+            this.newToolStripMenuItem1,
+            this.mainToolStripMenuItem});
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
-            this.functionToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.functionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.functionToolStripMenuItem.Text = "Function";
             // 
             // newToolStripMenuItem1
             // 
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-            this.newToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem1.Text = "New";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
             // 
@@ -86,6 +88,13 @@
             this.GlobalScopePanel.Name = "GlobalScopePanel";
             this.GlobalScopePanel.Size = new System.Drawing.Size(576, 415);
             this.GlobalScopePanel.TabIndex = 1;
+            // 
+            // mainToolStripMenuItem
+            // 
+            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
+            this.mainToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mainToolStripMenuItem.Text = "Main";
+            this.mainToolStripMenuItem.Click += new System.EventHandler(this.mainToolStripMenuItem_Click);
             // 
             // GlobalScopeControl
             // 
@@ -109,5 +118,6 @@
         private System.Windows.Forms.ToolStripMenuItem functionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
         public System.Windows.Forms.FlowLayoutPanel GlobalScopePanel;
+        private System.Windows.Forms.ToolStripMenuItem mainToolStripMenuItem;
     }
 }

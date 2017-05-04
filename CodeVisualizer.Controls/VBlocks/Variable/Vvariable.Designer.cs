@@ -38,12 +38,6 @@
             this.Header.Size = new System.Drawing.Size(226, 28);
             this.Header.TabIndex = 0;
             // 
-            // settingsButton
-            // 
-            this.settingsButton.Location = new System.Drawing.Point(159, 1);
-            this.settingsButton.Size = new System.Drawing.Size(33, 24);
-            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
-            // 
             // NameLable
             // 
             this.NameLable.Size = new System.Drawing.Size(104, 19);
@@ -62,6 +56,12 @@
             this.body.Size = new System.Drawing.Size(228, 27);
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.metroPanel1, 0);
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(159, 1);
+            this.settingsButton.Size = new System.Drawing.Size(33, 24);
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // metroPanel1
             // 

@@ -6,7 +6,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
 {
     public partial class Vif : VBlock
     {
-       
+        
         //TODO add function list later
         public Vif()
         {
@@ -31,7 +31,9 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
 
             NameLable.Text = @"If";
             scopeControl.Scope = iif.Scope;
+            
             ScopeControl = scopeControl;
+            ScopeControl.Scope = iif.Scope;
             conditionControl1.Condition = iif.Condition;
             VCode = iif;
         }
@@ -40,7 +42,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
 
         public void PopulateScopeVariables(List<DTD.Entity.vCodes.Variable> varList )
         {
-           
+
             
             foreach (var variable in varList)
             {

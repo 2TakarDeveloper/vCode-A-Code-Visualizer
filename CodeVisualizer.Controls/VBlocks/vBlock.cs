@@ -18,7 +18,7 @@ namespace CodeVisualizer.Controls.VBlocks
             
             ControlMoverOrResizer.Init(this);//This Allows the Controls to be movable and resizable
             ControlMoverOrResizer.WorkType = ControlMoverOrResizer.MoveOrResize.Resize;
-
+            
         }
 
         private void DisposeButton_Click(object sender, System.EventArgs e)

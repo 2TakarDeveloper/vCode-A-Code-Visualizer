@@ -90,11 +90,23 @@
     <Compile Include="PropertiesForm\AssignmentForm.Designer.cs">
       <DependentUpon>AssignmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PropertiesForm\FunctionPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertiesForm\FunctionPicker.Designer.cs">
+      <DependentUpon>FunctionPicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="PropertiesForm\FunctionProperties.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PropertiesForm\FunctionProperties.Designer.cs">
       <DependentUpon>FunctionProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesForm\VariablePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PropertiesForm\VariablePicker.Designer.cs">
+      <DependentUpon>VariablePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="PropertiesForm\VariableProperties.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,12 @@
     </Compile>
     <Compile Include="VBlocks\AssignmentBlock.Designer.cs">
       <DependentUpon>AssignmentBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VBlocks\ConstantBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VBlocks\ConstantBlock.Designer.cs">
+      <DependentUpon>ConstantBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="VBlocks\Function\FunctionCall.cs">
       <SubType>UserControl</SubType>
@@ -183,11 +201,20 @@
     <EmbeddedResource Include="Instructions\OneAddressInstruction.resx">
       <DependentUpon>OneAddressInstruction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Instructions\ThreeAddressInstructionControl.resx">
+      <DependentUpon>ThreeAddressInstructionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PropertiesForm\AssignmentForm.resx">
       <DependentUpon>AssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesForm\FunctionPicker.resx">
+      <DependentUpon>FunctionPicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PropertiesForm\FunctionProperties.resx">
       <DependentUpon>FunctionProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesForm\VariablePicker.resx">
+      <DependentUpon>VariablePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PropertiesForm\VariableProperties.resx">
       <DependentUpon>VariableProperties.cs</DependentUpon>
@@ -202,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VBlocks\AssignmentBlock.resx">
       <DependentUpon>AssignmentBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBlocks\ConstantBlock.resx">
+      <DependentUpon>ConstantBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VBlocks\Function\FunctionCall.resx">
       <DependentUpon>FunctionCall.cs</DependentUpon>

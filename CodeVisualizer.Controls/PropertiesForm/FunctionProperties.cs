@@ -72,24 +72,28 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 }
                 Function.Name = FunctionNameTextBox.Text;
 
-                switch (FunctionAccessModifier.Text)
-                {
-                    case "public":
-                        Function.AccessModifier = Enums.AccessModifier.Public;
-                        break;
-                    case "private":
-                        Function.AccessModifier = Enums.AccessModifier.Private;
-                        break;
-                    case "protected":
-                        Function.AccessModifier = Enums.AccessModifier.Protected;
-                        break;
+                //switch (FunctionAccessModifier.Text)
+                //{
+                //    case "public":
+                //        Function.AccessModifier = Enums.AccessModifier.Public;
+                //        break;
+                //    case "private":
+                //        Function.AccessModifier = Enums.AccessModifier.Private;
+                //        break;
+                //    case "protected":
+                //        Function.AccessModifier = Enums.AccessModifier.Protected;
+                //        break;
 
-                    default:
-                        throw new Exception("AccessModifier  can't be empty");
+                //    default:
+                //        throw new Exception("AccessModifier  can't be empty");
                       
-                }
-                Function.IsStatic = staticCheck.Checked;
+                //}
+                //Function.IsStatic = staticCheck.Checked;
+
+
                 Function.Parameters.Clear();
+
+
                 foreach (ParameterControl parameterControl  in ParameterFlow.Controls)
                 {
                     Function.Parameters.Add(parameterControl.Parameter);

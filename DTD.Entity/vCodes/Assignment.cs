@@ -12,6 +12,9 @@ namespace DTD.Entity.vCodes
     {
         //public Enums.InstructionType InstructionType { set; get; }
         public Instruction Instruction { set; get; }
-        public string Variable { set; get; } 
+        public string Variable { set; get; }//it should be replaced by a variable later else conversion might occure issues
+        public string AssignmentString { get; set; }//cheating to convert vCodetoCode;
+        public List<Variable> LocalVariables { get; set; }
+
     }
 }

@@ -26,7 +26,7 @@ namespace DTD.Entity.vCodes
             FunctionList.Clear();
             foreach (VCode vCode in Scope.Items)
             {
-                if(vCode.VType!=Enums.VType.Function)return;
+                if(vCode.VType!=Enums.VType.Function)continue;
                
                 Function f = (Function)vCode;
                 FunctionList.Add(f);

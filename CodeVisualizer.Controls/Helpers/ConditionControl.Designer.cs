@@ -73,6 +73,7 @@
             this.RightBox.Size = new System.Drawing.Size(83, 21);
             this.RightBox.TabIndex = 2;
             this.RightBox.SelectedIndexChanged += new System.EventHandler(this.RightBox_SelectedIndexChanged);
+            this.RightBox.TextChanged += new System.EventHandler(this.RightBox_SelectedIndexChanged);
             // 
             // ConditionControl
             // 

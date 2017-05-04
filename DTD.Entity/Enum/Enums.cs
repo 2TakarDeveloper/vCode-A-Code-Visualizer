@@ -14,7 +14,7 @@
 
         public enum VType
         {
-            Variable, Function, If, While, GlobalScope, Constant
+            Variable, Function, If, While, GlobalScope, Constant,Assignment
         }
 
         public enum InstructionType

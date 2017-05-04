@@ -30,7 +30,7 @@
         {
             this.InstructionPicker = new System.Windows.Forms.ComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.InstructionPanel = new MetroFramework.Controls.MetroPanel();
             this.SuspendLayout();
             // 
             // InstructionPicker
@@ -58,25 +58,25 @@
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Instruction";
             // 
-            // metroPanel1
+            // InstructionPanel
             // 
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 25);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(608, 204);
-            this.metroPanel1.TabIndex = 2;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.InstructionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InstructionPanel.HorizontalScrollbarBarColor = true;
+            this.InstructionPanel.HorizontalScrollbarHighlightOnWheel = false;
+            this.InstructionPanel.HorizontalScrollbarSize = 10;
+            this.InstructionPanel.Location = new System.Drawing.Point(0, 25);
+            this.InstructionPanel.Name = "InstructionPanel";
+            this.InstructionPanel.Size = new System.Drawing.Size(608, 204);
+            this.InstructionPanel.TabIndex = 2;
+            this.InstructionPanel.VerticalScrollbarBarColor = true;
+            this.InstructionPanel.VerticalScrollbarHighlightOnWheel = false;
+            this.InstructionPanel.VerticalScrollbarSize = 10;
             // 
             // InstructionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.InstructionPanel);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.InstructionPicker);
             this.Name = "InstructionControl";
@@ -90,6 +90,6 @@
 
         private System.Windows.Forms.ComboBox InstructionPicker;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroPanel InstructionPanel;
     }
 }

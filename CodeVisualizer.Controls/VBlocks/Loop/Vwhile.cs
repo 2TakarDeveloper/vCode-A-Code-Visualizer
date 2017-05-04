@@ -16,6 +16,8 @@ namespace CodeVisualizer.Controls.VBlocks
     public partial class Vwhile : VBlock
     {
        
+        private While While { get; set; }
+
         public Vwhile()
         {
             InitializeComponent();
@@ -23,12 +25,41 @@ namespace CodeVisualizer.Controls.VBlocks
             scopeControl.Scope=new Scope();
             ScopeControl = scopeControl;
             conditionControl1.Condition=new Condition();
-            While wWhile = new While
+            While = new While
             {
                 Scope = scopeControl.Scope,
                 Condition = conditionControl1.Condition
             };
-            VCode = (While) wWhile;
+            VCode = While;
+        }
+
+        public Vwhile(While wWhile)
+        {
+            InitializeComponent();
+
+            NameLable.Text = @"If";
+            scopeControl.Scope = wWhile.Scope;
+
+            ScopeControl = scopeControl;
+            ScopeControl.Scope = wWhile.Scope;
+            conditionControl1.Condition = wWhile.Condition;
+            VCode = wWhile;
+        }
+
+
+        public void PopulateScopeVariables(List<DTD.Entity.vCodes.Variable> varList)
+        {
+
+
+            foreach (var variable in varList)
+            {
+
+                conditionControl1.LeftBox.Items.Add(variable.Name);
+                conditionControl1.RightBox.Items.Add(variable.Name);
+            }
+
+
+
         }
     }
 }

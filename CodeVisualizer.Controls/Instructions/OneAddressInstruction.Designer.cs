@@ -29,13 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.Panel = new MetroFramework.Controls.MetroPanel();
             this.Menu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.variableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.constantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Panel = new MetroFramework.Controls.MetroPanel();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Panel
+            // 
+            this.Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel.ContextMenuStrip = this.Menu;
+            this.Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panel.HorizontalScrollbarBarColor = true;
+            this.Panel.HorizontalScrollbarHighlightOnWheel = false;
+            this.Panel.HorizontalScrollbarSize = 10;
+            this.Panel.Location = new System.Drawing.Point(0, 0);
+            this.Panel.Name = "Panel";
+            this.Panel.Size = new System.Drawing.Size(490, 195);
+            this.Panel.TabIndex = 1;
+            this.Panel.VerticalScrollbarBarColor = true;
+            this.Panel.VerticalScrollbarHighlightOnWheel = false;
+            this.Panel.VerticalScrollbarSize = 10;
             // 
             // Menu
             // 
@@ -44,40 +60,28 @@
             this.variableToolStripMenuItem,
             this.constantToolStripMenuItem});
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(123, 70);
+            this.Menu.Size = new System.Drawing.Size(153, 92);
             // 
             // functionToolStripMenuItem
             // 
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
-            this.functionToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.functionToolStripMenuItem.Text = "Function";
+            this.functionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.functionToolStripMenuItem.Text = "Variable";
+            this.functionToolStripMenuItem.Click += new System.EventHandler(this.variableToolStripMenuItem_Click);
             // 
             // variableToolStripMenuItem
             // 
             this.variableToolStripMenuItem.Name = "variableToolStripMenuItem";
-            this.variableToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.variableToolStripMenuItem.Text = "Variable";
+            this.variableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.variableToolStripMenuItem.Text = "Function";
+            this.variableToolStripMenuItem.Click += new System.EventHandler(this.functionToolStripMenuItem_Click);
             // 
             // constantToolStripMenuItem
             // 
             this.constantToolStripMenuItem.Name = "constantToolStripMenuItem";
-            this.constantToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.constantToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.constantToolStripMenuItem.Text = "Constant";
-            // 
-            // Panel
-            // 
-            this.Panel.ContextMenuStrip = this.Menu;
-            this.Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel.HorizontalScrollbarBarColor = true;
-            this.Panel.HorizontalScrollbarHighlightOnWheel = false;
-            this.Panel.HorizontalScrollbarSize = 10;
-            this.Panel.Location = new System.Drawing.Point(0, 0);
-            this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(582, 174);
-            this.Panel.TabIndex = 1;
-            this.Panel.VerticalScrollbarBarColor = true;
-            this.Panel.VerticalScrollbarHighlightOnWheel = false;
-            this.Panel.VerticalScrollbarSize = 10;
+            this.constantToolStripMenuItem.Click += new System.EventHandler(this.constantToolStripMenuItem_Click);
             // 
             // OneAddressInstruction
             // 
@@ -85,18 +89,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Panel);
             this.Name = "OneAddressInstruction";
-            this.Size = new System.Drawing.Size(582, 174);
+            this.Size = new System.Drawing.Size(490, 195);
             this.Menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private MetroFramework.Controls.MetroPanel Panel;
         private MetroFramework.Controls.MetroContextMenu Menu;
         private System.Windows.Forms.ToolStripMenuItem functionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem variableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem constantToolStripMenuItem;
-        private MetroFramework.Controls.MetroPanel Panel;
     }
 }
