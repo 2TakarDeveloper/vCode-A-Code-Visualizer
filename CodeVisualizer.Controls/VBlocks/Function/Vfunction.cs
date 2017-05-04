@@ -2,8 +2,8 @@
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using DTD.Entity;
+using DTD.Entity.Enum;
 using DTD.Entity.Helpers;
-using GlobalLibrary;
 
 namespace CodeVisualizer.Controls.VBlocks.Function
 {
@@ -11,6 +11,7 @@ namespace CodeVisualizer.Controls.VBlocks.Function
     {
         
         public DTD.Entity.vCodes.Function Function { get; set; }
+       
         public Vfunction(VCode vCode)
         {
             InitializeComponent();
@@ -19,14 +20,39 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             Function = (DTD.Entity.vCodes.Function)vCode;
             Function.IsBody = true;
             VCode = Function;
-            
+         
+
+
             scopeControl.Scope=new Scope();
             Function.Scope = scopeControl.Scope;
             ScopeControl = scopeControl;
-            
+
+           
+
             PopulateProperties();
           
         }
+
+
+        public void SetReturnVar()
+        {
+            if (Function.Type == Enums.Type.Void)
+            {
+                returnPicker.Visible = false;
+                returnLable.Visible = false;
+            }
+            else
+            {
+                foreach (DTD.Entity.vCodes.Variable variable in Function.Scope.ScopeAccessVariable)
+                {
+                    if (variable.Type == Function.Type)
+                        returnPicker.Items.Add(variable);
+                }
+            }
+
+            returnPicker.SelectedIndex = 0;
+        }
+
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
@@ -57,5 +83,9 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             
         }
 
+        private void returnPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Function.ReturnVariable = (DTD.Entity.vCodes.Variable) returnPicker.SelectedItem;
+        }
     }
 }

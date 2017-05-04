@@ -104,8 +104,11 @@ namespace CodeVisualizer.Controls.Helpers
             if (functionProperties.ShowDialog() != DialogResult.OK) return;
             Vfunction vFunc = new Vfunction(functionProperties.Function);
             vFunc.Function.Scope.ScopeAccessVariable = GlobalScope.Scope.LocalVariables;
+            vFunc.SetReturnVar();
             GlobalScopePanel.Controls.Add(vFunc);
             GlobalScope.FunctionList.Add(functionProperties.Function);
+            
+
             UpdateScope();
         }
 

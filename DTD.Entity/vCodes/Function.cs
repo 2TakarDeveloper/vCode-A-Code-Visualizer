@@ -13,6 +13,7 @@ namespace DTD.Entity.vCodes
     {
         public Scope Scope { get; set; }
         public List<Parameter> Parameters { get; set; }
+        public Variable ReturnVariable { get; set; }
         public Function()
         {
             Name = "NewFunction";
@@ -21,6 +22,7 @@ namespace DTD.Entity.vCodes
             Scope=new Scope();
             Parameters= new List<Parameter>();
             VType=Enums.VType.Function;
+            ReturnVariable=new Variable();
         }
         public Function(string name):this()
         {
@@ -35,6 +37,7 @@ namespace DTD.Entity.vCodes
             Scope = function.Scope;
             Parameters = function.Parameters;
             VType = function.VType;
+            ReturnVariable = function.ReturnVariable;
         }
 
 

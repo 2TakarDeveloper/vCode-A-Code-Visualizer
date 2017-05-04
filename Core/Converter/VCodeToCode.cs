@@ -105,7 +105,16 @@ namespace Core.Converter
 
                     if (function.IsBody)
                     {
+                        Code += "{";
+
                         ScopeToCode(function.Scope);
+
+                        if (function.Type != Enums.Type.Void)
+                        {
+                            Code += "return " + function.ReturnVariable.Name+";";
+                        }
+                        Code += "}";
+
                     }
                     else
                     {
@@ -118,14 +127,11 @@ namespace Core.Converter
         private  void ScopeToCode(Scope scope)
         {
             
-            Code += "{";
             foreach (VCode item in scope.Items)
             {
                 VCodeToString(item);
-               
             }
-            Code += "}";
-
+          
         }
 
         private void GlobalScopeToCode(Scope scope)
