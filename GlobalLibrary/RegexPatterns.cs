@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GlobalLibrary
@@ -43,7 +39,7 @@ namespace GlobalLibrary
         public Regex ParameterRegex { get; private set; }
         public Regex FunctionCall { get; private set; }
         public Regex FunctionCallAsInst { get; private set; }
-        public Regex ParameterValueRegex { get; private set; }
+        public Regex ArgumentRegex { get; private set; }
         public Regex IfRegex { get; private set; }
         public Regex WhileRegex { get; private set; }
         public Regex Condition { get; private set; }
@@ -71,9 +67,9 @@ namespace GlobalLibrary
             BooleanOperator = new Regex("([<][=]|[>][=]|([<])|([>])|([=][=]))");
 
 
-            ParameterValueRegex = new Regex("[\\s]*[(][\\s]*(((" + Variable + ")|(" + ConstantRegex + "))[\\s]*([,][\\s]*((" + Variable + ")|(" + ConstantRegex + "))[\\s]*)*)?[\\s]*[)]");
-            FunctionCallAsInst = new Regex("" + Variable + ParameterValueRegex + "[\\s]*");
-            FunctionCall = new Regex("^" + Variable + ParameterValueRegex + "[\\s]*([;])?$");
+            ArgumentRegex = new Regex("[\\s]*[(][\\s]*(((" + Variable + ")|(" + ConstantRegex + "))[\\s]*([,][\\s]*((" + Variable + ")|(" + ConstantRegex + "))[\\s]*)*)?[\\s]*[)]");
+            FunctionCallAsInst = new Regex("" + Variable + ArgumentRegex + "[\\s]*");
+            FunctionCall = new Regex("^" + Variable + ArgumentRegex + "[\\s]*([;])?$");
 
 
             InstructionRegex = new Regex("((" + Variable + ")|(" + ConstantRegex + ")|(" + FunctionCallAsInst + "))");
@@ -85,10 +81,9 @@ namespace GlobalLibrary
             ArrayRegex = new Regex("^((" + AccessModifier + ")[\\s]+)?" + "((" + IsStatic + ")[\\s]+)?((" + DataType + ")[\\s]+)" + Variable + "[\\s]*[\\[]((" + Variable+")|("+NumberRegex+"))?[\\]]" + "[\\s]*([\\[]((" + Variable + ")|(" + NumberRegex + "))?[\\]])?[;]$");
             VarAssignmentRegex = new Regex("^[\\s]*(" + Variable + ")[\\s]*" + "[=][\\s]*("+SingleInstructionRegex+")|("+ThreeAddressInstructionRegex+")[\\s]*$");
 
-            Condition = new Regex("[(]" + SingleInstructionRegex + "[\\s]*" + BooleanOperator + "[\\s]*" + SingleInstructionRegex + "[)]");
+            Condition = new Regex("[(]" + InstructionRegex + "[\\s]*" + BooleanOperator + "[\\s]*" + InstructionRegex + "[)]");
             IfRegex = new Regex("^[i][f][\\s]*" + Condition + "[\\s]*$");
-            WhileRegex = new Regex("[w][h][i][l][e][\\s]*" + Condition + "[\\s]*");
-            
+            WhileRegex = new Regex("^[w][h][i][l][e][\\s]*" + Condition + "[\\s]*$");
 
 
             ParameterRegex = new Regex("[\\s]*[(][\\s]*(((" + DataType + ")[\\s]+)" + Variable + "[\\s]*([,][\\s]*((" + DataType + ")[\\s]+)" + Variable + "[\\s]*)*)?[)][\\s]*");

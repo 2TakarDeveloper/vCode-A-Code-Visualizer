@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using Core.Beautifier;
 using Core.Converter;
 using DTD.Entity.Helpers;

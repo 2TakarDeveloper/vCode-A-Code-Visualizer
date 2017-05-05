@@ -21,7 +21,6 @@ namespace Core.Converter
         public CodeToVCode(string code)
         {
             _regex = new RegexPatterns();
-
             //Call Function here.
             Scope = new Scope();
             code = Regex.Replace(code, @"\t|\n", "");
@@ -148,9 +147,9 @@ namespace Core.Converter
 
         private void CreateFunctionCallObject(Function funcObject, string text)
         {
-            if (_regex.ParameterValueRegex.IsMatch(text))
+            if (_regex.ArgumentRegex.IsMatch(text))
             {
-                Match parameters = _regex.ParameterValueRegex.Match(text);
+                Match parameters = _regex.ArgumentRegex.Match(text);
                 Match m = _regex.SingleInstructionRegex.Match(parameters.Groups[0].ToString());
 
                 while (m.Success)
