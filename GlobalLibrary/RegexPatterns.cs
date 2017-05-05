@@ -99,5 +99,15 @@ namespace GlobalLibrary
 
         #endregion
 
+
+        public bool IsVariable(string data)
+        {
+            return Variable.IsMatch(data);
+        }
+
+
+       
+
+
     }
 }

@@ -3,22 +3,31 @@ using System.Windows.Forms;
 using DTD.Entity;
 using DTD.Entity.Enum;
 using DTD.Entity.vCodes;
+using GlobalLibrary;
 using MetroFramework;
+using MetroFramework.Components;
 
 namespace CodeVisualizer.Controls.PropertiesForm
 {
     public partial class VariableProperties : MetroFramework.Forms.MetroForm
     {
         public Variable Variable { get; set; }
-     
+
+        private  RegexPatterns RegexPatterns { get; set; }
+
+        private string tooltipText = @"Variable name must start with letters or _  also can't contain
+any other special character, But it can contain numbers(0-9).";
+
 
         public VariableProperties()
         {
             
             InitializeComponent();
             Variable =  new Variable();
-          
-       
+            RegexPatterns=new RegexPatterns();
+           
+            
+
         }
 
         public VariableProperties(VCode vcode)
@@ -26,7 +35,8 @@ namespace CodeVisualizer.Controls.PropertiesForm
             Variable = (Variable)vcode;
             InitializeComponent();
             PopulateProperties(Variable);
-           
+            RegexPatterns = new RegexPatterns();
+
         }
 
         private void PopulateProperties(Variable variable)
@@ -97,9 +107,14 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
-           DialogResult = DialogResult.OK;
-            
+            if (RegexPatterns.IsVariable(variableNameTextBox.Text))
+            {
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MetroMessageBox.Show(this, tooltipText, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
 
@@ -184,14 +199,23 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private void variableNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            Variable.Name = variableNameTextBox.Text;
+
+            if (!RegexPatterns.IsVariable(variableNameTextBox.Text))
+            {
+                VariableTip.Show(tooltipText,variableNameTextBox);
+            }
+            else
+            {
+                VariableTip.Hide(variableNameTextBox);
+                Variable.Name = variableNameTextBox.Text;
+            }
+
+            
         }
 
         private void staticCheck_CheckedChanged(object sender, EventArgs e)
         {
             Variable.IsStatic = staticCheck.Checked;
         }
-
-       
     }
 }
