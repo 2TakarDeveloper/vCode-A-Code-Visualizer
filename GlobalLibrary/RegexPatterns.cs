@@ -102,7 +102,8 @@ namespace GlobalLibrary
 
         public bool IsVariable(string data)
         {
-            return Variable.IsMatch(data);
+            Regex tempVariableRegex = new Regex("^"+Variable+"$");
+            return tempVariableRegex.IsMatch(data);
         }
 
 
