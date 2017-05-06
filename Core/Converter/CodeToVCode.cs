@@ -25,6 +25,7 @@ namespace Core.Converter
             Scope = new Scope();
             code = Regex.Replace(code, @"\t|\n", "");
             CreateScopeObject(Scope, '{' + code.Trim() + '}');
+            MessageBox.Show(((Function)Scope.Items.ElementAt(0)).Scope.Items.ElementAt(1).VType.ToString());
         }
 
         #region LexicalAnalyzer
@@ -189,14 +190,20 @@ namespace Core.Converter
                 text = _regex.ParameterRegex.Replace(text, "");
             }
 
-            #region Variable DataType
+            #region Function Return Type
             if (_regex.DataType.IsMatch(text))
             {
                 Match m = _regex.DataType.Match(text);
                 switch (m.Groups[0].ToString())
                 {
-                    case "bool":
+                    case "void":
+                        funcObject.Type = Enums.Type.Void;
+                        break;
+                    case "char":
                         funcObject.Type = Enums.Type.Bool;
+                        break;
+                    case "bool":
+                        funcObject.Type = Enums.Type.Char;
                         break;
 
                     case "int":
@@ -264,6 +271,10 @@ namespace Core.Converter
                 Match m = _regex.DataType.Match(text);
                 switch (m.Groups[0].ToString())
                 {
+                    case "void":
+                        varObject.Type = Enums.Type.Void;
+                        break;
+
                     case "bool":
                         varObject.Type = Enums.Type.Bool;
                         break;

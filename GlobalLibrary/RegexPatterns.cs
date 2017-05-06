@@ -63,7 +63,7 @@ namespace GlobalLibrary
 
             OperatorRegex = new Regex("([+])|([-])|([*])|([/])");
             Variable = new Regex("([a-z|A-Z|_][a-z|A-Z|0-9]*)");
-            DataType = new Regex("([i][n][t])|([f][l][o][a][t])|([d][o][u][b][l][e])|([s][t][r][i][n][g])|([b][o][o][l])");
+            DataType = new Regex("([v][o][i][d])|([c][h][a][r])|([i][n][t])|([f][l][o][a][t])|([d][o][u][b][l][e])|([s][t][r][i][n][g])|([b][o][o][l])");
             BooleanOperator = new Regex("([<][=]|[>][=]|([<])|([>])|([=][=]))");
 
 
