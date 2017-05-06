@@ -25,8 +25,8 @@ namespace CodeVisualizer.Controls.VBlocks.Function
          
 
 
-            scopeControl.Scope=new Scope();
-            Function.Scope = scopeControl.Scope;
+            scopeControl.Scope=Function.Scope;
+           
             ScopeControl = scopeControl;
 
             if (Function.Type == Enums.Type.Void)

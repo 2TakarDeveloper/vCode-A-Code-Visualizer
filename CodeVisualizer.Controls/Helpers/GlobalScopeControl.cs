@@ -70,6 +70,7 @@ namespace CodeVisualizer.Controls.Helpers
                         Vfunction vfunction = new Vfunction(function);
                         vfunction.ScopeControl.VcodeToVblock(function.Scope);
                         GlobalScopePanel.Controls.Add(vfunction);
+                        
                         break;
                   
 

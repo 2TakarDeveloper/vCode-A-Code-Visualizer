@@ -38,8 +38,6 @@
             this.functionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemDefinedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userDefinedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,9 +110,7 @@
             // systemDefinedToolStripMenuItem
             // 
             this.systemDefinedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printToolStripMenuItem,
-            this.scanToolStripMenuItem,
-            this.mainToolStripMenuItem});
+            this.printToolStripMenuItem});
             this.systemDefinedToolStripMenuItem.Name = "systemDefinedToolStripMenuItem";
             this.systemDefinedToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.systemDefinedToolStripMenuItem.Text = "System Defined";
@@ -122,21 +118,9 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click_1);
-            // 
-            // scanToolStripMenuItem
-            // 
-            this.scanToolStripMenuItem.Name = "scanToolStripMenuItem";
-            this.scanToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
-            this.scanToolStripMenuItem.Text = "Scan";
-            // 
-            // mainToolStripMenuItem
-            // 
-            this.mainToolStripMenuItem.Name = "mainToolStripMenuItem";
-            this.mainToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
-            this.mainToolStripMenuItem.Text = "Main";
             // 
             // userDefinedToolStripMenuItem
             // 
@@ -213,8 +197,6 @@
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem systemDefinedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mainToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userDefinedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignmentToolStripMenuItem;
     }

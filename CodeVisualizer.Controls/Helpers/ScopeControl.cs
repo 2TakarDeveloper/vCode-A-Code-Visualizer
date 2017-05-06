@@ -108,6 +108,22 @@ namespace CodeVisualizer.Controls.Helpers
             ScopePanel.Controls.Add(functionCall);
         }
 
+        private void scanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Function ScanFunction = new Function();
+            ScanFunction.Name = "scanf";
+            ScanFunction.IsBody = false;
+            ScanFunction.VType = Enums.VType.Function;
+
+            ScanFunction.Parameters.Add(new Parameter() { Name = "", Type = Enums.Type.String });
+            FunctionCall functionCall = new FunctionCall(ScanFunction, Scope.LocalVariables);
+            functionCall.settingsButton.Visible = false;
+            functionCall.ScopeControl = null;
+            ScopePanel.Controls.Add(functionCall);
+        }
+
+
+
         private void assignmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AssignmentForm assignmentForm = new AssignmentForm(Scope.LocalVariables);
@@ -128,6 +144,12 @@ namespace CodeVisualizer.Controls.Helpers
             ScopePanel.Controls.Add(functionCall);
             UpdateScope();
         }
+
+
+
+
+      
+
         #endregion
 
         #region vCodeConverter
@@ -183,6 +205,7 @@ namespace CodeVisualizer.Controls.Helpers
             }
 
         }
+
 
 
 
