@@ -25,7 +25,7 @@ namespace Core.Converter
             Scope = new Scope();
             code = Regex.Replace(code, @"\t|\n", "");
             CreateScopeObject(Scope, '{' + code.Trim() + '}');
-            MessageBox.Show(((Function)Scope.Items.ElementAt(0)).Scope.Items.ElementAt(1).VType.ToString());
+            //MessageBox.Show(((Function)Scope.Items.ElementAt(1)).Scope.Items.ElementAt(0).VType.ToString());
         }
 
         #region LexicalAnalyzer
@@ -413,7 +413,7 @@ namespace Core.Converter
                     }
                     else if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
                     {
-                        CreateInstructionObject(ins,m.Groups[0].ToString());
+                        CreateConstantObject(ins,m.Groups[0].ToString());
                     }
                     if (count == 0)
                     {
@@ -446,17 +446,19 @@ namespace Core.Converter
                 }
                 else if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
                 {
-                    CreateInstructionObject(ins, m.Groups[0].ToString());
+                    ins = CreateConstantObject(ins, m.Groups[0].ToString());
                 }
                 single.Instruction = ins;
             }
         }
 
-        private void CreateInstructionObject(TypedvCodes ins,string text)
+        private Constant CreateConstantObject(TypedvCodes ins,string text)
         {
-            Constant cns = (Constant)ins;
-            cns.Value = text;
-            cns.VType = Enums.VType.Constant;
+            Constant cns = new Constant
+            {
+                Value = text,
+                VType = Enums.VType.Constant
+            };
 
             if (_regex.StringRegex.IsMatch(text))
             {
@@ -478,6 +480,8 @@ namespace Core.Converter
             {
                 cns.Type = Enums.Type.Char;
             }
+
+            return cns;
         }
 
         #endregion

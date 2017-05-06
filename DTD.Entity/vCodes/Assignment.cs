@@ -16,5 +16,9 @@ namespace DTD.Entity.vCodes
         public string AssignmentString { get; set; }//cheating to convert vCodetoCode;
         public List<Variable> LocalVariables { get; set; }
 
+        public Assignment()
+        {
+            VType = Enums.VType.Assignment;
+        }
     }
 }
