@@ -58,6 +58,10 @@
             this.settingsButton.Location = new System.Drawing.Point(245, 1);
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(170, 1);
+            // 
             // AssignmentStringLable
             // 
             this.AssignmentStringLable.AutoSize = true;

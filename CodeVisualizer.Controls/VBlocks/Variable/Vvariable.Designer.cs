@@ -63,6 +63,12 @@
             this.settingsButton.Size = new System.Drawing.Size(33, 24);
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(111, 1);
+            this.metroButton1.Size = new System.Drawing.Size(48, 24);
+            this.metroButton1.Visible = false;
+            // 
             // metroPanel1
             // 
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -33,6 +33,7 @@
             this.NameLable = new MetroFramework.Controls.MetroLabel();
             this.DisposeButton = new MetroFramework.Controls.MetroLink();
             this.body = new System.Windows.Forms.Panel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.Header.SuspendLayout();
             this.body.SuspendLayout();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // 
             this.Header.BackColor = System.Drawing.Color.White;
             this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Header.Controls.Add(this.metroButton1);
             this.Header.Controls.Add(this.settingsButton);
             this.Header.Controls.Add(this.NameLable);
             this.Header.Controls.Add(this.DisposeButton);
@@ -97,6 +99,16 @@
             this.body.Size = new System.Drawing.Size(618, 316);
             this.body.TabIndex = 7;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroButton1.Location = new System.Drawing.Point(476, 1);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 19);
+            this.metroButton1.TabIndex = 9;
+            this.metroButton1.Text = "Reload";
+            this.metroButton1.UseSelectable = true;
+            // 
             // VBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,5 +132,6 @@
         protected MetroFramework.Controls.MetroLink DisposeButton;
         protected System.Windows.Forms.Panel body;
         public MetroFramework.Controls.MetroLink settingsButton;
+        public MetroFramework.Controls.MetroButton metroButton1;
     }
 }

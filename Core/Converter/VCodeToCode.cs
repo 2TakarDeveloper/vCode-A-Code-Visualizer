@@ -66,13 +66,17 @@ namespace Core.Converter
                     var If = (If) vcode;
                     Code += "if";
                     ConditionToCode(If.Condition);
+                    Code += "{";
                     ScopeToCode(If.Scope);
+                    Code += "}";
                     break;
                 case Enums.VType.While:
                     var wWhile = (While) vcode;
                     Code += "while";
                     ConditionToCode(wWhile.Condition);
+                    Code += "{";
                     ScopeToCode(wWhile.Scope);
+                    Code += "}";
                     break;
 
                 case Enums.VType.Assignment:

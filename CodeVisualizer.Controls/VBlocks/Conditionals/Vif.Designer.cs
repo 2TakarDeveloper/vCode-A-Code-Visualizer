@@ -41,14 +41,11 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // 
             this.Header.Controls.Add(this.conditionControl1);
             this.Header.Size = new System.Drawing.Size(358, 23);
+            this.Header.Controls.SetChildIndex(this.metroButton1, 0);
             this.Header.Controls.SetChildIndex(this.DisposeButton, 0);
             this.Header.Controls.SetChildIndex(this.settingsButton, 0);
             this.Header.Controls.SetChildIndex(this.NameLable, 0);
             this.Header.Controls.SetChildIndex(this.conditionControl1, 0);
-            // 
-            // settingsButton
-            // 
-            this.settingsButton.Location = new System.Drawing.Point(295, 1);
             // 
             // NameLable
             // 
@@ -57,7 +54,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(326, 1);
+            this.DisposeButton.Location = new System.Drawing.Point(249, 1);
             // 
             // body
             // 
@@ -65,6 +62,15 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             this.body.Size = new System.Drawing.Size(360, 240);
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.scopeControl, 0);
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(218, 1);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(280, 1);
+            this.metroButton1.Visible = false;
             // 
             // scopeControl
             // 
@@ -84,7 +90,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             this.conditionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.conditionControl1.Location = new System.Drawing.Point(19, 1);
             this.conditionControl1.Name = "conditionControl1";
-            this.conditionControl1.Size = new System.Drawing.Size(202, 21);
+            this.conditionControl1.Size = new System.Drawing.Size(202, 19);
             this.conditionControl1.TabIndex = 3;
             // 
             // Vif

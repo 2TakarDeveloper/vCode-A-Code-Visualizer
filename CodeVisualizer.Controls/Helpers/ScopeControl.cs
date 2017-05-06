@@ -26,7 +26,7 @@ namespace CodeVisualizer.Controls.Helpers
             InitializeComponent();
             
         }
-
+    
         #region UpdateScopeData
 
         private void AddItemToScope(VBlock vBlock)
@@ -48,6 +48,7 @@ namespace CodeVisualizer.Controls.Helpers
             }
 
             Scope.UpdateLocalVariables();
+            
             
         }
 

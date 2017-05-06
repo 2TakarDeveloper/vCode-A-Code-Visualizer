@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
 using DTD.Entity;
@@ -54,7 +56,8 @@ namespace CodeVisualizer.Controls.VBlocks.Function
                 }
             }
 
-            returnPicker.SelectedIndex = 0;
+            if(Function.Scope.ScopeAccessVariable.Count<=0)return;
+                returnPicker.SelectedIndex = 0;
         }
 
 
@@ -90,6 +93,35 @@ namespace CodeVisualizer.Controls.VBlocks.Function
         private void returnPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             Function.ReturnVariable = (DTD.Entity.vCodes.Variable) returnPicker.SelectedItem;
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+       
+            returnPicker.Items.Clear();
+            foreach (var var in Function.Scope.LocalVariables)
+            {
+                if (Function.Type != var.Type) continue;
+                        
+                    returnPicker.Items.Add(var);
+            }
+
+            foreach (var var in Function.Scope.ScopeAccessVariable)
+            {
+                if (Function.Type != var.Type) continue;
+                    if(returnPicker.Items.Contains(var))continue;
+                    returnPicker.Items.Add(var);
+            }
+
+            foreach (var parameter in Function.Parameters)
+            {
+                var var= new DTD.Entity.vCodes.Variable(parameter.Name) {Type = parameter.Type};
+                if (Function.Type != var.Type) continue;
+
+                returnPicker.Items.Add(var);
+            }
+           
+
         }
     }
 }

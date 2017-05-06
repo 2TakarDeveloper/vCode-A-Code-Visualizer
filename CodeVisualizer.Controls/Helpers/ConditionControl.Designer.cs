@@ -44,6 +44,7 @@
             this.LeftBox.Size = new System.Drawing.Size(78, 21);
             this.LeftBox.TabIndex = 0;
             this.LeftBox.SelectedIndexChanged += new System.EventHandler(this.leftBox_SelectedIndexChanged);
+            this.LeftBox.TextChanged += new System.EventHandler(this.leftBox_SelectedIndexChanged);
             // 
             // OperatorBox
             // 
