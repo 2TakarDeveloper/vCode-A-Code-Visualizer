@@ -25,7 +25,6 @@ namespace Core.Converter
             Scope = new Scope();
             code = Regex.Replace(code, @"\t|\n", "");
             CreateScopeObject(Scope, '{' + code.Trim() + '}');
-            //MessageBox.Show(((Function)Scope.Items.ElementAt(1)).Scope.Items.ElementAt(0).VType.ToString());
         }
 
         #region LexicalAnalyzer
@@ -35,7 +34,8 @@ namespace Core.Converter
             Match op = _regex.BooleanOperator.Match(text);
             condition.BooleanOperator = op.Groups[0].ToString();
 
-            Match param = _regex.SingleInstructionRegex.Match(text);
+            Match conditionString = _regex.Condition.Match(text);
+            Match param = _regex.InstructionRegex.Match(conditionString.Groups[0].ToString());
 
             byte count = 0;
             while (param.Success)
