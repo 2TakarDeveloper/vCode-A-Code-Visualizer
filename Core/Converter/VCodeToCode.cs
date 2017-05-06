@@ -93,7 +93,7 @@ namespace Core.Converter
                     {
                         foreach (Parameter p in function.Parameters)
                         {
-                            parameter += p.Type + " " + p.Name + ",";
+                            parameter += p.Type.ToString().ToLower() + " " + p.Name + ",";
                         }
                         parameter =parameter.Remove(parameter.Length-1);
                     }

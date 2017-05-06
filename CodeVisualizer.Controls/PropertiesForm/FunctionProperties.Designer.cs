@@ -44,6 +44,7 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.CancleButton = new MetroFramework.Controls.MetroButton();
             this.SubmitButton = new MetroFramework.Controls.MetroButton();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.tableLayoutPanel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -203,9 +204,12 @@
             this.FunctionNameTextBox.ShortcutsEnabled = true;
             this.FunctionNameTextBox.Size = new System.Drawing.Size(312, 26);
             this.FunctionNameTextBox.TabIndex = 21;
+            this.metroToolTip1.SetToolTip(this.FunctionNameTextBox, "Function name must start with letters(A-Z/a-z) or _  also can\'t contain\r\nany othe" +
+        "r special character, But it can contain numbers(0-9).");
             this.FunctionNameTextBox.UseSelectable = true;
             this.FunctionNameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.FunctionNameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.FunctionNameTextBox.TextChanged += new System.EventHandler(this.FunctionNameTextBox_TextChanged);
             // 
             // HasParameter
             // 
@@ -275,6 +279,12 @@
             this.SubmitButton.UseSelectable = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // FunctionProperties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,5 +317,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroButton CancleButton;
         private MetroFramework.Controls.MetroButton SubmitButton;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
     }
 }

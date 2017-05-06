@@ -44,8 +44,8 @@
             this.whileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ScopePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.assignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ScopePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,6 +143,7 @@
             this.userDefinedToolStripMenuItem.Name = "userDefinedToolStripMenuItem";
             this.userDefinedToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.userDefinedToolStripMenuItem.Text = "User Defined";
+            this.userDefinedToolStripMenuItem.Click += new System.EventHandler(this.userDefinedToolStripMenuItem_Click);
             // 
             // whileToolStripMenuItem
             // 
@@ -167,6 +168,13 @@
             this.whileToolStripMenuItem1.Text = "While";
             this.whileToolStripMenuItem1.Click += new System.EventHandler(this.whileToolStripMenuItem1_Click);
             // 
+            // assignmentToolStripMenuItem
+            // 
+            this.assignmentToolStripMenuItem.Name = "assignmentToolStripMenuItem";
+            this.assignmentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.assignmentToolStripMenuItem.Text = "Assignment";
+            this.assignmentToolStripMenuItem.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
+            // 
             // ScopePanel
             // 
             this.ScopePanel.AutoScroll = true;
@@ -178,13 +186,6 @@
             this.ScopePanel.Name = "ScopePanel";
             this.ScopePanel.Size = new System.Drawing.Size(475, 376);
             this.ScopePanel.TabIndex = 1;
-            // 
-            // assignmentToolStripMenuItem
-            // 
-            this.assignmentToolStripMenuItem.Name = "assignmentToolStripMenuItem";
-            this.assignmentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.assignmentToolStripMenuItem.Text = "Assignment";
-            this.assignmentToolStripMenuItem.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
             // 
             // ScopeControl
             // 

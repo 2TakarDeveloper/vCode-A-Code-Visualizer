@@ -51,6 +51,17 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            Assignment.Variable = AssignmentVariable.Text;
+            if (SelectedVariable.IsArray)
+            {
+                Assignment.Variable += "["+Rows.Text+"]";
+                if (SelectedVariable.ArrayType == "2D")
+                {
+                    Assignment.Variable += "[" + Columns.Text + "]";
+                }
+                Assignment.Variable += ";";
+            }
+
             Assignment.Instruction = InstructionControl.Instruction;
             if (AssignmentVariable.SelectedItem == null)MessageBox.Show(this,@"Assignment must be done on a variable");
             else DialogResult=DialogResult.OK;
@@ -138,14 +149,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 Columns.Visible = false;
             }
 
-            Assignment.Variable = SelectedVariable.Name;
-
-            if (SelectedVariable.IsArray)
-            {
-                Assignment.Variable += "[" + SelectedVariable.Row + "]";
-                if (SelectedVariable.ArrayType == "2D")
-                    Assignment.Variable += "[" + SelectedVariable.Column + "]";
-            }
+           
 
         }
     }

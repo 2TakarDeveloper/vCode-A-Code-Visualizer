@@ -28,6 +28,20 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         }
 
+        public FunctionPicker(List<Function> functions)
+        {
+            InitializeComponent();
+            foreach (var func in functions)
+            {
+               
+                    functionPickerBox.Items.Add(func);
+            }
+
+
+
+        }
+
+
         private void functionPickerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Function = (Function)functionPickerBox.SelectedItem;

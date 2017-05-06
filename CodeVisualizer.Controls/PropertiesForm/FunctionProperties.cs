@@ -11,6 +11,7 @@ using CodeVisualizer.Controls.Helpers;
 using DTD.Entity.Enum;
 using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
+using GlobalLibrary;
 using MetroFramework;
 
 namespace CodeVisualizer.Controls.PropertiesForm
@@ -18,6 +19,10 @@ namespace CodeVisualizer.Controls.PropertiesForm
     public partial class FunctionProperties : MetroFramework.Forms.MetroForm
     {
         public Function Function { get; set; }
+
+
+        private string tooltipText = @"Function name must start with letters(A-Z/a-z) or _  also can't contain
+any other special character, But it can contain numbers(0-9).";
 
         public FunctionProperties()
         {
@@ -29,6 +34,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
         {
             Function = function;
             InitializeComponent();
+          
             FunctionNameTextBox.Text = Function.Name;
             ReturnType.Text = Function.Type.ToString().ToLower();
             FunctionAccessModifier.Text = Function.AccessModifier.ToString().ToLower();
@@ -70,7 +76,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                         throw new Exception("Return type can't be empty");
                         
                 }
-                Function.Name = FunctionNameTextBox.Text;
+               
 
                 //switch (FunctionAccessModifier.Text)
                 //{
@@ -124,6 +130,22 @@ namespace CodeVisualizer.Controls.PropertiesForm
         {
             AddNewParameter.Visible = HasParameter.Checked;
             ParameterFlow.Controls.Clear();
+        }
+
+        private void FunctionNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            RegexPatterns RegexPatterns= new RegexPatterns();
+
+            if (!RegexPatterns.IsVariable(FunctionNameTextBox.Text))
+            {
+                metroToolTip1.Show(tooltipText, FunctionNameTextBox);
+            }
+            else
+            {
+                metroToolTip1.Hide(FunctionNameTextBox);
+                Function.Name = FunctionNameTextBox.Text;
+            }
+            
         }
     }
 }

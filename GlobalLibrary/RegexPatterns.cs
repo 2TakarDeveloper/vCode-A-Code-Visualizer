@@ -103,6 +103,7 @@ namespace GlobalLibrary
         public bool IsVariable(string data)
         {
             return Variable.IsMatch(data);
+           
         }
 
 

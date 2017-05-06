@@ -98,7 +98,7 @@ namespace CodeVisualizer.Controls.Helpers
             PrintFunction.IsBody = false;
             PrintFunction.VType = Enums.VType.Function;
 
-            PrintFunction.Parameters.Add(new Parameter() { Name = "", Type = "string" });
+            PrintFunction.Parameters.Add(new Parameter() { Name = "", Type = Enums.Type.String });
             FunctionCall functionCall = new FunctionCall(PrintFunction, Scope.LocalVariables);
             functionCall.settingsButton.Visible = false;
 
@@ -110,23 +110,24 @@ namespace CodeVisualizer.Controls.Helpers
         private void assignmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AssignmentForm assignmentForm = new AssignmentForm(Scope.LocalVariables);
-            if (assignmentForm.ShowDialog() == DialogResult.OK)
-            {
-                AssignmentBlock assignmentBlock = new AssignmentBlock(assignmentForm.Assignment);
-                ScopePanel.Controls.Add(assignmentBlock);
-                UpdateScope();
-            }
-
-
-
-            #endregion
-
-
-
-
-
-
+            if (assignmentForm.ShowDialog() != DialogResult.OK) return;
+            if(assignmentForm.Assignment==null)return;
+            AssignmentBlock assignmentBlock = new AssignmentBlock(assignmentForm.Assignment);
+            ScopePanel.Controls.Add(assignmentBlock);
+            UpdateScope();
         }
+
+
+        private void userDefinedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FunctionPicker functionPicker = new FunctionPicker(GlobalScope.FunctionList);
+            if (functionPicker.ShowDialog() != DialogResult.OK) return;
+            if(functionPicker.Function==null)return;
+            FunctionCall functionCall = new FunctionCall(functionPicker.Function,Scope.LocalVariables);
+            ScopePanel.Controls.Add(functionCall);
+            UpdateScope();
+        }
+        #endregion
 
         #region vCodeConverter
         //Pass the the items of a scope and it will generate necessary controls
@@ -188,5 +189,7 @@ namespace CodeVisualizer.Controls.Helpers
 
 
         #endregion
+
+        
     }
 }
