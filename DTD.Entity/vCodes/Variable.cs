@@ -14,8 +14,7 @@ namespace DTD.Entity.vCodes
         public int Row { get; set; }
         public int Column { get; set; }
         public string ArrayType { get; set; }
-
-       
+        
   
         
 

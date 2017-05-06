@@ -15,7 +15,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private  RegexPatterns RegexPatterns { get; set; }
 
-        private string tooltipText = @"Variable name must start with letters or _  also can't contain
+        private string tooltipText = @"Variable name must start with letters(A-Z/a-z) or _  also can't contain
 any other special character, But it can contain numbers(0-9).";
 
 
@@ -34,8 +34,9 @@ any other special character, But it can contain numbers(0-9).";
         {
             Variable = (Variable)vcode;
             InitializeComponent();
-            PopulateProperties(Variable);
             RegexPatterns = new RegexPatterns();
+            PopulateProperties(Variable);
+            
 
         }
 

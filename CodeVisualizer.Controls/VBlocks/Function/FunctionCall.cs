@@ -36,7 +36,7 @@ namespace CodeVisualizer.Controls.VBlocks.Function
                 if(ScopeVariables==null)return;
                 foreach (var variable in ScopeVariables)
                 {
-                    if (variable.Type.ToString().ToLower() == parameter.Type)
+                    if (variable.Type == parameter.Type)
                         combo.Items.Add(variable.Name);
                 }
                 FlowPanel.Controls.Add(combo);

@@ -179,7 +179,29 @@ namespace Core.Converter
                 {
                     Parameter p = new Parameter();
                     string[] parameterContent = m.ToString().Split(' ');
-                    p.Type = parameterContent[0];
+
+                    switch (parameterContent[0])
+                    {
+                        case "int":
+                            p.Type = Enums.Type.Int;
+                            break;
+                        case "float":
+                            p.Type = Enums.Type.Float;
+                            break;
+                        case "double":
+                            p.Type = Enums.Type.Double;
+                            break;
+                        case "string":
+                            p.Type = Enums.Type.String;
+                            break;
+                        case "char":
+                            p.Type = Enums.Type.Char;
+                            break;
+                        case "bool":
+                            p.Type = Enums.Type.Bool;
+                            break;
+                    }
+                    
                     p.Name = parameterContent[1];
 
                     funcObject.Parameters.Add(p);

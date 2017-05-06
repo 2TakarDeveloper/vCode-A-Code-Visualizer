@@ -27,7 +27,11 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             Function.Scope = scopeControl.Scope;
             ScopeControl = scopeControl;
 
-           
+            if (Function.Type == Enums.Type.Void)
+            {
+                returnLable.Visible = false;
+                returnPicker.Visible = false;
+            }
 
             PopulateProperties();
           
@@ -74,9 +78,9 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             {
                 for (int i = 0; i < len-1; i++)
                 {
-                    parameters += Function.Parameters[i].Type + " " + Function.Parameters[i].Name+",";
+                    parameters += Function.Parameters[i].Type.ToString().ToLower() + " " + Function.Parameters[i].Name+",";
                 }
-                parameters +=Function.Parameters[len - 1].Type + " " + Function.Parameters[len - 1].Name;
+                parameters +=Function.Parameters[len - 1].Type.ToString().ToLower() + " " + Function.Parameters[len - 1].Name;
             }
 
             NameLable.Text = Function.Type.ToString().ToLower()+@" "+Function.Name+ @"(" +parameters+@")";

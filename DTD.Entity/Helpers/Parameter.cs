@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using DTD.Entity.Enum;
+﻿using DTD.Entity.Enum;
 
 namespace DTD.Entity.Helpers
 {
     public class Parameter
     {
-        public string Type { get; set; }
+        public Enums.Type  Type { get; set; }
         public string Name { get; set; }
 
         public Parameter()
         {
-            Type = "int";
+            Type = Enums.Type.Int;
             Name = "New Parameter";
         }
-        public Parameter(string type, string name)
+        public Parameter(Enums.Type type, string name)
         {
             this.Type = type;
             this.Name = name;
         }
         public Parameter(string name)
         {
-            this.Type = null;
+            this.Type = Enums.Type.Int;
             this.Name = name;
         }
     }

@@ -348,8 +348,8 @@
             this.variableNameTextBox.ShortcutsEnabled = true;
             this.variableNameTextBox.Size = new System.Drawing.Size(317, 24);
             this.variableNameTextBox.TabIndex = 21;
-            this.VariableTip.SetToolTip(this.variableNameTextBox, "Variable name must start with letters or _  also can\'t contain\r\nany other special" +
-        " character, But it can contain numbers(0-9).");
+            this.VariableTip.SetToolTip(this.variableNameTextBox, "Variable name must start with letters(A-Z/a-z) or _  also can\'t contain\r\nany othe" +
+        "r special character, But it can contain numbers(0-9).");
             this.variableNameTextBox.UseSelectable = true;
             this.variableNameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.variableNameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);

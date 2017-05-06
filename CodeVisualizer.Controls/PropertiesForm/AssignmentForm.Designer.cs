@@ -36,8 +36,8 @@ namespace CodeVisualizer.Controls.PropertiesForm
             this.Rows = new System.Windows.Forms.ComboBox();
             this.AssignmentVariable = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.InstructionPanel = new MetroFramework.Controls.MetroPanel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.InstructionPanel = new MetroFramework.Controls.MetroPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +103,15 @@ namespace CodeVisualizer.Controls.PropertiesForm
             this.panel1.Size = new System.Drawing.Size(614, 49);
             this.panel1.TabIndex = 1;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(13, 5);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(126, 19);
+            this.metroLabel2.TabIndex = 4;
+            this.metroLabel2.Text = "Assignment Variable";
+            // 
             // InstructionPanel
             // 
             this.InstructionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -116,15 +125,6 @@ namespace CodeVisualizer.Controls.PropertiesForm
             this.InstructionPanel.VerticalScrollbarBarColor = true;
             this.InstructionPanel.VerticalScrollbarHighlightOnWheel = false;
             this.InstructionPanel.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(13, 5);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(126, 19);
-            this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "Assignment Variable";
             // 
             // AssignmentForm
             // 

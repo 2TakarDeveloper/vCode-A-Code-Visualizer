@@ -55,9 +55,9 @@
             // 
             // 
             this.NameTextBox.CustomButton.Image = null;
-            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(93, 1);
+            this.NameTextBox.CustomButton.Location = new System.Drawing.Point(95, 2);
             this.NameTextBox.CustomButton.Name = "";
-            this.NameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.NameTextBox.CustomButton.Size = new System.Drawing.Size(17, 17);
             this.NameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.NameTextBox.CustomButton.TabIndex = 1;
             this.NameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
