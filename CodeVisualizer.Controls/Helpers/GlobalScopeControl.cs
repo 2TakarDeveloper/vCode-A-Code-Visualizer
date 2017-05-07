@@ -104,8 +104,11 @@ namespace CodeVisualizer.Controls.Helpers
             FunctionProperties functionProperties = new FunctionProperties();
             if (functionProperties.ShowDialog() != DialogResult.OK) return;
             Vfunction vFunc = new Vfunction(functionProperties.Function);
-            vFunc.Function.Scope.ScopeAccessVariable = GlobalScope.Scope.LocalVariables;
-
+            
+            foreach (var variable in GlobalScope.Scope.LocalVariables)
+            {
+                vFunc.Function.Scope.ScopeAccessVariable.Add(variable);
+            }
             foreach (var var in functionProperties.Function.Parameters)
             {
                 vFunc.Function.Scope.ScopeAccessVariable.Add(new Variable(var.Name)
@@ -122,6 +125,9 @@ namespace CodeVisualizer.Controls.Helpers
             
 
             UpdateScope();
+           
+
+          
         }
 
         private void mainToolStripMenuItem_Click(object sender, EventArgs e)

@@ -23,6 +23,8 @@ namespace CodeVisualizer.Controls.PropertiesForm
 
         private string tooltipText = @"Function name must start with letters(A-Z/a-z) or _  also can't contain
 any other special character, But it can contain numbers(0-9).";
+        RegexPatterns _regexPatterns = new RegexPatterns();
+
 
         public FunctionProperties()
         {
@@ -106,9 +108,16 @@ any other special character, But it can contain numbers(0-9).";
                 }
 
 
+                if (_regexPatterns.IsVariable(FunctionNameTextBox.Text))
+                {
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, tooltipText, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-
-                DialogResult = DialogResult.OK;
+              
             }
             catch (Exception exception)
             {

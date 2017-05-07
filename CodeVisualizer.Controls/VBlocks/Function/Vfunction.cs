@@ -22,18 +22,22 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             Function = (DTD.Entity.vCodes.Function)vCode;
             Function.IsBody = true;
             VCode = Function;
-         
 
 
+            
             scopeControl.Scope=Function.Scope;
-           
             ScopeControl = scopeControl;
+
 
             if (Function.Type == Enums.Type.Void)
             {
                 returnLable.Visible = false;
                 returnPicker.Visible = false;
             }
+
+
+     
+
 
             PopulateProperties();
           
@@ -56,8 +60,7 @@ namespace CodeVisualizer.Controls.VBlocks.Function
                 }
             }
 
-            if(Function.Scope.ScopeAccessVariable.Count<=0)return;
-                returnPicker.SelectedIndex = 0;
+        
         }
 
 
@@ -99,28 +102,33 @@ namespace CodeVisualizer.Controls.VBlocks.Function
         {
        
             returnPicker.Items.Clear();
+
+
+
+         
+
             foreach (var var in Function.Scope.LocalVariables)
             {
                 if (Function.Type != var.Type) continue;
-                        
-                    returnPicker.Items.Add(var);
-            }
-
-            foreach (var var in Function.Scope.ScopeAccessVariable)
-            {
-                if (Function.Type != var.Type) continue;
-                    if(returnPicker.Items.Contains(var))continue;
-                    returnPicker.Items.Add(var);
-            }
-
-            foreach (var parameter in Function.Parameters)
-            {
-                var var= new DTD.Entity.vCodes.Variable(parameter.Name) {Type = parameter.Type};
-                if (Function.Type != var.Type) continue;
-
+                if (returnPicker.Items.Contains(var)) continue;
                 returnPicker.Items.Add(var);
             }
-           
+
+            //foreach (var var in Function.Scope.ScopeAccessVariable)
+            //{
+            //    if (Function.Type != var.Type) continue;
+            //    if (returnPicker.Items.Contains(var)) continue;
+            //    returnPicker.Items.Add(var);
+            //}
+
+            //foreach (var parameter in Function.Parameters)
+            //{
+            //    var var = new DTD.Entity.vCodes.Variable(parameter.Name) { Type = parameter.Type };
+            //    if (Function.Type != var.Type) continue;
+            //    if (returnPicker.Items.Contains(var)) continue;
+            //    returnPicker.Items.Add(var);
+            //}
+
 
         }
     }

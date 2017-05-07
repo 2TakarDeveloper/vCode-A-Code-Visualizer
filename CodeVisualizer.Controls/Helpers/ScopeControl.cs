@@ -31,6 +31,7 @@ namespace CodeVisualizer.Controls.Helpers
 
         private void AddItemToScope(VBlock vBlock)
         {
+            //Scope.Items.Enqueue(vBlock.VCode);
             vBlock.ScopeControl?.UpdateScope();
             Scope.Items.Enqueue(vBlock.VCode);
             
@@ -62,7 +63,12 @@ namespace CodeVisualizer.Controls.Helpers
         private void whileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vWhile = new Vwhile();
-            vWhile.ScopeControl.Scope.ScopeAccessVariable = Scope.LocalVariables;
+
+            foreach (var var in Scope.LocalVariables)
+            {
+                vWhile.ScopeControl.Scope.ScopeAccessVariable.Add(var);
+            }
+            
             vWhile.PopulateScopeVariables(Scope.LocalVariables);
 
             ScopePanel.Controls.Add(vWhile);
@@ -72,7 +78,10 @@ namespace CodeVisualizer.Controls.Helpers
         private void ifToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var vif = new Vif();
-            vif.ScopeControl.Scope.ScopeAccessVariable = Scope.LocalVariables;
+            foreach (var var in Scope.LocalVariables)
+            {
+                vif.ScopeControl.Scope.ScopeAccessVariable.Add(var);
+            }
             vif.PopulateScopeVariables(Scope.LocalVariables);
             ScopePanel.Controls.Add(vif);
             UpdateScope();
@@ -83,12 +92,10 @@ namespace CodeVisualizer.Controls.Helpers
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             VariableProperties variableProperties= new VariableProperties();
-            if (variableProperties.ShowDialog() == DialogResult.OK)
-            {
-                Vvariable vvariable = new Vvariable(variableProperties.Variable);
-                ScopePanel.Controls.Add(vvariable);
-                UpdateScope();
-            }
+            if (variableProperties.ShowDialog() != DialogResult.OK) return;
+            Vvariable vvariable = new Vvariable(variableProperties.Variable);
+            ScopePanel.Controls.Add(vvariable);
+            UpdateScope();
         }
 
 
@@ -108,19 +115,7 @@ namespace CodeVisualizer.Controls.Helpers
             ScopePanel.Controls.Add(functionCall);
         }
 
-        private void scanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Function ScanFunction = new Function();
-            ScanFunction.Name = "scanf";
-            ScanFunction.IsBody = false;
-            ScanFunction.VType = Enums.VType.Function;
-
-            ScanFunction.Parameters.Add(new Parameter() { Name = "", Type = Enums.Type.String });
-            FunctionCall functionCall = new FunctionCall(ScanFunction, Scope.LocalVariables);
-            functionCall.settingsButton.Visible = false;
-            functionCall.ScopeControl = null;
-            ScopePanel.Controls.Add(functionCall);
-        }
+        
 
 
 
