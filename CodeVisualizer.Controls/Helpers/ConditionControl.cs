@@ -13,6 +13,14 @@ namespace CodeVisualizer.Controls.Helpers
             Condition=new Condition();
         }
 
+        public void PopulateCondition(Condition condition)
+        {
+            Condition = condition;
+            OperatorBox.Text = condition.BooleanOperator;
+            LeftBox.Text = condition.LeftParameter;
+            RightBox.Text = condition.RightParameter;
+        }
+
         private void OperatorBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Condition.BooleanOperator = OperatorBox.Text;

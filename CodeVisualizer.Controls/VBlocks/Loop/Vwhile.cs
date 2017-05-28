@@ -43,7 +43,14 @@ namespace CodeVisualizer.Controls.VBlocks
             ScopeControl = scopeControl;
             ScopeControl.Scope = wWhile.Scope;
             conditionControl1.Condition = wWhile.Condition;
+            populateCondition(conditionControl1.Condition);
             VCode = wWhile;
+        }
+
+
+        public void populateCondition(Condition condition)
+        {
+            conditionControl1.PopulateCondition(condition);
         }
 
 

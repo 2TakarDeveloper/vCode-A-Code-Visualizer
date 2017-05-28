@@ -35,10 +35,15 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             ScopeControl = scopeControl;
             ScopeControl.Scope = iif.Scope;
             conditionControl1.Condition = iif.Condition;
+            populateCondition(conditionControl1.Condition);
             VCode = iif;
         }
 
 
+        public void populateCondition(Condition condition)
+        {
+            conditionControl1.PopulateCondition(condition);
+        }
 
         public void PopulateScopeVariables(List<DTD.Entity.vCodes.Variable> varList )
         {
