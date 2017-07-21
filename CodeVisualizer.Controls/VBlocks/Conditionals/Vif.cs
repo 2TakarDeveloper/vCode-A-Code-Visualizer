@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
 
@@ -22,6 +24,9 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
                 Condition = conditionControl1.Condition
             };
             VCode = iIf;
+
+
+           
         }
 
 
@@ -35,12 +40,13 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             ScopeControl = scopeControl;
             ScopeControl.Scope = iif.Scope;
             conditionControl1.Condition = iif.Condition;
-            populateCondition(conditionControl1.Condition);
+            PopulateCondition(conditionControl1.Condition);
             VCode = iif;
+           
         }
 
 
-        public void populateCondition(Condition condition)
+        public void PopulateCondition(Condition condition)
         {
             conditionControl1.PopulateCondition(condition);
         }
@@ -60,6 +66,12 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
   
         }
 
-      
+        private bool _isCollasped = true;
+
+        private void ExpandCollapseButton_Click(object sender, EventArgs e)
+        {
+            _isCollasped = !_isCollasped;
+            Size = _isCollasped ? new Size(Size.Width, 55) : new Size(Size.Width, 256);
+        }
     }
 }

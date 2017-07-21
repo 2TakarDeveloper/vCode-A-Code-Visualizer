@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.Header = new System.Windows.Forms.Panel();
-            this.settingsButton = new MetroFramework.Controls.MetroLink();
             this.NameLable = new MetroFramework.Controls.MetroLabel();
-            this.DisposeButton = new MetroFramework.Controls.MetroLink();
             this.body = new System.Windows.Forms.Panel();
+            this.DisposeButton = new MetroFramework.Controls.MetroLink();
+            this.settingsButton = new MetroFramework.Controls.MetroLink();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.ExpandCollapseButton = new MetroFramework.Controls.MetroButton();
             this.Header.SuspendLayout();
             this.body.SuspendLayout();
             this.SuspendLayout();
@@ -42,27 +43,17 @@
             // 
             this.Header.BackColor = System.Drawing.Color.White;
             this.Header.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Header.Controls.Add(this.ExpandCollapseButton);
             this.Header.Controls.Add(this.metroButton1);
             this.Header.Controls.Add(this.settingsButton);
-            this.Header.Controls.Add(this.NameLable);
             this.Header.Controls.Add(this.DisposeButton);
+            this.Header.Controls.Add(this.NameLable);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
             this.Header.Name = "Header";
             this.Header.Padding = new System.Windows.Forms.Padding(1);
             this.Header.Size = new System.Drawing.Size(616, 23);
             this.Header.TabIndex = 6;
-            // 
-            // settingsButton
-            // 
-            this.settingsButton.BackColor = System.Drawing.Color.Gray;
-            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.settingsButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856678_cog;
-            this.settingsButton.Location = new System.Drawing.Point(551, 1);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(31, 19);
-            this.settingsButton.TabIndex = 4;
-            this.settingsButton.UseSelectable = true;
             // 
             // NameLable
             // 
@@ -74,18 +65,6 @@
             this.NameLable.Size = new System.Drawing.Size(75, 19);
             this.NameLable.TabIndex = 2;
             this.NameLable.Text = "SomeText";
-            // 
-            // DisposeButton
-            // 
-            this.DisposeButton.BackColor = System.Drawing.Color.Gray;
-            this.DisposeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DisposeButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
-            this.DisposeButton.Location = new System.Drawing.Point(582, 1);
-            this.DisposeButton.Name = "DisposeButton";
-            this.DisposeButton.Size = new System.Drawing.Size(31, 19);
-            this.DisposeButton.TabIndex = 3;
-            this.DisposeButton.UseSelectable = true;
-            this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
             // body
             // 
@@ -99,15 +78,47 @@
             this.body.Size = new System.Drawing.Size(618, 316);
             this.body.TabIndex = 7;
             // 
+            // DisposeButton
+            // 
+            this.DisposeButton.BackColor = System.Drawing.Color.Gray;
+            this.DisposeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.DisposeButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
+            this.DisposeButton.Location = new System.Drawing.Point(582, 1);
+            this.DisposeButton.Name = "DisposeButton";
+            this.DisposeButton.Size = new System.Drawing.Size(31, 19);
+            this.DisposeButton.TabIndex = 11;
+            this.DisposeButton.UseSelectable = true;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.BackColor = System.Drawing.Color.Gray;
+            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.settingsButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856678_cog;
+            this.settingsButton.Location = new System.Drawing.Point(551, 1);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(31, 19);
+            this.settingsButton.TabIndex = 12;
+            this.settingsButton.UseSelectable = true;
+            // 
             // metroButton1
             // 
             this.metroButton1.Dock = System.Windows.Forms.DockStyle.Right;
             this.metroButton1.Location = new System.Drawing.Point(476, 1);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(75, 19);
-            this.metroButton1.TabIndex = 9;
+            this.metroButton1.TabIndex = 13;
             this.metroButton1.Text = "Reload";
             this.metroButton1.UseSelectable = true;
+            // 
+            // ExpandCollapseButton
+            // 
+            this.ExpandCollapseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(375, 1);
+            this.ExpandCollapseButton.Name = "ExpandCollapseButton";
+            this.ExpandCollapseButton.Size = new System.Drawing.Size(101, 19);
+            this.ExpandCollapseButton.TabIndex = 14;
+            this.ExpandCollapseButton.Text = "Expand/Collapse";
+            this.ExpandCollapseButton.UseSelectable = true;
             // 
             // VBlock
             // 
@@ -129,9 +140,10 @@
         #endregion
         protected System.Windows.Forms.Panel Header;
         protected MetroFramework.Controls.MetroLabel NameLable;
-        protected MetroFramework.Controls.MetroLink DisposeButton;
         protected System.Windows.Forms.Panel body;
-        public MetroFramework.Controls.MetroLink settingsButton;
+        public MetroFramework.Controls.MetroButton ExpandCollapseButton;
         public MetroFramework.Controls.MetroButton metroButton1;
+        public MetroFramework.Controls.MetroLink settingsButton;
+        protected MetroFramework.Controls.MetroLink DisposeButton;
     }
 }

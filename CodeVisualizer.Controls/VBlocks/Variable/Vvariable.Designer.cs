@@ -69,6 +69,12 @@
             this.metroButton1.Size = new System.Drawing.Size(48, 24);
             this.metroButton1.Visible = false;
             // 
+            // ExpandCollapseButton
+            // 
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(101, 1);
+            this.ExpandCollapseButton.Size = new System.Drawing.Size(10, 24);
+            this.ExpandCollapseButton.Visible = false;
+            // 
             // metroPanel1
             // 
             this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;

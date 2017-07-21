@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 using CodeVisualizer.Controls.PropertiesForm;
@@ -31,12 +32,12 @@ namespace CodeVisualizer.Controls.VBlocks.Function
 
             if (Function.Type == Enums.Type.Void)
             {
-                returnLable.Visible = false;
+                
                 returnPicker.Visible = false;
             }
 
 
-     
+           // Size = new Size(Size.Width, 94);
 
 
             PopulateProperties();
@@ -49,7 +50,7 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             if (Function.Type == Enums.Type.Void)
             {
                 returnPicker.Visible = false;
-                returnLable.Visible = false;
+      
             }
             else
             {
@@ -130,6 +131,14 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             //}
 
 
+        }
+
+        private bool isCollasped=true;
+
+        private void ExpandCollapseButton_Click(object sender, EventArgs e)
+        {
+            isCollasped = !isCollasped;
+            Size = isCollasped ? new Size(Size.Width,94) : new Size(Size.Width, 420);
         }
     }
 }

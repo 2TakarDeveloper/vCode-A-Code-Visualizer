@@ -40,7 +40,8 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // Header
             // 
             this.Header.Controls.Add(this.conditionControl1);
-            this.Header.Size = new System.Drawing.Size(358, 23);
+            this.Header.Size = new System.Drawing.Size(525, 23);
+            this.Header.Controls.SetChildIndex(this.ExpandCollapseButton, 0);
             this.Header.Controls.SetChildIndex(this.metroButton1, 0);
             this.Header.Controls.SetChildIndex(this.DisposeButton, 0);
             this.Header.Controls.SetChildIndex(this.settingsButton, 0);
@@ -52,25 +53,31 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             this.NameLable.Size = new System.Drawing.Size(18, 19);
             this.NameLable.Text = "If";
             // 
-            // DisposeButton
-            // 
-            this.DisposeButton.Location = new System.Drawing.Point(249, 1);
-            // 
             // body
             // 
             this.body.Controls.Add(this.scopeControl);
-            this.body.Size = new System.Drawing.Size(360, 240);
+            this.body.Size = new System.Drawing.Size(527, 25);
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.scopeControl, 0);
             // 
-            // settingsButton
+            // ExpandCollapseButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(218, 1);
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(420, 1);
+            this.ExpandCollapseButton.Size = new System.Drawing.Size(102, 19);
+            this.ExpandCollapseButton.Click += new System.EventHandler(this.ExpandCollapseButton_Click);
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(280, 1);
+            this.metroButton1.Location = new System.Drawing.Point(345, 1);
             this.metroButton1.Visible = false;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(283, 1);
+            // 
+            // DisposeButton
+            // 
+            this.DisposeButton.Location = new System.Drawing.Point(314, 1);
             // 
             // scopeControl
             // 
@@ -78,7 +85,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             this.scopeControl.Location = new System.Drawing.Point(0, 23);
             this.scopeControl.Name = "scopeControl";
             this.scopeControl.Scope = null;
-            this.scopeControl.Size = new System.Drawing.Size(358, 215);
+            this.scopeControl.Size = new System.Drawing.Size(525, 0);
             this.scopeControl.TabIndex = 7;
             // 
             // conditionControl1
@@ -97,7 +104,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Name = "Vif";
-            this.Size = new System.Drawing.Size(390, 270);
+            this.Size = new System.Drawing.Size(557, 55);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);

@@ -38,7 +38,8 @@
             // Header
             // 
             this.Header.Controls.Add(this.conditionControl1);
-            this.Header.Size = new System.Drawing.Size(407, 24);
+            this.Header.Size = new System.Drawing.Size(522, 24);
+            this.Header.Controls.SetChildIndex(this.ExpandCollapseButton, 0);
             this.Header.Controls.SetChildIndex(this.metroButton1, 0);
             this.Header.Controls.SetChildIndex(this.DisposeButton, 0);
             this.Header.Controls.SetChildIndex(this.settingsButton, 0);
@@ -50,28 +51,34 @@
             this.NameLable.Size = new System.Drawing.Size(47, 19);
             this.NameLable.Text = "While";
             // 
-            // DisposeButton
-            // 
-            this.DisposeButton.Location = new System.Drawing.Point(298, 1);
-            this.DisposeButton.Size = new System.Drawing.Size(31, 20);
-            // 
             // body
             // 
             this.body.Controls.Add(this.scopeControl);
-            this.body.Size = new System.Drawing.Size(409, 259);
+            this.body.Size = new System.Drawing.Size(524, 26);
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.scopeControl, 0);
             // 
-            // settingsButton
+            // ExpandCollapseButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(267, 1);
-            this.settingsButton.Size = new System.Drawing.Size(31, 20);
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(418, 1);
+            this.ExpandCollapseButton.Size = new System.Drawing.Size(101, 20);
+            this.ExpandCollapseButton.Click += new System.EventHandler(this.ExpandCollapseButton_Click);
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(329, 1);
+            this.metroButton1.Location = new System.Drawing.Point(343, 1);
             this.metroButton1.Size = new System.Drawing.Size(75, 20);
             this.metroButton1.Visible = false;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(281, 1);
+            this.settingsButton.Size = new System.Drawing.Size(31, 20);
+            // 
+            // DisposeButton
+            // 
+            this.DisposeButton.Location = new System.Drawing.Point(312, 1);
+            this.DisposeButton.Size = new System.Drawing.Size(31, 20);
             // 
             // conditionControl1
             // 
@@ -91,14 +98,14 @@
             this.scopeControl.Location = new System.Drawing.Point(0, 24);
             this.scopeControl.Name = "scopeControl";
             this.scopeControl.Scope = null;
-            this.scopeControl.Size = new System.Drawing.Size(407, 233);
+            this.scopeControl.Size = new System.Drawing.Size(522, 0);
             this.scopeControl.TabIndex = 7;
             // 
             // Vwhile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Name = "Vwhile";
-            this.Size = new System.Drawing.Size(439, 289);
+            this.Size = new System.Drawing.Size(554, 56);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);

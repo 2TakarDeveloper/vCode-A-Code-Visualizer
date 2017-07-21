@@ -68,5 +68,13 @@ namespace CodeVisualizer.Controls.VBlocks
 
 
         }
+
+        private bool _isCollasped = true;
+
+        private void ExpandCollapseButton_Click(object sender, EventArgs e)
+        {
+            _isCollasped = !_isCollasped;
+            Size = _isCollasped ? new Size(Size.Width, 56) : new Size(Size.Width, 256);
+        }
     }
 }
