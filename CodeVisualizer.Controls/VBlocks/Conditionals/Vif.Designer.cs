@@ -78,6 +78,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // DisposeButton
             // 
             this.DisposeButton.Location = new System.Drawing.Point(314, 1);
+            this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
             // scopeControl
             // 

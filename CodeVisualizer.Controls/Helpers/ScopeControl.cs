@@ -185,7 +185,7 @@ namespace CodeVisualizer.Controls.Helpers
                         break;
                     case Enums.VType.While:
                         While wWhile = (While)item;
-                        Vwhile vwhile = new Vwhile() { VCode = wWhile };
+                        Vwhile vwhile = new Vwhile(wWhile);
                         vwhile.ScopeControl.VcodeToVblock(wWhile.Scope);
                         ScopePanel.Controls.Add(vwhile);
                         break;

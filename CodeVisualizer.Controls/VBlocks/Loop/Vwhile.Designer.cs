@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DTD.Entity.Helpers.Condition condition2 = new DTD.Entity.Helpers.Condition();
+            DTD.Entity.Helpers.Condition condition1 = new DTD.Entity.Helpers.Condition();
             this.conditionControl1 = new CodeVisualizer.Controls.Helpers.ConditionControl();
             this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.Header.SuspendLayout();
@@ -74,18 +74,20 @@
             // 
             this.settingsButton.Location = new System.Drawing.Point(281, 1);
             this.settingsButton.Size = new System.Drawing.Size(31, 20);
+            this.settingsButton.Visible = false;
             // 
             // DisposeButton
             // 
             this.DisposeButton.Location = new System.Drawing.Point(312, 1);
             this.DisposeButton.Size = new System.Drawing.Size(31, 20);
+            this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
             // conditionControl1
             // 
-            condition2.BooleanOperator = "<=";
-            condition2.LeftParameter = "x";
-            condition2.RightParameter = "5";
-            this.conditionControl1.Condition = condition2;
+            condition1.BooleanOperator = "<=";
+            condition1.LeftParameter = "x";
+            condition1.RightParameter = "5";
+            this.conditionControl1.Condition = condition1;
             this.conditionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.conditionControl1.Location = new System.Drawing.Point(48, 1);
             this.conditionControl1.Name = "conditionControl1";

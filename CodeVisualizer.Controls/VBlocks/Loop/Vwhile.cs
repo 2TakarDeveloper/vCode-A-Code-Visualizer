@@ -37,18 +37,18 @@ namespace CodeVisualizer.Controls.VBlocks
         {
             InitializeComponent();
 
-            NameLable.Text = @"If";
+          
             scopeControl.Scope = wWhile.Scope;
 
             ScopeControl = scopeControl;
             ScopeControl.Scope = wWhile.Scope;
             conditionControl1.Condition = wWhile.Condition;
-            populateCondition(conditionControl1.Condition);
+            PopulateCondition(conditionControl1.Condition);
             VCode = wWhile;
         }
 
 
-        public void populateCondition(Condition condition)
+        private void PopulateCondition(Condition condition)
         {
             conditionControl1.PopulateCondition(condition);
         }
@@ -75,6 +75,11 @@ namespace CodeVisualizer.Controls.VBlocks
         {
             _isCollasped = !_isCollasped;
             Size = _isCollasped ? new Size(Size.Width, 56) : new Size(Size.Width, 256);
+        }
+
+        private void DisposeButton_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

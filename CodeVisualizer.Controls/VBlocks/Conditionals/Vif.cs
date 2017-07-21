@@ -73,5 +73,10 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             _isCollasped = !_isCollasped;
             Size = _isCollasped ? new Size(Size.Width, 55) : new Size(Size.Width, 256);
         }
+
+        private void DisposeButton_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

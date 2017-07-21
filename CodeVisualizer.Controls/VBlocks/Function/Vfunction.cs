@@ -140,5 +140,10 @@ namespace CodeVisualizer.Controls.VBlocks.Function
             isCollasped = !isCollasped;
             Size = isCollasped ? new Size(Size.Width,94) : new Size(Size.Width, 420);
         }
+
+        private void DisposeButton_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 }

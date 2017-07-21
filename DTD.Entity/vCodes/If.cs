@@ -19,5 +19,11 @@ namespace DTD.Entity.vCodes
             Scope=new Scope();
             VType=Enums.VType.If;
         }
+
+
+        public override string ToString()
+        {
+            return "if(" + Condition.LeftParameter + Condition.BooleanOperator + Condition.RightParameter + ")";
+        }
     }
 }

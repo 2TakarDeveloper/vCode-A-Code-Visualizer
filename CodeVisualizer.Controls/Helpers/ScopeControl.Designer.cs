@@ -57,7 +57,7 @@
             this.whileToolStripMenuItem,
             this.assignmentToolStripMenuItem});
             this.ContextMenuStrip.Name = "ContextMenu";
-            this.ContextMenuStrip.Size = new System.Drawing.Size(142, 114);
+            this.ContextMenuStrip.Size = new System.Drawing.Size(153, 136);
             this.ContextMenuStrip.Text = "Component";
             // 
             // variableToolStripMenuItem
@@ -65,7 +65,7 @@
             this.variableToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem1});
             this.variableToolStripMenuItem.Name = "variableToolStripMenuItem";
-            this.variableToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.variableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.variableToolStripMenuItem.Text = "Variable";
             // 
             // newToolStripMenuItem1
@@ -81,7 +81,7 @@
             this.ifToolStripMenuItem1,
             this.switchCaseToolStripMenuItem});
             this.iFToolStripMenuItem.Name = "iFToolStripMenuItem";
-            this.iFToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.iFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iFToolStripMenuItem.Text = "Conditionals";
             // 
             // ifToolStripMenuItem1
@@ -104,7 +104,7 @@
             this.systemDefinedToolStripMenuItem,
             this.userDefinedToolStripMenuItem});
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
-            this.functionToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.functionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.functionToolStripMenuItem.Text = "Function";
             // 
             // systemDefinedToolStripMenuItem
@@ -117,8 +117,9 @@
             // 
             // printToolStripMenuItem
             // 
+            this.printToolStripMenuItem.Enabled = false;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click_1);
             // 
@@ -135,7 +136,7 @@
             this.forToolStripMenuItem,
             this.whileToolStripMenuItem1});
             this.whileToolStripMenuItem.Name = "whileToolStripMenuItem";
-            this.whileToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.whileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.whileToolStripMenuItem.Text = "Loop";
             // 
             // forToolStripMenuItem
@@ -155,7 +156,7 @@
             // assignmentToolStripMenuItem
             // 
             this.assignmentToolStripMenuItem.Name = "assignmentToolStripMenuItem";
-            this.assignmentToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.assignmentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.assignmentToolStripMenuItem.Text = "Assignment";
             this.assignmentToolStripMenuItem.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
             // 

@@ -11,5 +11,10 @@ namespace DTD.Entity.vCodes
             Value = "";
             VType = Enums.VType.Constant;
         }
+
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 }

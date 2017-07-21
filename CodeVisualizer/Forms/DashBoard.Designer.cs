@@ -46,6 +46,7 @@ namespace CodeVisualizer.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.globalScopeControl = new CodeVisualizer.Controls.Helpers.GlobalScopeControl();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.botPanel = new System.Windows.Forms.Panel();
@@ -178,9 +179,10 @@ namespace CodeVisualizer.Forms
             // SplitPanel1.Panel2
             // 
             this.SplitPanel1.Panel2.Controls.Add(this.globalScopeControl);
+            this.SplitPanel1.Panel2.Controls.Add(this.treeView1);
             this.SplitPanel1.Panel2.Controls.Add(this.header);
             this.SplitPanel1.Size = new System.Drawing.Size(713, 393);
-            this.SplitPanel1.SplitterDistance = 244;
+            this.SplitPanel1.SplitterDistance = 178;
             this.SplitPanel1.TabIndex = 0;
             // 
             // CodeEditor
@@ -189,7 +191,7 @@ namespace CodeVisualizer.Forms
             this.CodeEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CodeEditor.Location = new System.Drawing.Point(0, 22);
             this.CodeEditor.Name = "CodeEditor";
-            this.CodeEditor.Size = new System.Drawing.Size(244, 371);
+            this.CodeEditor.Size = new System.Drawing.Size(178, 371);
             this.CodeEditor.TabIndex = 3;
             this.CodeEditor.Text = "";
             this.CodeEditor.TextChanged += new System.EventHandler(this.CodeEditor_TextChanged);
@@ -201,7 +203,7 @@ namespace CodeVisualizer.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(244, 22);
+            this.panel1.Size = new System.Drawing.Size(178, 22);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -222,10 +224,18 @@ namespace CodeVisualizer.Forms
             this.globalScopeControl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.globalScopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.globalScopeControl.GlobalScope = null;
-            this.globalScopeControl.Location = new System.Drawing.Point(0, 22);
+            this.globalScopeControl.Location = new System.Drawing.Point(146, 22);
             this.globalScopeControl.Name = "globalScopeControl";
-            this.globalScopeControl.Size = new System.Drawing.Size(465, 371);
-            this.globalScopeControl.TabIndex = 6;
+            this.globalScopeControl.Size = new System.Drawing.Size(385, 371);
+            this.globalScopeControl.TabIndex = 10;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.treeView1.Location = new System.Drawing.Point(0, 22);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(146, 371);
+            this.treeView1.TabIndex = 9;
             // 
             // header
             // 
@@ -234,8 +244,8 @@ namespace CodeVisualizer.Forms
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(465, 22);
-            this.header.TabIndex = 5;
+            this.header.Size = new System.Drawing.Size(531, 22);
+            this.header.TabIndex = 8;
             // 
             // label2
             // 
@@ -322,10 +332,11 @@ namespace CodeVisualizer.Forms
         private System.Windows.Forms.ToolStripMenuItem visualToCodeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem codeToVisualToolStripMenuItem;
         private System.Windows.Forms.Panel panel3;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private GlobalScopeControl globalScopeControl;
+        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel header;
         private System.Windows.Forms.Label label2;
-        private GlobalScopeControl globalScopeControl;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
     }
 }
 

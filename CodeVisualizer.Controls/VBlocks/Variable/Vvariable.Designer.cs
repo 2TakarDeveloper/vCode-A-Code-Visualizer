@@ -44,11 +44,6 @@
             this.NameLable.Text = "VariableName";
             this.NameLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DisposeButton
-            // 
-            this.DisposeButton.Location = new System.Drawing.Point(192, 1);
-            this.DisposeButton.Size = new System.Drawing.Size(31, 24);
-            // 
             // body
             // 
             this.body.Controls.Add(this.metroPanel1);
@@ -57,11 +52,11 @@
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.metroPanel1, 0);
             // 
-            // settingsButton
+            // ExpandCollapseButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(159, 1);
-            this.settingsButton.Size = new System.Drawing.Size(33, 24);
-            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(101, 1);
+            this.ExpandCollapseButton.Size = new System.Drawing.Size(10, 24);
+            this.ExpandCollapseButton.Visible = false;
             // 
             // metroButton1
             // 
@@ -69,11 +64,17 @@
             this.metroButton1.Size = new System.Drawing.Size(48, 24);
             this.metroButton1.Visible = false;
             // 
-            // ExpandCollapseButton
+            // settingsButton
             // 
-            this.ExpandCollapseButton.Location = new System.Drawing.Point(101, 1);
-            this.ExpandCollapseButton.Size = new System.Drawing.Size(10, 24);
-            this.ExpandCollapseButton.Visible = false;
+            this.settingsButton.Location = new System.Drawing.Point(159, 1);
+            this.settingsButton.Size = new System.Drawing.Size(33, 24);
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            // 
+            // DisposeButton
+            // 
+            this.DisposeButton.Location = new System.Drawing.Point(192, 1);
+            this.DisposeButton.Size = new System.Drawing.Size(31, 24);
+            this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
             // metroPanel1
             // 

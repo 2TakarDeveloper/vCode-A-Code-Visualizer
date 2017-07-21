@@ -75,6 +75,7 @@
             // 
             this.DisposeButton.Location = new System.Drawing.Point(560, 1);
             this.DisposeButton.Size = new System.Drawing.Size(31, 27);
+            this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
             // scopeControl
             // 

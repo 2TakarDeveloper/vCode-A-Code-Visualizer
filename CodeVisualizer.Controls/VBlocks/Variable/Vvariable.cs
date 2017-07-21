@@ -57,9 +57,9 @@ namespace CodeVisualizer.Controls.VBlocks.Variable
             }
         }
 
-        
-
-      
-
+        private void DisposeButton_Click(object sender, EventArgs e)
+        {
+           Dispose();
+        }
     }
 }
