@@ -43,8 +43,14 @@
             this.forToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.assignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.AssignmentButton = new System.Windows.Forms.Button();
+            this.WhileButton = new System.Windows.Forms.Button();
+            this.ifButton = new System.Windows.Forms.Button();
+            this.variableButton = new System.Windows.Forms.Button();
             this.ScopePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ContextMenuStrip.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContextMenuStrip
@@ -57,7 +63,7 @@
             this.whileToolStripMenuItem,
             this.assignmentToolStripMenuItem});
             this.ContextMenuStrip.Name = "ContextMenu";
-            this.ContextMenuStrip.Size = new System.Drawing.Size(153, 136);
+            this.ContextMenuStrip.Size = new System.Drawing.Size(142, 114);
             this.ContextMenuStrip.Text = "Component";
             // 
             // variableToolStripMenuItem
@@ -65,7 +71,7 @@
             this.variableToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem1});
             this.variableToolStripMenuItem.Name = "variableToolStripMenuItem";
-            this.variableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.variableToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.variableToolStripMenuItem.Text = "Variable";
             // 
             // newToolStripMenuItem1
@@ -81,7 +87,7 @@
             this.ifToolStripMenuItem1,
             this.switchCaseToolStripMenuItem});
             this.iFToolStripMenuItem.Name = "iFToolStripMenuItem";
-            this.iFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iFToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.iFToolStripMenuItem.Text = "Conditionals";
             // 
             // ifToolStripMenuItem1
@@ -104,7 +110,7 @@
             this.systemDefinedToolStripMenuItem,
             this.userDefinedToolStripMenuItem});
             this.functionToolStripMenuItem.Name = "functionToolStripMenuItem";
-            this.functionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.functionToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.functionToolStripMenuItem.Text = "Function";
             // 
             // systemDefinedToolStripMenuItem
@@ -119,7 +125,7 @@
             // 
             this.printToolStripMenuItem.Enabled = false;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.printToolStripMenuItem.Text = "Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click_1);
             // 
@@ -136,7 +142,7 @@
             this.forToolStripMenuItem,
             this.whileToolStripMenuItem1});
             this.whileToolStripMenuItem.Name = "whileToolStripMenuItem";
-            this.whileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.whileToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.whileToolStripMenuItem.Text = "Loop";
             // 
             // forToolStripMenuItem
@@ -156,30 +162,90 @@
             // assignmentToolStripMenuItem
             // 
             this.assignmentToolStripMenuItem.Name = "assignmentToolStripMenuItem";
-            this.assignmentToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.assignmentToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.assignmentToolStripMenuItem.Text = "Assignment";
             this.assignmentToolStripMenuItem.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.AssignmentButton);
+            this.panel1.Controls.Add(this.WhileButton);
+            this.panel1.Controls.Add(this.ifButton);
+            this.panel1.Controls.Add(this.variableButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(413, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(72, 336);
+            this.panel1.TabIndex = 4;
+            // 
+            // AssignmentButton
+            // 
+            this.AssignmentButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AssignmentButton.Location = new System.Drawing.Point(0, 69);
+            this.AssignmentButton.Name = "AssignmentButton";
+            this.AssignmentButton.Padding = new System.Windows.Forms.Padding(2);
+            this.AssignmentButton.Size = new System.Drawing.Size(72, 23);
+            this.AssignmentButton.TabIndex = 3;
+            this.AssignmentButton.Text = "Assignment";
+            this.AssignmentButton.UseVisualStyleBackColor = true;
+            this.AssignmentButton.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
+            // 
+            // WhileButton
+            // 
+            this.WhileButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WhileButton.Location = new System.Drawing.Point(0, 46);
+            this.WhileButton.Name = "WhileButton";
+            this.WhileButton.Size = new System.Drawing.Size(72, 23);
+            this.WhileButton.TabIndex = 2;
+            this.WhileButton.Text = "While";
+            this.WhileButton.UseVisualStyleBackColor = true;
+            this.WhileButton.Click += new System.EventHandler(this.whileToolStripMenuItem1_Click);
+            // 
+            // ifButton
+            // 
+            this.ifButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ifButton.Location = new System.Drawing.Point(0, 23);
+            this.ifButton.Name = "ifButton";
+            this.ifButton.Size = new System.Drawing.Size(72, 23);
+            this.ifButton.TabIndex = 1;
+            this.ifButton.Text = "if";
+            this.ifButton.UseVisualStyleBackColor = true;
+            this.ifButton.Click += new System.EventHandler(this.ifToolStripMenuItem1_Click);
+            // 
+            // variableButton
+            // 
+            this.variableButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.variableButton.Location = new System.Drawing.Point(0, 0);
+            this.variableButton.Name = "variableButton";
+            this.variableButton.Size = new System.Drawing.Size(72, 23);
+            this.variableButton.TabIndex = 0;
+            this.variableButton.Text = "Variable";
+            this.variableButton.UseVisualStyleBackColor = true;
+            this.variableButton.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
             // 
             // ScopePanel
             // 
             this.ScopePanel.AutoScroll = true;
-            this.ScopePanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ScopePanel.BackColor = System.Drawing.Color.Tan;
             this.ScopePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ScopePanel.ContextMenuStrip = this.ContextMenuStrip;
             this.ScopePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScopePanel.Location = new System.Drawing.Point(0, 0);
             this.ScopePanel.Name = "ScopePanel";
-            this.ScopePanel.Size = new System.Drawing.Size(475, 336);
-            this.ScopePanel.TabIndex = 3;
+            this.ScopePanel.Size = new System.Drawing.Size(413, 336);
+            this.ScopePanel.TabIndex = 5;
             // 
             // ScopeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ScopePanel);
+            this.Controls.Add(this.panel1);
             this.Name = "ScopeControl";
-            this.Size = new System.Drawing.Size(475, 336);
+            this.Size = new System.Drawing.Size(485, 336);
             this.ContextMenuStrip.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -199,6 +265,11 @@
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userDefinedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignmentToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button AssignmentButton;
+        private System.Windows.Forms.Button WhileButton;
+        private System.Windows.Forms.Button ifButton;
+        private System.Windows.Forms.Button variableButton;
         public System.Windows.Forms.FlowLayoutPanel ScopePanel;
     }
 }

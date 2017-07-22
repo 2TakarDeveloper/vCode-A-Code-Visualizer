@@ -63,7 +63,7 @@ namespace CodeVisualizer.Controls.Helpers
 
         private void whileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var vWhile = new Vwhile();
+            var vWhile = new Vwhile() { Width = ScopePanel.Width };
 
             foreach (var var in Scope.LocalVariables)
             {
@@ -78,7 +78,7 @@ namespace CodeVisualizer.Controls.Helpers
 
         private void ifToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var vif = new Vif();
+            var vif = new Vif() { Width = ScopePanel.Width };
             foreach (var var in Scope.LocalVariables)
             {
                 vif.ScopeControl.Scope.ScopeAccessVariable.Add(var);
@@ -108,7 +108,7 @@ namespace CodeVisualizer.Controls.Helpers
             PrintFunction.VType = Enums.VType.Function;
 
             PrintFunction.Parameters.Add(new Parameter() { Name = "", Type = Enums.Type.String });
-            FunctionCall functionCall = new FunctionCall(PrintFunction, Scope.LocalVariables);
+            FunctionCall functionCall = new FunctionCall(PrintFunction, Scope.LocalVariables) ;
             functionCall.settingsButton.Visible = false;
 
 
@@ -125,7 +125,7 @@ namespace CodeVisualizer.Controls.Helpers
             AssignmentForm assignmentForm = new AssignmentForm(Scope.LocalVariables);
             if (assignmentForm.ShowDialog() != DialogResult.OK) return;
             if(assignmentForm.Assignment==null)return;
-            AssignmentBlock assignmentBlock = new AssignmentBlock(assignmentForm.Assignment);
+            AssignmentBlock assignmentBlock = new AssignmentBlock(assignmentForm.Assignment) ;
             ScopePanel.Controls.Add(assignmentBlock);
             UpdateScope();
         }
@@ -136,7 +136,7 @@ namespace CodeVisualizer.Controls.Helpers
             FunctionPicker functionPicker = new FunctionPicker(GlobalScope.FunctionList);
             if (functionPicker.ShowDialog() != DialogResult.OK) return;
             if(functionPicker.Function==null)return;
-            FunctionCall functionCall = new FunctionCall(functionPicker.Function,Scope.LocalVariables);
+            FunctionCall functionCall = new FunctionCall(functionPicker.Function,Scope.LocalVariables) ;
             ScopePanel.Controls.Add(functionCall);
             UpdateScope();
         }
@@ -166,7 +166,7 @@ namespace CodeVisualizer.Controls.Helpers
 
                         if (function.IsBody)
                         {
-                            Vfunction vfunction = new Vfunction(function);
+                            Vfunction vfunction = new Vfunction(function) { Width = ScopePanel.Width };
                             vfunction.ScopeControl.VcodeToVblock(function.Scope);
                             ScopePanel.Controls.Add(vfunction);
                         }
@@ -179,13 +179,13 @@ namespace CodeVisualizer.Controls.Helpers
                         break;
                     case Enums.VType.If:
                         If iif = (If)item;
-                        Vif vif = new Vif(iif);
+                        Vif vif = new Vif(iif) { Width = ScopePanel.Width };
                         vif.ScopeControl.VcodeToVblock(iif.Scope);
                         ScopePanel.Controls.Add(vif);
                         break;
                     case Enums.VType.While:
                         While wWhile = (While)item;
-                        Vwhile vwhile = new Vwhile(wWhile);
+                        Vwhile vwhile = new Vwhile(wWhile) { Width = ScopePanel.Width };
                         vwhile.ScopeControl.VcodeToVblock(wWhile.Scope);
                         ScopePanel.Controls.Add(vwhile);
                         break;

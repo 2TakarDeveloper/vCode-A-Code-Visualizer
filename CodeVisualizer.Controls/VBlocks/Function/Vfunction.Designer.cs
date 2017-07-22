@@ -37,7 +37,7 @@
             // Header
             // 
             this.Header.Location = new System.Drawing.Point(10, 10);
-            this.Header.Size = new System.Drawing.Size(594, 31);
+            this.Header.Size = new System.Drawing.Size(673, 31);
             // 
             // NameLable
             // 
@@ -49,31 +49,31 @@
             // 
             this.body.Controls.Add(this.scopeControl);
             this.body.Padding = new System.Windows.Forms.Padding(10);
-            this.body.Size = new System.Drawing.Size(616, 65);
+            this.body.Size = new System.Drawing.Size(695, 63);
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.scopeControl, 0);
             // 
             // ExpandCollapseButton
             // 
-            this.ExpandCollapseButton.Location = new System.Drawing.Point(353, 1);
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(432, 1);
             this.ExpandCollapseButton.Size = new System.Drawing.Size(101, 27);
             this.ExpandCollapseButton.Click += new System.EventHandler(this.ExpandCollapseButton_Click);
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(454, 1);
+            this.metroButton1.Location = new System.Drawing.Point(533, 1);
             this.metroButton1.Size = new System.Drawing.Size(75, 27);
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(529, 1);
+            this.settingsButton.Location = new System.Drawing.Point(608, 1);
             this.settingsButton.Size = new System.Drawing.Size(31, 27);
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(560, 1);
+            this.DisposeButton.Location = new System.Drawing.Point(639, 1);
             this.DisposeButton.Size = new System.Drawing.Size(31, 27);
             this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
@@ -83,16 +83,16 @@
             this.scopeControl.Location = new System.Drawing.Point(10, 41);
             this.scopeControl.Name = "scopeControl";
             this.scopeControl.Scope = null;
-            this.scopeControl.Size = new System.Drawing.Size(594, 12);
+            this.scopeControl.Size = new System.Drawing.Size(673, 10);
             this.scopeControl.TabIndex = 7;
             // 
             // returnPicker
             // 
             this.returnPicker.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.returnPicker.FormattingEnabled = true;
-            this.returnPicker.Location = new System.Drawing.Point(15, 59);
+            this.returnPicker.Location = new System.Drawing.Point(15, 57);
             this.returnPicker.Name = "returnPicker";
-            this.returnPicker.Size = new System.Drawing.Size(616, 21);
+            this.returnPicker.Size = new System.Drawing.Size(695, 21);
             this.returnPicker.TabIndex = 8;
             this.returnPicker.SelectedIndexChanged += new System.EventHandler(this.returnPicker_SelectedIndexChanged);
             // 
@@ -101,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.returnPicker);
             this.Name = "Vfunction";
-            this.Size = new System.Drawing.Size(646, 95);
+            this.Size = new System.Drawing.Size(725, 93);
             this.Controls.SetChildIndex(this.body, 0);
             this.Controls.SetChildIndex(this.returnPicker, 0);
             this.Header.ResumeLayout(false);

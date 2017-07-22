@@ -9,6 +9,7 @@ using DTD.Entity;
 using DTD.Entity.Enum;
 using DTD.Entity.Helpers;
 using DTD.Entity.vCodes;
+using MetroFramework;
 
 namespace CodeVisualizer.Controls.Helpers
 {
@@ -16,10 +17,12 @@ namespace CodeVisualizer.Controls.Helpers
     {
         public GlobalScope GlobalScope { get; set; }
 
+        private  bool MainFunctionDeclared { get; set; }
+        
         public GlobalScopeControl()
         {
             InitializeComponent();
-            
+           
         }
 
 
@@ -63,11 +66,13 @@ namespace CodeVisualizer.Controls.Helpers
                 {
                     case Enums.VType.Variable:
                         Vvariable vvariable = new Vvariable(item);
+                        
                         GlobalScopePanel.Controls.Add(vvariable);
                         break;
                     case Enums.VType.Function:
                         Function function = (Function)item;
-                        Vfunction vfunction = new Vfunction(function);
+                        Vfunction vfunction = new Vfunction(function) { Width = GlobalScopePanel.Width };
+                        
                         vfunction.ScopeControl.VcodeToVblock(function.Scope);
                         GlobalScopePanel.Controls.Add(vfunction);
                         
@@ -89,11 +94,12 @@ namespace CodeVisualizer.Controls.Helpers
 
         #endregion
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void variableToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VariableProperties variableProperties = new VariableProperties();
+            VariableProperties variableProperties = new VariableProperties() ;
             if (variableProperties.ShowDialog() != DialogResult.OK) return;
             Vvariable vvariable = new Vvariable(variableProperties.Variable);
+            
             GlobalScopePanel.Controls.Add(vvariable);
             UpdateScope();
         }
@@ -101,10 +107,12 @@ namespace CodeVisualizer.Controls.Helpers
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             
-            FunctionProperties functionProperties = new FunctionProperties();
+            FunctionProperties functionProperties = new FunctionProperties() ;
             if (functionProperties.ShowDialog() != DialogResult.OK) return;
-            Vfunction vFunc = new Vfunction(functionProperties.Function);
+            Vfunction vFunc = new Vfunction(functionProperties.Function) { Width = GlobalScopePanel.Width };
             
+
+
             foreach (var variable in GlobalScope.Scope.LocalVariables)
             {
                 vFunc.Function.Scope.ScopeAccessVariable.Add(variable);
@@ -132,21 +140,36 @@ namespace CodeVisualizer.Controls.Helpers
 
         private void mainToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Function MainFunction = new Function();
-            MainFunction.Name = "Main";
-            MainFunction.IsBody = true;
-            MainFunction.VType = Enums.VType.Function;
-            MainFunction.Type=Enums.Type.Void;
+            if (MainFunctionDeclared)
+            {
+                MetroMessageBox.Show(this,"Main Function can only be declared once");
+                return;
+            }
+            Function mainFunction = new Function();
+            mainFunction.Name = "Main";
+            mainFunction.IsBody = true;
+            mainFunction.VType = Enums.VType.Function;
+            mainFunction.Type=Enums.Type.Void;
+            
 
-            Vfunction vFunc = new Vfunction(MainFunction);
+
+            Vfunction vFunc = new Vfunction(mainFunction){Width = GlobalScopePanel.Width} ;
+            vFunc.Disposed += VFunc_Disposed;
+
+
             vFunc.settingsButton.Visible = false;
 
 
             vFunc.Function.Scope.ScopeAccessVariable = GlobalScope.Scope.LocalVariables;
 
             GlobalScopePanel.Controls.Add(vFunc);
-
+            MainFunctionDeclared = true;
             UpdateScope();
+        }
+
+        private void VFunc_Disposed(object sender, EventArgs e)
+        {
+            MainFunctionDeclared = false;
         }
     }
 }

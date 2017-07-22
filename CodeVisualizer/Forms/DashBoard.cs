@@ -24,7 +24,14 @@ namespace CodeVisualizer.Forms
         {
             InitializeComponent();
             globalScopeControl.GlobalScope = new GlobalScope();
+            globalScopeControl.GlobalScopePanel.ControlAdded += GlobalScopeControl_ControlAdded;
+            globalScopeControl.GlobalScopePanel.ControlRemoved += GlobalScopeControl_ControlAdded;
 
+        }
+
+        public void GlobalScopeControl_ControlAdded(object sender, ControlEventArgs e)
+        {
+            ToCode();
         }
 
 
@@ -123,17 +130,30 @@ namespace CodeVisualizer.Forms
         private void visualToCodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            ToCode();
+
+        }
+
+        private void ToCode()
+        {
 
             globalScopeControl.UpdateScope();
             VCodeToCode vBlockToCode = new VCodeToCode(globalScopeControl.GlobalScope);
             Beautify beautifier = new Beautify(vBlockToCode.Code);
             CodeEditor.Text = beautifier.CodeOutput;
-
         }
+
 
         private void codeToVisualToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ToUi();
+            
 
+
+        }
+
+        private void ToUi()
+        {
             CodeToVCode codeToVCode = new CodeToVCode(CodeEditor.Text);
             globalScopeControl.VcodeToVblock(codeToVCode.Scope);
 
@@ -142,9 +162,10 @@ namespace CodeVisualizer.Forms
             UpdateTreeView(ref root, codeToVCode.Scope.Items);
             treeView1.Nodes.Clear();
             treeView1.Nodes.Add(root);
-
-
         }
+
+        
+
 
         private void UpdateTreeView(ref TreeNode root, Queue<VCode> vCodes)
         {
