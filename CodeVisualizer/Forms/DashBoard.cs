@@ -105,6 +105,9 @@ namespace CodeVisualizer.Forms
                 CodeEditor.SelectionColor = Color.Black;
             }
 
+
+            //ToUi();
+
         }
 
         #endregion

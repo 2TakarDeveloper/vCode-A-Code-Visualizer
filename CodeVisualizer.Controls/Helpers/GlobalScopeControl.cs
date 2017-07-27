@@ -140,17 +140,19 @@ namespace CodeVisualizer.Controls.Helpers
 
         private void mainToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MainFunctionDeclared)
+            //if (MainFunctionDeclared)
+            //{
+            //    MetroMessageBox.Show(this,"Main Function can only be declared once");
+            //    return;
+            //}
+            Function mainFunction = new Function
             {
-                MetroMessageBox.Show(this,"Main Function can only be declared once");
-                return;
-            }
-            Function mainFunction = new Function();
-            mainFunction.Name = "Main";
-            mainFunction.IsBody = true;
-            mainFunction.VType = Enums.VType.Function;
-            mainFunction.Type=Enums.Type.Void;
-            
+                Name = "Main",
+                IsBody = true,
+                VType = Enums.VType.Function,
+                Type = Enums.Type.Void
+            };
+
 
 
             Vfunction vFunc = new Vfunction(mainFunction){Width = GlobalScopePanel.Width} ;
