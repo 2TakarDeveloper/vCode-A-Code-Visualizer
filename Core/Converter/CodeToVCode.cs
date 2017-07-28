@@ -25,6 +25,7 @@ namespace Core.Converter
             Scope = new Scope();
             code = Regex.Replace(code, @"\t|\n", "");
             CreateScopeObject(Scope, '{' + code.Trim() + '}');
+
         }
 
         #region LexicalAnalyzer
@@ -403,17 +404,19 @@ namespace Core.Converter
                 while (m.Success)
                 {
                     TypedvCodes ins = new TypedvCodes();
-                    if (_regex.Variable.IsMatch(m.Groups[0].ToString()))
+                    if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
+                    {
+                        ins = CreateConstantObject(ins, m.Groups[0].ToString());
+                    }
+                    else if (_regex.Variable.IsMatch(m.Groups[0].ToString()))
                     {
                         ins.Name = m.Groups[0].ToString();
+                        ins.VType = Enums.VType.Variable;
                     }
                     else if (_regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
                     {
                         ins.Name = m.Groups[0].ToString();
-                    }
-                    else if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
-                    {
-                        CreateConstantObject(ins,m.Groups[0].ToString());
+                        ins.VType = Enums.VType.Function;
                     }
                     if (count == 0)
                     {
@@ -436,20 +439,24 @@ namespace Core.Converter
 
                 m = m.NextMatch();
                 TypedvCodes ins = new TypedvCodes();
-                if (_regex.Variable.IsMatch(m.Groups[0].ToString()))
+                
+                if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
+                {
+                    ins = CreateConstantObject(ins, m.Groups[0].ToString());
+                }
+                else if (_regex.Variable.IsMatch(m.Groups[0].ToString()))
                 {
                     ins.Name = m.Groups[0].ToString();
+                    ins.VType = Enums.VType.Variable;
                 }
                 else if (_regex.FunctionCall.IsMatch(m.Groups[0].ToString()))
                 {
                     ins.Name = m.Groups[0].ToString();
-                }
-                else if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
-                {
-                    ins = CreateConstantObject(ins, m.Groups[0].ToString());
+                    ins.VType = Enums.VType.Function;
                 }
                 single.Instruction = ins;
             }
+            
         }
 
         private Constant CreateConstantObject(TypedvCodes ins,string text)
