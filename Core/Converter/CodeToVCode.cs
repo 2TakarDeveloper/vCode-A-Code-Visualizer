@@ -89,6 +89,7 @@ namespace Core.Converter
                 if (_regex.FunctionRegex.IsMatch(selectedText))
                 {
                     Function funcObject = new Function();
+                    funcObject.IsBody = true;
                     scope.Items.Enqueue(funcObject);
                     CreateFunctionObject(funcObject, selectedText);
                     start = ++end;
