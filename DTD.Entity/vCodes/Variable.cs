@@ -32,16 +32,16 @@ namespace DTD.Entity.vCodes
 
         public override string ToString()
         {
-            if (IsArray)
-            {
-                switch (ArrayType)
-                {
-                    case "1D":
-                        return Name + "[" + Row + "]";
-                    case "2D":
-                        return Name + "[" + Row + "]" + "[" + Column + "]";
-                }
-            }
+            //if (IsArray)
+            //{
+            //    switch (ArrayType)
+            //    {
+            //        case "1D":
+            //            return Name + "[" + Row + "]";
+            //        case "2D":
+            //            return Name + "[" + Row + "]" + "[" + Column + "]";
+            //    }
+            //}
           
 
             return Name;

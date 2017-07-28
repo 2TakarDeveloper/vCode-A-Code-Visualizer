@@ -31,11 +31,11 @@ namespace CodeVisualizer.Controls.VBlocks
         }
 
 
-        private void ParseInstruction(VCode vCode)
+        private void ParseInstruction(TypedvCodes typedvCodes)
         {
-            if (vCode.VType == Enums.VType.Function)
+            if (typedvCodes.VType == Enums.VType.Function)
             {
-                DTD.Entity.vCodes.Function function = (DTD.Entity.vCodes.Function)vCode;
+                DTD.Entity.vCodes.Function function = (DTD.Entity.vCodes.Function)typedvCodes;
                 AssignmentString += function.Name + "(";
                 foreach (var var in function.Parameters)
                 {
@@ -47,22 +47,25 @@ namespace CodeVisualizer.Controls.VBlocks
                 AssignmentString += ")";
 
             }
-            else if (vCode.VType == Enums.VType.Variable)
+            else if (typedvCodes.VType == Enums.VType.Variable)
             {
-                DTD.Entity.vCodes.Variable variable = (DTD.Entity.vCodes.Variable)vCode;
-                AssignmentString += variable.Name;
-                if (variable.IsArray)
-                {
-                    AssignmentString += "[" + variable.Row + "]";
-                    if (variable.ArrayType == "2D")
-                        AssignmentString += "[" + variable.Column + "]";
-                }
+               
+               
+                //DTD.Entity.vCodes.Variable variable = (DTD.Entity.vCodes.Variable) vCode;
+
+                AssignmentString += typedvCodes.Name;
+                //if (variable.IsArray)
+                //{
+                //    AssignmentString += "[" + variable.Row + "]";
+                //    if (variable.ArrayType == "2D")
+                //        AssignmentString += "[" + variable.Column + "]";
+                //}
 
 
             }
-            else if (vCode.VType == Enums.VType.Constant)
+            else if (typedvCodes.VType == Enums.VType.Constant)
             {
-                Constant constant = (Constant)vCode;
+                Constant constant = (Constant)typedvCodes;
                 AssignmentString += constant.Value;
 
             }

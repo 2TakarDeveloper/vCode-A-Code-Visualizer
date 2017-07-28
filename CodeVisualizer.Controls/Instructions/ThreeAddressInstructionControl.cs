@@ -26,8 +26,8 @@ namespace CodeVisualizer.Controls.Instructions
         public ThreeAddressInstructionControl(List<Variable> ScopeVariables,Variable selectedVariable )
         {
             InitializeComponent();
-            ThreeAddressInstruction=new ThreeAddressInstruction();
-            ThreeAddressInstruction.InstructionType=Enums.InstructionType.ThreeAddress;
+            ThreeAddressInstruction =
+                new ThreeAddressInstruction {InstructionType = Enums.InstructionType.ThreeAddress};
             SelectetVariable = selectedVariable;
             LocalVariables = ScopeVariables;
             ThreeAddressInstruction.Operator = "+";

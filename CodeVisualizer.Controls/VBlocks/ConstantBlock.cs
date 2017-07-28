@@ -20,8 +20,7 @@ namespace CodeVisualizer.Controls.VBlocks
         public ConstantBlock(DTD.Entity.vCodes.Variable variable)
         {
             InitializeComponent();
-            Constant=new Constant();
-            Constant.VType=Enums.VType.Constant;
+            Constant = new Constant {VType = Enums.VType.Constant};
             variableType = variable.Type;
 
 

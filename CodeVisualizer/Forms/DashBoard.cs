@@ -24,9 +24,6 @@ namespace CodeVisualizer.Forms
         {
             InitializeComponent();
             globalScopeControl.GlobalScope = new GlobalScope();
-            globalScopeControl.GlobalScopePanel.ControlAdded += GlobalScopeControl_ControlAdded;
-            globalScopeControl.GlobalScopePanel.ControlRemoved += GlobalScopeControl_ControlAdded;
-
         }
 
         public void GlobalScopeControl_ControlAdded(object sender, ControlEventArgs e)
@@ -134,7 +131,7 @@ namespace CodeVisualizer.Forms
         {
 
             ToCode();
-
+            TreeDraw();
         }
 
         private void ToCode()
@@ -167,8 +164,17 @@ namespace CodeVisualizer.Forms
             treeView1.Nodes.Add(root);
         }
 
-        
 
+        private void TreeDraw()
+        {
+            CodeToVCode codeToVCode = new CodeToVCode(CodeEditor.Text);
+           
+            TreeNode root = null;
+
+            UpdateTreeView(ref root, codeToVCode.Scope.Items);
+            treeView1.Nodes.Clear();
+            treeView1.Nodes.Add(root);
+        }
 
         private void UpdateTreeView(ref TreeNode root, Queue<VCode> vCodes)
         {
