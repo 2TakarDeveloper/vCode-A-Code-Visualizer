@@ -42,25 +42,32 @@
             this.NameLable.Size = new System.Drawing.Size(86, 19);
             this.NameLable.Text = "Assignment";
             // 
-            // DisposeButton
-            // 
-            this.DisposeButton.Location = new System.Drawing.Point(276, 1);
-            // 
             // body
             // 
             this.body.Controls.Add(this.AssignmentStringLable);
-            this.body.Size = new System.Drawing.Size(312, 56);
+            this.body.Size = new System.Drawing.Size(312, 25);
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.AssignmentStringLable, 0);
+            // 
+            // ExpandCollapseButton
+            // 
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(69, 1);
+            this.ExpandCollapseButton.Click += new System.EventHandler(this.ExpandCollapseButton_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(170, 1);
+            this.metroButton1.Visible = false;
             // 
             // settingsButton
             // 
             this.settingsButton.Location = new System.Drawing.Point(245, 1);
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
-            // metroButton1
+            // DisposeButton
             // 
-            this.metroButton1.Location = new System.Drawing.Point(170, 1);
+            this.DisposeButton.Location = new System.Drawing.Point(276, 1);
+            this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
             // AssignmentStringLable
             // 
@@ -77,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "AssignmentBlock";
-            this.Size = new System.Drawing.Size(342, 86);
+            this.Size = new System.Drawing.Size(342, 55);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);

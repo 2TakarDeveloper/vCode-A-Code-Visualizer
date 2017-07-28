@@ -119,6 +119,19 @@ namespace CodeVisualizer.Controls.VBlocks
             Assignment.AssignmentString = AssignmentString;
         }
 
+
+        private bool _isCollasped = true;
+
+        private void ExpandCollapseButton_Click(object sender, EventArgs e)
+        {
+            _isCollasped = !_isCollasped;
+            Size = _isCollasped ? new Size(Size.Width, 55) : new Size(Size.Width, 77);
+        }
+
+        private void DisposeButton_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
     }
 
 
