@@ -52,8 +52,8 @@ namespace GlobalLibrary
             IsStatic = new Regex("[s][t][a][t][i][c]");
 
 
-            IntRegex = new Regex("([+]|[-])?[0-9]+");
-            DoubleRgex = new Regex("([+]|[-])?[0-9]+([.][0-9]+)");
+            IntRegex = new Regex("[0-9]+");
+            DoubleRgex = new Regex("[0-9]+([.][0-9]+)");
             NumberRegex = new Regex("("+IntRegex+")|("+DoubleRgex+")");
             StringRegex = new Regex("([\"]([\\w]*[\\W]*)*[\"])");
             BoolValue = new Regex("(([t][r][u][e])|([f][a][l][s][e]))");
