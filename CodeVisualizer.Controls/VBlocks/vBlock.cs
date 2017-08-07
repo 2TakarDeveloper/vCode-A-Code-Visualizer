@@ -25,8 +25,5 @@ namespace CodeVisualizer.Controls.VBlocks
         {
             Dispose();
         }
-
-
-
     }
 }

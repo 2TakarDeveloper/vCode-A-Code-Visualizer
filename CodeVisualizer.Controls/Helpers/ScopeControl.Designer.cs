@@ -44,10 +44,11 @@
             this.whileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.assignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AssignmentButton = new System.Windows.Forms.Button();
-            this.WhileButton = new System.Windows.Forms.Button();
-            this.ifButton = new System.Windows.Forms.Button();
-            this.variableButton = new System.Windows.Forms.Button();
+            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.ifLink = new MetroFramework.Controls.MetroLink();
+            this.FunctionLink = new MetroFramework.Controls.MetroLink();
+            this.VariableLink = new MetroFramework.Controls.MetroLink();
             this.ScopePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ContextMenuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,7 +80,7 @@
             this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
             this.newToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
             this.newToolStripMenuItem1.Text = "New";
-            this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
+            this.newToolStripMenuItem1.Click += new System.EventHandler(this.VariableToolStripMenuItemClick);
             // 
             // iFToolStripMenuItem
             // 
@@ -168,61 +169,79 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.AssignmentButton);
-            this.panel1.Controls.Add(this.WhileButton);
-            this.panel1.Controls.Add(this.ifButton);
-            this.panel1.Controls.Add(this.variableButton);
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.metroLink2);
+            this.panel1.Controls.Add(this.metroLink1);
+            this.panel1.Controls.Add(this.ifLink);
+            this.panel1.Controls.Add(this.FunctionLink);
+            this.panel1.Controls.Add(this.VariableLink);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(413, 0);
+            this.panel1.Location = new System.Drawing.Point(429, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(72, 336);
+            this.panel1.Size = new System.Drawing.Size(56, 336);
             this.panel1.TabIndex = 4;
             // 
-            // AssignmentButton
+            // metroLink2
             // 
-            this.AssignmentButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AssignmentButton.Location = new System.Drawing.Point(0, 69);
-            this.AssignmentButton.Name = "AssignmentButton";
-            this.AssignmentButton.Padding = new System.Windows.Forms.Padding(2);
-            this.AssignmentButton.Size = new System.Drawing.Size(72, 23);
-            this.AssignmentButton.TabIndex = 3;
-            this.AssignmentButton.Text = "Assignment";
-            this.AssignmentButton.UseVisualStyleBackColor = true;
-            this.AssignmentButton.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
+            this.metroLink2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroLink2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroLink2.Image = global::CodeVisualizer.Controls.Properties.Resources.assignment;
+            this.metroLink2.ImageSize = 60;
+            this.metroLink2.Location = new System.Drawing.Point(0, 267);
+            this.metroLink2.Name = "metroLink2";
+            this.metroLink2.Size = new System.Drawing.Size(56, 63);
+            this.metroLink2.TabIndex = 4;
+            this.metroLink2.UseSelectable = true;
+            this.metroLink2.Click += new System.EventHandler(this.assignmentToolStripMenuItem_Click);
             // 
-            // WhileButton
+            // metroLink1
             // 
-            this.WhileButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.WhileButton.Location = new System.Drawing.Point(0, 46);
-            this.WhileButton.Name = "WhileButton";
-            this.WhileButton.Size = new System.Drawing.Size(72, 23);
-            this.WhileButton.TabIndex = 2;
-            this.WhileButton.Text = "While";
-            this.WhileButton.UseVisualStyleBackColor = true;
-            this.WhileButton.Click += new System.EventHandler(this.whileToolStripMenuItem1_Click);
+            this.metroLink1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.metroLink1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroLink1.Image = global::CodeVisualizer.Controls.Properties.Resources.loop;
+            this.metroLink1.ImageSize = 60;
+            this.metroLink1.Location = new System.Drawing.Point(0, 195);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(56, 72);
+            this.metroLink1.TabIndex = 3;
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.whileToolStripMenuItem1_Click);
             // 
-            // ifButton
+            // ifLink
             // 
-            this.ifButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ifButton.Location = new System.Drawing.Point(0, 23);
-            this.ifButton.Name = "ifButton";
-            this.ifButton.Size = new System.Drawing.Size(72, 23);
-            this.ifButton.TabIndex = 1;
-            this.ifButton.Text = "if";
-            this.ifButton.UseVisualStyleBackColor = true;
-            this.ifButton.Click += new System.EventHandler(this.ifToolStripMenuItem1_Click);
+            this.ifLink.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ifLink.Image = global::CodeVisualizer.Controls.Properties.Resources._if;
+            this.ifLink.ImageSize = 60;
+            this.ifLink.Location = new System.Drawing.Point(0, 131);
+            this.ifLink.Name = "ifLink";
+            this.ifLink.Size = new System.Drawing.Size(56, 64);
+            this.ifLink.TabIndex = 2;
+            this.ifLink.UseSelectable = true;
+            this.ifLink.Click += new System.EventHandler(this.ifToolStripMenuItem1_Click);
             // 
-            // variableButton
+            // FunctionLink
             // 
-            this.variableButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.variableButton.Location = new System.Drawing.Point(0, 0);
-            this.variableButton.Name = "variableButton";
-            this.variableButton.Size = new System.Drawing.Size(72, 23);
-            this.variableButton.TabIndex = 0;
-            this.variableButton.Text = "Variable";
-            this.variableButton.UseVisualStyleBackColor = true;
-            this.variableButton.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
+            this.FunctionLink.Dock = System.Windows.Forms.DockStyle.Top;
+            this.FunctionLink.Image = global::CodeVisualizer.Controls.Properties.Resources.function;
+            this.FunctionLink.ImageSize = 60;
+            this.FunctionLink.Location = new System.Drawing.Point(0, 65);
+            this.FunctionLink.Name = "FunctionLink";
+            this.FunctionLink.Size = new System.Drawing.Size(56, 66);
+            this.FunctionLink.TabIndex = 1;
+            this.FunctionLink.UseSelectable = true;
+            this.FunctionLink.Click += new System.EventHandler(this.userDefinedToolStripMenuItem_Click);
+            // 
+            // VariableLink
+            // 
+            this.VariableLink.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VariableLink.Image = global::CodeVisualizer.Controls.Properties.Resources.variable;
+            this.VariableLink.ImageSize = 60;
+            this.VariableLink.Location = new System.Drawing.Point(0, 0);
+            this.VariableLink.Name = "VariableLink";
+            this.VariableLink.Size = new System.Drawing.Size(56, 65);
+            this.VariableLink.TabIndex = 0;
+            this.VariableLink.UseSelectable = true;
+            this.VariableLink.Click += new System.EventHandler(this.VariableToolStripMenuItemClick);
             // 
             // ScopePanel
             // 
@@ -233,7 +252,7 @@
             this.ScopePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScopePanel.Location = new System.Drawing.Point(0, 0);
             this.ScopePanel.Name = "ScopePanel";
-            this.ScopePanel.Size = new System.Drawing.Size(413, 336);
+            this.ScopePanel.Size = new System.Drawing.Size(429, 336);
             this.ScopePanel.TabIndex = 5;
             // 
             // ScopeControl
@@ -266,10 +285,11 @@
         private System.Windows.Forms.ToolStripMenuItem userDefinedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignmentToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button AssignmentButton;
-        private System.Windows.Forms.Button WhileButton;
-        private System.Windows.Forms.Button ifButton;
-        private System.Windows.Forms.Button variableButton;
         public System.Windows.Forms.FlowLayoutPanel ScopePanel;
+        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroLink ifLink;
+        private MetroFramework.Controls.MetroLink FunctionLink;
+        private MetroFramework.Controls.MetroLink VariableLink;
+        private MetroFramework.Controls.MetroLink metroLink2;
     }
 }

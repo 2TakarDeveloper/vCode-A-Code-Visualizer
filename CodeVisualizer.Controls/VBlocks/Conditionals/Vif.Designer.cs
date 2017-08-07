@@ -30,7 +30,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
         /// </summary>
         private void InitializeComponent()
         {
-            DTD.Entity.Helpers.Condition condition1 = new DTD.Entity.Helpers.Condition();
+            DTD.Entity.Helpers.Condition condition2 = new DTD.Entity.Helpers.Condition();
             this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.conditionControl1 = new CodeVisualizer.Controls.Helpers.ConditionControl();
             this.Header.SuspendLayout();
@@ -68,16 +68,16 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(345, 1);
+            this.metroButton1.Location = new System.Drawing.Point(359, 1);
             this.metroButton1.Visible = false;
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(283, 1);
+            this.settingsButton.Location = new System.Drawing.Point(297, 1);
             // 
             // DisposeButton
             // 
-            this.DisposeButton.Location = new System.Drawing.Point(314, 1);
+            this.DisposeButton.Location = new System.Drawing.Point(328, 1);
             this.DisposeButton.Click += new System.EventHandler(this.DisposeButton_Click);
             // 
             // scopeControl
@@ -91,10 +91,10 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // 
             // conditionControl1
             // 
-            condition1.BooleanOperator = "<=";
-            condition1.LeftParameter = "x";
-            condition1.RightParameter = "5";
-            this.conditionControl1.Condition = condition1;
+            condition2.BooleanOperator = "<=";
+            condition2.LeftParameter = "x";
+            condition2.RightParameter = "5";
+            this.conditionControl1.Condition = condition2;
             this.conditionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.conditionControl1.Location = new System.Drawing.Point(19, 1);
             this.conditionControl1.Name = "conditionControl1";
@@ -104,6 +104,7 @@ namespace CodeVisualizer.Controls.VBlocks.Conditionals
             // Vif
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.BackColor = System.Drawing.Color.MediumAquamarine;
             this.Name = "Vif";
             this.Size = new System.Drawing.Size(557, 55);
             this.Header.ResumeLayout(false);
