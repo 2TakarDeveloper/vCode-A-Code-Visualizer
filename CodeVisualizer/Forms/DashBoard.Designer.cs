@@ -30,139 +30,158 @@ namespace CodeVisualizer.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualToCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.codeToVisualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.midPanel = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.treeView = new System.Windows.Forms.TreeView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SplitPanel1 = new System.Windows.Forms.SplitContainer();
             this.CodeEditor = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.globalScopeControl = new CodeVisualizer.Controls.Helpers.GlobalScopeControl();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.botPanel = new System.Windows.Forms.Panel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.tableLayoutPanel.SuspendLayout();
-            this.topPanel.SuspendLayout();
-            this.menuStrip.SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.midPanel.SuspendLayout();
+            this.tableLayoutPanel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitPanel1)).BeginInit();
             this.SplitPanel1.Panel1.SuspendLayout();
             this.SplitPanel1.Panel2.SuspendLayout();
             this.SplitPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.header.SuspendLayout();
-            this.botPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // midPanel
+            // 
+            this.midPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.midPanel.Controls.Add(this.splitContainer1);
+            this.midPanel.Controls.Add(this.panel3);
+            this.midPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.midPanel.Location = new System.Drawing.Point(3, 3);
+            this.midPanel.Name = "midPanel";
+            this.midPanel.Size = new System.Drawing.Size(717, 487);
+            this.midPanel.TabIndex = 1;
             // 
             // tableLayoutPanel
             // 
             this.tableLayoutPanel.ColumnCount = 1;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.Controls.Add(this.topPanel, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.midPanel, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.botPanel, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.midPanel, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.ForeColor = System.Drawing.Color.Black;
             this.tableLayoutPanel.Location = new System.Drawing.Point(20, 30);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 3;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.71171F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.75676F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.306306F));
+            this.tableLayoutPanel.RowCount = 1;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(723, 493);
             this.tableLayoutPanel.TabIndex = 0;
             // 
-            // topPanel
+            // imageList1
             // 
-            this.topPanel.Controls.Add(this.panel3);
-            this.topPanel.Controls.Add(this.menuStrip);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topPanel.Location = new System.Drawing.Point(3, 3);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(717, 51);
-            this.topPanel.TabIndex = 0;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "variable.png");
+            this.imageList1.Images.SetKeyName(1, "function.png");
+            this.imageList1.Images.SetKeyName(2, "if.png");
+            this.imageList1.Images.SetKeyName(3, "loop.png");
+            this.imageList1.Images.SetKeyName(4, "assignment.png");
+            this.imageList1.Images.SetKeyName(5, "main.png");
+            this.imageList1.Images.SetKeyName(6, "c to v.png");
             // 
             // panel3
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 24);
+            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(717, 27);
-            this.panel3.TabIndex = 1;
+            this.panel3.Size = new System.Drawing.Size(713, 30);
+            this.panel3.TabIndex = 2;
             // 
-            // menuStrip
+            // splitContainer1
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.compileToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(717, 24);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "menuStrip1";
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // fileToolStripMenuItem
+            // splitContainer1.Panel1
             // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.splitContainer1.Panel1.Controls.Add(this.metroPanel1);
             // 
-            // editToolStripMenuItem
+            // splitContainer1.Panel2
             // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
+            this.splitContainer1.Panel2.Controls.Add(this.SplitPanel1);
+            this.splitContainer1.Size = new System.Drawing.Size(713, 453);
+            this.splitContainer1.SplitterDistance = 80;
+            this.splitContainer1.TabIndex = 3;
             // 
-            // viewToolStripMenuItem
+            // metroPanel1
             // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
+            this.metroPanel1.Controls.Add(this.treeView);
+            this.metroPanel1.Controls.Add(this.panel2);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(80, 453);
+            this.metroPanel1.TabIndex = 0;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // compileToolStripMenuItem
+            // treeView
             // 
-            this.compileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualToCodeToolStripMenuItem,
-            this.codeToVisualToolStripMenuItem});
-            this.compileToolStripMenuItem.Name = "compileToolStripMenuItem";
-            this.compileToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.compileToolStripMenuItem.Text = "Convert";
+            this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView.ImageKey = "main.png";
+            this.treeView.ImageList = this.imageList1;
+            this.treeView.Location = new System.Drawing.Point(0, 17);
+            this.treeView.Name = "treeView";
+            this.treeView.SelectedImageIndex = 6;
+            this.treeView.Size = new System.Drawing.Size(80, 436);
+            this.treeView.TabIndex = 4;
             // 
-            // visualToCodeToolStripMenuItem
+            // panel2
             // 
-            this.visualToCodeToolStripMenuItem.Name = "visualToCodeToolStripMenuItem";
-            this.visualToCodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.visualToCodeToolStripMenuItem.Text = "Visual To Code";
-            this.visualToCodeToolStripMenuItem.Click += new System.EventHandler(this.visualToCodeToolStripMenuItem_Click);
+            this.panel2.BackColor = System.Drawing.Color.Thistle;
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(80, 17);
+            this.panel2.TabIndex = 3;
             // 
-            // codeToVisualToolStripMenuItem
+            // label3
             // 
-            this.codeToVisualToolStripMenuItem.Name = "codeToVisualToolStripMenuItem";
-            this.codeToVisualToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.codeToVisualToolStripMenuItem.Text = "Code To Visual";
-            this.codeToVisualToolStripMenuItem.Click += new System.EventHandler(this.codeToVisualToolStripMenuItem_Click);
-            // 
-            // midPanel
-            // 
-            this.midPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.midPanel.Controls.Add(this.SplitPanel1);
-            this.midPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.midPanel.Location = new System.Drawing.Point(3, 60);
-            this.midPanel.Name = "midPanel";
-            this.midPanel.Size = new System.Drawing.Size(717, 397);
-            this.midPanel.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Tree View";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SplitPanel1
             // 
@@ -179,19 +198,18 @@ namespace CodeVisualizer.Forms
             // SplitPanel1.Panel2
             // 
             this.SplitPanel1.Panel2.Controls.Add(this.globalScopeControl);
-            this.SplitPanel1.Panel2.Controls.Add(this.treeView1);
             this.SplitPanel1.Panel2.Controls.Add(this.header);
-            this.SplitPanel1.Size = new System.Drawing.Size(713, 393);
-            this.SplitPanel1.SplitterDistance = 178;
+            this.SplitPanel1.Size = new System.Drawing.Size(629, 453);
+            this.SplitPanel1.SplitterDistance = 135;
             this.SplitPanel1.TabIndex = 0;
             // 
             // CodeEditor
             // 
             this.CodeEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CodeEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodeEditor.Location = new System.Drawing.Point(0, 22);
+            this.CodeEditor.Location = new System.Drawing.Point(0, 17);
             this.CodeEditor.Name = "CodeEditor";
-            this.CodeEditor.Size = new System.Drawing.Size(178, 371);
+            this.CodeEditor.Size = new System.Drawing.Size(135, 436);
             this.CodeEditor.TabIndex = 3;
             this.CodeEditor.Text = "";
             this.CodeEditor.TextChanged += new System.EventHandler(this.CodeEditor_TextChanged);
@@ -203,7 +221,7 @@ namespace CodeVisualizer.Forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 22);
+            this.panel1.Size = new System.Drawing.Size(135, 17);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -224,18 +242,10 @@ namespace CodeVisualizer.Forms
             this.globalScopeControl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.globalScopeControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.globalScopeControl.GlobalScope = null;
-            this.globalScopeControl.Location = new System.Drawing.Point(146, 22);
+            this.globalScopeControl.Location = new System.Drawing.Point(0, 17);
             this.globalScopeControl.Name = "globalScopeControl";
-            this.globalScopeControl.Size = new System.Drawing.Size(385, 371);
+            this.globalScopeControl.Size = new System.Drawing.Size(490, 436);
             this.globalScopeControl.TabIndex = 10;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeView1.Location = new System.Drawing.Point(0, 22);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(146, 371);
-            this.treeView1.TabIndex = 9;
             // 
             // header
             // 
@@ -244,7 +254,7 @@ namespace CodeVisualizer.Forms
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(531, 22);
+            this.header.Size = new System.Drawing.Size(490, 17);
             this.header.TabIndex = 8;
             // 
             // label2
@@ -254,33 +264,34 @@ namespace CodeVisualizer.Forms
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 17);
+            this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Code Visualizer";
+            this.label2.Text = "vCode";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // botPanel
+            // button1
             // 
-            this.botPanel.Controls.Add(this.metroPanel1);
-            this.botPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.botPanel.Location = new System.Drawing.Point(3, 463);
-            this.botPanel.Name = "botPanel";
-            this.botPanel.Size = new System.Drawing.Size(717, 27);
-            this.botPanel.TabIndex = 2;
+            this.button1.BackgroundImage = global::CodeVisualizer.Properties.Resources.v_to_c;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Location = new System.Drawing.Point(680, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 30);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.visualToCodeToolStripMenuItem_Click);
             // 
-            // metroPanel1
+            // label4
             // 
-            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(717, 27);
-            this.metroPanel1.TabIndex = 0;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.PaleVioletRed;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(185, 18);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "vCode: A Code Visualizer";
             // 
             // DashBoard
             // 
@@ -291,16 +302,21 @@ namespace CodeVisualizer.Forms
             this.DisplayHeader = false;
             this.ForeColor = System.Drawing.Color.Teal;
             this.HelpButton = true;
-            this.MainMenuStrip = this.menuStrip;
             this.Name = "DashBoard";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Style = MetroFramework.MetroColorStyle.White;
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.topPanel.ResumeLayout(false);
-            this.topPanel.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.midPanel.ResumeLayout(false);
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.metroPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.SplitPanel1.Panel1.ResumeLayout(false);
             this.SplitPanel1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitPanel1)).EndInit();
@@ -309,34 +325,30 @@ namespace CodeVisualizer.Forms
             this.panel1.PerformLayout();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            this.botPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel midPanel;
-        private System.Windows.Forms.Panel botPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.TreeView treeView;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.SplitContainer SplitPanel1;
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox CodeEditor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox CodeEditor;
-        private System.Windows.Forms.ToolStripMenuItem compileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visualToCodeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem codeToVisualToolStripMenuItem;
-        private System.Windows.Forms.Panel panel3;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
         private GlobalScopeControl globalScopeControl;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel header;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

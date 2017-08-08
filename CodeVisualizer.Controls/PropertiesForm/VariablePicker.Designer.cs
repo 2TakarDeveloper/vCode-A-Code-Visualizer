@@ -38,7 +38,7 @@
             this.VariablePickerBox.FormattingEnabled = true;
             this.VariablePickerBox.Location = new System.Drawing.Point(20, 60);
             this.VariablePickerBox.Name = "VariablePickerBox";
-            this.VariablePickerBox.Size = new System.Drawing.Size(171, 21);
+            this.VariablePickerBox.Size = new System.Drawing.Size(162, 21);
             this.VariablePickerBox.TabIndex = 0;
             this.VariablePickerBox.SelectedIndexChanged += new System.EventHandler(this.VariablePickerBox_SelectedIndexChanged);
             // 
@@ -47,7 +47,7 @@
             this.submitButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.submitButton.Location = new System.Drawing.Point(20, 81);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(171, 23);
+            this.submitButton.Size = new System.Drawing.Size(162, 23);
             this.submitButton.TabIndex = 1;
             this.submitButton.Text = "Confirm";
             this.submitButton.UseSelectable = true;
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(211, 128);
+            this.ClientSize = new System.Drawing.Size(202, 128);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.VariablePickerBox);
             this.Name = "VariablePicker";

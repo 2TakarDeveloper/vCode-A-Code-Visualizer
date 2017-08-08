@@ -36,9 +36,9 @@
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.FunctionLink = new MetroFramework.Controls.MetroLink();
-            this.VariableLink = new MetroFramework.Controls.MetroLink();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.GlobalScopePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.VBlockMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,51 +93,51 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.metroLink1);
-            this.panel1.Controls.Add(this.FunctionLink);
-            this.panel1.Controls.Add(this.VariableLink);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(514, 0);
+            this.panel1.Location = new System.Drawing.Point(504, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(62, 415);
+            this.panel1.Size = new System.Drawing.Size(72, 415);
             this.panel1.TabIndex = 1;
             // 
-            // metroLink1
+            // button3
             // 
-            this.metroLink1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroLink1.Image = global::CodeVisualizer.Controls.Properties.Resources.main;
-            this.metroLink1.ImageSize = 60;
-            this.metroLink1.Location = new System.Drawing.Point(0, 122);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(62, 61);
-            this.metroLink1.TabIndex = 3;
-            this.metroLink1.UseSelectable = true;
-            this.metroLink1.Click += new System.EventHandler(this.mainToolStripMenuItem_Click);
+            this.button3.BackgroundImage = global::CodeVisualizer.Controls.Properties.Resources.main;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 142);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(72, 71);
+            this.button3.TabIndex = 3;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.mainToolStripMenuItem_Click);
             // 
-            // FunctionLink
+            // button2
             // 
-            this.FunctionLink.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FunctionLink.Image = global::CodeVisualizer.Controls.Properties.Resources.function;
-            this.FunctionLink.ImageSize = 60;
-            this.FunctionLink.Location = new System.Drawing.Point(0, 61);
-            this.FunctionLink.Name = "FunctionLink";
-            this.FunctionLink.Size = new System.Drawing.Size(62, 61);
-            this.FunctionLink.TabIndex = 2;
-            this.FunctionLink.UseSelectable = true;
-            this.FunctionLink.Click += new System.EventHandler(this.FunctionToolStripMenuItem1_Click);
+            this.button2.BackgroundImage = global::CodeVisualizer.Controls.Properties.Resources.function;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 72);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(72, 70);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.FunctionToolStripMenuItem1_Click);
             // 
-            // VariableLink
+            // button1
             // 
-            this.VariableLink.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VariableLink.Image = global::CodeVisualizer.Controls.Properties.Resources.variable;
-            this.VariableLink.ImageSize = 60;
-            this.VariableLink.Location = new System.Drawing.Point(0, 0);
-            this.VariableLink.Name = "VariableLink";
-            this.VariableLink.Size = new System.Drawing.Size(62, 61);
-            this.VariableLink.TabIndex = 1;
-            this.VariableLink.UseSelectable = true;
-            this.VariableLink.Click += new System.EventHandler(this.variableToolStripMenuItem_Click);
+            this.button1.BackgroundImage = global::CodeVisualizer.Controls.Properties.Resources.variable;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 72);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.variableToolStripMenuItem_Click);
             // 
             // GlobalScopePanel
             // 
@@ -147,7 +147,7 @@
             this.GlobalScopePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GlobalScopePanel.Location = new System.Drawing.Point(0, 0);
             this.GlobalScopePanel.Name = "GlobalScopePanel";
-            this.GlobalScopePanel.Size = new System.Drawing.Size(514, 415);
+            this.GlobalScopePanel.Size = new System.Drawing.Size(504, 415);
             this.GlobalScopePanel.TabIndex = 2;
             // 
             // GlobalScopeControl
@@ -176,8 +176,8 @@
         private System.Windows.Forms.ToolStripMenuItem mainToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.FlowLayoutPanel GlobalScopePanel;
-        private MetroFramework.Controls.MetroLink VariableLink;
-        private MetroFramework.Controls.MetroLink metroLink1;
-        private MetroFramework.Controls.MetroLink FunctionLink;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

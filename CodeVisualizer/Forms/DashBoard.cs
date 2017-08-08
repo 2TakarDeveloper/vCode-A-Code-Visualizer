@@ -159,8 +159,8 @@ namespace CodeVisualizer.Forms
             TreeNode root = null;
 
             UpdateTreeView(ref root, codeToVCode.Scope.Items);
-            treeView1.Nodes.Clear();
-            treeView1.Nodes.Add(root);
+            treeView.Nodes.Clear();
+            treeView.Nodes.Add(root);
         }
 
 
@@ -171,8 +171,9 @@ namespace CodeVisualizer.Forms
             TreeNode root = null;
 
             UpdateTreeView(ref root, codeToVCode.Scope.Items);
-            treeView1.Nodes.Clear();
-            treeView1.Nodes.Add(root);
+          
+            treeView.Nodes.Clear();
+            treeView.Nodes.Add(root);
         }
 
         private void UpdateTreeView(ref TreeNode root, Queue<VCode> vCodes)
@@ -183,8 +184,10 @@ namespace CodeVisualizer.Forms
                 {
                     Text = @"Root",
                     Tag = null
+                    
+
                 };
-                // get all departments in the list with parent is null
+           
 
                 foreach (VCode vCode in vCodes)
                 {
@@ -194,19 +197,27 @@ namespace CodeVisualizer.Forms
                         case Enums.VType.Variable:
                             var child = new TreeNode()
                             {
-                                Text = vCode.ToString()
+                                Text = vCode.ToString(),
+                                ImageIndex = 0,
+                                SelectedImageIndex = 6
 
                             };
+                            
+
                             root.Nodes.Add(child);
                             break;
                         case Enums.VType.Function:
                             Function func = (Function) vCode;
                             child = new TreeNode()
                             {
-                                Text = func.ToString()
+                                Text = func.ToString(),
+                                ImageIndex = 1,
+                                SelectedImageIndex = 6
 
                             };
+                            
                             UpdateTreeView(ref child, func.Scope.Items);
+
                             root.Nodes.Add(child);
 
                             break;
@@ -214,9 +225,12 @@ namespace CodeVisualizer.Forms
                             If vif = (If) vCode;
                             child = new TreeNode()
                             {
-                                Text = vif.ToString()
+                                Text = vif.ToString(),
+                                ImageIndex = 2,
+                                SelectedImageIndex = 6
 
                             };
+                          
                             UpdateTreeView(ref child, vif.Scope.Items);
                             root.Nodes.Add(child);
 
@@ -225,27 +239,23 @@ namespace CodeVisualizer.Forms
                             While wWhile = (While) vCode;
                             child = new TreeNode()
                             {
-                                Text = wWhile.ToString()
+                                Text = wWhile.ToString(),
+                                ImageIndex = 3,
+                                SelectedImageIndex = 6
 
                             };
+                            
                             UpdateTreeView(ref child, wWhile.Scope.Items);
                             root.Nodes.Add(child);
                             break;
-                        case Enums.VType.Constant:
-                            Constant constant = (Constant) vCode;
-                            child = new TreeNode()
-                            {
-                                Text = constant.ToString()
 
-                            };
-
-                            root.Nodes.Add(child);
-                            break;
                         case Enums.VType.Assignment:
                             Assignment assignment = (Assignment) vCode;
                             child = new TreeNode()
                             {
-                                Text = assignment.AssignmentString
+                                Text = assignment.AssignmentString,
+                                ImageIndex = 4,
+                                SelectedImageIndex = 6
 
                             };
 
@@ -271,58 +281,65 @@ namespace CodeVisualizer.Forms
                         case Enums.VType.Variable:
                             var child = new TreeNode()
                             {
-                                Text = vCode.ToString()
+                                Text = vCode.ToString(),
+                                ImageIndex = 0,
+                                SelectedImageIndex = 6
 
                             };
+
+
                             root.Nodes.Add(child);
                             break;
                         case Enums.VType.Function:
-                            Function func = (Function) vCode;
+                            Function func = (Function)vCode;
                             child = new TreeNode()
                             {
-                                Text = func.ToString()
+                                Text = func.ToString(),
+                                ImageIndex = 1,
+                                SelectedImageIndex = 6
 
                             };
+
                             UpdateTreeView(ref child, func.Scope.Items);
+
                             root.Nodes.Add(child);
 
                             break;
                         case Enums.VType.If:
-                            If vif = (If) vCode;
+                            If vif = (If)vCode;
                             child = new TreeNode()
                             {
-                                Text = vif.ToString()
+                                Text = vif.ToString(),
+                                ImageIndex = 2,
+                                SelectedImageIndex = 6
 
                             };
+
                             UpdateTreeView(ref child, vif.Scope.Items);
                             root.Nodes.Add(child);
 
                             break;
                         case Enums.VType.While:
-                            While wWhile = (While) vCode;
+                            While wWhile = (While)vCode;
                             child = new TreeNode()
                             {
-                                Text = wWhile.ToString()
+                                Text = wWhile.ToString(),
+                                ImageIndex = 3,
+                                SelectedImageIndex = 6
 
                             };
+
                             UpdateTreeView(ref child, wWhile.Scope.Items);
                             root.Nodes.Add(child);
                             break;
-                        case Enums.VType.Constant:
-                            Constant constant = (Constant) vCode;
-                            child = new TreeNode()
-                            {
-                                Text = constant.ToString()
 
-                            };
-
-                            root.Nodes.Add(child);
-                            break;
                         case Enums.VType.Assignment:
-                            Assignment assignment = (Assignment) vCode;
+                            Assignment assignment = (Assignment)vCode;
                             child = new TreeNode()
                             {
-                                Text = assignment.AssignmentString
+                                Text = assignment.AssignmentString,
+                                ImageIndex = 4,
+                                SelectedImageIndex = 6
 
                             };
 
