@@ -140,11 +140,7 @@ namespace CodeVisualizer.Controls.Helpers
 
         private void mainToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (MainFunctionDeclared)
-            //{
-            //    MetroMessageBox.Show(this,"Main Function can only be declared once");
-            //    return;
-            //}
+            
             Function mainFunction = new Function
             {
                 Name = "Main",
@@ -155,11 +151,14 @@ namespace CodeVisualizer.Controls.Helpers
 
 
 
-            Vfunction vFunc = new Vfunction(mainFunction){Width = GlobalScopePanel.Width} ;
-            vFunc.Disposed += VFunc_Disposed;
+            Vfunction vFunc = new Vfunction(mainFunction)
+            {
+                Width = GlobalScopePanel.Width,
+                settingsButton = {Visible = false}
+            };
 
 
-            vFunc.settingsButton.Visible = false;
+
 
 
             vFunc.Function.Scope.ScopeAccessVariable = GlobalScope.Scope.LocalVariables;
@@ -169,9 +168,6 @@ namespace CodeVisualizer.Controls.Helpers
             UpdateScope();
         }
 
-        private void VFunc_Disposed(object sender, EventArgs e)
-        {
-            MainFunctionDeclared = false;
-        }
+       
     }
 }
