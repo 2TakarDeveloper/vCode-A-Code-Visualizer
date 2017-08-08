@@ -30,6 +30,7 @@ namespace GlobalLibrary
         public Regex Variable { get; private set; }
         public Regex VarDeclaration { get; private set; }
         public Regex ArrayRegex { get; private set; }
+        public Regex ArrayAssignment { get; private set; }
         public Regex InstructionRegex { get; private set; }
         public Regex SingleInstructionRegex { get; private set; }
         public Regex ThreeAddressInstructionRegex { get; private set; }
@@ -45,6 +46,7 @@ namespace GlobalLibrary
         public Regex Condition { get; private set; }
         public Regex BooleanOperator { get; private set; }
         public Regex OperatorRegex { get; private set; }
+        public Regex Array { get; private set; }
 
         private void InitRegex()
         {
@@ -65,20 +67,21 @@ namespace GlobalLibrary
             Variable = new Regex("([a-z|A-Z|_][a-z|A-Z|0-9]*)");
             DataType = new Regex("([v][o][i][d])|([c][h][a][r])|([i][n][t])|([f][l][o][a][t])|([d][o][u][b][l][e])|([s][t][r][i][n][g])|([b][o][o][l])");
             BooleanOperator = new Regex("([<][=]|[>][=]|([<])|([>])|([=][=]))");
-
+            Array = new Regex(Variable + "[\\s] *[\\[]((" + Variable + ") | (" + NumberRegex + "))?[\\]]" + "[\\s] * ([\\[]((" + Variable + ") | (" + NumberRegex + "))?[\\]])?[\\s]*");
 
             ArgumentRegex = new Regex("[\\s]*[(][\\s]*(((" + Variable + ")|(" + ConstantRegex + "))[\\s]*([,][\\s]*((" + Variable + ")|(" + ConstantRegex + "))[\\s]*)*)?[\\s]*[)]");
             FunctionCallAsInst = new Regex("" + Variable + ArgumentRegex + "[\\s]*");
             FunctionCall = new Regex("^" + Variable + ArgumentRegex + "[\\s]*([;])?$");
 
 
-            InstructionRegex = new Regex("((" + Variable + ")|(" + ConstantRegex + ")|(" + FunctionCallAsInst + "))");
+            InstructionRegex = new Regex("((" + Variable + ")|(" + ConstantRegex + ")|(" + Array + ")|(" + FunctionCallAsInst + "))");
             SingleInstructionRegex = new Regex("" + InstructionRegex + "[\\s]*[;]");
             ThreeAddressInstructionRegex = new Regex("[\\s]*("+ InstructionRegex +")[\\s]*("+ OperatorRegex + ")[\\s]*(" + InstructionRegex +")[\\s]*[;]");
            
 
             VarDeclaration = new Regex("^((" + AccessModifier + ")[\\s]+)?" + "((" + IsStatic + ")[\\s]+)?((" + DataType + ")[\\s]+)" + Variable +"[\\s]*[;]$");
             ArrayRegex = new Regex("^((" + AccessModifier + ")[\\s]+)?" + "((" + IsStatic + ")[\\s]+)?((" + DataType + ")[\\s]+)" + Variable + "[\\s]*[\\[]((" + Variable+")|("+NumberRegex+"))?[\\]]" + "[\\s]*([\\[]((" + Variable + ")|(" + NumberRegex + "))?[\\]])?[;]$");
+            ArrayAssignment = new Regex("^" + Variable + "[\\s]*[\\[]((" + Variable + ")|(" + NumberRegex + "))?[\\]]" + "[\\s]*([\\[]((" + Variable + ")|(" + NumberRegex + "))?[\\]])?[\\s]*" + "[=][\\s]*(" + SingleInstructionRegex + ")|(" + ThreeAddressInstructionRegex + ")[\\s]*[;]$");
             VarAssignmentRegex = new Regex("^[\\s]*(" + Variable + ")[\\s]*" + "[=][\\s]*("+SingleInstructionRegex+")|("+ThreeAddressInstructionRegex+")[\\s]*$");
 
             Condition = new Regex("[(]" + InstructionRegex + "[\\s]*" + BooleanOperator + "[\\s]*" + InstructionRegex + "[)]");

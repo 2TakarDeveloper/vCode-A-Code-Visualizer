@@ -174,9 +174,9 @@
             this.panel1.Controls.Add(this.ifButton);
             this.panel1.Controls.Add(this.variableButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(413, 0);
+            this.panel1.Location = new System.Drawing.Point(405, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(72, 336);
+            this.panel1.Size = new System.Drawing.Size(80, 336);
             this.panel1.TabIndex = 4;
             // 
             // AssignmentButton
@@ -185,7 +185,7 @@
             this.AssignmentButton.Location = new System.Drawing.Point(0, 69);
             this.AssignmentButton.Name = "AssignmentButton";
             this.AssignmentButton.Padding = new System.Windows.Forms.Padding(2);
-            this.AssignmentButton.Size = new System.Drawing.Size(72, 23);
+            this.AssignmentButton.Size = new System.Drawing.Size(80, 26);
             this.AssignmentButton.TabIndex = 3;
             this.AssignmentButton.Text = "Assignment";
             this.AssignmentButton.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             this.WhileButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.WhileButton.Location = new System.Drawing.Point(0, 46);
             this.WhileButton.Name = "WhileButton";
-            this.WhileButton.Size = new System.Drawing.Size(72, 23);
+            this.WhileButton.Size = new System.Drawing.Size(80, 23);
             this.WhileButton.TabIndex = 2;
             this.WhileButton.Text = "While";
             this.WhileButton.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
             this.ifButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.ifButton.Location = new System.Drawing.Point(0, 23);
             this.ifButton.Name = "ifButton";
-            this.ifButton.Size = new System.Drawing.Size(72, 23);
+            this.ifButton.Size = new System.Drawing.Size(80, 23);
             this.ifButton.TabIndex = 1;
             this.ifButton.Text = "if";
             this.ifButton.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.variableButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.variableButton.Location = new System.Drawing.Point(0, 0);
             this.variableButton.Name = "variableButton";
-            this.variableButton.Size = new System.Drawing.Size(72, 23);
+            this.variableButton.Size = new System.Drawing.Size(80, 23);
             this.variableButton.TabIndex = 0;
             this.variableButton.Text = "Variable";
             this.variableButton.UseVisualStyleBackColor = true;
@@ -233,7 +233,7 @@
             this.ScopePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScopePanel.Location = new System.Drawing.Point(0, 0);
             this.ScopePanel.Name = "ScopePanel";
-            this.ScopePanel.Size = new System.Drawing.Size(413, 336);
+            this.ScopePanel.Size = new System.Drawing.Size(405, 336);
             this.ScopePanel.TabIndex = 5;
             // 
             // ScopeControl

@@ -128,7 +128,7 @@ namespace Core.Converter
                     start = ++end;
                     start = end = CropScope(whileObject.Scope, start, currentScope);
                 }
-                else if(_regex.VarAssignmentRegex.IsMatch(selectedText))
+                else if(_regex.VarAssignmentRegex.IsMatch(selectedText) || _regex.ArrayAssignment.IsMatch(selectedText))
                 {
                     CreateAssignmentObject(scope,selectedText);
                     start = ++end;

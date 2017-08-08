@@ -59,7 +59,7 @@ namespace CodeVisualizer.Controls.PropertiesForm
                 {
                     Assignment.Variable += "[" + Columns.Text + "]";
                 }
-                Assignment.Variable += ";";
+                
             }
 
             Assignment.Instruction = InstructionControl.Instruction;

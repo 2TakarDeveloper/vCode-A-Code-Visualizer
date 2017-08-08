@@ -103,7 +103,7 @@ namespace CodeVisualizer.Forms
             }
 
 
-            //ToUi();
+            ToUi();
 
         }
 
