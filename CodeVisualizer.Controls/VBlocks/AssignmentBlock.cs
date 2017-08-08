@@ -28,6 +28,7 @@ namespace CodeVisualizer.Controls.VBlocks
             assignment.VType=Enums.VType.Assignment;
             VCode = Assignment;
             SetString(Assignment);
+            NameLable.Text = AssignmentString;
         }
 
 

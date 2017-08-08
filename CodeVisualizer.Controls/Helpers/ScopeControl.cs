@@ -90,7 +90,7 @@ namespace CodeVisualizer.Controls.Helpers
 
 
 
-        private void newToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void VariableToolStripMenuItemClick(object sender, EventArgs e)
         {
             VariableProperties variableProperties= new VariableProperties();
             if (variableProperties.ShowDialog() != DialogResult.OK) return;

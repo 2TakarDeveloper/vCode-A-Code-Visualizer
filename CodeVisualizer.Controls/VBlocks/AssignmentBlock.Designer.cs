@@ -41,22 +41,25 @@
             // 
             this.NameLable.Size = new System.Drawing.Size(86, 19);
             this.NameLable.Text = "Assignment";
+            this.NameLable.UseCustomBackColor = true;
+            this.NameLable.UseCustomForeColor = true;
             // 
             // body
             // 
             this.body.Controls.Add(this.AssignmentStringLable);
-            this.body.Size = new System.Drawing.Size(312, 25);
+            this.body.Size = new System.Drawing.Size(312, 24);
             this.body.Controls.SetChildIndex(this.Header, 0);
             this.body.Controls.SetChildIndex(this.AssignmentStringLable, 0);
             // 
             // ExpandCollapseButton
             // 
-            this.ExpandCollapseButton.Location = new System.Drawing.Point(69, 1);
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(124, 1);
+            this.ExpandCollapseButton.Visible = false;
             this.ExpandCollapseButton.Click += new System.EventHandler(this.ExpandCollapseButton_Click);
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(170, 1);
+            this.metroButton1.Location = new System.Drawing.Point(184, 1);
             this.metroButton1.Visible = false;
             // 
             // settingsButton
@@ -83,8 +86,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Red;
             this.Name = "AssignmentBlock";
-            this.Size = new System.Drawing.Size(342, 55);
+            this.Size = new System.Drawing.Size(342, 54);
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.body.ResumeLayout(false);

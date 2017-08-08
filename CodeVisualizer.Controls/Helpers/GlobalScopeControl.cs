@@ -104,7 +104,7 @@ namespace CodeVisualizer.Controls.Helpers
             UpdateScope();
         }
 
-        private void newToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void FunctionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             
             FunctionProperties functionProperties = new FunctionProperties() ;

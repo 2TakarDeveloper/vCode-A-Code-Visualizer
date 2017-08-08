@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DTD.Entity.Helpers.Condition condition2 = new DTD.Entity.Helpers.Condition();
+            DTD.Entity.Helpers.Condition condition1 = new DTD.Entity.Helpers.Condition();
             this.conditionControl1 = new CodeVisualizer.Controls.Helpers.ConditionControl();
             this.scopeControl = new CodeVisualizer.Controls.Helpers.ScopeControl();
             this.Header.SuspendLayout();
@@ -84,10 +84,10 @@
             // 
             // conditionControl1
             // 
-            condition2.BooleanOperator = "<=";
-            condition2.LeftParameter = "x";
-            condition2.RightParameter = "5";
-            this.conditionControl1.Condition = condition2;
+            condition1.BooleanOperator = "<=";
+            condition1.LeftParameter = "x";
+            condition1.RightParameter = "5";
+            this.conditionControl1.Condition = condition1;
             this.conditionControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.conditionControl1.Location = new System.Drawing.Point(48, 1);
             this.conditionControl1.Name = "conditionControl1";
@@ -106,6 +106,7 @@
             // Vwhile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.BackColor = System.Drawing.Color.Moccasin;
             this.Name = "Vwhile";
             this.Size = new System.Drawing.Size(554, 56);
             this.Header.ResumeLayout(false);

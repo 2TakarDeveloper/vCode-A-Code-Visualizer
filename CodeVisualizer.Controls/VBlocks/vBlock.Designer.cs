@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.Header = new System.Windows.Forms.Panel();
+            this.ExpandCollapseButton = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.settingsButton = new MetroFramework.Controls.MetroLink();
+            this.DisposeButton = new MetroFramework.Controls.MetroLink();
             this.NameLable = new MetroFramework.Controls.MetroLabel();
             this.body = new System.Windows.Forms.Panel();
-            this.DisposeButton = new MetroFramework.Controls.MetroLink();
-            this.settingsButton = new MetroFramework.Controls.MetroLink();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.ExpandCollapseButton = new MetroFramework.Controls.MetroButton();
             this.Header.SuspendLayout();
             this.body.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,51 @@
             this.Header.Padding = new System.Windows.Forms.Padding(1);
             this.Header.Size = new System.Drawing.Size(616, 23);
             this.Header.TabIndex = 6;
+            // 
+            // ExpandCollapseButton
+            // 
+            this.ExpandCollapseButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExpandCollapseButton.Location = new System.Drawing.Point(430, 1);
+            this.ExpandCollapseButton.Name = "ExpandCollapseButton";
+            this.ExpandCollapseButton.Size = new System.Drawing.Size(60, 19);
+            this.ExpandCollapseButton.TabIndex = 14;
+            this.ExpandCollapseButton.Text = "+/-";
+            this.ExpandCollapseButton.UseSelectable = true;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.BackColor = System.Drawing.Color.LightGray;
+            this.metroButton1.BackgroundImage = global::CodeVisualizer.Controls.Properties.Resources.icon_ios7_refresh_empty_128;
+            this.metroButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroButton1.Location = new System.Drawing.Point(490, 1);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(61, 19);
+            this.metroButton1.TabIndex = 13;
+            this.metroButton1.Text = "Refresh";
+            this.metroButton1.UseSelectable = true;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.settingsButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856678_cog;
+            this.settingsButton.Location = new System.Drawing.Point(551, 1);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(31, 19);
+            this.settingsButton.TabIndex = 12;
+            this.settingsButton.UseCustomBackColor = true;
+            this.settingsButton.UseSelectable = true;
+            // 
+            // DisposeButton
+            // 
+            this.DisposeButton.BackColor = System.Drawing.Color.Gray;
+            this.DisposeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.DisposeButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
+            this.DisposeButton.Location = new System.Drawing.Point(582, 1);
+            this.DisposeButton.Name = "DisposeButton";
+            this.DisposeButton.Size = new System.Drawing.Size(31, 19);
+            this.DisposeButton.TabIndex = 11;
+            this.DisposeButton.UseSelectable = true;
             // 
             // NameLable
             // 
@@ -78,53 +123,11 @@
             this.body.Size = new System.Drawing.Size(618, 316);
             this.body.TabIndex = 7;
             // 
-            // DisposeButton
-            // 
-            this.DisposeButton.BackColor = System.Drawing.Color.Gray;
-            this.DisposeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DisposeButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856362_Close_Box_Red;
-            this.DisposeButton.Location = new System.Drawing.Point(582, 1);
-            this.DisposeButton.Name = "DisposeButton";
-            this.DisposeButton.Size = new System.Drawing.Size(31, 19);
-            this.DisposeButton.TabIndex = 11;
-            this.DisposeButton.UseSelectable = true;
-            // 
-            // settingsButton
-            // 
-            this.settingsButton.BackColor = System.Drawing.Color.Gray;
-            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.settingsButton.Image = global::CodeVisualizer.Controls.Properties.Resources._1484856678_cog;
-            this.settingsButton.Location = new System.Drawing.Point(551, 1);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(31, 19);
-            this.settingsButton.TabIndex = 12;
-            this.settingsButton.UseSelectable = true;
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.metroButton1.Location = new System.Drawing.Point(476, 1);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 19);
-            this.metroButton1.TabIndex = 13;
-            this.metroButton1.Text = "Reload";
-            this.metroButton1.UseSelectable = true;
-            // 
-            // ExpandCollapseButton
-            // 
-            this.ExpandCollapseButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ExpandCollapseButton.Location = new System.Drawing.Point(375, 1);
-            this.ExpandCollapseButton.Name = "ExpandCollapseButton";
-            this.ExpandCollapseButton.Size = new System.Drawing.Size(101, 19);
-            this.ExpandCollapseButton.TabIndex = 14;
-            this.ExpandCollapseButton.Text = "Expand/Collapse";
-            this.ExpandCollapseButton.UseSelectable = true;
-            // 
             // VBlock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Controls.Add(this.body);
             this.Name = "VBlock";
             this.Padding = new System.Windows.Forms.Padding(15);

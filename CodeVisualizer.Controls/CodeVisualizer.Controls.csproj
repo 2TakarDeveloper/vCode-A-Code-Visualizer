@@ -277,7 +277,27 @@
   <ItemGroup>
     <None Include="Resources\1484856678_cog.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icon-ios7-refresh-empty-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assignment.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\variable.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

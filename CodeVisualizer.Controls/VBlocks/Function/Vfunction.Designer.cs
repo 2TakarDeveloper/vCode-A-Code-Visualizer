@@ -99,6 +99,7 @@
             // Vfunction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.BackColor = System.Drawing.Color.MediumPurple;
             this.Controls.Add(this.returnPicker);
             this.Name = "Vfunction";
             this.Size = new System.Drawing.Size(725, 93);

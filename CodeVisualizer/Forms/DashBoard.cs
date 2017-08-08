@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Castle.Core.Internal;
-using CodeVisualizer.Controls.VBlocks.Function;
+
 using Core.Beautifier;
 using Core.Converter;
 using DTD.Entity;
 using DTD.Entity.Enum;
-using DTD.Entity.Helpers;
+
 using DTD.Entity.vCodes;
 using MetroFramework.Forms;
 
@@ -18,7 +16,7 @@ namespace CodeVisualizer.Forms
 {
     public partial class DashBoard : MetroForm
     {
-        private string Code { get; set; }
+        
 
         public DashBoard()
         {
@@ -26,26 +24,23 @@ namespace CodeVisualizer.Forms
             globalScopeControl.GlobalScope = new GlobalScope();
         }
 
-        public void GlobalScopeControl_ControlAdded(object sender, ControlEventArgs e)
-        {
-            ToCode();
-        }
+        
 
 
         #region TextHighligher
 
-        public Regex variable = new Regex("int|char|string|double|float|");
-        public Regex conditional = new Regex("for|while|if|else|");
-        public Regex accessModifier = new Regex("private|public|protected|");
-        public Regex stringValue = new Regex("[\"]+([a-z]||[A-Z]||[0-9])+[\"]");
-        public Regex floatNumberValue = new Regex("([0-9]*)+[.]+[0-9]*");
-        public Regex intNumberValue = new Regex("[0-9]*");
+        private readonly Regex _variable = new Regex("int|char|string|double|float|");
+        private readonly Regex _conditional = new Regex("for|while|if|else|");
+        private readonly Regex _accessModifier = new Regex("private|public|protected|");
+        private readonly Regex _stringValue = new Regex("[\"]+([a-z]||[A-Z]||[0-9])+[\"]");
+        private readonly Regex _floatNumberValue = new Regex("([0-9]*)+[.]+[0-9]*");
+        private readonly Regex _intNumberValue = new Regex("[0-9]*");
 
         private void CodeEditor_TextChanged(object sender, EventArgs e)
         {
 
             int selPos = CodeEditor.SelectionStart;
-            foreach (Match keyWordMatch in variable.Matches(CodeEditor.Text))
+            foreach (Match keyWordMatch in _variable.Matches(CodeEditor.Text))
             {
 
                 CodeEditor.Select(keyWordMatch.Index, keyWordMatch.Length);
@@ -56,7 +51,7 @@ namespace CodeVisualizer.Forms
 
 
             }
-            foreach (Match keyWordMatch in accessModifier.Matches(CodeEditor.Text))
+            foreach (Match keyWordMatch in _accessModifier.Matches(CodeEditor.Text))
             {
 
                 CodeEditor.Select(keyWordMatch.Index, keyWordMatch.Length);
@@ -65,7 +60,7 @@ namespace CodeVisualizer.Forms
                 CodeEditor.SelectionStart = selPos;
                 CodeEditor.SelectionColor = Color.Black;
             }
-            foreach (Match keyWordMatch in conditional.Matches(CodeEditor.Text))
+            foreach (Match keyWordMatch in _conditional.Matches(CodeEditor.Text))
             {
 
                 CodeEditor.Select(keyWordMatch.Index, keyWordMatch.Length);
@@ -74,7 +69,7 @@ namespace CodeVisualizer.Forms
                 CodeEditor.SelectionStart = selPos;
                 CodeEditor.SelectionColor = Color.Black;
             }
-            foreach (Match keyWordMatch in stringValue.Matches(CodeEditor.Text))
+            foreach (Match keyWordMatch in _stringValue.Matches(CodeEditor.Text))
             {
 
                 CodeEditor.Select(keyWordMatch.Index, keyWordMatch.Length);
@@ -83,7 +78,7 @@ namespace CodeVisualizer.Forms
                 CodeEditor.SelectionStart = selPos;
                 CodeEditor.SelectionColor = Color.Black;
             }
-            foreach (Match keyWordMatch in floatNumberValue.Matches(CodeEditor.Text))
+            foreach (Match keyWordMatch in _floatNumberValue.Matches(CodeEditor.Text))
             {
 
                 CodeEditor.Select(keyWordMatch.Index, keyWordMatch.Length);
@@ -92,7 +87,7 @@ namespace CodeVisualizer.Forms
                 CodeEditor.SelectionStart = selPos;
                 CodeEditor.SelectionColor = Color.Black;
             }
-            foreach (Match keyWordMatch in intNumberValue.Matches(CodeEditor.Text))
+            foreach (Match keyWordMatch in _intNumberValue.Matches(CodeEditor.Text))
             {
 
                 CodeEditor.Select(keyWordMatch.Index, keyWordMatch.Length);
@@ -102,8 +97,15 @@ namespace CodeVisualizer.Forms
                 CodeEditor.SelectionColor = Color.Black;
             }
 
-
-            ToUi();
+            try
+            {
+                ToUi();
+            }
+            catch (Exception )
+            {
+                //
+            }
+            
 
         }
 
@@ -147,9 +149,6 @@ namespace CodeVisualizer.Forms
         private void codeToVisualToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToUi();
-            
-
-
         }
 
         private void ToUi()
