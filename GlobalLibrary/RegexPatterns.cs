@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -67,8 +67,7 @@ namespace GlobalLibrary
             Variable = new Regex("([a-z|A-Z|_][a-z|A-Z|0-9]*)");
             DataType = new Regex("([v][o][i][d])|([c][h][a][r])|([i][n][t])|([f][l][o][a][t])|([d][o][u][b][l][e])|([s][t][r][i][n][g])|([b][o][o][l])");
             BooleanOperator = new Regex("([<][=]|[>][=]|([<])|([>])|([=][=]))");
-            Array = new Regex(Variable + "[\\s] *[\\[]((" + Variable + ") | (" + NumberRegex + "))?[\\]]" + "[\\s] * ([\\[]((" + Variable + ") | (" + NumberRegex + "))?[\\]])?[\\s]*");
-
+            Array = new Regex(Variable+"[\\s]*[\\[]((" + Variable + ")|(" + NumberRegex + "))[\\]][\\s]*([\\[]((" + Variable + ")|(" + NumberRegex + "))?[\\]])?");
             ArgumentRegex = new Regex("[\\s]*[(][\\s]*(((" + Variable + ")|(" + ConstantRegex + "))[\\s]*([,][\\s]*((" + Variable + ")|(" + ConstantRegex + "))[\\s]*)*)?[\\s]*[)]");
             FunctionCallAsInst = new Regex("" + Variable + ArgumentRegex + "[\\s]*");
             FunctionCall = new Regex("^" + Variable + ArgumentRegex + "[\\s]*([;])?$");
