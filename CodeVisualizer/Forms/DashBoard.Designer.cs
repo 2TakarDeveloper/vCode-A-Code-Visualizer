@@ -33,12 +33,10 @@ namespace CodeVisualizer.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.midPanel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.treeView = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.SplitPanel1 = new System.Windows.Forms.SplitContainer();
@@ -48,11 +46,11 @@ namespace CodeVisualizer.Forms
             this.globalScopeControl = new CodeVisualizer.Controls.Helpers.GlobalScopeControl();
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.midPanel.SuspendLayout();
-            this.tableLayoutPanel.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -65,6 +63,8 @@ namespace CodeVisualizer.Forms
             this.SplitPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.header.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // midPanel
@@ -77,45 +77,6 @@ namespace CodeVisualizer.Forms
             this.midPanel.Name = "midPanel";
             this.midPanel.Size = new System.Drawing.Size(717, 487);
             this.midPanel.TabIndex = 1;
-            // 
-            // tableLayoutPanel
-            // 
-            this.tableLayoutPanel.ColumnCount = 1;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.Controls.Add(this.midPanel, 0, 0);
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(20, 30);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 1;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(723, 493);
-            this.tableLayoutPanel.TabIndex = 0;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "variable.png");
-            this.imageList1.Images.SetKeyName(1, "function.png");
-            this.imageList1.Images.SetKeyName(2, "if.png");
-            this.imageList1.Images.SetKeyName(3, "loop.png");
-            this.imageList1.Images.SetKeyName(4, "assignment.png");
-            this.imageList1.Images.SetKeyName(5, "main.png");
-            this.imageList1.Images.SetKeyName(6, "c to v.png");
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(713, 30);
-            this.panel3.TabIndex = 2;
             // 
             // splitContainer1
             // 
@@ -160,6 +121,18 @@ namespace CodeVisualizer.Forms
             this.treeView.SelectedImageIndex = 6;
             this.treeView.Size = new System.Drawing.Size(80, 436);
             this.treeView.TabIndex = 4;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "variable.png");
+            this.imageList1.Images.SetKeyName(1, "function.png");
+            this.imageList1.Images.SetKeyName(2, "if.png");
+            this.imageList1.Images.SetKeyName(3, "loop.png");
+            this.imageList1.Images.SetKeyName(4, "assignment.png");
+            this.imageList1.Images.SetKeyName(5, "main.png");
+            this.imageList1.Images.SetKeyName(6, "c to v.png");
             // 
             // panel2
             // 
@@ -269,17 +242,16 @@ namespace CodeVisualizer.Forms
             this.label2.Text = "vCode";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // panel3
             // 
-            this.button1.BackgroundImage = global::CodeVisualizer.Properties.Resources.v_to_c;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(680, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 30);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.visualToCodeToolStripMenuItem_Click);
+            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(713, 30);
+            this.panel3.TabIndex = 2;
             // 
             // label4
             // 
@@ -292,6 +264,34 @@ namespace CodeVisualizer.Forms
             this.label4.Size = new System.Drawing.Size(185, 18);
             this.label4.TabIndex = 1;
             this.label4.Text = "vCode: A Code Visualizer";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::CodeVisualizer.Properties.Resources.v_to_c;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Location = new System.Drawing.Point(680, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 30);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.visualToCodeToolStripMenuItem_Click);
+            // 
+            // tableLayoutPanel
+            // 
+            this.tableLayoutPanel.ColumnCount = 1;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.Controls.Add(this.midPanel, 0, 0);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.ForeColor = System.Drawing.Color.Black;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(20, 30);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 1;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(723, 493);
+            this.tableLayoutPanel.TabIndex = 0;
             // 
             // DashBoard
             // 
@@ -307,9 +307,6 @@ namespace CodeVisualizer.Forms
             this.Style = MetroFramework.MetroColorStyle.White;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.midPanel.ResumeLayout(false);
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -325,6 +322,9 @@ namespace CodeVisualizer.Forms
             this.panel1.PerformLayout();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
