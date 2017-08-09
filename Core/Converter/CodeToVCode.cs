@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -370,9 +370,15 @@ namespace Core.Converter
                 while (m.Success)
                 {
                     if (count == 0)
+                    {
                         varObject.Row = Convert.ToInt32(m.Groups[0].ToString());
+                        varObject.ArrayType = "1D";
+                    }
                     else
+                    {
                         varObject.Column = Convert.ToInt32(m.Groups[0].ToString());
+                        varObject.ArrayType = "2D";
+                    }
                     m = m.NextMatch();
                     count++;
                 }
@@ -383,12 +389,25 @@ namespace Core.Converter
         private void CreateAssignmentObject(Scope scope, string text)
         {
             Assignment assignment = new Assignment();
+            assignment.AssignmentString = text;
             scope.Items.Enqueue(assignment);
 
+
             Match m = _regex.InstructionRegex.Match(text);
+            Match ma = _regex.Array.Match(text);
             Match op = _regex.OperatorRegex.Match(text);
 
-            assignment.Variable = m.Groups[0].ToString();
+            if(ma.Groups.Count > 0)
+            {
+                assignment.Variable = ma.Groups[0].ToString();
+                text = text.Replace(ma.Groups[0].ToString(),"");                    
+            }
+            else
+            {
+                assignment.Variable = m.Groups[0].ToString();
+                m = m.NextMatch();
+            }
+            m = _regex.InstructionRegex.Match(text);
 
 
             if (_regex.ThreeAddressInstructionRegex.IsMatch(text))
@@ -400,7 +419,6 @@ namespace Core.Converter
                 assignment.Instruction = threeAddress;
 
 
-                m = m.NextMatch();
                 byte count = 0;
                 while (m.Success)
                 {
@@ -438,7 +456,6 @@ namespace Core.Converter
                 SingleInstruction single = new SingleInstruction {InstructionType = Enums.InstructionType.SingleAddress};
                 assignment.Instruction = single;
 
-                m = m.NextMatch();
                 TypedvCodes ins = new TypedvCodes();
                 
                 if (_regex.ConstantRegex.IsMatch(m.Groups[0].ToString()))
