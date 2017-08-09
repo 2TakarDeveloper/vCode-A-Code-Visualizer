@@ -52,15 +52,15 @@ namespace CodeVisualizer.Controls.VBlocks
             {
                
                
-                //DTD.Entity.vCodes.Variable variable = (DTD.Entity.vCodes.Variable) vCode;
+                DTD.Entity.vCodes.Variable variable = (DTD.Entity.vCodes.Variable) typedvCodes;
 
-                AssignmentString += typedvCodes.Name;
-                //if (variable.IsArray)
-                //{
-                //    AssignmentString += "[" + variable.Row + "]";
-                //    if (variable.ArrayType == "2D")
-                //        AssignmentString += "[" + variable.Column + "]";
-                //}
+                AssignmentString += variable.Name;
+                if (variable.IsArray)
+                {
+                    AssignmentString += "[" + variable.Row + "]";
+                    if (variable.ArrayType == "2D")
+                        AssignmentString += "[" + variable.Column + "]";
+                }
 
 
             }
@@ -117,7 +117,7 @@ namespace CodeVisualizer.Controls.VBlocks
 
             }
 
-            AssignmentString += ";";
+            
 
             AssignmentStringLable.Text = AssignmentString;
             Assignment.AssignmentString = AssignmentString;

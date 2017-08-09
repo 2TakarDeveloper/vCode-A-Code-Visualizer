@@ -27,7 +27,7 @@ namespace CodeVisualizer.Controls.Instructions
 
         private void InstructionPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (InstructionPicker.Text == "Single Address")
+            if (InstructionPicker.Text == @"Single Address")
             {
                  OneAddressInstruction oneaddress= new OneAddressInstruction(ScopeVariable,Variable) {Dock = DockStyle.Fill};
           
@@ -37,13 +37,13 @@ namespace CodeVisualizer.Controls.Instructions
                 Instruction.InstructionType = Enums.InstructionType.SingleAddress;
 
             }
-            else if (InstructionPicker.Text == "Three Address")
+            else if (InstructionPicker.Text == @"Three Address")
             {
-                ThreeAddressInstructionControl ThreeAddress= new ThreeAddressInstructionControl(ScopeVariable, Variable) {Dock = DockStyle.Fill};
+                ThreeAddressInstructionControl threeAddress= new ThreeAddressInstructionControl(ScopeVariable, Variable) {Dock = DockStyle.Fill};
                
                 InstructionPanel.Controls.Clear();
-                InstructionPanel.Controls.Add(ThreeAddress);
-                Instruction = ThreeAddress.ThreeAddressInstruction;
+                InstructionPanel.Controls.Add(threeAddress);
+                Instruction = threeAddress.ThreeAddressInstruction;
                 Instruction.InstructionType = Enums.InstructionType.ThreeAddress;
             }
 

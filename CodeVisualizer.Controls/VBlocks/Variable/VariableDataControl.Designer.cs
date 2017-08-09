@@ -62,6 +62,7 @@
             this.columnIndex.TabIndex = 3;
             this.columnIndex.UseSelectable = true;
             this.columnIndex.Visible = false;
+            this.columnIndex.SelectedIndexChanged += new System.EventHandler(this.columnIndex_SelectedIndexChanged);
             // 
             // rowIndex
             // 
@@ -73,6 +74,7 @@
             this.rowIndex.TabIndex = 2;
             this.rowIndex.UseSelectable = true;
             this.rowIndex.Visible = false;
+            this.rowIndex.SelectedIndexChanged += new System.EventHandler(this.rowIndex_SelectedIndexChanged);
             // 
             // VariableName
             // 

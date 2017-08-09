@@ -26,27 +26,10 @@ namespace Core.Converter
            
             if (variable.IsArray)
             {
-
                 Code += "[" + variable.Row + "]";
-                switch (variable.ArrayType)
-                {
-                   
-                    case "2D":
-                        Code += "[" + variable.Column + "]";
-                        break;
-                }
-
-            
-
+                if (variable.ArrayType == "2D")
+                    Code += "[" + variable.Column + "]";
             }
-            else
-            {
-                //Code += variable.Value[0, 0].ToString();
-            }
-
-          
-
-
             Code += ";";
         }
 
@@ -82,6 +65,7 @@ namespace Core.Converter
                 case Enums.VType.Assignment:
                     var assignment = (Assignment) vcode;
                     AssignmentToCode(assignment);
+                    Code += ";";
                     break;
                 case Enums.VType.Function:
                     var function = (Function) vcode;
