@@ -388,26 +388,26 @@ namespace Core.Converter
 
         private void CreateAssignmentObject(Scope scope, string text)
         {
-            Assignment assignment = new Assignment();
-            assignment.AssignmentString = text;
+            Assignment assignment = new Assignment
+            {
+                AssignmentString = text.Replace(";", "")
+            };
             scope.Items.Enqueue(assignment);
 
-
-            Match m = _regex.InstructionRegex.Match(text);
+            /*Match m = _regex.InstructionRegex.Match(text);
             Match ma = _regex.Array.Match(text);
             Match op = _regex.OperatorRegex.Match(text);
-
-            if(ma.Groups.Count > 0)
+            if(ma.Groups.Count > 1)
             {
                 assignment.Variable = ma.Groups[0].ToString();
-                text = text.Replace(ma.Groups[0].ToString(),"");                    
+                text = text.Replace(ma.Groups[0].ToString(),"");
+                m = _regex.InstructionRegex.Match(text);
             }
             else
             {
                 assignment.Variable = m.Groups[0].ToString();
                 m = m.NextMatch();
             }
-            m = _regex.InstructionRegex.Match(text);
 
 
             if (_regex.ThreeAddressInstructionRegex.IsMatch(text))
@@ -452,9 +452,8 @@ namespace Core.Converter
             }
             else
             {
-
                 SingleInstruction single = new SingleInstruction {InstructionType = Enums.InstructionType.SingleAddress};
-                assignment.Instruction = single;
+                
 
                 TypedvCodes ins = new TypedvCodes();
                 
@@ -473,8 +472,11 @@ namespace Core.Converter
                     ins.VType = Enums.VType.Function;
                 }
                 single.Instruction = ins;
+                assignment.Instruction = single;
+                MessageBox.Show(assignment.Instruction.InstructionType.ToString());
             }
-            
+            */
+
         }
 
         private Constant CreateConstantObject(TypedvCodes ins,string text)

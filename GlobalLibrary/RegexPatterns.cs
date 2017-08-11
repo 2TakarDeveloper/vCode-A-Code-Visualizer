@@ -67,13 +67,13 @@ namespace GlobalLibrary
             Variable = new Regex("([a-z|A-Z|_][a-z|A-Z|0-9]*)");
             DataType = new Regex("([v][o][i][d])|([c][h][a][r])|([i][n][t])|([f][l][o][a][t])|([d][o][u][b][l][e])|([s][t][r][i][n][g])|([b][o][o][l])");
             BooleanOperator = new Regex("([<][=]|[>][=]|([<])|([>])|([=][=]))");
-            Array = new Regex(Variable+"[\\s]*[\\[]((" + Variable + ")|(" + NumberRegex + "))[\\]][\\s]*([\\[]((" + Variable + ")|(" + NumberRegex + "))?[\\]])?");
+            Array = new Regex(Variable+"[\\s]*[\\[]((" + Variable + ")|(" + NumberRegex + "))[\\]]([\\s]*[\\[]((" + Variable + ")|(" + NumberRegex + "))?[\\]])?");
             ArgumentRegex = new Regex("[\\s]*[(][\\s]*(((" + Variable + ")|(" + ConstantRegex + "))[\\s]*([,][\\s]*((" + Variable + ")|(" + ConstantRegex + "))[\\s]*)*)?[\\s]*[)]");
             FunctionCallAsInst = new Regex("" + Variable + ArgumentRegex + "[\\s]*");
             FunctionCall = new Regex("^" + Variable + ArgumentRegex + "[\\s]*([;])?$");
 
 
-            InstructionRegex = new Regex("((" + Variable + ")|(" + ConstantRegex + ")|(" + Array + ")|(" + FunctionCallAsInst + "))");
+            InstructionRegex = new Regex("((" + Variable + ")|(" + ConstantRegex + ")|(" + FunctionCallAsInst + "))");
             SingleInstructionRegex = new Regex("" + InstructionRegex + "[\\s]*[;]");
             ThreeAddressInstructionRegex = new Regex("[\\s]*("+ InstructionRegex +")[\\s]*("+ OperatorRegex + ")[\\s]*(" + InstructionRegex +")[\\s]*[;]");
            
