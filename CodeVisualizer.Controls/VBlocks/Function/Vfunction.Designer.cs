@@ -61,6 +61,7 @@
             // 
             // metroButton1
             // 
+            this.metroButton1.BackgroundImage = null;
             this.metroButton1.Location = new System.Drawing.Point(533, 1);
             this.metroButton1.Size = new System.Drawing.Size(75, 27);
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);

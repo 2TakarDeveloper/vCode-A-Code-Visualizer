@@ -302,6 +302,7 @@ namespace CodeVisualizer.Forms
             this.DisplayHeader = false;
             this.ForeColor = System.Drawing.Color.Teal;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DashBoard";
             this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Style = MetroFramework.MetroColorStyle.White;
