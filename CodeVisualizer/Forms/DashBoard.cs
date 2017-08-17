@@ -101,7 +101,7 @@ namespace CodeVisualizer.Forms
             {
                 ToUi();
             }
-            catch (Exception )
+            catch (Exception ex)
             {
                 //
             }
@@ -154,7 +154,16 @@ namespace CodeVisualizer.Forms
         private void ToUi()
         {
             CodeToVCode codeToVCode = new CodeToVCode(CodeEditor.Text);
-            globalScopeControl.VcodeToVblock(codeToVCode.Scope);
+            try
+            {
+              
+                globalScopeControl.VcodeToVblock(codeToVCode.Scope);
+            }
+            catch (Exception ex)
+            {
+
+            }
+           
 
             TreeNode root = null;
 

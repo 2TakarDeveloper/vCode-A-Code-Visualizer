@@ -390,7 +390,12 @@ namespace Core.Converter
         {
             Assignment assignment = new Assignment
             {
-                AssignmentString = text.Replace(";", "")
+                AssignmentString = text.Replace(";", ""),
+                Instruction=new SingleInstruction(),
+                Variable="",
+                LocalVariables=new List<Variable>(),
+                VType=Enums.VType.Assignment,
+                
             };
             scope.Items.Enqueue(assignment);
 

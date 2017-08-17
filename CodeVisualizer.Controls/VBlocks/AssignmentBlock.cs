@@ -27,13 +27,15 @@ namespace CodeVisualizer.Controls.VBlocks
             Assignment = assignment;
             assignment.VType=Enums.VType.Assignment;
             VCode = Assignment;
-            SetString(Assignment);
-            NameLable.Text = AssignmentString;
+            //SetString(Assignment);
+            NameLable.Text = assignment.AssignmentString;
         }
 
 
         private void ParseInstruction(TypedvCodes typedvCodes)
         {
+
+            if (typedvCodes == null) return;
             if (typedvCodes.VType == Enums.VType.Function)
             {
                 DTD.Entity.vCodes.Function function = (DTD.Entity.vCodes.Function)typedvCodes;
@@ -111,12 +113,8 @@ namespace CodeVisualizer.Controls.VBlocks
                 AssignmentString += instruction.Operator;
 
                 ParseInstruction(instruction.RightInstruction);
-
-
-
-
             }
-
+            
             
 
             AssignmentStringLable.Text = AssignmentString;
