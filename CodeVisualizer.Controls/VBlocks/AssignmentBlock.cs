@@ -21,13 +21,17 @@ namespace CodeVisualizer.Controls.VBlocks
         public string AssignmentString { get; set; }
         public Assignment Assignment { get; set; }
 
-        public AssignmentBlock(Assignment assignment)
+        public AssignmentBlock(Assignment assignment, bool setString)
         {
             InitializeComponent();
             Assignment = assignment;
             assignment.VType=Enums.VType.Assignment;
             VCode = Assignment;
-            //SetString(Assignment);
+            if (setString)
+            {
+                SetString(Assignment);
+            }
+            
             NameLable.Text = assignment.AssignmentString;
         }
 

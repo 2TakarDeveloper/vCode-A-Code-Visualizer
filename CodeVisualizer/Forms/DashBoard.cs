@@ -362,5 +362,11 @@ namespace CodeVisualizer.Forms
             }
 
         }
+
+        private void aboutLink_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
+        }
     }
 }

@@ -47,9 +47,9 @@ namespace CodeVisualizer.Forms
             this.header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.aboutLink = new MetroFramework.Controls.MetroLink();
             this.midPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,7 +75,7 @@ namespace CodeVisualizer.Forms
             this.midPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.midPanel.Location = new System.Drawing.Point(3, 3);
             this.midPanel.Name = "midPanel";
-            this.midPanel.Size = new System.Drawing.Size(717, 487);
+            this.midPanel.Size = new System.Drawing.Size(717, 475);
             this.midPanel.TabIndex = 1;
             // 
             // splitContainer1
@@ -91,7 +91,7 @@ namespace CodeVisualizer.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.SplitPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(713, 453);
+            this.splitContainer1.Size = new System.Drawing.Size(713, 441);
             this.splitContainer1.SplitterDistance = 80;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -105,7 +105,7 @@ namespace CodeVisualizer.Forms
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(80, 453);
+            this.metroPanel1.Size = new System.Drawing.Size(80, 441);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -119,7 +119,7 @@ namespace CodeVisualizer.Forms
             this.treeView.Location = new System.Drawing.Point(0, 17);
             this.treeView.Name = "treeView";
             this.treeView.SelectedImageIndex = 6;
-            this.treeView.Size = new System.Drawing.Size(80, 436);
+            this.treeView.Size = new System.Drawing.Size(80, 424);
             this.treeView.TabIndex = 4;
             // 
             // imageList1
@@ -172,7 +172,7 @@ namespace CodeVisualizer.Forms
             // 
             this.SplitPanel1.Panel2.Controls.Add(this.globalScopeControl);
             this.SplitPanel1.Panel2.Controls.Add(this.header);
-            this.SplitPanel1.Size = new System.Drawing.Size(629, 453);
+            this.SplitPanel1.Size = new System.Drawing.Size(629, 441);
             this.SplitPanel1.SplitterDistance = 135;
             this.SplitPanel1.TabIndex = 0;
             // 
@@ -182,7 +182,7 @@ namespace CodeVisualizer.Forms
             this.CodeEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CodeEditor.Location = new System.Drawing.Point(0, 17);
             this.CodeEditor.Name = "CodeEditor";
-            this.CodeEditor.Size = new System.Drawing.Size(135, 436);
+            this.CodeEditor.Size = new System.Drawing.Size(135, 424);
             this.CodeEditor.TabIndex = 3;
             this.CodeEditor.Text = "";
             this.CodeEditor.TextChanged += new System.EventHandler(this.CodeEditor_TextChanged);
@@ -217,7 +217,7 @@ namespace CodeVisualizer.Forms
             this.globalScopeControl.GlobalScope = null;
             this.globalScopeControl.Location = new System.Drawing.Point(0, 17);
             this.globalScopeControl.Name = "globalScopeControl";
-            this.globalScopeControl.Size = new System.Drawing.Size(490, 436);
+            this.globalScopeControl.Size = new System.Drawing.Size(490, 424);
             this.globalScopeControl.TabIndex = 10;
             // 
             // header
@@ -245,25 +245,12 @@ namespace CodeVisualizer.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(713, 30);
             this.panel3.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 18);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "vCode: A Code Visualizer";
             // 
             // button1
             // 
@@ -284,28 +271,41 @@ namespace CodeVisualizer.Forms
             this.tableLayoutPanel.Controls.Add(this.midPanel, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.ForeColor = System.Drawing.Color.Black;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(20, 30);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(20, 60);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(723, 493);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(723, 481);
             this.tableLayoutPanel.TabIndex = 0;
+            // 
+            // aboutLink
+            // 
+            this.aboutLink.ForeColor = System.Drawing.Color.Blue;
+            this.aboutLink.Location = new System.Drawing.Point(287, 34);
+            this.aboutLink.Name = "aboutLink";
+            this.aboutLink.Size = new System.Drawing.Size(75, 20);
+            this.aboutLink.TabIndex = 2;
+            this.aboutLink.Text = "About Us";
+            this.aboutLink.UseCustomBackColor = true;
+            this.aboutLink.UseCustomForeColor = true;
+            this.aboutLink.UseSelectable = true;
+            this.aboutLink.Click += new System.EventHandler(this.aboutLink_Click);
             // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 543);
+            this.ClientSize = new System.Drawing.Size(763, 561);
+            this.Controls.Add(this.aboutLink);
             this.Controls.Add(this.tableLayoutPanel);
-            this.DisplayHeader = false;
             this.ForeColor = System.Drawing.Color.Teal;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DashBoard";
-            this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Style = MetroFramework.MetroColorStyle.White;
+            this.Text = "vCode: A Code Visualizer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.midPanel.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -324,7 +324,6 @@ namespace CodeVisualizer.Forms
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -349,7 +348,7 @@ namespace CodeVisualizer.Forms
         private System.Windows.Forms.Panel header;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
+        private MetroFramework.Controls.MetroLink aboutLink;
     }
 }
 

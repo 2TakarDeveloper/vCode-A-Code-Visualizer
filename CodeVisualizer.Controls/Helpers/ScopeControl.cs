@@ -125,7 +125,7 @@ namespace CodeVisualizer.Controls.Helpers
             AssignmentForm assignmentForm = new AssignmentForm(Scope.LocalVariables);
             if (assignmentForm.ShowDialog() != DialogResult.OK) return;
             if(assignmentForm.Assignment==null)return;
-            AssignmentBlock assignmentBlock = new AssignmentBlock(assignmentForm.Assignment) ;
+            AssignmentBlock assignmentBlock = new AssignmentBlock(assignmentForm.Assignment,true) ;
             ScopePanel.Controls.Add(assignmentBlock);
             UpdateScope();
         }
@@ -192,7 +192,7 @@ namespace CodeVisualizer.Controls.Helpers
 
                     case Enums.VType.Assignment:
                         Assignment assignment = (Assignment)item;
-                        AssignmentBlock assignmentBlock = new AssignmentBlock(assignment);
+                        AssignmentBlock assignmentBlock = new AssignmentBlock(assignment,false);
                         ScopePanel.Controls.Add(assignmentBlock);
                         break;
                     default:
